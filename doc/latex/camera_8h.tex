@@ -1,0 +1,113 @@
+\hypertarget{camera_8h}{}\subsection{Référence du fichier camera.\+h}
+\label{camera_8h}\index{camera.\+h@{camera.\+h}}
+
+
+Fichier qui contient la déclaration de la classe \hyperlink{class_camera}{Camera}.  
+
+
+{\ttfamily \#include $<$Q\+Debug$>$}\newline
+{\ttfamily \#include $<$Q\+Object$>$}\newline
+{\ttfamily \#include $<$Q\+Thread$>$}\newline
+{\ttfamily \#include $<$opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$video/video.\+hpp$>$}\newline
+{\ttfamily \#include $<$Q\+Pixmap$>$}\newline
+{\ttfamily \#include $<$Q\+Image$>$}\newline
+{\ttfamily \#include $<$Q\+Time$>$}\newline
+{\ttfamily \#include $<$Q\+Camera\+Info$>$}\newline
+{\ttfamily \#include \char`\"{}rov.\+h\char`\"{}}\newline
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_camera}{Camera}
+\begin{DoxyCompactList}\small\item\em Class permettant de mettre en place une communication avec la camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{camera_8h_a87f76384d33bc9bba579afd1d5f3221a}{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+UT}~0
+\begin{DoxyCompactList}\small\item\em Défini le numéro de la caméra par défaut. \end{DoxyCompactList}\item 
+\#define \hyperlink{camera_8h_a70cf269dc21e5a921c2927034d6cadd2}{H\+A\+U\+T\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}~1200
+\begin{DoxyCompactList}\small\item\em Défini la hauteur en pixel de la caméra par défaut. \end{DoxyCompactList}\item 
+\#define \hyperlink{camera_8h_afe66edd1ec0aa05058aaa2a069248f65}{L\+A\+R\+G\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}~1600
+\begin{DoxyCompactList}\small\item\em Défini la largeur en pixel de la caméra par défaut. \end{DoxyCompactList}\item 
+\#define \hyperlink{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}{S\+E\+U\+I\+L\+\_\+\+D\+E\+F\+A\+UT}~0.\+5
+\begin{DoxyCompactList}\small\item\em Défini le seuil du contraste, luminosite et saturation de la caméra par défaut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Fichier qui contient la déclaration de la classe \hyperlink{class_camera}{Camera}. 
+
+
+
+Définition dans le fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+\subsubsection{Documentation des macros}
+\mbox{\Hypertarget{camera_8h_a87f76384d33bc9bba579afd1d5f3221a}\label{camera_8h_a87f76384d33bc9bba579afd1d5f3221a}} 
+\index{camera.\+h@{camera.\+h}!C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+UT@{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+UT}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+UT@{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+UT}!camera.\+h@{camera.\+h}}
+\paragraph{\texorpdfstring{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+UT}{CAMERA\_DEFAUT}}
+{\footnotesize\ttfamily \#define C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+UT~0}
+
+
+
+Défini le numéro de la caméra par défaut. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00029}{29} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00123}{Rov\+::demarrer\+Campagne()}.
+
+\mbox{\Hypertarget{camera_8h_a70cf269dc21e5a921c2927034d6cadd2}\label{camera_8h_a70cf269dc21e5a921c2927034d6cadd2}} 
+\index{camera.\+h@{camera.\+h}!H\+A\+U\+T\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT@{H\+A\+U\+T\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}}
+\index{H\+A\+U\+T\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT@{H\+A\+U\+T\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}!camera.\+h@{camera.\+h}}
+\paragraph{\texorpdfstring{H\+A\+U\+T\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}{HAUTEUR\_DEFAUT}}
+{\footnotesize\ttfamily \#define H\+A\+U\+T\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT~1200}
+
+
+
+Défini la hauteur en pixel de la caméra par défaut. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00041}{41} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00121}{Camera\+::get\+Resolution()}, et \hyperlink{camera_8cpp_source_l00152}{Camera\+::recuperer\+Liste\+Resolutions\+Camera()}.
+
+\mbox{\Hypertarget{camera_8h_afe66edd1ec0aa05058aaa2a069248f65}\label{camera_8h_afe66edd1ec0aa05058aaa2a069248f65}} 
+\index{camera.\+h@{camera.\+h}!L\+A\+R\+G\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT@{L\+A\+R\+G\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}}
+\index{L\+A\+R\+G\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT@{L\+A\+R\+G\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}!camera.\+h@{camera.\+h}}
+\paragraph{\texorpdfstring{L\+A\+R\+G\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}{LARGEUR\_DEFAUT}}
+{\footnotesize\ttfamily \#define L\+A\+R\+G\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT~1600}
+
+
+
+Défini la largeur en pixel de la caméra par défaut. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00035}{35} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00121}{Camera\+::get\+Resolution()}, et \hyperlink{camera_8cpp_source_l00152}{Camera\+::recuperer\+Liste\+Resolutions\+Camera()}.
+
+\mbox{\Hypertarget{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}\label{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}} 
+\index{camera.\+h@{camera.\+h}!S\+E\+U\+I\+L\+\_\+\+D\+E\+F\+A\+UT@{S\+E\+U\+I\+L\+\_\+\+D\+E\+F\+A\+UT}}
+\index{S\+E\+U\+I\+L\+\_\+\+D\+E\+F\+A\+UT@{S\+E\+U\+I\+L\+\_\+\+D\+E\+F\+A\+UT}!camera.\+h@{camera.\+h}}
+\paragraph{\texorpdfstring{S\+E\+U\+I\+L\+\_\+\+D\+E\+F\+A\+UT}{SEUIL\_DEFAUT}}
+{\footnotesize\ttfamily \#define S\+E\+U\+I\+L\+\_\+\+D\+E\+F\+A\+UT~0.\+5}
+
+
+
+Défini le seuil du contraste, luminosite et saturation de la caméra par défaut. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00047}{47} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+

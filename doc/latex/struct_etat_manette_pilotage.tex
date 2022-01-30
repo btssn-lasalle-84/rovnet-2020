@@ -1,0 +1,243 @@
+\hypertarget{struct_etat_manette_pilotage}{}\subsection{Référence de la structure Etat\+Manette\+Pilotage}
+\label{struct_etat_manette_pilotage}\index{Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}}
+
+
+Structure qui définit l\textquotesingle{}état de la manette en mode pilotage de la pince.  
+
+
+
+
+{\ttfamily \#include $<$manette.\+h$>$}
+
+
+
+Graphe de collaboration de Etat\+Manette\+Pilotage\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{struct_etat_manette_pilotage__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_etat_manette_pilotage_a1a9cbf7891c30ab2503ec9c9b7fb5299}{operator!=} (const \hyperlink{struct_etat_manette_pilotage}{Etat\+Manette\+Pilotage} \&ma\+Structure) const
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur != afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_pilotage_a85cac8d658fdc2d63ac54ea340ec8be8}{operator==} (const \hyperlink{struct_etat_manette_pilotage}{Etat\+Manette\+Pilotage} \&ma\+Structure) const
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur == afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{bouton\+Haut\+Droit}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du bouton R1. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{bouton\+Haut\+Gauche}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du bouton L1. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{fleche\+A\+Droite}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état de la flèche de droite. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{fleche\+A\+Gauche}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état de la flèche de gauche. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{fleche\+En\+Arriere}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état de la flèche du bas. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{fleche\+En\+Avant}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état de la flèche du haut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Structure qui définit l\textquotesingle{}état de la manette en mode pilotage de la pince. 
+
+Définition à la ligne \hyperlink{manette_8h_source_l00150}{150} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{struct_etat_manette_pilotage_a1a9cbf7891c30ab2503ec9c9b7fb5299}\label{struct_etat_manette_pilotage_a1a9cbf7891c30ab2503ec9c9b7fb5299}} 
+\index{Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}}
+\paragraph{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Pilotage\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_etat_manette_pilotage}{Etat\+Manette\+Pilotage} \&}]{ma\+Structure }\end{DoxyParamCaption}) const}
+
+
+
+Surcharge de l\textquotesingle{}opérateur != afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ma\+Structure} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Si l\textquotesingle{}opération est possible ou pas 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{manette_8cpp_source_l00631}{631} du fichier \hyperlink{manette_8cpp_source}{manette.\+cpp}.
+
+
+\begin{DoxyCode}
+00632 \{
+00633     \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == maStructure);
+00634 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_etat_manette_pilotage_a85cac8d658fdc2d63ac54ea340ec8be8}\label{struct_etat_manette_pilotage_a85cac8d658fdc2d63ac54ea340ec8be8}} 
+\index{Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}!operator==@{operator==}}
+\index{operator==@{operator==}!Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}}
+\paragraph{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Pilotage\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_etat_manette_pilotage}{Etat\+Manette\+Pilotage} \&}]{ma\+Structure }\end{DoxyParamCaption}) const}
+
+
+
+Surcharge de l\textquotesingle{}opérateur == afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ma\+Structure} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Si l\textquotesingle{}opération est possible ou pas 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{manette_8cpp_source_l00613}{613} du fichier \hyperlink{manette_8cpp_source}{manette.\+cpp}.
+
+
+
+Références \hyperlink{manette_8h_source_l00157}{bouton\+Haut\+Droit}, \hyperlink{manette_8h_source_l00156}{bouton\+Haut\+Gauche}, \hyperlink{manette_8h_source_l00155}{fleche\+A\+Droite}, \hyperlink{manette_8h_source_l00154}{fleche\+A\+Gauche}, \hyperlink{manette_8h_source_l00153}{fleche\+En\+Arriere}, et \hyperlink{manette_8h_source_l00152}{fleche\+En\+Avant}.
+
+
+\begin{DoxyCode}
+00614 \{
+00615     \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant} != maStructure.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant})
+00616         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00617     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere} != maStructure.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere})
+00618         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00619     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche} != maStructure.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche})
+00620         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00621     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite} != maStructure.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite})
+00622         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00623     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche} != maStructure.
+      \hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche})
+00624         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00625     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit} != maStructure.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit})
+00626         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00627     \textcolor{keywordflow}{else}
+00628         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00629 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}\label{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}} 
+\index{Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}!bouton\+Haut\+Droit@{bouton\+Haut\+Droit}}
+\index{bouton\+Haut\+Droit@{bouton\+Haut\+Droit}!Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}}
+\paragraph{\texorpdfstring{bouton\+Haut\+Droit}{boutonHautDroit}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Pilotage\+::bouton\+Haut\+Droit}
+
+
+
+Membre définissant l\textquotesingle{}état du bouton R1. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00157}{157} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00486}{Manette\+::changer\+Bouton\+Haut\+Droit()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, \hyperlink{manette_8cpp_source_l00040}{Manette\+::initialiser\+Types\+Pilotage()}, et \hyperlink{manette_8cpp_source_l00613}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}\label{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}} 
+\index{Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}!bouton\+Haut\+Gauche@{bouton\+Haut\+Gauche}}
+\index{bouton\+Haut\+Gauche@{bouton\+Haut\+Gauche}!Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}}
+\paragraph{\texorpdfstring{bouton\+Haut\+Gauche}{boutonHautGauche}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Pilotage\+::bouton\+Haut\+Gauche}
+
+
+
+Membre définissant l\textquotesingle{}état du bouton L1. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00156}{156} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00479}{Manette\+::changer\+Bouton\+Haut\+Gauche()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, \hyperlink{manette_8cpp_source_l00040}{Manette\+::initialiser\+Types\+Pilotage()}, et \hyperlink{manette_8cpp_source_l00613}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}\label{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}} 
+\index{Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}!fleche\+A\+Droite@{fleche\+A\+Droite}}
+\index{fleche\+A\+Droite@{fleche\+A\+Droite}!Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}}
+\paragraph{\texorpdfstring{fleche\+A\+Droite}{flecheADroite}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Pilotage\+::fleche\+A\+Droite}
+
+
+
+Membre définissant l\textquotesingle{}état de la flèche de droite. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00155}{155} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00542}{Manette\+::changer\+Fleche\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, \hyperlink{manette_8cpp_source_l00040}{Manette\+::initialiser\+Types\+Pilotage()}, et \hyperlink{manette_8cpp_source_l00613}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}\label{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}} 
+\index{Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}!fleche\+A\+Gauche@{fleche\+A\+Gauche}}
+\index{fleche\+A\+Gauche@{fleche\+A\+Gauche}!Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}}
+\paragraph{\texorpdfstring{fleche\+A\+Gauche}{flecheAGauche}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Pilotage\+::fleche\+A\+Gauche}
+
+
+
+Membre définissant l\textquotesingle{}état de la flèche de gauche. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00154}{154} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00533}{Manette\+::changer\+Fleche\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, \hyperlink{manette_8cpp_source_l00040}{Manette\+::initialiser\+Types\+Pilotage()}, et \hyperlink{manette_8cpp_source_l00613}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}\label{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}} 
+\index{Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}!fleche\+En\+Arriere@{fleche\+En\+Arriere}}
+\index{fleche\+En\+Arriere@{fleche\+En\+Arriere}!Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}}
+\paragraph{\texorpdfstring{fleche\+En\+Arriere}{flecheEnArriere}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Pilotage\+::fleche\+En\+Arriere}
+
+
+
+Membre définissant l\textquotesingle{}état de la flèche du bas. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00153}{153} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00524}{Manette\+::changer\+Fleche\+En\+Arriere()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, \hyperlink{manette_8cpp_source_l00040}{Manette\+::initialiser\+Types\+Pilotage()}, et \hyperlink{manette_8cpp_source_l00613}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}\label{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}} 
+\index{Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}!fleche\+En\+Avant@{fleche\+En\+Avant}}
+\index{fleche\+En\+Avant@{fleche\+En\+Avant}!Etat\+Manette\+Pilotage@{Etat\+Manette\+Pilotage}}
+\paragraph{\texorpdfstring{fleche\+En\+Avant}{flecheEnAvant}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Pilotage\+::fleche\+En\+Avant}
+
+
+
+Membre définissant l\textquotesingle{}état de la flèche du haut. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00152}{152} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00515}{Manette\+::changer\+Fleche\+En\+Avant()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, \hyperlink{manette_8cpp_source_l00040}{Manette\+::initialiser\+Types\+Pilotage()}, et \hyperlink{manette_8cpp_source_l00613}{operator==()}.
+
+
+
+La documentation de cette structure a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{manette_8h}{manette.\+h}\item 
+\hyperlink{manette_8cpp}{manette.\+cpp}\end{DoxyCompactItemize}

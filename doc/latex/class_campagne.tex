@@ -1,0 +1,925 @@
+\hypertarget{class_campagne}{}\subsection{Référence de la classe Campagne}
+\label{class_campagne}\index{Campagne@{Campagne}}
+
+
+Class contenant les informations de la campagne en cours.  
+
+
+
+
+{\ttfamily \#include \char`\"{}campagne.\+h\char`\"{}}
+
+
+
+Graphe de collaboration de Campagne\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_campagne__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_campagne_ab301ceaacbe1186682c2b6f3282619d0}{ajouter\+Mesure} (\hyperlink{struct_mesure}{Mesure} \&mesure)
+\begin{DoxyCompactList}\small\item\em Ajoute une mesure dans le conteneur de mesure. \end{DoxyCompactList}\item 
+void \hyperlink{class_campagne_a472029bf46646d136a750dbaa7a3155f}{ajouter\+Photo} (\hyperlink{struct_photo}{Photo} \&photo)
+\begin{DoxyCompactList}\small\item\em Ajoute une photo dans l\textquotesingle{}album photo. \end{DoxyCompactList}\item 
+\hyperlink{class_campagne_aba78ce7d7b921053abc69e22789ec6da}{Campagne} (Q\+String \hyperlink{class_campagne_a4455078418041442fa3998b9b6cb6230}{nom\+Campagne}, Q\+String \hyperlink{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}{lieu}, Q\+String \hyperlink{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}{nom\+Technicien}, Q\+String \hyperlink{class_campagne_a9cc37c9671136683b5dac87ff34017bc}{prenom\+Technicien}, Q\+Date\+Time \hyperlink{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}{date}, \hyperlink{class_q_object}{Q\+Object} $\ast$parent=nullptr, int \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree}=0)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_campagne}{Campagne}. \end{DoxyCompactList}\item 
+Q\+Vector$<$ \hyperlink{struct_photo}{Photo} $>$ \hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{get\+Album\+Photo} () const
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}album photo de la campagne. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_ad752790357417d83a93056d9c9689a16}{get\+Chemin\+Sauvegarde} () const
+\begin{DoxyCompactList}\small\item\em Retourne le chemin du dossier de sauvegarde des photos. \end{DoxyCompactList}\item 
+Q\+Date\+Time \hyperlink{class_campagne_a319b5bb4ed2b0fc1a10fc4d099a7a6d2}{get\+Date} () const
+\begin{DoxyCompactList}\small\item\em Retourne la date de la campagne. \end{DoxyCompactList}\item 
+int \hyperlink{class_campagne_abe02a9050f4a5ea9521dd40b855c350b}{get\+Duree} () const
+\begin{DoxyCompactList}\small\item\em Retourne la durée de la campagne. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_a98d71a731d16dec7a882787387b29d8e}{get\+Lieu} () const
+\begin{DoxyCompactList}\small\item\em Retourne le lieu de la campagne. \end{DoxyCompactList}\item 
+Q\+Vector$<$ \hyperlink{struct_mesure}{Mesure} $>$ \hyperlink{class_campagne_ab3a3e6e325fec3aef0521f077e71c914}{get\+Mesures} () const
+\begin{DoxyCompactList}\small\item\em Retourne les mesures de la campagne. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{get\+Nom\+Campagne} () const
+\begin{DoxyCompactList}\small\item\em Retourne le nom de la campagne. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_ae1df1bd6234222ccdaf5a1d20d64ee46}{get\+Nom\+Technicien} () const
+\begin{DoxyCompactList}\small\item\em Retourne le nom du technicien. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_ac6c7772ef5d7b15964664d659b486263}{get\+Prenom\+Technicien} () const
+\begin{DoxyCompactList}\small\item\em Retourne le prenom du technicien. \end{DoxyCompactList}\item 
+int \hyperlink{class_campagne_ab6a893a28bc18e054d2d19d2671ce6da}{incremente\+Nombre\+Photo} ()
+\begin{DoxyCompactList}\small\item\em Incrémente le nombre de photo prises durant la campagne et retourne son nombre. \end{DoxyCompactList}\item 
+void \hyperlink{class_campagne_a7751a5a0b5d1be46384f57b5409163e8}{modifier\+Archive\+Photo} (int numero\+Photo)
+\begin{DoxyCompactList}\small\item\em Modifie l\textquotesingle{}état d\textquotesingle{}archive de la photo correspondant au numéro passé en paramètre. \end{DoxyCompactList}\item 
+void \hyperlink{class_campagne_a68c7eb6776e46306b10f1ca2a409ae6e}{set\+Chemin\+Sauvegarde} (Q\+String chemin)
+\begin{DoxyCompactList}\small\item\em Modifie le chemin de sauvegarde des photos. \end{DoxyCompactList}\item 
+void \hyperlink{class_campagne_aff9aebbc64c40ce2c1b5ae584c7a8d71}{set\+Duree} (int \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree})
+\begin{DoxyCompactList}\small\item\em Modifie la duree de la campagne. \end{DoxyCompactList}\item 
+void \hyperlink{class_campagne_a2b8848ade0f97708571331ef71e4c9cb}{set\+Nombre\+Photos} (int nombre)
+\begin{DoxyCompactList}\small\item\em Modifie le nombre de photos prises durant la campagne. \end{DoxyCompactList}\item 
+void \hyperlink{class_campagne_a77066423e53f99bb6cd39fd25a6f2b5f}{supprimer\+Mesures} ()
+\begin{DoxyCompactList}\small\item\em Supprime les mesure du conteneur de \hyperlink{struct_mesure}{Mesure}, une fois celles-\/ci archivés dans la B\+DD. \end{DoxyCompactList}\item 
+void \hyperlink{class_campagne_ad2fc4d5863302c88ded7b58991b1398a}{supprimer\+Photos} ()
+\begin{DoxyCompactList}\small\item\em Supprime les photo du conteneur de \hyperlink{struct_photo}{Photo}, une fois celles-\/ci archivés dans la B\+DD. \end{DoxyCompactList}\item 
+\hyperlink{class_campagne_a250c1d51fba057efbd7d1f66dce7c6e9}{$\sim$\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_campagne}{Campagne}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector$<$ \hyperlink{struct_photo}{Photo} $>$ \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{album\+Photo}
+\begin{DoxyCompactList}\small\item\em Conteneur des photos prises durant la campagne. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_a95484d0782021bc30157669d16c42208}{chemin\+Sauvegarde\+Photos}
+\begin{DoxyCompactList}\small\item\em Attribut contenant le chemin de sauvegarde des photos. \end{DoxyCompactList}\item 
+Q\+Date\+Time \hyperlink{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}{date}
+\begin{DoxyCompactList}\small\item\em Attribut contenant la date de la campagne. \end{DoxyCompactList}\item 
+int \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree}
+\begin{DoxyCompactList}\small\item\em Attribut contenant la durée de la campagne en millisecondes. \end{DoxyCompactList}\item 
+bool \hyperlink{class_campagne_a6ff3284dd54897c32c2ab9478f1f50ec}{est\+Archive}
+\begin{DoxyCompactList}\small\item\em Attribut booléen afin de savoir si la campagne est toujours en cours. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}{lieu}
+\begin{DoxyCompactList}\small\item\em Attribut contenant le lieu de la campagne. \end{DoxyCompactList}\item 
+Q\+Vector$<$ \hyperlink{struct_mesure}{Mesure} $>$ \hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{mesures}
+\begin{DoxyCompactList}\small\item\em Conteneur des mesures enregistrés durant la campagne. \end{DoxyCompactList}\item 
+int \hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{nombre\+Photos}
+\begin{DoxyCompactList}\small\item\em Attribut contenant le nombre de photos prise durant la campagne. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_a4455078418041442fa3998b9b6cb6230}{nom\+Campagne}
+\begin{DoxyCompactList}\small\item\em Attribut contenant le nom de la campagne. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}{nom\+Technicien}
+\begin{DoxyCompactList}\small\item\em Attribut contenant le nom du technicien. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_campagne_a9cc37c9671136683b5dac87ff34017bc}{prenom\+Technicien}
+\begin{DoxyCompactList}\small\item\em Attribut contenant le nom du technicien. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Class contenant les informations de la campagne en cours. 
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00034}{34} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_campagne_aba78ce7d7b921053abc69e22789ec6da}\label{class_campagne_aba78ce7d7b921053abc69e22789ec6da}} 
+\index{Campagne@{Campagne}!Campagne@{Campagne}}
+\index{Campagne@{Campagne}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{Campagne()}{Campagne()}}
+{\footnotesize\ttfamily Campagne\+::\+Campagne (\begin{DoxyParamCaption}\item[{Q\+String}]{nom\+Campagne,  }\item[{Q\+String}]{lieu,  }\item[{Q\+String}]{nom\+Technicien,  }\item[{Q\+String}]{prenom\+Technicien,  }\item[{Q\+Date\+Time}]{date,  }\item[{\hyperlink{class_q_object}{Q\+Object} $\ast$}]{parent = {\ttfamily nullptr},  }\item[{int}]{duree = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_campagne}{Campagne}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Campagne} & \\
+\hline
+{\em lieu} & \\
+\hline
+{\em nom\+Technicien} & \\
+\hline
+{\em prenom\+Technicien} & \\
+\hline
+{\em date} & \\
+\hline
+{\em parent} & \\
+\hline
+{\em duree} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00009}{9} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+\begin{DoxyCode}
+00009                                                                                                            
+                                            : \hyperlink{class_q_object}{QObject} (parent), \hyperlink{class_campagne_a4455078418041442fa3998b9b6cb6230}{nomCampagne}(
+      \hyperlink{class_campagne_a4455078418041442fa3998b9b6cb6230}{nomCampagne}), \hyperlink{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}{nomTechnicien}(\hyperlink{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}{nomTechnicien}), 
+      \hyperlink{class_campagne_a9cc37c9671136683b5dac87ff34017bc}{prenomTechnicien}(\hyperlink{class_campagne_a9cc37c9671136683b5dac87ff34017bc}{prenomTechnicien}), \hyperlink{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}{lieu}(
+      \hyperlink{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}{lieu}), \hyperlink{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}{date}(\hyperlink{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}{date}), \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree}(\hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree}), \hyperlink{class_campagne_a6ff3284dd54897c32c2ab9478f1f50ec}{estArchive}(\textcolor{keyword}{false}), 
+      \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto}(), \hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{mesures}(), \hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{nombrePhotos}(0)
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO;
+00012 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_a250c1d51fba057efbd7d1f66dce7c6e9}\label{class_campagne_a250c1d51fba057efbd7d1f66dce7c6e9}} 
+\index{Campagne@{Campagne}!````~Campagne@{$\sim$\+Campagne}}
+\index{````~Campagne@{$\sim$\+Campagne}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{$\sim$\+Campagne()}{~Campagne()}}
+{\footnotesize\ttfamily Campagne\+::$\sim$\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \hyperlink{class_campagne}{Campagne}. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00014}{14} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+\begin{DoxyCode}
+00015 \{
+00016     qDebug() << Q\_FUNC\_INFO;
+00017 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_campagne_ab301ceaacbe1186682c2b6f3282619d0}\label{class_campagne_ab301ceaacbe1186682c2b6f3282619d0}} 
+\index{Campagne@{Campagne}!ajouter\+Mesure@{ajouter\+Mesure}}
+\index{ajouter\+Mesure@{ajouter\+Mesure}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{ajouter\+Mesure()}{ajouterMesure()}}
+{\footnotesize\ttfamily void Campagne\+::ajouter\+Mesure (\begin{DoxyParamCaption}\item[{\hyperlink{struct_mesure}{Mesure} \&}]{mesure }\end{DoxyParamCaption})}
+
+
+
+Ajoute une mesure dans le conteneur de mesure. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mesure} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00090}{90} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00047}{mesures}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00086}{Rov\+::decoder\+Trame\+Capteur()}.
+
+
+\begin{DoxyCode}
+00091 \{
+00092     \hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{mesures}.push\_back(mesure);
+00093 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_a472029bf46646d136a750dbaa7a3155f}\label{class_campagne_a472029bf46646d136a750dbaa7a3155f}} 
+\index{Campagne@{Campagne}!ajouter\+Photo@{ajouter\+Photo}}
+\index{ajouter\+Photo@{ajouter\+Photo}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{ajouter\+Photo()}{ajouterPhoto()}}
+{\footnotesize\ttfamily void Campagne\+::ajouter\+Photo (\begin{DoxyParamCaption}\item[{\hyperlink{struct_photo}{Photo} \&}]{photo }\end{DoxyParamCaption})}
+
+
+
+Ajoute une photo dans l\textquotesingle{}album photo. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em photo} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00080}{80} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00046}{album\+Photo}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00179}{I\+H\+M\+Rov\+::capturer\+Image()}, et \hyperlink{ihmaccueil_8cpp_source_l00130}{I\+H\+M\+Accueil\+::charger\+Campagnes()}.
+
+
+\begin{DoxyCode}
+00081 \{
+00082     \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto}.push\_back(photo);
+00083 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_abec90fcbc0c4ded45caaac9adb454add}\label{class_campagne_abec90fcbc0c4ded45caaac9adb454add}} 
+\index{Campagne@{Campagne}!get\+Album\+Photo@{get\+Album\+Photo}}
+\index{get\+Album\+Photo@{get\+Album\+Photo}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{get\+Album\+Photo()}{getAlbumPhoto()}}
+{\footnotesize\ttfamily Q\+Vector$<$ \hyperlink{struct_photo}{Photo} $>$ Campagne\+::get\+Album\+Photo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne l\textquotesingle{}album photo de la campagne. 
+
+\begin{DoxyReturn}{Renvoie}
+album photo de la campagne sous forme d\textquotesingle{}un Q\+Vector de photo 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00070}{70} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00046}{album\+Photo}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00223}{I\+H\+M\+Rov\+::charger\+Photos()}, \hyperlink{ihmaccueil_8cpp_source_l00295}{I\+H\+M\+Accueil\+::modifier\+Campagne\+B\+D\+D()}, et \hyperlink{ihmalbumphoto_8cpp_source_l00081}{I\+H\+M\+Album\+Photo\+::selectionner\+Photo()}.
+
+
+\begin{DoxyCode}
+00071 \{
+00072     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto};
+00073 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_ad752790357417d83a93056d9c9689a16}\label{class_campagne_ad752790357417d83a93056d9c9689a16}} 
+\index{Campagne@{Campagne}!get\+Chemin\+Sauvegarde@{get\+Chemin\+Sauvegarde}}
+\index{get\+Chemin\+Sauvegarde@{get\+Chemin\+Sauvegarde}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{get\+Chemin\+Sauvegarde()}{getCheminSauvegarde()}}
+{\footnotesize\ttfamily Q\+String Campagne\+::get\+Chemin\+Sauvegarde (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le chemin du dossier de sauvegarde des photos. 
+
+\begin{DoxyReturn}{Renvoie}
+chemin du dossier de sauvegarde des photos sous forme d\textquotesingle{}un Q\+String 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00055}{55} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00043}{chemin\+Sauvegarde\+Photos}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00254}{I\+H\+M\+Accueil\+::ajouter\+Campagne()}, \hyperlink{ihmrov_8cpp_source_l00179}{I\+H\+M\+Rov\+::capturer\+Image()}, et \hyperlink{ihmaccueil_8cpp_source_l00273}{I\+H\+M\+Accueil\+::enregistrer\+Campagne\+B\+D\+D()}.
+
+
+\begin{DoxyCode}
+00056 \{
+00057     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a95484d0782021bc30157669d16c42208}{cheminSauvegardePhotos};
+00058 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_a319b5bb4ed2b0fc1a10fc4d099a7a6d2}\label{class_campagne_a319b5bb4ed2b0fc1a10fc4d099a7a6d2}} 
+\index{Campagne@{Campagne}!get\+Date@{get\+Date}}
+\index{get\+Date@{get\+Date}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{get\+Date()}{getDate()}}
+{\footnotesize\ttfamily Q\+Date\+Time Campagne\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne la date de la campagne. 
+
+\begin{DoxyReturn}{Renvoie}
+date de la campagne sous forme de Q\+Date\+Time 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00039}{39} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00042}{date}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00273}{I\+H\+M\+Accueil\+::enregistrer\+Campagne\+B\+D\+D()}, et \hyperlink{ihmrov_8cpp_source_l00143}{I\+H\+M\+Rov\+::set\+Campagne()}.
+
+
+\begin{DoxyCode}
+00040 \{
+00041     \textcolor{keywordflow}{return} \hyperlink{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}{date};
+00042 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_abe02a9050f4a5ea9521dd40b855c350b}\label{class_campagne_abe02a9050f4a5ea9521dd40b855c350b}} 
+\index{Campagne@{Campagne}!get\+Duree@{get\+Duree}}
+\index{get\+Duree@{get\+Duree}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{get\+Duree()}{getDuree()}}
+{\footnotesize\ttfamily int Campagne\+::get\+Duree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne la durée de la campagne. 
+
+\begin{DoxyReturn}{Renvoie}
+durée de la campagne sous forme d\textquotesingle{}un int 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00044}{44} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00044}{duree}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00273}{I\+H\+M\+Accueil\+::enregistrer\+Campagne\+B\+D\+D()}, \hyperlink{rov_8cpp_source_l00154}{Rov\+::get\+Temps\+Campagne()}, et \hyperlink{ihmaccueil_8cpp_source_l00295}{I\+H\+M\+Accueil\+::modifier\+Campagne\+B\+D\+D()}.
+
+
+\begin{DoxyCode}
+00045 \{
+00046     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree};
+00047 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_a98d71a731d16dec7a882787387b29d8e}\label{class_campagne_a98d71a731d16dec7a882787387b29d8e}} 
+\index{Campagne@{Campagne}!get\+Lieu@{get\+Lieu}}
+\index{get\+Lieu@{get\+Lieu}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{get\+Lieu()}{getLieu()}}
+{\footnotesize\ttfamily Q\+String Campagne\+::get\+Lieu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le lieu de la campagne. 
+
+\begin{DoxyReturn}{Renvoie}
+lieu de la campagne sous forme de Q\+String 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00034}{34} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00041}{lieu}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00273}{I\+H\+M\+Accueil\+::enregistrer\+Campagne\+B\+D\+D()}.
+
+
+\begin{DoxyCode}
+00035 \{
+00036     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}{lieu};
+00037 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_ab3a3e6e325fec3aef0521f077e71c914}\label{class_campagne_ab3a3e6e325fec3aef0521f077e71c914}} 
+\index{Campagne@{Campagne}!get\+Mesures@{get\+Mesures}}
+\index{get\+Mesures@{get\+Mesures}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{get\+Mesures()}{getMesures()}}
+{\footnotesize\ttfamily Q\+Vector$<$ \hyperlink{struct_mesure}{Mesure} $>$ Campagne\+::get\+Mesures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne les mesures de la campagne. 
+
+\begin{DoxyReturn}{Renvoie}
+Mesures de la campagne sous forme d\textquotesingle{}un Q\+Vector de \hyperlink{struct_mesure}{Mesure} 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00075}{75} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00047}{mesures}.
+
+
+\begin{DoxyCode}
+00076 \{
+00077     \textcolor{keywordflow}{return} \hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{mesures};
+00078 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}\label{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}} 
+\index{Campagne@{Campagne}!get\+Nom\+Campagne@{get\+Nom\+Campagne}}
+\index{get\+Nom\+Campagne@{get\+Nom\+Campagne}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{get\+Nom\+Campagne()}{getNomCampagne()}}
+{\footnotesize\ttfamily Q\+String Campagne\+::get\+Nom\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le nom de la campagne. 
+
+\begin{DoxyReturn}{Renvoie}
+nom de la campagne sous forme de Q\+String 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00019}{19} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00038}{nom\+Campagne}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00254}{I\+H\+M\+Accueil\+::ajouter\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00313}{I\+H\+M\+Accueil\+::ajouter\+Photo\+B\+D\+D()}, \hyperlink{ihmrov_8cpp_source_l00179}{I\+H\+M\+Rov\+::capturer\+Image()}, \hyperlink{ihmaccueil_8cpp_source_l00273}{I\+H\+M\+Accueil\+::enregistrer\+Campagne\+B\+D\+D()}, \hyperlink{ihmaccueil_8cpp_source_l00295}{I\+H\+M\+Accueil\+::modifier\+Campagne\+B\+D\+D()}, et \hyperlink{ihmrov_8cpp_source_l00143}{I\+H\+M\+Rov\+::set\+Campagne()}.
+
+
+\begin{DoxyCode}
+00020 \{
+00021     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a4455078418041442fa3998b9b6cb6230}{nomCampagne};
+00022 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_ae1df1bd6234222ccdaf5a1d20d64ee46}\label{class_campagne_ae1df1bd6234222ccdaf5a1d20d64ee46}} 
+\index{Campagne@{Campagne}!get\+Nom\+Technicien@{get\+Nom\+Technicien}}
+\index{get\+Nom\+Technicien@{get\+Nom\+Technicien}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{get\+Nom\+Technicien()}{getNomTechnicien()}}
+{\footnotesize\ttfamily Q\+String Campagne\+::get\+Nom\+Technicien (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le nom du technicien. 
+
+\begin{DoxyReturn}{Renvoie}
+nom du technicien sous forme de Q\+String 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00024}{24} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00039}{nom\+Technicien}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00273}{I\+H\+M\+Accueil\+::enregistrer\+Campagne\+B\+D\+D()}.
+
+
+\begin{DoxyCode}
+00025 \{
+00026     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}{nomTechnicien};
+00027 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_ac6c7772ef5d7b15964664d659b486263}\label{class_campagne_ac6c7772ef5d7b15964664d659b486263}} 
+\index{Campagne@{Campagne}!get\+Prenom\+Technicien@{get\+Prenom\+Technicien}}
+\index{get\+Prenom\+Technicien@{get\+Prenom\+Technicien}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{get\+Prenom\+Technicien()}{getPrenomTechnicien()}}
+{\footnotesize\ttfamily Q\+String Campagne\+::get\+Prenom\+Technicien (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le prenom du technicien. 
+
+\begin{DoxyReturn}{Renvoie}
+prenom du technicien sous forme de Q\+String 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00029}{29} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00040}{prenom\+Technicien}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00273}{I\+H\+M\+Accueil\+::enregistrer\+Campagne\+B\+D\+D()}.
+
+
+\begin{DoxyCode}
+00030 \{
+00031     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a9cc37c9671136683b5dac87ff34017bc}{prenomTechnicien};
+00032 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_ab6a893a28bc18e054d2d19d2671ce6da}\label{class_campagne_ab6a893a28bc18e054d2d19d2671ce6da}} 
+\index{Campagne@{Campagne}!incremente\+Nombre\+Photo@{incremente\+Nombre\+Photo}}
+\index{incremente\+Nombre\+Photo@{incremente\+Nombre\+Photo}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{incremente\+Nombre\+Photo()}{incrementeNombrePhoto()}}
+{\footnotesize\ttfamily int Campagne\+::incremente\+Nombre\+Photo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Incrémente le nombre de photo prises durant la campagne et retourne son nombre. 
+
+\begin{DoxyReturn}{Renvoie}
+nombre de photo prise durant la campagne sous forme d\textquotesingle{}un int 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00105}{105} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00048}{nombre\+Photos}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00179}{I\+H\+M\+Rov\+::capturer\+Image()}.
+
+
+\begin{DoxyCode}
+00106 \{
+00107     \hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{nombrePhotos}++;
+00108     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{nombrePhotos};
+00109 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_a7751a5a0b5d1be46384f57b5409163e8}\label{class_campagne_a7751a5a0b5d1be46384f57b5409163e8}} 
+\index{Campagne@{Campagne}!modifier\+Archive\+Photo@{modifier\+Archive\+Photo}}
+\index{modifier\+Archive\+Photo@{modifier\+Archive\+Photo}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{modifier\+Archive\+Photo()}{modifierArchivePhoto()}}
+{\footnotesize\ttfamily void Campagne\+::modifier\+Archive\+Photo (\begin{DoxyParamCaption}\item[{int}]{numero\+Photo }\end{DoxyParamCaption})}
+
+
+
+Modifie l\textquotesingle{}état d\textquotesingle{}archive de la photo correspondant au numéro passé en paramètre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em numero\+Photo} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00085}{85} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00046}{album\+Photo}.
+
+
+
+Référencé par \hyperlink{ihmalbumphoto_8cpp_source_l00081}{I\+H\+M\+Album\+Photo\+::selectionner\+Photo()}.
+
+
+\begin{DoxyCode}
+00086 \{
+00087     \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto}[numeroPhoto].aGarder = !(\hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto}[numeroPhoto].aGarder);
+00088 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_a68c7eb6776e46306b10f1ca2a409ae6e}\label{class_campagne_a68c7eb6776e46306b10f1ca2a409ae6e}} 
+\index{Campagne@{Campagne}!set\+Chemin\+Sauvegarde@{set\+Chemin\+Sauvegarde}}
+\index{set\+Chemin\+Sauvegarde@{set\+Chemin\+Sauvegarde}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{set\+Chemin\+Sauvegarde()}{setCheminSauvegarde()}}
+{\footnotesize\ttfamily void Campagne\+::set\+Chemin\+Sauvegarde (\begin{DoxyParamCaption}\item[{Q\+String}]{chemin }\end{DoxyParamCaption})}
+
+
+
+Modifie le chemin de sauvegarde des photos. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em chemin} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00060}{60} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00043}{chemin\+Sauvegarde\+Photos}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00130}{I\+H\+M\+Accueil\+::charger\+Campagnes()}, et \hyperlink{ihmcreationcampagne_8cpp_source_l00071}{I\+H\+M\+Creation\+Campagne\+::valider\+Campagne()}.
+
+
+\begin{DoxyCode}
+00061 \{
+00062     \hyperlink{class_campagne_a95484d0782021bc30157669d16c42208}{cheminSauvegardePhotos} = chemin;
+00063 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_aff9aebbc64c40ce2c1b5ae584c7a8d71}\label{class_campagne_aff9aebbc64c40ce2c1b5ae584c7a8d71}} 
+\index{Campagne@{Campagne}!set\+Duree@{set\+Duree}}
+\index{set\+Duree@{set\+Duree}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{set\+Duree()}{setDuree()}}
+{\footnotesize\ttfamily void Campagne\+::set\+Duree (\begin{DoxyParamCaption}\item[{int}]{duree }\end{DoxyParamCaption})}
+
+
+
+Modifie la duree de la campagne. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em duree} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00049}{49} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00044}{duree}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00136}{Rov\+::arreter\+Campagne()}.
+
+
+\begin{DoxyCode}
+00050 \{
+00051     this->\hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree} = this->\hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree} + \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree};
+00052 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_a2b8848ade0f97708571331ef71e4c9cb}\label{class_campagne_a2b8848ade0f97708571331ef71e4c9cb}} 
+\index{Campagne@{Campagne}!set\+Nombre\+Photos@{set\+Nombre\+Photos}}
+\index{set\+Nombre\+Photos@{set\+Nombre\+Photos}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{set\+Nombre\+Photos()}{setNombrePhotos()}}
+{\footnotesize\ttfamily void Campagne\+::set\+Nombre\+Photos (\begin{DoxyParamCaption}\item[{int}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Modifie le nombre de photos prises durant la campagne. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nombre} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00065}{65} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00048}{nombre\+Photos}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00130}{I\+H\+M\+Accueil\+::charger\+Campagnes()}.
+
+
+\begin{DoxyCode}
+00066 \{
+00067     \hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{nombrePhotos} = nombre;
+00068 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_a77066423e53f99bb6cd39fd25a6f2b5f}\label{class_campagne_a77066423e53f99bb6cd39fd25a6f2b5f}} 
+\index{Campagne@{Campagne}!supprimer\+Mesures@{supprimer\+Mesures}}
+\index{supprimer\+Mesures@{supprimer\+Mesures}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{supprimer\+Mesures()}{supprimerMesures()}}
+{\footnotesize\ttfamily void Campagne\+::supprimer\+Mesures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Supprime les mesure du conteneur de \hyperlink{struct_mesure}{Mesure}, une fois celles-\/ci archivés dans la B\+DD. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00095}{95} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00047}{mesures}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00295}{I\+H\+M\+Accueil\+::modifier\+Campagne\+B\+D\+D()}.
+
+
+\begin{DoxyCode}
+00096 \{
+00097     \hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{mesures}.clear();
+00098 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_campagne_ad2fc4d5863302c88ded7b58991b1398a}\label{class_campagne_ad2fc4d5863302c88ded7b58991b1398a}} 
+\index{Campagne@{Campagne}!supprimer\+Photos@{supprimer\+Photos}}
+\index{supprimer\+Photos@{supprimer\+Photos}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{supprimer\+Photos()}{supprimerPhotos()}}
+{\footnotesize\ttfamily void Campagne\+::supprimer\+Photos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Supprime les photo du conteneur de \hyperlink{struct_photo}{Photo}, une fois celles-\/ci archivés dans la B\+DD. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8cpp_source_l00100}{100} du fichier \hyperlink{campagne_8cpp_source}{campagne.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8h_source_l00046}{album\+Photo}.
+
+
+\begin{DoxyCode}
+00101 \{
+00102     \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto}.clear();
+00103 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}\label{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}} 
+\index{Campagne@{Campagne}!album\+Photo@{album\+Photo}}
+\index{album\+Photo@{album\+Photo}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{album\+Photo}{albumPhoto}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{struct_photo}{Photo}$>$ Campagne\+::album\+Photo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Conteneur des photos prises durant la campagne. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00046}{46} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00080}{ajouter\+Photo()}, \hyperlink{campagne_8cpp_source_l00070}{get\+Album\+Photo()}, \hyperlink{campagne_8cpp_source_l00085}{modifier\+Archive\+Photo()}, et \hyperlink{campagne_8cpp_source_l00100}{supprimer\+Photos()}.
+
+\mbox{\Hypertarget{class_campagne_a95484d0782021bc30157669d16c42208}\label{class_campagne_a95484d0782021bc30157669d16c42208}} 
+\index{Campagne@{Campagne}!chemin\+Sauvegarde\+Photos@{chemin\+Sauvegarde\+Photos}}
+\index{chemin\+Sauvegarde\+Photos@{chemin\+Sauvegarde\+Photos}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{chemin\+Sauvegarde\+Photos}{cheminSauvegardePhotos}}
+{\footnotesize\ttfamily Q\+String Campagne\+::chemin\+Sauvegarde\+Photos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant le chemin de sauvegarde des photos. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00043}{43} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00055}{get\+Chemin\+Sauvegarde()}, et \hyperlink{campagne_8cpp_source_l00060}{set\+Chemin\+Sauvegarde()}.
+
+\mbox{\Hypertarget{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}\label{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}} 
+\index{Campagne@{Campagne}!date@{date}}
+\index{date@{date}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{date}{date}}
+{\footnotesize\ttfamily Q\+Date\+Time Campagne\+::date\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant la date de la campagne. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00042}{42} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00039}{get\+Date()}.
+
+\mbox{\Hypertarget{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}\label{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}} 
+\index{Campagne@{Campagne}!duree@{duree}}
+\index{duree@{duree}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{duree}{duree}}
+{\footnotesize\ttfamily int Campagne\+::duree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant la durée de la campagne en millisecondes. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00044}{44} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00044}{get\+Duree()}, et \hyperlink{campagne_8cpp_source_l00049}{set\+Duree()}.
+
+\mbox{\Hypertarget{class_campagne_a6ff3284dd54897c32c2ab9478f1f50ec}\label{class_campagne_a6ff3284dd54897c32c2ab9478f1f50ec}} 
+\index{Campagne@{Campagne}!est\+Archive@{est\+Archive}}
+\index{est\+Archive@{est\+Archive}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{est\+Archive}{estArchive}}
+{\footnotesize\ttfamily bool Campagne\+::est\+Archive\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut booléen afin de savoir si la campagne est toujours en cours. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00045}{45} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+\mbox{\Hypertarget{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}\label{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}} 
+\index{Campagne@{Campagne}!lieu@{lieu}}
+\index{lieu@{lieu}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{lieu}{lieu}}
+{\footnotesize\ttfamily Q\+String Campagne\+::lieu\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant le lieu de la campagne. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00041}{41} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00034}{get\+Lieu()}.
+
+\mbox{\Hypertarget{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}\label{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}} 
+\index{Campagne@{Campagne}!mesures@{mesures}}
+\index{mesures@{mesures}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{mesures}{mesures}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{struct_mesure}{Mesure}$>$ Campagne\+::mesures\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Conteneur des mesures enregistrés durant la campagne. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00047}{47} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00090}{ajouter\+Mesure()}, \hyperlink{campagne_8cpp_source_l00075}{get\+Mesures()}, et \hyperlink{campagne_8cpp_source_l00095}{supprimer\+Mesures()}.
+
+\mbox{\Hypertarget{class_campagne_a3696e02e3cefc30bf4f284152917718b}\label{class_campagne_a3696e02e3cefc30bf4f284152917718b}} 
+\index{Campagne@{Campagne}!nombre\+Photos@{nombre\+Photos}}
+\index{nombre\+Photos@{nombre\+Photos}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{nombre\+Photos}{nombrePhotos}}
+{\footnotesize\ttfamily int Campagne\+::nombre\+Photos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant le nombre de photos prise durant la campagne. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00048}{48} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00105}{incremente\+Nombre\+Photo()}, et \hyperlink{campagne_8cpp_source_l00065}{set\+Nombre\+Photos()}.
+
+\mbox{\Hypertarget{class_campagne_a4455078418041442fa3998b9b6cb6230}\label{class_campagne_a4455078418041442fa3998b9b6cb6230}} 
+\index{Campagne@{Campagne}!nom\+Campagne@{nom\+Campagne}}
+\index{nom\+Campagne@{nom\+Campagne}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{nom\+Campagne}{nomCampagne}}
+{\footnotesize\ttfamily Q\+String Campagne\+::nom\+Campagne\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant le nom de la campagne. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00038}{38} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00019}{get\+Nom\+Campagne()}.
+
+\mbox{\Hypertarget{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}\label{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}} 
+\index{Campagne@{Campagne}!nom\+Technicien@{nom\+Technicien}}
+\index{nom\+Technicien@{nom\+Technicien}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{nom\+Technicien}{nomTechnicien}}
+{\footnotesize\ttfamily Q\+String Campagne\+::nom\+Technicien\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant le nom du technicien. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00039}{39} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00024}{get\+Nom\+Technicien()}.
+
+\mbox{\Hypertarget{class_campagne_a9cc37c9671136683b5dac87ff34017bc}\label{class_campagne_a9cc37c9671136683b5dac87ff34017bc}} 
+\index{Campagne@{Campagne}!prenom\+Technicien@{prenom\+Technicien}}
+\index{prenom\+Technicien@{prenom\+Technicien}!Campagne@{Campagne}}
+\paragraph{\texorpdfstring{prenom\+Technicien}{prenomTechnicien}}
+{\footnotesize\ttfamily Q\+String Campagne\+::prenom\+Technicien\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant le nom du technicien. 
+
+
+
+Définition à la ligne \hyperlink{campagne_8h_source_l00040}{40} du fichier \hyperlink{campagne_8h_source}{campagne.\+h}.
+
+
+
+Référencé par \hyperlink{campagne_8cpp_source_l00029}{get\+Prenom\+Technicien()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{campagne_8h}{campagne.\+h}\item 
+\hyperlink{campagne_8cpp}{campagne.\+cpp}\end{DoxyCompactItemize}

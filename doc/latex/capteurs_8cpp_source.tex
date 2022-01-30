@@ -1,0 +1,59 @@
+\hypertarget{capteurs_8cpp_source}{}\subsection{capteurs.\+cpp}
+\label{capteurs_8cpp_source}\index{capteurs.\+cpp@{capteurs.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{capteurs_8h}{capteurs.h}"}
+00008 
+\Hypertarget{capteurs_8cpp_source_l00009}\hyperlink{class_capteurs_a9d34c185400db797961c72498c48bbc0}{00009} \hyperlink{class_capteurs_a9d34c185400db797961c72498c48bbc0}{Capteurs::Capteurs}(\hyperlink{class_q_object}{QObject} *parent) : \hyperlink{class_q_object}{QObject}(parent), telemetrie(\textcolor{stringliteral}{"0"}), 
+      temperature(\textcolor{stringliteral}{"0"}), humidite(\textcolor{stringliteral}{"0"}), radiation(\textcolor{stringliteral}{"0"})
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO;
+00012 \}
+00013 
+\Hypertarget{capteurs_8cpp_source_l00014}\hyperlink{class_capteurs_a8d0e38fada71279279b2d3938485304b}{00014} \hyperlink{class_capteurs_a8d0e38fada71279279b2d3938485304b}{Capteurs::~Capteurs}()
+00015 \{
+00016     qDebug() << Q\_FUNC\_INFO;
+00017 \}
+00018 
+\Hypertarget{capteurs_8cpp_source_l00019}\hyperlink{class_capteurs_a399af986afb9d707138bc57a51e1f34f}{00019} \textcolor{keywordtype}{void} \hyperlink{class_capteurs_a399af986afb9d707138bc57a51e1f34f}{Capteurs::setTelemetrie}(QString \hyperlink{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}{telemetrie})
+00020 \{
+00021     this->telemetrie = \hyperlink{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}{telemetrie};
+00022 \}
+00023 
+\Hypertarget{capteurs_8cpp_source_l00024}\hyperlink{class_capteurs_a8d6a0bceb4d236edf7b51335d9be8ecd}{00024} \textcolor{keywordtype}{void} \hyperlink{class_capteurs_a8d6a0bceb4d236edf7b51335d9be8ecd}{Capteurs::setTemperature}(QString \hyperlink{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}{temperature})
+00025 \{
+00026     this->temperature = \hyperlink{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}{temperature};
+00027 \}
+00028 
+\Hypertarget{capteurs_8cpp_source_l00029}\hyperlink{class_capteurs_aafb06e1746006cdb72e92dc7a0519a2e}{00029} \textcolor{keywordtype}{void} \hyperlink{class_capteurs_aafb06e1746006cdb72e92dc7a0519a2e}{Capteurs::setHumidite}(QString \hyperlink{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}{humidite})
+00030 \{
+00031     this->humidite = \hyperlink{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}{humidite};
+00032 \}
+00033 
+\Hypertarget{capteurs_8cpp_source_l00034}\hyperlink{class_capteurs_a8692d145188df3129d88fef77efbb7b0}{00034} \textcolor{keywordtype}{void} \hyperlink{class_capteurs_a8692d145188df3129d88fef77efbb7b0}{Capteurs::setRadiation}(QString \hyperlink{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}{radiation})
+00035 \{
+00036     this->radiation = \hyperlink{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}{radiation};
+00037 \}
+00038 
+\Hypertarget{capteurs_8cpp_source_l00039}\hyperlink{class_capteurs_ad8c2c486e92cc537dc014035b5634b60}{00039} QString \hyperlink{class_capteurs_ad8c2c486e92cc537dc014035b5634b60}{Capteurs::getTelemetrie}()\textcolor{keyword}{ const}
+00040 \textcolor{keyword}{}\{
+00041     \textcolor{keywordflow}{return} \hyperlink{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}{telemetrie};
+00042 \}
+00043 
+\Hypertarget{capteurs_8cpp_source_l00044}\hyperlink{class_capteurs_aa1346e5cbea9e37afc3694a0ea86bd99}{00044} QString \hyperlink{class_capteurs_aa1346e5cbea9e37afc3694a0ea86bd99}{Capteurs::getTemperature}()\textcolor{keyword}{ const}
+00045 \textcolor{keyword}{}\{
+00046     \textcolor{keywordflow}{return} \hyperlink{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}{temperature};
+00047 \}
+00048 
+\Hypertarget{capteurs_8cpp_source_l00049}\hyperlink{class_capteurs_a419b69b8b2fcc02a9bb7bdff39f87b06}{00049} QString \hyperlink{class_capteurs_a419b69b8b2fcc02a9bb7bdff39f87b06}{Capteurs::getHumidite}()\textcolor{keyword}{ const}
+00050 \textcolor{keyword}{}\{
+00051     \textcolor{keywordflow}{return} \hyperlink{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}{humidite};
+00052 \}
+00053 
+\Hypertarget{capteurs_8cpp_source_l00054}\hyperlink{class_capteurs_aaee3d64c752b09f8674fa62907f38cbc}{00054} QString \hyperlink{class_capteurs_aaee3d64c752b09f8674fa62907f38cbc}{Capteurs::getRadiation}()\textcolor{keyword}{ const}
+00055 \textcolor{keyword}{}\{
+00056     \textcolor{keywordflow}{return} \hyperlink{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}{radiation};
+00057 \}
+00058 
+\end{DoxyCode}

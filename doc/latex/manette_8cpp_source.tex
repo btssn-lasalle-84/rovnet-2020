@@ -1,0 +1,776 @@
+\hypertarget{manette_8cpp_source}{}\subsection{manette.\+cpp}
+\label{manette_8cpp_source}\index{manette.\+cpp@{manette.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{manette_8h}{manette.h}"}
+00008 
+\Hypertarget{manette_8cpp_source_l00009}\hyperlink{class_manette_aaeb630a14bd4905666146dca3253827b}{00009} \hyperlink{class_manette_aaeb630a14bd4905666146dca3253827b}{Manette::Manette}(\textcolor{keywordtype}{int} deviceID) : \hyperlink{class_q_gamepad}{QGamepad}(deviceID), modeDeplacement(true), 
+      modePilotageBras(false), puissanceGachetteDroite(0), puissanceGachetteGauche(0), joystickAxeXCamera(\textcolor{stringliteral}{"0"}), 
+      joystickAxeYCamera(\textcolor{stringliteral}{"0"})
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this};
+00012     \hyperlink{class_manette_afd722561b4cc62304e81a8e41c820bb8}{initialiserEtats}();
+00013     \hyperlink{class_manette_a21ebb19837250342e4859ba7dc5f03cc}{initialiserEtatBouton}();
+00014     \hyperlink{class_manette_ab20afdb190b24126e54d4f80af0bf310}{initialiserTypesPilotage}();
+00015     \hyperlink{class_manette_a9888b04a784ceda912a35b6eb30ae84a}{initialiserTypesDeplacement}();
+00016 \}
+00017 
+\Hypertarget{manette_8cpp_source_l00018}\hyperlink{class_manette_a86a0cab49599b27d86c2e77f13fa54a2}{00018} \hyperlink{class_manette_a86a0cab49599b27d86c2e77f13fa54a2}{Manette::~Manette}()
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this};
+00021 \}
+00022 
+\Hypertarget{manette_8cpp_source_l00023}\hyperlink{class_manette_afd722561b4cc62304e81a8e41c820bb8}{00023} \textcolor{keywordtype}{void} \hyperlink{class_manette_afd722561b4cc62304e81a8e41c820bb8}{Manette::initialiserEtats}()
+00024 \{
+00025     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite} = \textcolor{keyword}{false};
+00026     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche} = \textcolor{keyword}{false};
+00027     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere} = \textcolor{keyword}{false};
+00028     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant} = \textcolor{keyword}{false};
+00029     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit} = \textcolor{keyword}{false};
+00030     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche} = \textcolor{keyword}{false};
+00031 
+00032     \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00033     \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00034     \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00035     \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00036     \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00037     \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00038 \}
+00039 
+\Hypertarget{manette_8cpp_source_l00040}\hyperlink{class_manette_ab20afdb190b24126e54d4f80af0bf310}{00040} \textcolor{keywordtype}{void} \hyperlink{class_manette_ab20afdb190b24126e54d4f80af0bf310}{Manette::initialiserTypesPilotage}()
+00041 \{
+00042     \hyperlink{class_manette_a6ff181eab8c2206ca3d40bf5112e72ec}{avance}.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite} = \textcolor{keyword}{false};
+00043     \hyperlink{class_manette_a6ff181eab8c2206ca3d40bf5112e72ec}{avance}.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche} = \textcolor{keyword}{false};
+00044     \hyperlink{class_manette_a6ff181eab8c2206ca3d40bf5112e72ec}{avance}.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere} = \textcolor{keyword}{false};
+00045     \hyperlink{class_manette_a6ff181eab8c2206ca3d40bf5112e72ec}{avance}.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant} = \textcolor{keyword}{true};
+00046     \hyperlink{class_manette_a6ff181eab8c2206ca3d40bf5112e72ec}{avance}.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit} = \textcolor{keyword}{false};
+00047     \hyperlink{class_manette_a6ff181eab8c2206ca3d40bf5112e72ec}{avance}.\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche} = \textcolor{keyword}{false};
+00048 
+00049     \hyperlink{class_manette_a5ed3a0ab27f98cd11ecafe5f5b94e7e5}{recule}.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite} = \textcolor{keyword}{false};
+00050     \hyperlink{class_manette_a5ed3a0ab27f98cd11ecafe5f5b94e7e5}{recule}.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche} = \textcolor{keyword}{false};
+00051     \hyperlink{class_manette_a5ed3a0ab27f98cd11ecafe5f5b94e7e5}{recule}.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere} = \textcolor{keyword}{true};
+00052     \hyperlink{class_manette_a5ed3a0ab27f98cd11ecafe5f5b94e7e5}{recule}.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant} = \textcolor{keyword}{false};
+00053     \hyperlink{class_manette_a5ed3a0ab27f98cd11ecafe5f5b94e7e5}{recule}.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit} = \textcolor{keyword}{false};
+00054     \hyperlink{class_manette_a5ed3a0ab27f98cd11ecafe5f5b94e7e5}{recule}.\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche} = \textcolor{keyword}{false};
+00055 
+00056     \hyperlink{class_manette_acc72f831540b93ac3a265d35d005c4fa}{gauche}.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite} = \textcolor{keyword}{false};
+00057     \hyperlink{class_manette_acc72f831540b93ac3a265d35d005c4fa}{gauche}.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche} = \textcolor{keyword}{true};
+00058     \hyperlink{class_manette_acc72f831540b93ac3a265d35d005c4fa}{gauche}.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere} = \textcolor{keyword}{false};
+00059     \hyperlink{class_manette_acc72f831540b93ac3a265d35d005c4fa}{gauche}.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant} = \textcolor{keyword}{false};
+00060     \hyperlink{class_manette_acc72f831540b93ac3a265d35d005c4fa}{gauche}.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit} = \textcolor{keyword}{false};
+00061     \hyperlink{class_manette_acc72f831540b93ac3a265d35d005c4fa}{gauche}.\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche} = \textcolor{keyword}{false};
+00062 
+00063     \hyperlink{class_manette_a40a2dc8420742b04c3eee14e477992b1}{droite}.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite} = \textcolor{keyword}{true};
+00064     \hyperlink{class_manette_a40a2dc8420742b04c3eee14e477992b1}{droite}.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche} = \textcolor{keyword}{false};
+00065     \hyperlink{class_manette_a40a2dc8420742b04c3eee14e477992b1}{droite}.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere} = \textcolor{keyword}{false};
+00066     \hyperlink{class_manette_a40a2dc8420742b04c3eee14e477992b1}{droite}.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant} = \textcolor{keyword}{false};
+00067     \hyperlink{class_manette_a40a2dc8420742b04c3eee14e477992b1}{droite}.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit} = \textcolor{keyword}{false};
+00068     \hyperlink{class_manette_a40a2dc8420742b04c3eee14e477992b1}{droite}.\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche} = \textcolor{keyword}{false};
+00069 
+00070     \hyperlink{class_manette_a63d9a39ea238e105d7491b87f0a3f87d}{monte}.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite} = \textcolor{keyword}{false};
+00071     \hyperlink{class_manette_a63d9a39ea238e105d7491b87f0a3f87d}{monte}.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche} = \textcolor{keyword}{false};
+00072     \hyperlink{class_manette_a63d9a39ea238e105d7491b87f0a3f87d}{monte}.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere} = \textcolor{keyword}{false};
+00073     \hyperlink{class_manette_a63d9a39ea238e105d7491b87f0a3f87d}{monte}.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant} = \textcolor{keyword}{false};
+00074     \hyperlink{class_manette_a63d9a39ea238e105d7491b87f0a3f87d}{monte}.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit} = \textcolor{keyword}{true};
+00075     \hyperlink{class_manette_a63d9a39ea238e105d7491b87f0a3f87d}{monte}.\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche} = \textcolor{keyword}{false};
+00076 
+00077     \hyperlink{class_manette_a95e7f41f1e15f01d7530062801817304}{descend}.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite} = \textcolor{keyword}{false};
+00078     \hyperlink{class_manette_a95e7f41f1e15f01d7530062801817304}{descend}.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche} = \textcolor{keyword}{false};
+00079     \hyperlink{class_manette_a95e7f41f1e15f01d7530062801817304}{descend}.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere} = \textcolor{keyword}{false};
+00080     \hyperlink{class_manette_a95e7f41f1e15f01d7530062801817304}{descend}.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant} = \textcolor{keyword}{false};
+00081     \hyperlink{class_manette_a95e7f41f1e15f01d7530062801817304}{descend}.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit} = \textcolor{keyword}{false};
+00082     \hyperlink{class_manette_a95e7f41f1e15f01d7530062801817304}{descend}.\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche} = \textcolor{keyword}{true};
+00083 \}
+00084 
+\Hypertarget{manette_8cpp_source_l00085}\hyperlink{class_manette_a9888b04a784ceda912a35b6eb30ae84a}{00085} \textcolor{keywordtype}{void} \hyperlink{class_manette_a9888b04a784ceda912a35b6eb30ae84a}{Manette::initialiserTypesDeplacement}()
+00086 \{
+00087     \hyperlink{class_manette_afd5504555886e0abf89347b4f8d57fe0}{initialisationStructuresEnAvant}();
+00088     \hyperlink{class_manette_ae4379b4f09192b83219de5aaa548fda0}{initialisationStructuresEnArriere}();
+00089     \hyperlink{class_manette_a9c1348e7b4c4cc071c9b8bac79f0eeab}{initialisationStructureRotationAGauche}();
+00090     \hyperlink{class_manette_a35242782669d6d2cf88f2b5dbd9b0b73}{initialisationStructuresRotationAGaucheDoucement}();
+00091     \hyperlink{class_manette_a34e37141425dd6d62bcb5954312705c9}{initialisationStructureRotationADroite}();
+00092     \hyperlink{class_manette_aba0348198bad2dff52fe71684d73c2df}{initialisationStructuresRotationADroiteDoucement}();
+00093     \hyperlink{class_manette_aa02a2dfa49318e1043b52dd103fa1795}{initialisationStructureVirageAvantAGauche}();
+00094     \hyperlink{class_manette_ac01c5ff122f042497658f00d3df9e859}{initialisationStructuresVirageAvantAGaucheDoucement}(
+      );
+00095     \hyperlink{class_manette_ad41918ccfeee9d80146a74678173cee8}{initialisationStructureVirageAvantADroite}();
+00096     \hyperlink{class_manette_ac77d5caae62d9248edd5e26f15176f34}{initialisationStructuresVirageAvantADroiteDoucement}(
+      );
+00097     \hyperlink{class_manette_ad1d146fe52ff367fd2a7fe3c94c165e4}{initialisationStructureVirageArriereAGauche}();
+00098     \hyperlink{class_manette_a345202d80c6b1370284103878e690363}{initialisationStructuresVirageArriereAGaucheDoucement}
+      ();
+00099     \hyperlink{class_manette_a9097a15ce44cb2535ce6e6099a8b2095}{initialisationStructureVirageArriereADroite}();
+00100     \hyperlink{class_manette_a118d9481c3eecb4dcc58f8798893fa85}{initialisationStructuresVirageArriereADroiteDoucement}
+      ();
+00101 \}
+00102 
+\Hypertarget{manette_8cpp_source_l00103}\hyperlink{class_manette_afd5504555886e0abf89347b4f8d57fe0}{00103} \textcolor{keywordtype}{void} \hyperlink{class_manette_afd5504555886e0abf89347b4f8d57fe0}{Manette::initialisationStructuresEnAvant}()
+00104 \{
+00105     \hyperlink{class_manette_ad6d8777e6a4885b343389a04174cf1c9}{enAvantCas1}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00106     \hyperlink{class_manette_ad6d8777e6a4885b343389a04174cf1c9}{enAvantCas1}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00107     \hyperlink{class_manette_ad6d8777e6a4885b343389a04174cf1c9}{enAvantCas1}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00108     \hyperlink{class_manette_ad6d8777e6a4885b343389a04174cf1c9}{enAvantCas1}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00109     \hyperlink{class_manette_ad6d8777e6a4885b343389a04174cf1c9}{enAvantCas1}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00110     \hyperlink{class_manette_ad6d8777e6a4885b343389a04174cf1c9}{enAvantCas1}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00111 
+00112     \hyperlink{class_manette_a37e31078db889bbf8202b7d8cb9c5947}{enAvantCas2}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{true};
+00113     \hyperlink{class_manette_a37e31078db889bbf8202b7d8cb9c5947}{enAvantCas2}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00114     \hyperlink{class_manette_a37e31078db889bbf8202b7d8cb9c5947}{enAvantCas2}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00115     \hyperlink{class_manette_a37e31078db889bbf8202b7d8cb9c5947}{enAvantCas2}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00116     \hyperlink{class_manette_a37e31078db889bbf8202b7d8cb9c5947}{enAvantCas2}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00117     \hyperlink{class_manette_a37e31078db889bbf8202b7d8cb9c5947}{enAvantCas2}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00118 
+00119     \hyperlink{class_manette_a4546e6f56bac4a9e99a92539a68f3c5c}{enAvantCas3}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00120     \hyperlink{class_manette_a4546e6f56bac4a9e99a92539a68f3c5c}{enAvantCas3}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{true};
+00121     \hyperlink{class_manette_a4546e6f56bac4a9e99a92539a68f3c5c}{enAvantCas3}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00122     \hyperlink{class_manette_a4546e6f56bac4a9e99a92539a68f3c5c}{enAvantCas3}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00123     \hyperlink{class_manette_a4546e6f56bac4a9e99a92539a68f3c5c}{enAvantCas3}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00124     \hyperlink{class_manette_a4546e6f56bac4a9e99a92539a68f3c5c}{enAvantCas3}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00125 \}
+00126 
+\Hypertarget{manette_8cpp_source_l00127}\hyperlink{class_manette_ae4379b4f09192b83219de5aaa548fda0}{00127} \textcolor{keywordtype}{void} \hyperlink{class_manette_ae4379b4f09192b83219de5aaa548fda0}{Manette::initialisationStructuresEnArriere}()
+00128 \{
+00129     \hyperlink{class_manette_a915c1867ed0f8f9be3a1bf5d87c23813}{enArriereCas1}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00130     \hyperlink{class_manette_a915c1867ed0f8f9be3a1bf5d87c23813}{enArriereCas1}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00131     \hyperlink{class_manette_a915c1867ed0f8f9be3a1bf5d87c23813}{enArriereCas1}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00132     \hyperlink{class_manette_a915c1867ed0f8f9be3a1bf5d87c23813}{enArriereCas1}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00133     \hyperlink{class_manette_a915c1867ed0f8f9be3a1bf5d87c23813}{enArriereCas1}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00134     \hyperlink{class_manette_a915c1867ed0f8f9be3a1bf5d87c23813}{enArriereCas1}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00135 
+00136     \hyperlink{class_manette_aa620cef4ea733aa3b9dee18377aee140}{enArriereCas2}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{true};
+00137     \hyperlink{class_manette_aa620cef4ea733aa3b9dee18377aee140}{enArriereCas2}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00138     \hyperlink{class_manette_aa620cef4ea733aa3b9dee18377aee140}{enArriereCas2}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00139     \hyperlink{class_manette_aa620cef4ea733aa3b9dee18377aee140}{enArriereCas2}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00140     \hyperlink{class_manette_aa620cef4ea733aa3b9dee18377aee140}{enArriereCas2}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00141     \hyperlink{class_manette_aa620cef4ea733aa3b9dee18377aee140}{enArriereCas2}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00142 
+00143     \hyperlink{class_manette_a2dfc47df38251abd34a495005eae6572}{enArriereCas3}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00144     \hyperlink{class_manette_a2dfc47df38251abd34a495005eae6572}{enArriereCas3}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{true};
+00145     \hyperlink{class_manette_a2dfc47df38251abd34a495005eae6572}{enArriereCas3}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00146     \hyperlink{class_manette_a2dfc47df38251abd34a495005eae6572}{enArriereCas3}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00147     \hyperlink{class_manette_a2dfc47df38251abd34a495005eae6572}{enArriereCas3}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00148     \hyperlink{class_manette_a2dfc47df38251abd34a495005eae6572}{enArriereCas3}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00149 \}
+00150 
+\Hypertarget{manette_8cpp_source_l00151}\hyperlink{class_manette_a9c1348e7b4c4cc071c9b8bac79f0eeab}{00151} \textcolor{keywordtype}{void} \hyperlink{class_manette_a9c1348e7b4c4cc071c9b8bac79f0eeab}{Manette::initialisationStructureRotationAGauche}()
+00152 \{
+00153     \hyperlink{class_manette_a3aa7b857df1a364d70f1626f2f517056}{rotationAGauche}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00154     \hyperlink{class_manette_a3aa7b857df1a364d70f1626f2f517056}{rotationAGauche}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00155     \hyperlink{class_manette_a3aa7b857df1a364d70f1626f2f517056}{rotationAGauche}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00156     \hyperlink{class_manette_a3aa7b857df1a364d70f1626f2f517056}{rotationAGauche}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00157     \hyperlink{class_manette_a3aa7b857df1a364d70f1626f2f517056}{rotationAGauche}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00158     \hyperlink{class_manette_a3aa7b857df1a364d70f1626f2f517056}{rotationAGauche}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00159 \}
+00160 
+\Hypertarget{manette_8cpp_source_l00161}\hyperlink{class_manette_a35242782669d6d2cf88f2b5dbd9b0b73}{00161} \textcolor{keywordtype}{void} \hyperlink{class_manette_a35242782669d6d2cf88f2b5dbd9b0b73}{Manette::initialisationStructuresRotationAGaucheDoucement}
+      ()
+00162 \{
+00163     \hyperlink{class_manette_ac24e87d64418d5667a378b2f508a0759}{rotationAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00164     \hyperlink{class_manette_ac24e87d64418d5667a378b2f508a0759}{rotationAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{true};
+00165     \hyperlink{class_manette_ac24e87d64418d5667a378b2f508a0759}{rotationAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00166     \hyperlink{class_manette_ac24e87d64418d5667a378b2f508a0759}{rotationAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00167     \hyperlink{class_manette_ac24e87d64418d5667a378b2f508a0759}{rotationAGaucheDoucementCas1}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00168     \hyperlink{class_manette_ac24e87d64418d5667a378b2f508a0759}{rotationAGaucheDoucementCas1}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00169 
+00170     \hyperlink{class_manette_a21fa44eaadd677f97cdc876da8fe3143}{rotationAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{true};
+00171     \hyperlink{class_manette_a21fa44eaadd677f97cdc876da8fe3143}{rotationAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00172     \hyperlink{class_manette_a21fa44eaadd677f97cdc876da8fe3143}{rotationAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00173     \hyperlink{class_manette_a21fa44eaadd677f97cdc876da8fe3143}{rotationAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00174     \hyperlink{class_manette_a21fa44eaadd677f97cdc876da8fe3143}{rotationAGaucheDoucementCas2}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00175     \hyperlink{class_manette_a21fa44eaadd677f97cdc876da8fe3143}{rotationAGaucheDoucementCas2}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00176 \}
+00177 
+\Hypertarget{manette_8cpp_source_l00178}\hyperlink{class_manette_a34e37141425dd6d62bcb5954312705c9}{00178} \textcolor{keywordtype}{void} \hyperlink{class_manette_a34e37141425dd6d62bcb5954312705c9}{Manette::initialisationStructureRotationADroite}()
+00179 \{
+00180     \hyperlink{class_manette_abeff301c65d7faeb68e7d38b8f0b5122}{rotationADroite}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00181     \hyperlink{class_manette_abeff301c65d7faeb68e7d38b8f0b5122}{rotationADroite}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00182     \hyperlink{class_manette_abeff301c65d7faeb68e7d38b8f0b5122}{rotationADroite}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00183     \hyperlink{class_manette_abeff301c65d7faeb68e7d38b8f0b5122}{rotationADroite}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00184     \hyperlink{class_manette_abeff301c65d7faeb68e7d38b8f0b5122}{rotationADroite}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00185     \hyperlink{class_manette_abeff301c65d7faeb68e7d38b8f0b5122}{rotationADroite}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00186 \}
+00187 
+\Hypertarget{manette_8cpp_source_l00188}\hyperlink{class_manette_aba0348198bad2dff52fe71684d73c2df}{00188} \textcolor{keywordtype}{void} \hyperlink{class_manette_aba0348198bad2dff52fe71684d73c2df}{Manette::initialisationStructuresRotationADroiteDoucement}
+      ()
+00189 \{
+00190     \hyperlink{class_manette_ac7bf8fa21acad7d4afe9e73c62c224a9}{rotationADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00191     \hyperlink{class_manette_ac7bf8fa21acad7d4afe9e73c62c224a9}{rotationADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{true};
+00192     \hyperlink{class_manette_ac7bf8fa21acad7d4afe9e73c62c224a9}{rotationADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00193     \hyperlink{class_manette_ac7bf8fa21acad7d4afe9e73c62c224a9}{rotationADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00194     \hyperlink{class_manette_ac7bf8fa21acad7d4afe9e73c62c224a9}{rotationADroiteDoucementCas1}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00195     \hyperlink{class_manette_ac7bf8fa21acad7d4afe9e73c62c224a9}{rotationADroiteDoucementCas1}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00196 
+00197     \hyperlink{class_manette_a1ae7c87ab4c27fec817e7b02de9e546b}{rotationADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{true};
+00198     \hyperlink{class_manette_a1ae7c87ab4c27fec817e7b02de9e546b}{rotationADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00199     \hyperlink{class_manette_a1ae7c87ab4c27fec817e7b02de9e546b}{rotationADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00200     \hyperlink{class_manette_a1ae7c87ab4c27fec817e7b02de9e546b}{rotationADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00201     \hyperlink{class_manette_a1ae7c87ab4c27fec817e7b02de9e546b}{rotationADroiteDoucementCas2}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00202     \hyperlink{class_manette_a1ae7c87ab4c27fec817e7b02de9e546b}{rotationADroiteDoucementCas2}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00203 \}
+00204 
+\Hypertarget{manette_8cpp_source_l00205}\hyperlink{class_manette_aa02a2dfa49318e1043b52dd103fa1795}{00205} \textcolor{keywordtype}{void} \hyperlink{class_manette_aa02a2dfa49318e1043b52dd103fa1795}{Manette::initialisationStructureVirageAvantAGauche}()
+00206 \{
+00207     \hyperlink{class_manette_a3f44a6304ed3b17176636bad8f2220db}{virageAvantAGauche}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00208     \hyperlink{class_manette_a3f44a6304ed3b17176636bad8f2220db}{virageAvantAGauche}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00209     \hyperlink{class_manette_a3f44a6304ed3b17176636bad8f2220db}{virageAvantAGauche}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00210     \hyperlink{class_manette_a3f44a6304ed3b17176636bad8f2220db}{virageAvantAGauche}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00211     \hyperlink{class_manette_a3f44a6304ed3b17176636bad8f2220db}{virageAvantAGauche}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00212     \hyperlink{class_manette_a3f44a6304ed3b17176636bad8f2220db}{virageAvantAGauche}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00213 \}
+00214 
+\Hypertarget{manette_8cpp_source_l00215}\hyperlink{class_manette_ac01c5ff122f042497658f00d3df9e859}{00215} \textcolor{keywordtype}{void} \hyperlink{class_manette_ac01c5ff122f042497658f00d3df9e859}{Manette::initialisationStructuresVirageAvantAGaucheDoucement}
+      ()
+00216 \{
+00217     \hyperlink{class_manette_a0fe6d52d8ca1060a2a3c534847824c09}{virageAvantAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{true};
+00218     \hyperlink{class_manette_a0fe6d52d8ca1060a2a3c534847824c09}{virageAvantAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00219     \hyperlink{class_manette_a0fe6d52d8ca1060a2a3c534847824c09}{virageAvantAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00220     \hyperlink{class_manette_a0fe6d52d8ca1060a2a3c534847824c09}{virageAvantAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00221     \hyperlink{class_manette_a0fe6d52d8ca1060a2a3c534847824c09}{virageAvantAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00222     \hyperlink{class_manette_a0fe6d52d8ca1060a2a3c534847824c09}{virageAvantAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00223 
+00224     \hyperlink{class_manette_a575018c439de0fd1e8cf7be5907ca60d}{virageAvantAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00225     \hyperlink{class_manette_a575018c439de0fd1e8cf7be5907ca60d}{virageAvantAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{true};
+00226     \hyperlink{class_manette_a575018c439de0fd1e8cf7be5907ca60d}{virageAvantAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00227     \hyperlink{class_manette_a575018c439de0fd1e8cf7be5907ca60d}{virageAvantAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00228     \hyperlink{class_manette_a575018c439de0fd1e8cf7be5907ca60d}{virageAvantAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00229     \hyperlink{class_manette_a575018c439de0fd1e8cf7be5907ca60d}{virageAvantAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00230 \}
+00231 
+\Hypertarget{manette_8cpp_source_l00232}\hyperlink{class_manette_ad41918ccfeee9d80146a74678173cee8}{00232} \textcolor{keywordtype}{void} \hyperlink{class_manette_ad41918ccfeee9d80146a74678173cee8}{Manette::initialisationStructureVirageAvantADroite}()
+00233 \{
+00234     \hyperlink{class_manette_a91afd62402f690f74a7e351c9aa8f6ec}{virageAvantADroite}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00235     \hyperlink{class_manette_a91afd62402f690f74a7e351c9aa8f6ec}{virageAvantADroite}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00236     \hyperlink{class_manette_a91afd62402f690f74a7e351c9aa8f6ec}{virageAvantADroite}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00237     \hyperlink{class_manette_a91afd62402f690f74a7e351c9aa8f6ec}{virageAvantADroite}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00238     \hyperlink{class_manette_a91afd62402f690f74a7e351c9aa8f6ec}{virageAvantADroite}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00239     \hyperlink{class_manette_a91afd62402f690f74a7e351c9aa8f6ec}{virageAvantADroite}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00240 \}
+00241 
+\Hypertarget{manette_8cpp_source_l00242}\hyperlink{class_manette_ac77d5caae62d9248edd5e26f15176f34}{00242} \textcolor{keywordtype}{void} \hyperlink{class_manette_ac77d5caae62d9248edd5e26f15176f34}{Manette::initialisationStructuresVirageAvantADroiteDoucement}
+      ()
+00243 \{
+00244     \hyperlink{class_manette_ad4aeabac283607d7d37823aabd4c5e0f}{virageAvantADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{true};
+00245     \hyperlink{class_manette_ad4aeabac283607d7d37823aabd4c5e0f}{virageAvantADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00246     \hyperlink{class_manette_ad4aeabac283607d7d37823aabd4c5e0f}{virageAvantADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00247     \hyperlink{class_manette_ad4aeabac283607d7d37823aabd4c5e0f}{virageAvantADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00248     \hyperlink{class_manette_ad4aeabac283607d7d37823aabd4c5e0f}{virageAvantADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00249     \hyperlink{class_manette_ad4aeabac283607d7d37823aabd4c5e0f}{virageAvantADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00250 
+00251     \hyperlink{class_manette_a6b8d8fd853462fa182a37122b692db90}{virageAvantADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00252     \hyperlink{class_manette_a6b8d8fd853462fa182a37122b692db90}{virageAvantADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{true};
+00253     \hyperlink{class_manette_a6b8d8fd853462fa182a37122b692db90}{virageAvantADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00254     \hyperlink{class_manette_a6b8d8fd853462fa182a37122b692db90}{virageAvantADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00255     \hyperlink{class_manette_a6b8d8fd853462fa182a37122b692db90}{virageAvantADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00256     \hyperlink{class_manette_a6b8d8fd853462fa182a37122b692db90}{virageAvantADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00257 \}
+00258 
+\Hypertarget{manette_8cpp_source_l00259}\hyperlink{class_manette_ad1d146fe52ff367fd2a7fe3c94c165e4}{00259} \textcolor{keywordtype}{void} \hyperlink{class_manette_ad1d146fe52ff367fd2a7fe3c94c165e4}{Manette::initialisationStructureVirageArriereAGauche}
+      ()
+00260 \{
+00261     \hyperlink{class_manette_a92a64ea372e58825097e049694e838a1}{virageArriereAGauche}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00262     \hyperlink{class_manette_a92a64ea372e58825097e049694e838a1}{virageArriereAGauche}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00263     \hyperlink{class_manette_a92a64ea372e58825097e049694e838a1}{virageArriereAGauche}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00264     \hyperlink{class_manette_a92a64ea372e58825097e049694e838a1}{virageArriereAGauche}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00265     \hyperlink{class_manette_a92a64ea372e58825097e049694e838a1}{virageArriereAGauche}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00266     \hyperlink{class_manette_a92a64ea372e58825097e049694e838a1}{virageArriereAGauche}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00267 \}
+00268 
+\Hypertarget{manette_8cpp_source_l00269}\hyperlink{class_manette_a345202d80c6b1370284103878e690363}{00269} \textcolor{keywordtype}{void} \hyperlink{class_manette_a345202d80c6b1370284103878e690363}{Manette::initialisationStructuresVirageArriereAGaucheDoucement}
+      ()
+00270 \{
+00271     \hyperlink{class_manette_a984a465aac5dda20091f561339dd351d}{virageArriereAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{true};
+00272     \hyperlink{class_manette_a984a465aac5dda20091f561339dd351d}{virageArriereAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00273     \hyperlink{class_manette_a984a465aac5dda20091f561339dd351d}{virageArriereAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00274     \hyperlink{class_manette_a984a465aac5dda20091f561339dd351d}{virageArriereAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00275     \hyperlink{class_manette_a984a465aac5dda20091f561339dd351d}{virageArriereAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00276     \hyperlink{class_manette_a984a465aac5dda20091f561339dd351d}{virageArriereAGaucheDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00277 
+00278     \hyperlink{class_manette_ac509477cff14d1ab9562c03e9db833f8}{virageArriereAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00279     \hyperlink{class_manette_ac509477cff14d1ab9562c03e9db833f8}{virageArriereAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{true};
+00280     \hyperlink{class_manette_ac509477cff14d1ab9562c03e9db833f8}{virageArriereAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00281     \hyperlink{class_manette_ac509477cff14d1ab9562c03e9db833f8}{virageArriereAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00282     \hyperlink{class_manette_ac509477cff14d1ab9562c03e9db833f8}{virageArriereAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00283     \hyperlink{class_manette_ac509477cff14d1ab9562c03e9db833f8}{virageArriereAGaucheDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00284 \}
+00285 
+\Hypertarget{manette_8cpp_source_l00286}\hyperlink{class_manette_a9097a15ce44cb2535ce6e6099a8b2095}{00286} \textcolor{keywordtype}{void} \hyperlink{class_manette_a9097a15ce44cb2535ce6e6099a8b2095}{Manette::initialisationStructureVirageArriereADroite}
+      ()
+00287 \{
+00288     \hyperlink{class_manette_a6df334aec9f621e7394e9f398221fe9e}{virageArriereADroite}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00289     \hyperlink{class_manette_a6df334aec9f621e7394e9f398221fe9e}{virageArriereADroite}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00290     \hyperlink{class_manette_a6df334aec9f621e7394e9f398221fe9e}{virageArriereADroite}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00291     \hyperlink{class_manette_a6df334aec9f621e7394e9f398221fe9e}{virageArriereADroite}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00292     \hyperlink{class_manette_a6df334aec9f621e7394e9f398221fe9e}{virageArriereADroite}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00293     \hyperlink{class_manette_a6df334aec9f621e7394e9f398221fe9e}{virageArriereADroite}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00294 \}
+00295 
+\Hypertarget{manette_8cpp_source_l00296}\hyperlink{class_manette_a118d9481c3eecb4dcc58f8798893fa85}{00296} \textcolor{keywordtype}{void} \hyperlink{class_manette_a118d9481c3eecb4dcc58f8798893fa85}{Manette::initialisationStructuresVirageArriereADroiteDoucement}
+      ()
+00297 \{
+00298     \hyperlink{class_manette_a2dddb8a8a6f75abc15ddf58025b98ecc}{virageArriereADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{true};
+00299     \hyperlink{class_manette_a2dddb8a8a6f75abc15ddf58025b98ecc}{virageArriereADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false};
+00300     \hyperlink{class_manette_a2dddb8a8a6f75abc15ddf58025b98ecc}{virageArriereADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00301     \hyperlink{class_manette_a2dddb8a8a6f75abc15ddf58025b98ecc}{virageArriereADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00302     \hyperlink{class_manette_a2dddb8a8a6f75abc15ddf58025b98ecc}{virageArriereADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00303     \hyperlink{class_manette_a2dddb8a8a6f75abc15ddf58025b98ecc}{virageArriereADroiteDoucementCas1}.
+      \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00304 
+00305     \hyperlink{class_manette_a609f10f48e39eafac800eb232272f0cb}{virageArriereADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00306     \hyperlink{class_manette_a609f10f48e39eafac800eb232272f0cb}{virageArriereADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{true};
+00307     \hyperlink{class_manette_a609f10f48e39eafac800eb232272f0cb}{virageArriereADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00308     \hyperlink{class_manette_a609f10f48e39eafac800eb232272f0cb}{virageArriereADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00309     \hyperlink{class_manette_a609f10f48e39eafac800eb232272f0cb}{virageArriereADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00310     \hyperlink{class_manette_a609f10f48e39eafac800eb232272f0cb}{virageArriereADroiteDoucementCas2}.
+      \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00311 \}
+00312 
+\Hypertarget{manette_8cpp_source_l00313}\hyperlink{class_manette_a21ebb19837250342e4859ba7dc5f03cc}{00313} \textcolor{keywordtype}{void} \hyperlink{class_manette_a21ebb19837250342e4859ba7dc5f03cc}{Manette::initialiserEtatBouton}()
+00314 \{
+00315     \hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton}.\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA} = \textcolor{keyword}{false};
+00316     \hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton}.\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB} = \textcolor{keyword}{false};
+00317     \hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton}.\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX} = \textcolor{keyword}{false};
+00318     \hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton}.\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY} = \textcolor{keyword}{false};
+00319 
+00320     \hyperlink{class_manette_a066eacf19e615fd72690477c043e3703}{ouvrirPince}.\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA} = \textcolor{keyword}{false};
+00321     \hyperlink{class_manette_a066eacf19e615fd72690477c043e3703}{ouvrirPince}.\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB} = \textcolor{keyword}{false};
+00322     \hyperlink{class_manette_a066eacf19e615fd72690477c043e3703}{ouvrirPince}.\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX} = \textcolor{keyword}{true};
+00323     \hyperlink{class_manette_a066eacf19e615fd72690477c043e3703}{ouvrirPince}.\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY} = \textcolor{keyword}{false};
+00324 
+00325     \hyperlink{class_manette_a32adcccdddf35a04970b8b3b12462c00}{fermerPince}.\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA} = \textcolor{keyword}{false};
+00326     \hyperlink{class_manette_a32adcccdddf35a04970b8b3b12462c00}{fermerPince}.\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB} = \textcolor{keyword}{true};
+00327     \hyperlink{class_manette_a32adcccdddf35a04970b8b3b12462c00}{fermerPince}.\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX} = \textcolor{keyword}{false};
+00328     \hyperlink{class_manette_a32adcccdddf35a04970b8b3b12462c00}{fermerPince}.\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY} = \textcolor{keyword}{false};
+00329 
+00330     \hyperlink{class_manette_a93fc38a8ca8fbb1cc57cedbab059c56f}{poserObjetDansBac}.\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA} = \textcolor{keyword}{true};
+00331     \hyperlink{class_manette_a93fc38a8ca8fbb1cc57cedbab059c56f}{poserObjetDansBac}.\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB} = \textcolor{keyword}{false};
+00332     \hyperlink{class_manette_a93fc38a8ca8fbb1cc57cedbab059c56f}{poserObjetDansBac}.\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX} = \textcolor{keyword}{false};
+00333     \hyperlink{class_manette_a93fc38a8ca8fbb1cc57cedbab059c56f}{poserObjetDansBac}.\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY} = \textcolor{keyword}{false};
+00334 
+00335     \hyperlink{class_manette_a4c0e9611f08e363feb0a24f8c9d258f2}{revenirEtatInitial}.\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA} = \textcolor{keyword}{false};
+00336     \hyperlink{class_manette_a4c0e9611f08e363feb0a24f8c9d258f2}{revenirEtatInitial}.\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB} = \textcolor{keyword}{false};
+00337     \hyperlink{class_manette_a4c0e9611f08e363feb0a24f8c9d258f2}{revenirEtatInitial}.\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX} = \textcolor{keyword}{false};
+00338     \hyperlink{class_manette_a4c0e9611f08e363feb0a24f8c9d258f2}{revenirEtatInitial}.\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY} = \textcolor{keyword}{true};
+00339 \}
+00340 
+\Hypertarget{manette_8cpp_source_l00341}\hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{00341} \textcolor{keywordtype}{void} \hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{Manette::determinerTrameDeplacementRobot}()
+00342 \{
+00343     \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_ad6d8777e6a4885b343389a04174cf1c9}{enAvantCas1} || 
+      \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a37e31078db889bbf8202b7d8cb9c5947}{enAvantCas2} || 
+      \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a4546e6f56bac4a9e99a92539a68f3c5c}{enAvantCas3})
+00344         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'A'}, 
+      \hyperlink{class_manette_a135a3a6f567bbeeefd69b3a020f9f040}{puissanceGachetteDroite}, \textcolor{charliteral}{'0'});
+00345     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a915c1867ed0f8f9be3a1bf5d87c23813}{enArriereCas1} || 
+      \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_aa620cef4ea733aa3b9dee18377aee140}{enArriereCas2} || 
+      \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a2dfc47df38251abd34a495005eae6572}{enArriereCas3})
+00346         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'R'}, 
+      \hyperlink{class_manette_ab777328c9b35454ab45ed5e0b0a5f234}{puissanceGachetteGauche}, \textcolor{charliteral}{'0'});
+00347     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a3aa7b857df1a364d70f1626f2f517056}{rotationAGauche})
+00348         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'0'}, 100, \textcolor{charliteral}{'G'});
+00349     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == 
+      \hyperlink{class_manette_ac24e87d64418d5667a378b2f508a0759}{rotationAGaucheDoucementCas1} || \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == 
+      \hyperlink{class_manette_a21fa44eaadd677f97cdc876da8fe3143}{rotationAGaucheDoucementCas2})
+00350         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'0'}, \textcolor{keywordtype}{int}(100 * 
+      \hyperlink{manette_8h_a26e43ead1d984ddabb462b55010d12f6}{REDUCTION\_VITESSE}), \textcolor{charliteral}{'G'});
+00351     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_abeff301c65d7faeb68e7d38b8f0b5122}{rotationADroite})
+00352         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'0'}, 100, \textcolor{charliteral}{'D'});
+00353     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == 
+      \hyperlink{class_manette_ac7bf8fa21acad7d4afe9e73c62c224a9}{rotationADroiteDoucementCas1} || \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == 
+      \hyperlink{class_manette_a1ae7c87ab4c27fec817e7b02de9e546b}{rotationADroiteDoucementCas2})
+00354         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'0'}, \textcolor{keywordtype}{int}(100 * 
+      \hyperlink{manette_8h_a26e43ead1d984ddabb462b55010d12f6}{REDUCTION\_VITESSE}), \textcolor{charliteral}{'D'});
+00355     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a3f44a6304ed3b17176636bad8f2220db}{virageAvantAGauche})
+00356         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'A'}, 
+      \hyperlink{class_manette_a135a3a6f567bbeeefd69b3a020f9f040}{puissanceGachetteDroite}, \textcolor{charliteral}{'G'});
+00357     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == 
+      \hyperlink{class_manette_a0fe6d52d8ca1060a2a3c534847824c09}{virageAvantAGaucheDoucementCas1} || 
+      \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a575018c439de0fd1e8cf7be5907ca60d}{virageAvantAGaucheDoucementCas2})
+00358         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'A'}, \textcolor{keywordtype}{int}(
+      \hyperlink{class_manette_a135a3a6f567bbeeefd69b3a020f9f040}{puissanceGachetteDroite} * \hyperlink{manette_8h_a26e43ead1d984ddabb462b55010d12f6}{REDUCTION\_VITESSE}), \textcolor{charliteral}{'G'});
+00359     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a91afd62402f690f74a7e351c9aa8f6ec}{virageAvantADroite})
+00360         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'A'}, 
+      \hyperlink{class_manette_a135a3a6f567bbeeefd69b3a020f9f040}{puissanceGachetteDroite}, \textcolor{charliteral}{'D'});
+00361     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == 
+      \hyperlink{class_manette_ad4aeabac283607d7d37823aabd4c5e0f}{virageAvantADroiteDoucementCas1} || 
+      \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a6b8d8fd853462fa182a37122b692db90}{virageAvantADroiteDoucementCas2})
+00362         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'A'}, \textcolor{keywordtype}{int}(
+      \hyperlink{class_manette_a135a3a6f567bbeeefd69b3a020f9f040}{puissanceGachetteDroite} * REDUCTION\_VITESSE), \textcolor{charliteral}{'D'});
+00363     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a92a64ea372e58825097e049694e838a1}{virageArriereAGauche})
+00364         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'R'}, 
+      \hyperlink{class_manette_ab777328c9b35454ab45ed5e0b0a5f234}{puissanceGachetteGauche}, \textcolor{charliteral}{'G'});
+00365     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == 
+      \hyperlink{class_manette_a984a465aac5dda20091f561339dd351d}{virageArriereAGaucheDoucementCas1} || 
+      \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_ac509477cff14d1ab9562c03e9db833f8}{virageArriereAGaucheDoucementCas2}
+      )
+00366         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'R'}, \textcolor{keywordtype}{int}(
+      \hyperlink{class_manette_ab777328c9b35454ab45ed5e0b0a5f234}{puissanceGachetteGauche} * REDUCTION\_VITESSE), \textcolor{charliteral}{'G'});
+00367     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a6df334aec9f621e7394e9f398221fe9e}{virageArriereADroite})
+00368         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'R'}, 
+      \hyperlink{class_manette_ab777328c9b35454ab45ed5e0b0a5f234}{puissanceGachetteGauche}, \textcolor{charliteral}{'D'});
+00369     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == 
+      \hyperlink{class_manette_a2dddb8a8a6f75abc15ddf58025b98ecc}{virageArriereADroiteDoucementCas1} || 
+      \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement} == \hyperlink{class_manette_a609f10f48e39eafac800eb232272f0cb}{virageArriereADroiteDoucementCas2}
+      )
+00370         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'R'}, \textcolor{keywordtype}{int}(
+      \hyperlink{class_manette_ab777328c9b35454ab45ed5e0b0a5f234}{puissanceGachetteGauche} * REDUCTION\_VITESSE), \textcolor{charliteral}{'D'});
+00371     \textcolor{keywordflow}{else}
+00372         emit \hyperlink{class_manette_a4151ee98538d58d2dde6c8027e9ef512}{creationTrameDeplacement}(\textcolor{charliteral}{'0'}, 0, \textcolor{charliteral}{'0'});
+00373 \}
+00374 
+\Hypertarget{manette_8cpp_source_l00375}\hyperlink{class_manette_ab5eb6972f366aa7527b2b27da5539638}{00375} \textcolor{keywordtype}{void} \hyperlink{class_manette_ab5eb6972f366aa7527b2b27da5539638}{Manette::determinerTramePilotageBras}()
+00376 \{
+00377     \textcolor{keywordflow}{if}(\hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage} == \hyperlink{class_manette_a6ff181eab8c2206ca3d40bf5112e72ec}{avance})
+00378         emit \hyperlink{class_manette_a39de9cbde743771debc15501f8f8c154}{creationTramePilotage}(\hyperlink{manette_8h_af54a6d7aa82993b62caabaaf5b3f1459}{AVANCER});
+00379     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage} == \hyperlink{class_manette_a5ed3a0ab27f98cd11ecafe5f5b94e7e5}{recule})
+00380         emit \hyperlink{class_manette_a39de9cbde743771debc15501f8f8c154}{creationTramePilotage}(\hyperlink{manette_8h_a26da42c0f048eced1fff947bac0c2b3d}{RECULER});
+00381     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage} == \hyperlink{class_manette_acc72f831540b93ac3a265d35d005c4fa}{gauche})
+00382         emit \hyperlink{class_manette_a39de9cbde743771debc15501f8f8c154}{creationTramePilotage}(\hyperlink{manette_8h_af07f8bf974fdf76afd17f2b97ac15a22}{GAUCHE});
+00383     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage} == \hyperlink{class_manette_a40a2dc8420742b04c3eee14e477992b1}{droite})
+00384         emit \hyperlink{class_manette_a39de9cbde743771debc15501f8f8c154}{creationTramePilotage}(\hyperlink{manette_8h_af625d3f3bc022848a558f2b18def5b15}{DROITE});
+00385     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage} == \hyperlink{class_manette_a63d9a39ea238e105d7491b87f0a3f87d}{monte})
+00386         emit \hyperlink{class_manette_a39de9cbde743771debc15501f8f8c154}{creationTramePilotage}(\hyperlink{manette_8h_a765e6ea0e13ca38a457aa563930ce2df}{MONTER});
+00387     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage} == \hyperlink{class_manette_a95e7f41f1e15f01d7530062801817304}{descend})
+00388         emit \hyperlink{class_manette_a39de9cbde743771debc15501f8f8c154}{creationTramePilotage}(\hyperlink{manette_8h_a0f61ab9ae13b77038540b31843a6c2ea}{DESCENDRE});
+00389     \textcolor{keywordflow}{else}
+00390         emit \hyperlink{class_manette_a39de9cbde743771debc15501f8f8c154}{creationTramePilotage}(\hyperlink{manette_8h_a16ccf2890fcfc78a47402fe94becb6ca}{IMMOBILE});
+00391 \}
+00392 
+\Hypertarget{manette_8cpp_source_l00393}\hyperlink{class_manette_a3fb9d1245400b6bb6379fbb63a8099ba}{00393} \textcolor{keywordtype}{void} \hyperlink{class_manette_a3fb9d1245400b6bb6379fbb63a8099ba}{Manette::determinerTrameBouton}()
+00394 \{
+00395     \textcolor{keywordflow}{if}(\hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton} == \hyperlink{class_manette_a066eacf19e615fd72690477c043e3703}{ouvrirPince})
+00396         emit \hyperlink{class_manette_a16cb602cf7001f78b115f395fad47586}{creationTramePince}(\hyperlink{manette_8h_a0259cc955736c3970883196448e0476a}{OUVERTURE\_PINCE});
+00397     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton} == \hyperlink{class_manette_a32adcccdddf35a04970b8b3b12462c00}{fermerPince})
+00398         emit \hyperlink{class_manette_a16cb602cf7001f78b115f395fad47586}{creationTramePince}(\hyperlink{manette_8h_a1c242b29a47122b6c528f2bcb73a29e2}{FERMETURE\_PINCE});
+00399     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton} == \hyperlink{class_manette_a4c0e9611f08e363feb0a24f8c9d258f2}{revenirEtatInitial})
+00400         emit \hyperlink{class_manette_ad28d8f539df6b73805ae94e9bbd827ec}{creationTrameOrdre}(\hyperlink{manette_8h_a0d14fc3b862ee6b41366ac22e9737025}{RETOUR\_ETAT\_INITIAL});
+00401     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton} == \hyperlink{class_manette_a93fc38a8ca8fbb1cc57cedbab059c56f}{poserObjetDansBac})
+00402         emit \hyperlink{class_manette_ad28d8f539df6b73805ae94e9bbd827ec}{creationTrameOrdre}(\hyperlink{manette_8h_afeb63c058f63189b11f10b79f90459e2}{POSER\_OBJET\_DANS\_BAC});
+00403     \textcolor{keywordflow}{else}
+00404         emit \hyperlink{class_manette_a16cb602cf7001f78b115f395fad47586}{creationTramePince}(\hyperlink{manette_8h_a16ccf2890fcfc78a47402fe94becb6ca}{IMMOBILE});
+00405 \}
+00406 
+\Hypertarget{manette_8cpp_source_l00407}\hyperlink{class_manette_a202faf093876b9e95cfc316b552c59c3}{00407} \textcolor{keywordtype}{void} \hyperlink{class_manette_a202faf093876b9e95cfc316b552c59c3}{Manette::changerMode}()
+00408 \{
+00409     \textcolor{keywordflow}{if}(\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement})
+00410     \{
+00411         \hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{modePilotageBras} = \textcolor{keyword}{true};
+00412         \hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement} = \textcolor{keyword}{false};
+00413     \}
+00414     \textcolor{keywordflow}{else}
+00415     \{
+00416         \hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{modePilotageBras} = \textcolor{keyword}{false};
+00417         \hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement} = \textcolor{keyword}{true};
+00418     \}
+00419 \}
+00420 
+\Hypertarget{manette_8cpp_source_l00421}\hyperlink{class_manette_a82a0d2535dd1dd9ea4021aa1fe71b1bc}{00421} \textcolor{keywordtype}{void} \hyperlink{class_manette_a82a0d2535dd1dd9ea4021aa1fe71b1bc}{Manette::changerAxeXJoystickGauche}(\textcolor{keywordtype}{double} valeur)
+00422 \{
+00423     \textcolor{keywordflow}{if}(\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement})
+00424     \{
+00425         \textcolor{keywordflow}{if}(valeur <= -\hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00426             \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{true};
+00427         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(valeur >= \hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00428             \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{true};
+00429         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(valeur > -\hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK} && valeur < 
+      \hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00430         \{
+00431             \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} = \textcolor{keyword}{false};
+00432             \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} = \textcolor{keyword}{false};
+00433         \}
+00434         \hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{determinerTrameDeplacementRobot}();
+00435     \}
+00436 \}
+00437 
+\Hypertarget{manette_8cpp_source_l00438}\hyperlink{class_manette_a6fd30466571a96d9789c54c8e8104ab2}{00438} \textcolor{keywordtype}{void} \hyperlink{class_manette_a6fd30466571a96d9789c54c8e8104ab2}{Manette::changerAxeYJoystickGauche}(\textcolor{keywordtype}{double} valeur)
+00439 \{
+00440     \textcolor{keywordflow}{if}(\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement})
+00441     \{
+00442         \textcolor{keywordflow}{if}(valeur >= \hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00443             \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{true};
+00444         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(valeur <= -\hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00445             \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{true};
+00446         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(valeur > -\hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK} && valeur < 
+      \hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00447         \{
+00448             \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} = \textcolor{keyword}{false};
+00449             \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} = \textcolor{keyword}{false}
+      ;
+00450         \}
+00451         \hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{determinerTrameDeplacementRobot}();
+00452     \}
+00453 \}
+00454 
+\Hypertarget{manette_8cpp_source_l00455}\hyperlink{class_manette_a37202e63cf8662fed5b3a2efc8eb99d1}{00455} \textcolor{keywordtype}{void} \hyperlink{class_manette_a37202e63cf8662fed5b3a2efc8eb99d1}{Manette::changerAxeXJoystickDroit}(\textcolor{keywordtype}{double} valeur)
+00456 \{
+00457     \textcolor{keywordflow}{if}(valeur >= \hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00458         \hyperlink{class_manette_a0ca05a5c08455e74c8d944b96d8124a6}{joystickAxeXCamera} = \textcolor{stringliteral}{"D"};
+00459     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(valeur <= -\hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00460         \hyperlink{class_manette_a0ca05a5c08455e74c8d944b96d8124a6}{joystickAxeXCamera} = \textcolor{stringliteral}{"G"};
+00461     \textcolor{keywordflow}{else}
+00462         \hyperlink{class_manette_a0ca05a5c08455e74c8d944b96d8124a6}{joystickAxeXCamera} = \textcolor{stringliteral}{"0"};
+00463 
+00464     emit \hyperlink{class_manette_a229a449e851b5f716778d19c5cf2ba49}{nouvelleTrameCamera}(\hyperlink{class_manette_a0ca05a5c08455e74c8d944b96d8124a6}{joystickAxeXCamera}, 
+      \hyperlink{class_manette_ab635d71c9e829d8950b9bbd13b9cdb01}{joystickAxeYCamera});
+00465 \}
+00466 
+\Hypertarget{manette_8cpp_source_l00467}\hyperlink{class_manette_aaedc46e870b2731a79c5497296dba469}{00467} \textcolor{keywordtype}{void} \hyperlink{class_manette_aaedc46e870b2731a79c5497296dba469}{Manette::changerAxeYJoystickDroit}(\textcolor{keywordtype}{double} valeur)
+00468 \{
+00469     \textcolor{keywordflow}{if}(valeur >= \hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00470         \hyperlink{class_manette_ab635d71c9e829d8950b9bbd13b9cdb01}{joystickAxeYCamera} = \textcolor{stringliteral}{"B"};
+00471     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(valeur <= -\hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{TAUX\_VALIDITE\_JOYSTICK})
+00472         \hyperlink{class_manette_ab635d71c9e829d8950b9bbd13b9cdb01}{joystickAxeYCamera} = \textcolor{stringliteral}{"H"};
+00473     \textcolor{keywordflow}{else}
+00474         \hyperlink{class_manette_ab635d71c9e829d8950b9bbd13b9cdb01}{joystickAxeYCamera} = \textcolor{stringliteral}{"0"};
+00475 
+00476     emit \hyperlink{class_manette_a229a449e851b5f716778d19c5cf2ba49}{nouvelleTrameCamera}(\hyperlink{class_manette_a0ca05a5c08455e74c8d944b96d8124a6}{joystickAxeXCamera}, 
+      \hyperlink{class_manette_ab635d71c9e829d8950b9bbd13b9cdb01}{joystickAxeYCamera});
+00477 \}
+00478 
+\Hypertarget{manette_8cpp_source_l00479}\hyperlink{class_manette_a739830941c396dabb7c57862a1880a34}{00479} \textcolor{keywordtype}{void} \hyperlink{class_manette_a739830941c396dabb7c57862a1880a34}{Manette::changerBoutonHautGauche}(\textcolor{keywordtype}{bool} etat)
+00480 \{
+00481     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche} = etat;
+00482     \textcolor{keywordflow}{if}(\hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{modePilotageBras})
+00483         \hyperlink{class_manette_ab5eb6972f366aa7527b2b27da5539638}{determinerTramePilotageBras}();
+00484 \}
+00485 
+\Hypertarget{manette_8cpp_source_l00486}\hyperlink{class_manette_a039b73883b0649e1bbaa7f7b3dff43f8}{00486} \textcolor{keywordtype}{void} \hyperlink{class_manette_a039b73883b0649e1bbaa7f7b3dff43f8}{Manette::changerBoutonHautDroit}(\textcolor{keywordtype}{bool} etat)
+00487 \{
+00488     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit} = etat;
+00489     \textcolor{keywordflow}{if}(\hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{modePilotageBras})
+00490         \hyperlink{class_manette_ab5eb6972f366aa7527b2b27da5539638}{determinerTramePilotageBras}();
+00491 \}
+00492 
+\Hypertarget{manette_8cpp_source_l00493}\hyperlink{class_manette_a858088ed0eb2259fcb2f3df390e950c9}{00493} \textcolor{keywordtype}{void} \hyperlink{class_manette_a858088ed0eb2259fcb2f3df390e950c9}{Manette::changerGachetteBasGauche}(\textcolor{keywordtype}{double} valeur)
+00494 \{
+00495     \hyperlink{class_manette_ab777328c9b35454ab45ed5e0b0a5f234}{puissanceGachetteGauche} = int(valeur*100);
+00496     \textcolor{keywordflow}{if} (valeur > 0)
+00497         \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{true};
+00498     \textcolor{keywordflow}{else}
+00499         \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} = \textcolor{keyword}{false};
+00500     \textcolor{keywordflow}{if}(\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement})
+00501         \hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{determinerTrameDeplacementRobot}();
+00502 \}
+00503 
+\Hypertarget{manette_8cpp_source_l00504}\hyperlink{class_manette_aa3540dc97fd85153baf80b9e06e8565f}{00504} \textcolor{keywordtype}{void} \hyperlink{class_manette_aa3540dc97fd85153baf80b9e06e8565f}{Manette::changerGachetteBasDroit}(\textcolor{keywordtype}{double} valeur)
+00505 \{
+00506     \hyperlink{class_manette_a135a3a6f567bbeeefd69b3a020f9f040}{puissanceGachetteDroite} = int(valeur*100);
+00507     \textcolor{keywordflow}{if} (valeur > 0)
+00508         \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{true};
+00509     \textcolor{keywordflow}{else}
+00510         \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement}.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} = \textcolor{keyword}{false};
+00511     \textcolor{keywordflow}{if}(\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement})
+00512         \hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{determinerTrameDeplacementRobot}();
+00513 \}
+00514 
+\Hypertarget{manette_8cpp_source_l00515}\hyperlink{class_manette_aec3aca0f38959daec78db1f97f79c2d6}{00515} \textcolor{keywordtype}{void} \hyperlink{class_manette_aec3aca0f38959daec78db1f97f79c2d6}{Manette::changerFlecheEnAvant}(\textcolor{keywordtype}{bool} etat)
+00516 \{
+00517     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant} = etat;
+00518     \textcolor{keywordflow}{if}(\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement})
+00519         \hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{determinerTrameDeplacementRobot}();
+00520     \textcolor{keywordflow}{else}
+00521         \hyperlink{class_manette_ab5eb6972f366aa7527b2b27da5539638}{determinerTramePilotageBras}();
+00522 \}
+00523 
+\Hypertarget{manette_8cpp_source_l00524}\hyperlink{class_manette_a6e83727ee7bf7b3276b86d08b1c8d4d5}{00524} \textcolor{keywordtype}{void} \hyperlink{class_manette_a6e83727ee7bf7b3276b86d08b1c8d4d5}{Manette::changerFlecheEnArriere}(\textcolor{keywordtype}{bool} etat)
+00525 \{
+00526     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere} = etat;
+00527     \textcolor{keywordflow}{if}(\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement})
+00528         \hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{determinerTrameDeplacementRobot}();
+00529     \textcolor{keywordflow}{else}
+00530         \hyperlink{class_manette_ab5eb6972f366aa7527b2b27da5539638}{determinerTramePilotageBras}();
+00531 \}
+00532 
+\Hypertarget{manette_8cpp_source_l00533}\hyperlink{class_manette_ad4a00c510c7f6beb882d1e1d323346ae}{00533} \textcolor{keywordtype}{void} \hyperlink{class_manette_ad4a00c510c7f6beb882d1e1d323346ae}{Manette::changerFlecheAGauche}(\textcolor{keywordtype}{bool} etat)
+00534 \{
+00535     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche} = etat;
+00536     \textcolor{keywordflow}{if}(\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement})
+00537         \hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{determinerTrameDeplacementRobot}();
+00538     \textcolor{keywordflow}{else}
+00539         \hyperlink{class_manette_ab5eb6972f366aa7527b2b27da5539638}{determinerTramePilotageBras}();
+00540 \}
+00541 
+\Hypertarget{manette_8cpp_source_l00542}\hyperlink{class_manette_abb0ab6adafd0785d1fef58481005ac41}{00542} \textcolor{keywordtype}{void} \hyperlink{class_manette_abb0ab6adafd0785d1fef58481005ac41}{Manette::changerFlecheADroite}(\textcolor{keywordtype}{bool} etat)
+00543 \{
+00544     \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage}.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite} = etat;
+00545     \textcolor{keywordflow}{if}(\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement})
+00546         \hyperlink{class_manette_a97a50caac68954a229c7e9461e7f4232}{determinerTrameDeplacementRobot}();
+00547     \textcolor{keywordflow}{else}
+00548         \hyperlink{class_manette_ab5eb6972f366aa7527b2b27da5539638}{determinerTramePilotageBras}();
+00549 \}
+00550 
+\Hypertarget{manette_8cpp_source_l00551}\hyperlink{class_manette_aadf275d6bac238d48f8879d264bbc868}{00551} \textcolor{keywordtype}{void} \hyperlink{class_manette_aadf275d6bac238d48f8879d264bbc868}{Manette::changerBoutonA}(\textcolor{keywordtype}{bool} etat)
+00552 \{
+00553     \hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton}.\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA} = etat;
+00554     \textcolor{keywordflow}{if}(\hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{modePilotageBras})
+00555         \hyperlink{class_manette_a3fb9d1245400b6bb6379fbb63a8099ba}{determinerTrameBouton}();
+00556 \}
+00557 
+\Hypertarget{manette_8cpp_source_l00558}\hyperlink{class_manette_af38f60c4bfa3f76da9c4598b0b144fd6}{00558} \textcolor{keywordtype}{void} \hyperlink{class_manette_af38f60c4bfa3f76da9c4598b0b144fd6}{Manette::changerBoutonB}(\textcolor{keywordtype}{bool} etat)
+00559 \{
+00560     \hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton}.\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB} = etat;
+00561     \textcolor{keywordflow}{if}(\hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{modePilotageBras})
+00562         \hyperlink{class_manette_a3fb9d1245400b6bb6379fbb63a8099ba}{determinerTrameBouton}();
+00563 \}
+00564 
+\Hypertarget{manette_8cpp_source_l00565}\hyperlink{class_manette_a5d9f34f3ec334fa3880d93175f0df152}{00565} \textcolor{keywordtype}{void} \hyperlink{class_manette_a5d9f34f3ec334fa3880d93175f0df152}{Manette::changerBoutonX}(\textcolor{keywordtype}{bool} etat)
+00566 \{
+00567     \hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton}.\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX} = etat;
+00568     \textcolor{keywordflow}{if}(\hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{modePilotageBras})
+00569         \hyperlink{class_manette_a3fb9d1245400b6bb6379fbb63a8099ba}{determinerTrameBouton}();
+00570 \}
+00571 
+\Hypertarget{manette_8cpp_source_l00572}\hyperlink{class_manette_a070a7551299aad2db041591004d2bc60}{00572} \textcolor{keywordtype}{void} \hyperlink{class_manette_a070a7551299aad2db041591004d2bc60}{Manette::changerBoutonY}(\textcolor{keywordtype}{bool} etat)
+00573 \{
+00574     \hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton}.\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY} = etat;
+00575     \textcolor{keywordflow}{if}(\hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{modePilotageBras})
+00576         \hyperlink{class_manette_a3fb9d1245400b6bb6379fbb63a8099ba}{determinerTrameBouton}();
+00577 \}
+00578 
+\Hypertarget{manette_8cpp_source_l00579}\hyperlink{class_manette_a37710e94b9d871a577740daf13cb571b}{00579} \textcolor{keywordtype}{void} \hyperlink{class_manette_a37710e94b9d871a577740daf13cb571b}{Manette::changerBoutonSelect}(\textcolor{keywordtype}{bool} etat)
+00580 \{
+00581     \textcolor{keywordflow}{if}(etat)
+00582     \{
+00583         \hyperlink{class_manette_a202faf093876b9e95cfc316b552c59c3}{changerMode}();
+00584     \}
+00585     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Button Select"} << etat ;
+00586 \}
+00587 
+\Hypertarget{manette_8cpp_source_l00588}\hyperlink{class_manette_a7345a7c5bfdc566119f7db7358584b6c}{00588} \textcolor{keywordtype}{void} \hyperlink{class_manette_a7345a7c5bfdc566119f7db7358584b6c}{Manette::fermerApplication}(\textcolor{keywordtype}{bool} etat)
+00589 \{
+00590     Q\_UNUSED(etat);
+00591     QCoreApplication::quit();
+00592 \}
+00593 
+\Hypertarget{manette_8cpp_source_l00594}\hyperlink{struct_etat_manette_bouton_a7898661d3d19b6d8cf7005111d670ede}{00594} \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a7898661d3d19b6d8cf7005111d670ede}{EtatManetteBouton::operator==}(\textcolor{keyword}{const} 
+      \hyperlink{struct_etat_manette_bouton}{EtatManetteBouton} &maStructure)\textcolor{keyword}{ const}
+00595 \textcolor{keyword}{}\{
+00596     \textcolor{keywordflow}{if}(this->boutonA != maStructure.\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA})
+00597         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00598     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->boutonB != maStructure.\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB})
+00599         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00600     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->boutonX != maStructure.\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX})
+00601         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00602     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->boutonY != maStructure.\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY})
+00603         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00604     \textcolor{keywordflow}{else}
+00605         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00606 \}
+00607 
+\Hypertarget{manette_8cpp_source_l00608}\hyperlink{struct_etat_manette_bouton_a6ebd196e0fe68d30a8238b3e12194c93}{00608} \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a6ebd196e0fe68d30a8238b3e12194c93}{EtatManetteBouton::operator!=}(\textcolor{keyword}{const} 
+      \hyperlink{struct_etat_manette_bouton}{EtatManetteBouton} &maStructure)\textcolor{keyword}{ const}
+00609 \textcolor{keyword}{}\{
+00610     \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == maStructure);
+00611 \}
+00612 
+\Hypertarget{manette_8cpp_source_l00613}\hyperlink{struct_etat_manette_pilotage_a85cac8d658fdc2d63ac54ea340ec8be8}{00613} \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_pilotage_a85cac8d658fdc2d63ac54ea340ec8be8}{EtatManettePilotage::operator==}(\textcolor{keyword}{const} 
+      \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} &maStructure)\textcolor{keyword}{ const}
+00614 \textcolor{keyword}{}\{
+00615     \textcolor{keywordflow}{if}(this->flecheEnAvant != maStructure.\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant})
+00616         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00617     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->flecheEnArriere != maStructure.\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere})
+00618         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00619     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->flecheAGauche != maStructure.\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche})
+00620         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00621     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->flecheADroite != maStructure.\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite})
+00622         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00623     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->boutonHautGauche != maStructure.\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche})
+00624         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00625     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->boutonHautDroit != maStructure.\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit})
+00626         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00627     \textcolor{keywordflow}{else}
+00628         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00629 \}
+00630 
+\Hypertarget{manette_8cpp_source_l00631}\hyperlink{struct_etat_manette_pilotage_a1a9cbf7891c30ab2503ec9c9b7fb5299}{00631} \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_pilotage_a1a9cbf7891c30ab2503ec9c9b7fb5299}{EtatManettePilotage::operator!=}(\textcolor{keyword}{const} 
+      \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} &maStructure)\textcolor{keyword}{ const}
+00632 \textcolor{keyword}{}\{
+00633     \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == maStructure);
+00634 \}
+00635 
+\Hypertarget{manette_8cpp_source_l00636}\hyperlink{struct_etat_manette_deplacement_a8f248b6ec1788c058e161b74fb371c5b}{00636} \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_deplacement_a8f248b6ec1788c058e161b74fb371c5b}{EtatManetteDeplacement::operator==}(\textcolor{keyword}{const} 
+      \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} &maStructure)\textcolor{keyword}{ const}
+00637 \textcolor{keyword}{}\{
+00638     \textcolor{keywordflow}{if}(this->gachetteBasDroit != maStructure.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit})
+00639         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00640     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->gachetteBasGauche != maStructure.\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche})
+00641         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00642     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->joystickGaucheADroite != maStructure.\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite})
+00643         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00644     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->joystickGaucheAGauche != maStructure.\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche})
+00645         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00646     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->joystickGaucheEnArriere != maStructure.\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere})
+00647         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00648     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->joystickGaucheEnAvant != maStructure.\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant})
+00649         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00650     \textcolor{keywordflow}{else}
+00651         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00652 \}
+00653 
+\Hypertarget{manette_8cpp_source_l00654}\hyperlink{struct_etat_manette_deplacement_aa57df0ecb60478f389d84c6e5d0cc1b8}{00654} \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_deplacement_aa57df0ecb60478f389d84c6e5d0cc1b8}{EtatManetteDeplacement::operator!=}(\textcolor{keyword}{const} 
+      \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} &maStructure)\textcolor{keyword}{ const}
+00655 \textcolor{keyword}{}\{
+00656     \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == maStructure);
+00657 \}
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\hypertarget{communicationrov_8h_source}{}\subsection{communicationrov.\+h}
+\label{communicationrov_8h_source}\index{communicationrov.\+h@{communicationrov.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef COMMUNICATIONROV\_H}
+00008 \textcolor{preprocessor}{#define COMMUNICATIONROV\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QObject>}
+00011 \textcolor{preprocessor}{#include <QSerialPort>}
+00012 \textcolor{preprocessor}{#include <QSerialPortInfo>}
+00013 \textcolor{preprocessor}{#include <QDebug>}
+00014 \textcolor{preprocessor}{#include <QMessageBox>}
+00015 
+00016 \textcolor{comment}{//#define MODE\_CONNECTE}
+\Hypertarget{communicationrov_8h_source_l00017}\hyperlink{communicationrov_8h_aa527cd5549b27f11b24e5879e73abbee}{00017} \textcolor{preprocessor}{#define CONFIGURATION\_MANUELLE}
+00018 
+\Hypertarget{communicationrov_8h_source_l00024}\hyperlink{struct_configuration}{00024} \textcolor{keyword}{struct }\hyperlink{struct_configuration}{Configuration}
+00025 \{
+\Hypertarget{communicationrov_8h_source_l00026}\hyperlink{struct_configuration_acc40b4f298cb215a94fb43976ef7d3a8}{00026}     QString \hyperlink{struct_configuration_acc40b4f298cb215a94fb43976ef7d3a8}{port};    
+\Hypertarget{communicationrov_8h_source_l00027}\hyperlink{struct_configuration_ab714d6036189bf451e566e6c6a971c85}{00027}     \textcolor{keywordtype}{int} \hyperlink{struct_configuration_ab714d6036189bf451e566e6c6a971c85}{debit};       
+\Hypertarget{communicationrov_8h_source_l00028}\hyperlink{struct_configuration_a37e0691e4a25b11bd86a52bc68c81f93}{00028}     \textcolor{keywordtype}{int} \hyperlink{struct_configuration_a37e0691e4a25b11bd86a52bc68c81f93}{bitsDonnees}; 
+\Hypertarget{communicationrov_8h_source_l00029}\hyperlink{struct_configuration_a9c24ff9a3e5a24b14e1ac8bc03de907d}{00029}     \textcolor{keywordtype}{int} \hyperlink{struct_configuration_a9c24ff9a3e5a24b14e1ac8bc03de907d}{bitStop};     
+00030 \};
+00031 
+00032 
+\Hypertarget{communicationrov_8h_source_l00038}\hyperlink{class_communication_rov}{00038} \textcolor{keyword}{class }\hyperlink{class_communication_rov}{CommunicationRov} : \textcolor{keyword}{public} \hyperlink{class_q_object}{QObject}
+00039 \{
+00040     Q\_OBJECT
+00041 \textcolor{keyword}{private}:
+\Hypertarget{communicationrov_8h_source_l00042}\hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{00042}     QSerialPort *\hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port};                  
+\Hypertarget{communicationrov_8h_source_l00043}\hyperlink{class_communication_rov_acbb6939bb597179956c6f4bc5ca39f3f}{00043}     QByteArray \hyperlink{class_communication_rov_acbb6939bb597179956c6f4bc5ca39f3f}{donnees};                 
+\Hypertarget{communicationrov_8h_source_l00044}\hyperlink{class_communication_rov_a2f5a49875a9fa51800522c531ecc65fc}{00044}     QString \hyperlink{class_communication_rov_a2f5a49875a9fa51800522c531ecc65fc}{trameRecue};                 
+00045 
+00046 \textcolor{keyword}{public}:
+00052     \hyperlink{class_communication_rov}{CommunicationRov}(\hyperlink{class_q_object}{QObject} *parent = \textcolor{keyword}{nullptr});
+00057     ~\hyperlink{class_communication_rov}{CommunicationRov}();
+00062     \textcolor{keywordtype}{void} ouvrirPort();
+00068     \textcolor{keywordtype}{void} setConfiguration(\hyperlink{struct_configuration}{Configuration} maConfiguration);
+00075     \textcolor{keywordtype}{int} emettreTrame(QString trame);
+00076     \textcolor{keyword}{static} QStringList detecterPortsDisponibles();
+00077 
+00078 signals:
+00084     \textcolor{keywordtype}{void} nouvelleTrame(QString trame);
+00085 
+00086 \textcolor{keyword}{public} slots:
+00091     \textcolor{keywordtype}{void} recevoir();
+00092 \};
+00093 
+00094 \textcolor{preprocessor}{#endif // COMMUNICATIONROV\_H}
+\end{DoxyCode}

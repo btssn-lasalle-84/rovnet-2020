@@ -1,0 +1,198 @@
+\hypertarget{struct_etat_manette_bouton}{}\subsection{Référence de la structure Etat\+Manette\+Bouton}
+\label{struct_etat_manette_bouton}\index{Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}}
+
+
+Structure qui définit l\textquotesingle{}état de la manette en mode pilotage de la pince.  
+
+
+
+
+{\ttfamily \#include $<$manette.\+h$>$}
+
+
+
+Graphe de collaboration de Etat\+Manette\+Bouton\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{struct_etat_manette_bouton__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_etat_manette_bouton_a6ebd196e0fe68d30a8238b3e12194c93}{operator!=} (const \hyperlink{struct_etat_manette_bouton}{Etat\+Manette\+Bouton} \&ma\+Structure) const
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur != afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_bouton_a7898661d3d19b6d8cf7005111d670ede}{operator==} (const \hyperlink{struct_etat_manette_bouton}{Etat\+Manette\+Bouton} \&ma\+Structure) const
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur == afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du bouton A. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du bouton B. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du bouton X. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du bouton Y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Structure qui définit l\textquotesingle{}état de la manette en mode pilotage de la pince. 
+
+Définition à la ligne \hyperlink{manette_8h_source_l00122}{122} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{struct_etat_manette_bouton_a6ebd196e0fe68d30a8238b3e12194c93}\label{struct_etat_manette_bouton_a6ebd196e0fe68d30a8238b3e12194c93}} 
+\index{Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}}
+\paragraph{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Bouton\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_etat_manette_bouton}{Etat\+Manette\+Bouton} \&}]{ma\+Structure }\end{DoxyParamCaption}) const}
+
+
+
+Surcharge de l\textquotesingle{}opérateur != afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ma\+Structure} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Si l\textquotesingle{}opération est possible ou pas 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{manette_8cpp_source_l00608}{608} du fichier \hyperlink{manette_8cpp_source}{manette.\+cpp}.
+
+
+\begin{DoxyCode}
+00609 \{
+00610     \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == maStructure);
+00611 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_etat_manette_bouton_a7898661d3d19b6d8cf7005111d670ede}\label{struct_etat_manette_bouton_a7898661d3d19b6d8cf7005111d670ede}} 
+\index{Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}!operator==@{operator==}}
+\index{operator==@{operator==}!Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}}
+\paragraph{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Bouton\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_etat_manette_bouton}{Etat\+Manette\+Bouton} \&}]{ma\+Structure }\end{DoxyParamCaption}) const}
+
+
+
+Surcharge de l\textquotesingle{}opérateur == afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ma\+Structure} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Si l\textquotesingle{}opération est possible ou pas 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{manette_8cpp_source_l00594}{594} du fichier \hyperlink{manette_8cpp_source}{manette.\+cpp}.
+
+
+
+Références \hyperlink{manette_8h_source_l00124}{boutonA}, \hyperlink{manette_8h_source_l00125}{boutonB}, \hyperlink{manette_8h_source_l00126}{boutonX}, et \hyperlink{manette_8h_source_l00127}{boutonY}.
+
+
+\begin{DoxyCode}
+00595 \{
+00596     \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA} != maStructure.\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA})
+00597         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00598     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB} != maStructure.\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB})
+00599         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00600     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX} != maStructure.\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX})
+00601         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00602     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY} != maStructure.\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY})
+00603         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00604     \textcolor{keywordflow}{else}
+00605         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00606 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}\label{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}} 
+\index{Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}!boutonA@{boutonA}}
+\index{boutonA@{boutonA}!Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}}
+\paragraph{\texorpdfstring{boutonA}{boutonA}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Bouton\+::boutonA}
+
+
+
+Membre définissant l\textquotesingle{}état du bouton A. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00124}{124} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00551}{Manette\+::changer\+Bouton\+A()}, \hyperlink{manette_8cpp_source_l00313}{Manette\+::initialiser\+Etat\+Bouton()}, et \hyperlink{manette_8cpp_source_l00594}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}\label{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}} 
+\index{Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}!boutonB@{boutonB}}
+\index{boutonB@{boutonB}!Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}}
+\paragraph{\texorpdfstring{boutonB}{boutonB}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Bouton\+::boutonB}
+
+
+
+Membre définissant l\textquotesingle{}état du bouton B. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00125}{125} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00558}{Manette\+::changer\+Bouton\+B()}, \hyperlink{manette_8cpp_source_l00313}{Manette\+::initialiser\+Etat\+Bouton()}, et \hyperlink{manette_8cpp_source_l00594}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}\label{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}} 
+\index{Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}!boutonX@{boutonX}}
+\index{boutonX@{boutonX}!Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}}
+\paragraph{\texorpdfstring{boutonX}{boutonX}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Bouton\+::boutonX}
+
+
+
+Membre définissant l\textquotesingle{}état du bouton X. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00126}{126} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00565}{Manette\+::changer\+Bouton\+X()}, \hyperlink{manette_8cpp_source_l00313}{Manette\+::initialiser\+Etat\+Bouton()}, et \hyperlink{manette_8cpp_source_l00594}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}\label{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}} 
+\index{Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}!boutonY@{boutonY}}
+\index{boutonY@{boutonY}!Etat\+Manette\+Bouton@{Etat\+Manette\+Bouton}}
+\paragraph{\texorpdfstring{boutonY}{boutonY}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Bouton\+::boutonY}
+
+
+
+Membre définissant l\textquotesingle{}état du bouton Y. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00127}{127} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00572}{Manette\+::changer\+Bouton\+Y()}, \hyperlink{manette_8cpp_source_l00313}{Manette\+::initialiser\+Etat\+Bouton()}, et \hyperlink{manette_8cpp_source_l00594}{operator==()}.
+
+
+
+La documentation de cette structure a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{manette_8h}{manette.\+h}\item 
+\hyperlink{manette_8cpp}{manette.\+cpp}\end{DoxyCompactItemize}

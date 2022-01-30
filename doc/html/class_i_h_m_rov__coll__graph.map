@@ -1,0 +1,14 @@
+<map id="IHMRov" name="IHMRov">
+<area shape="rect" id="node4" href="$class_rov.html" title="Classe controlant tout les traitements en provenance et en direction de la communication avec le rov..." alt="" coords="636,1296,842,1857"/>
+<area shape="rect" id="node12" href="$class_i_h_m_accueil.html" title="Class permettant de créer une nouvelle campagne, reprendre une campagne mise en pause, archiver une campagne, supprimer une campagne, accéder à la base de données et configurer le matériel. " alt="" coords="141,1311,348,1843"/>
+<area shape="rect" id="node2" href="$class_q_widget.html" title="La classe QWidget est la classe de base de tous les objets graphiques d&#39;interface utilisateur..." alt="" coords="92,279,165,356"/>
+<area shape="rect" id="node3" href="$class_i_h_m_reglage_video.html" title="Classe permettant de regler l&#39;affichage du flux video. " alt="" coords="213,2001,449,2445"/>
+<area shape="rect" id="node11" href="$class_i_h_m_configuration.html" title="Class permettant de configurer la communication avec le rov. " alt="" coords="473,2118,626,2327"/>
+<area shape="rect" id="node6" href="$class_camera.html" title="Class permettant de mettre en place une communication avec la camera. " alt="" coords="695,1920,898,2525"/>
+<area shape="rect" id="node5" href="$class_q_object.html" title="La classe QObject est la classe de base de tous les objets Qt. Elle permet à ces objets Qt de dispose..." alt="" coords="649,5,720,83"/>
+<area shape="rect" id="node8" href="$class_capteurs.html" title="Classe contenant les dernières informations issues des capteurs du rov. " alt="" coords="704,534,838,787"/>
+<area shape="rect" id="node9" href="$class_communication_rov.html" title="Class permettant de mettre en place une communication avec le rov. " alt="" coords="829,929,1017,1123"/>
+<area shape="rect" id="node10" href="$class_campagne.html" title="Class contenant les informations de la campagne en cours. " alt="" coords="458,132,641,503"/>
+<area shape="rect" id="node13" href="$class_base_de_donnees.html" title="Class permettant de s&#39;interfacer avec la base de données. " alt="" coords="230,527,376,795"/>
+<area shape="rect" id="node7" href="$class_q_thread.html" title="La classe QThread fournit un moyen indépendant de gérer les threads dans Qt. " alt="" coords="867,1538,939,1615"/>
+</map>

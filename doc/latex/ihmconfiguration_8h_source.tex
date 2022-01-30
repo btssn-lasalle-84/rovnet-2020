@@ -1,0 +1,39 @@
+\hypertarget{ihmconfiguration_8h_source}{}\subsection{ihmconfiguration.\+h}
+\label{ihmconfiguration_8h_source}\index{ihmconfiguration.\+h@{ihmconfiguration.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef IHMCONFIGURATION\_H}
+00008 \textcolor{preprocessor}{#define IHMCONFIGURATION\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QWidget>}
+00011 \textcolor{preprocessor}{#include "\hyperlink{rov_8h}{rov.h}"}
+00012 
+00013 \textcolor{keyword}{class }\hyperlink{class_rov}{Rov};
+00014 
+\Hypertarget{ihmconfiguration_8h_source_l00020}\hyperlink{class_i_h_m_configuration}{00020} \textcolor{keyword}{class }\hyperlink{class_i_h_m_configuration}{IHMConfiguration} : \textcolor{keyword}{public} \hyperlink{class_q_widget}{QWidget}
+00021 \{
+00022     Q\_OBJECT
+00023 \textcolor{keyword}{private}:
+\Hypertarget{ihmconfiguration_8h_source_l00024}\hyperlink{class_i_h_m_configuration_a75a7e5b7312d9eb3377bc96372fc0b3a}{00024}     \hyperlink{class_rov}{Rov} *\hyperlink{class_i_h_m_configuration_a75a7e5b7312d9eb3377bc96372fc0b3a}{rov};                           
+\Hypertarget{ihmconfiguration_8h_source_l00025}\hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{00025}     QComboBox *\hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles};   
+\Hypertarget{ihmconfiguration_8h_source_l00026}\hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{00026}     QComboBox *\hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{listeDebit};              
+\Hypertarget{ihmconfiguration_8h_source_l00027}\hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{00027}     QComboBox *\hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees};        
+\Hypertarget{ihmconfiguration_8h_source_l00028}\hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{00028}     QComboBox *\hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{listeBitsStop};           
+\Hypertarget{ihmconfiguration_8h_source_l00029}\hyperlink{class_i_h_m_configuration_a824b7f6c0d332b8f6f76801e545b14ad}{00029}     QPushButton *\hyperlink{class_i_h_m_configuration_a824b7f6c0d332b8f6f76801e545b14ad}{boutonOuvrirPort};      
+\Hypertarget{ihmconfiguration_8h_source_l00030}\hyperlink{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}{00030}     QPushButton *\hyperlink{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}{boutonFermerPort};      
+00031 
+00036     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_configuration_a76fe56bbd88aef5581186e05fb4ae67f}{initialiserWidgets}();
+00041     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_configuration_a9ed73ca9584b8d9f33ad341081113a55}{configurerWidgets}();
+00046     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_configuration_ab76abe78fff3b7945b675acddbd320f0}{initialiserLayouts}();
+00047 
+00048 \textcolor{keyword}{public}:
+00055     \hyperlink{class_i_h_m_configuration_a1532c281d170546071352cfe05feb1b8}{IHMConfiguration}(\hyperlink{class_rov}{Rov} *rov, \hyperlink{class_q_widget}{QWidget} *parent = \textcolor{keyword}{nullptr});
+00060     \hyperlink{class_i_h_m_configuration_a59e2b693b4a1f1a8a6af3227996c3808}{~IHMConfiguration}();
+00061 
+00062 signals:
+00063 
+00064 \};
+00065 
+00066 \textcolor{preprocessor}{#endif // IHMCONFIGURATION\_H}
+\end{DoxyCode}

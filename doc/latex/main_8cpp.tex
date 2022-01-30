@@ -1,0 +1,60 @@
+\hypertarget{main_8cpp}{}\subsection{Référence du fichier main.\+cpp}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+
+
+Fichier main.  
+
+
+{\ttfamily \#include \char`\"{}ihmaccueil.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Application$>$}\newline
+\subsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Programme principal qui instancie, affiche l\textquotesingle{}I\+HM du \hyperlink{class_rov}{Rov} et exécute la boucle d\textquotesingle{}évènements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Fichier main. 
+
+
+
+Définition dans le fichier \hyperlink{main_8cpp_source}{main.\+cpp}.
+
+
+
+\subsubsection{Documentation des fonctions}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\paragraph{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Programme principal qui instancie, affiche l\textquotesingle{}I\+HM du \hyperlink{class_rov}{Rov} et exécute la boucle d\textquotesingle{}évènements. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em argc} & \\
+\hline
+{\em argv} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+retourne un entier correspond à l\textquotesingle{}état de la fermeture de l\textquotesingle{}application 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{main_8cpp_source_l00017}{17} du fichier \hyperlink{main_8cpp_source}{main.\+cpp}.
+
+
+\begin{DoxyCode}
+00018 \{
+00019     QApplication a(argc, argv);
+00020     \hyperlink{class_i_h_m_accueil}{IHMAccueil} w;
+00021     w.show();
+00022 
+00023     \textcolor{keywordflow}{return} a.exec();
+00024 \}
+\end{DoxyCode}

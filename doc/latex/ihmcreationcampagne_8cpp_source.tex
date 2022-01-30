@@ -1,0 +1,118 @@
+\hypertarget{ihmcreationcampagne_8cpp_source}{}\subsection{ihmcreationcampagne.\+cpp}
+\label{ihmcreationcampagne_8cpp_source}\index{ihmcreationcampagne.\+cpp@{ihmcreationcampagne.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{ihmcreationcampagne_8h}{ihmcreationcampagne.h}"}
+00008 \textcolor{preprocessor}{#include "\hyperlink{campagne_8h}{campagne.h}"}
+00009 \textcolor{preprocessor}{#include "\hyperlink{ihmaccueil_8h}{ihmaccueil.h}"}
+00010 
+\Hypertarget{ihmcreationcampagne_8cpp_source_l00011}\hyperlink{class_i_h_m_creation_campagne_a0e9cce2b950a638f1bf012b79d05eb9c}{00011} \hyperlink{class_i_h_m_creation_campagne_a0e9cce2b950a638f1bf012b79d05eb9c}{IHMCreationCampagne::IHMCreationCampagne}(
+      \hyperlink{class_i_h_m_accueil}{IHMAccueil} *ihmAccueil, QVector<QStringList> &listeTechniciens) : 
+      \hyperlink{class_q_dialog}{QDialog}(ihmAccueil, Qt::Dialog), ihmAccueil(ihmAccueil), listeTechniciens(listeTechniciens)
+00012 \{
+00013     qDebug() << Q\_FUNC\_INFO;
+00014     \hyperlink{class_i_h_m_creation_campagne_a6f07f2571a10f035c7b6a3ef1daefdab}{nomCampagne} = \textcolor{keyword}{new} QLineEdit(\textcolor{keyword}{this});
+00015     \hyperlink{class_i_h_m_creation_campagne_a5546fee9a51daceb1b719b105427dfe9}{nomTechnicien} = \textcolor{keyword}{new} QLineEdit(\textcolor{keyword}{this});
+00016     \hyperlink{class_i_h_m_creation_campagne_a95e0a4f224110a79731e947baa505b7e}{prenomTechnicien} = \textcolor{keyword}{new} QLineEdit(\textcolor{keyword}{this});
+00017     \hyperlink{class_i_h_m_creation_campagne_af68a722acc97a1011ff82752169a2ac8}{lieu} = \textcolor{keyword}{new} QLineEdit(\textcolor{keyword}{this});
+00018     \hyperlink{class_i_h_m_creation_campagne_a95c12e2d42063f9c510704b87e3357da}{cheminSauvegarde} = \textcolor{keyword}{new} QLineEdit(\textcolor{keyword}{this});
+00019     \hyperlink{class_i_h_m_creation_campagne_a7c1dbc0141ba19b9ac16ea1444cd5d6f}{boutonValider} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Valider"}, \textcolor{keyword}{this});
+00020     \hyperlink{class_i_h_m_creation_campagne_ab20ebd5f09b98103c682ed2e1b192a1d}{boutonAnnuler} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Annuler"}, \textcolor{keyword}{this});
+00021     \hyperlink{class_i_h_m_creation_campagne_ab709b06a83d8e1ebf9c920e7c60e2d79}{boutonChoixChemin} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"..."}, \textcolor{keyword}{this});
+00022     \hyperlink{class_i_h_m_creation_campagne_a8235e7a18cda1298be624a59a4cc1a56}{techniciens} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00023 
+00024     QVBoxLayout *layoutPrincipal = \textcolor{keyword}{new} QVBoxLayout;
+00025     QFormLayout *layoutFormulaireCampagne = \textcolor{keyword}{new} QFormLayout;
+00026     QHBoxLayout *layoutValidation = \textcolor{keyword}{new} QHBoxLayout;
+00027     QHBoxLayout *layoutChoixChemin = \textcolor{keyword}{new} QHBoxLayout;
+00028 
+00029     layoutPrincipal->addLayout(layoutFormulaireCampagne);
+00030     layoutPrincipal->addLayout(layoutValidation);
+00031     layoutChoixChemin->addWidget(\hyperlink{class_i_h_m_creation_campagne_a95c12e2d42063f9c510704b87e3357da}{cheminSauvegarde});
+00032     layoutChoixChemin->addWidget(\hyperlink{class_i_h_m_creation_campagne_ab709b06a83d8e1ebf9c920e7c60e2d79}{boutonChoixChemin});
+00033 
+00034     layoutFormulaireCampagne->addRow(\textcolor{stringliteral}{"Nom campagne : "}, \hyperlink{class_i_h_m_creation_campagne_a6f07f2571a10f035c7b6a3ef1daefdab}{nomCampagne});
+00035     layoutFormulaireCampagne->addRow(\textcolor{stringliteral}{"Techniciens : "}, \hyperlink{class_i_h_m_creation_campagne_a8235e7a18cda1298be624a59a4cc1a56}{techniciens});
+00036     layoutFormulaireCampagne->addRow(\textcolor{stringliteral}{"Nom technicien : "}, \hyperlink{class_i_h_m_creation_campagne_a5546fee9a51daceb1b719b105427dfe9}{nomTechnicien});
+00037     layoutFormulaireCampagne->addRow(\textcolor{stringliteral}{"Prenom technicien : "}, \hyperlink{class_i_h_m_creation_campagne_a95e0a4f224110a79731e947baa505b7e}{prenomTechnicien});
+00038     layoutFormulaireCampagne->addRow(\textcolor{stringliteral}{"Lieu campagne : "}, \hyperlink{class_i_h_m_creation_campagne_af68a722acc97a1011ff82752169a2ac8}{lieu});
+00039     layoutFormulaireCampagne->addRow(\textcolor{stringliteral}{"Chemin sauvegarde photos : "}, layoutChoixChemin);
+00040 
+00041     layoutValidation->addWidget(\hyperlink{class_i_h_m_creation_campagne_a7c1dbc0141ba19b9ac16ea1444cd5d6f}{boutonValider});
+00042     layoutValidation->addWidget(\hyperlink{class_i_h_m_creation_campagne_ab20ebd5f09b98103c682ed2e1b192a1d}{boutonAnnuler});
+00043 
+00044     layoutValidation->setAlignment(Qt::AlignBottom);
+00045 
+00046     setLayout(layoutPrincipal);
+00047 
+00048     connect(\hyperlink{class_i_h_m_creation_campagne_a7c1dbc0141ba19b9ac16ea1444cd5d6f}{boutonValider}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_creation_campagne_ad5c63453b1b8d1099a43ff3522244072}{validerCampagne}()));
+00049     connect(\hyperlink{class_i_h_m_creation_campagne_ab20ebd5f09b98103c682ed2e1b192a1d}{boutonAnnuler}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(close()));
+00050     connect(\hyperlink{class_i_h_m_creation_campagne_ab709b06a83d8e1ebf9c920e7c60e2d79}{boutonChoixChemin}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_creation_campagne_aceedbe44750998444120ae6343bbdcc6}{choixCheminSauvegarde}()));
+00051     connect(\hyperlink{class_i_h_m_creation_campagne_a8235e7a18cda1298be624a59a4cc1a56}{techniciens}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_creation_campagne_a93395fef027960e7ab0d5c75a76e7414}{modifierEtatBouton}(\textcolor{keywordtype}{int})));
+00052 
+00053     \hyperlink{class_i_h_m_creation_campagne_a0648a6013cec5557150d0addf30e2bbc}{chargerListeTechniciens}();
+00054 \}
+00055 
+\Hypertarget{ihmcreationcampagne_8cpp_source_l00056}\hyperlink{class_i_h_m_creation_campagne_af2f85377637b15ccb2215b4b1f96b574}{00056} \hyperlink{class_i_h_m_creation_campagne_af2f85377637b15ccb2215b4b1f96b574}{IHMCreationCampagne::~IHMCreationCampagne}()
+00057 \{
+00058     qDebug() << Q\_FUNC\_INFO;
+00059 \}
+00060 
+\Hypertarget{ihmcreationcampagne_8cpp_source_l00061}\hyperlink{class_i_h_m_creation_campagne_a0648a6013cec5557150d0addf30e2bbc}{00061} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_creation_campagne_a0648a6013cec5557150d0addf30e2bbc}{IHMCreationCampagne::chargerListeTechniciens}()
+00062 \{
+00063     \hyperlink{class_i_h_m_creation_campagne_a8235e7a18cda1298be624a59a4cc1a56}{techniciens}->addItem(\textcolor{stringliteral}{"Ajouter technicien"});
+00064 
+00065     \textcolor{keywordflow}{for}(QVector<QStringList>::iterator it = \hyperlink{class_i_h_m_creation_campagne_aee78d20f0263359283cbcbc50fac3143}{listeTechniciens}.begin(); it != 
+      \hyperlink{class_i_h_m_creation_campagne_aee78d20f0263359283cbcbc50fac3143}{listeTechniciens}.end(); ++it)
+00066     \{
+00067         \hyperlink{class_i_h_m_creation_campagne_a8235e7a18cda1298be624a59a4cc1a56}{techniciens}->addItem((*it).at(0) + \textcolor{stringliteral}{" "} + (*it).at(1));
+00068     \}
+00069 \}
+00070 
+\Hypertarget{ihmcreationcampagne_8cpp_source_l00071}\hyperlink{class_i_h_m_creation_campagne_ad5c63453b1b8d1099a43ff3522244072}{00071} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_creation_campagne_ad5c63453b1b8d1099a43ff3522244072}{IHMCreationCampagne::validerCampagne}()
+00072 \{
+00073     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_creation_campagne_a6f07f2571a10f035c7b6a3ef1daefdab}{nomCampagne}->text().isEmpty() || \hyperlink{class_i_h_m_creation_campagne_a5546fee9a51daceb1b719b105427dfe9}{nomTechnicien}->text().isEmpty() || 
+      \hyperlink{class_i_h_m_creation_campagne_a95e0a4f224110a79731e947baa505b7e}{prenomTechnicien}->text().isEmpty() || \hyperlink{class_i_h_m_creation_campagne_af68a722acc97a1011ff82752169a2ac8}{lieu}->text().isEmpty() || 
+      \hyperlink{class_i_h_m_creation_campagne_a95c12e2d42063f9c510704b87e3357da}{cheminSauvegarde}->text().isEmpty())
+00074     \{
+00075         QMessageBox::critical(\textcolor{keyword}{nullptr}, \textcolor{stringliteral}{"Création campagne"}, \textcolor{stringliteral}{"Informations incomplètes !"});
+00076         \textcolor{keywordflow}{return};
+00077     \}
+00078 
+00079     \hyperlink{class_campagne}{Campagne} *campagne = \textcolor{keyword}{new} \hyperlink{class_campagne}{Campagne}(\hyperlink{class_i_h_m_creation_campagne_a6f07f2571a10f035c7b6a3ef1daefdab}{nomCampagne}->text(), 
+      \hyperlink{class_i_h_m_creation_campagne_af68a722acc97a1011ff82752169a2ac8}{lieu}->text(), \hyperlink{class_i_h_m_creation_campagne_a5546fee9a51daceb1b719b105427dfe9}{nomTechnicien}->text(), \hyperlink{class_i_h_m_creation_campagne_a95e0a4f224110a79731e947baa505b7e}{prenomTechnicien}->text(), 
+      QDateTime::currentDateTime(), \textcolor{keyword}{this});
+00080     campagne->\hyperlink{class_campagne_a68c7eb6776e46306b10f1ca2a409ae6e}{setCheminSauvegarde}(\hyperlink{class_i_h_m_creation_campagne_a95c12e2d42063f9c510704b87e3357da}{cheminSauvegarde}->text());
+00081     \hyperlink{class_i_h_m_creation_campagne_a6b5ea4a52138016a07a37060669288ae}{ihmAccueil}->\hyperlink{class_i_h_m_accueil_a3087ce7a78561c79ce3148761750dd1d}{ajouterCampagne}(campagne, \textcolor{keyword}{true});
+00082     \hyperlink{class_i_h_m_creation_campagne_a6b5ea4a52138016a07a37060669288ae}{ihmAccueil}->\hyperlink{class_i_h_m_accueil_a5ab04fc3fa87817bec130f377d563b75}{enregistrerCampagneBDD}(campagne);
+00083     close();
+00084 \}
+00085 
+\Hypertarget{ihmcreationcampagne_8cpp_source_l00086}\hyperlink{class_i_h_m_creation_campagne_a93395fef027960e7ab0d5c75a76e7414}{00086} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_creation_campagne_a93395fef027960e7ab0d5c75a76e7414}{IHMCreationCampagne::modifierEtatBouton}(\textcolor{keywordtype}{int} index)
+00087 \{
+00088     \textcolor{keywordflow}{if}(index > 0)
+00089     \{
+00090         \hyperlink{class_i_h_m_creation_campagne_a5546fee9a51daceb1b719b105427dfe9}{nomTechnicien}->setDisabled(\textcolor{keyword}{true});
+00091         \hyperlink{class_i_h_m_creation_campagne_a5546fee9a51daceb1b719b105427dfe9}{nomTechnicien}->setText(\hyperlink{class_i_h_m_creation_campagne_aee78d20f0263359283cbcbc50fac3143}{listeTechniciens}[index - 1].at(0));
+00092         \hyperlink{class_i_h_m_creation_campagne_a95e0a4f224110a79731e947baa505b7e}{prenomTechnicien}->setDisabled(\textcolor{keyword}{true});
+00093         \hyperlink{class_i_h_m_creation_campagne_a95e0a4f224110a79731e947baa505b7e}{prenomTechnicien}->setText(\hyperlink{class_i_h_m_creation_campagne_aee78d20f0263359283cbcbc50fac3143}{listeTechniciens}[index - 1].at(1));
+00094     \}
+00095     \textcolor{keywordflow}{else}
+00096     \{
+00097         \hyperlink{class_i_h_m_creation_campagne_a5546fee9a51daceb1b719b105427dfe9}{nomTechnicien}->clear();
+00098         \hyperlink{class_i_h_m_creation_campagne_a95e0a4f224110a79731e947baa505b7e}{prenomTechnicien}->clear();
+00099         \hyperlink{class_i_h_m_creation_campagne_a5546fee9a51daceb1b719b105427dfe9}{nomTechnicien}->setEnabled(\textcolor{keyword}{true});
+00100         \hyperlink{class_i_h_m_creation_campagne_a95e0a4f224110a79731e947baa505b7e}{prenomTechnicien}->setEnabled(\textcolor{keyword}{true});
+00101     \}
+00102 \}
+00103 
+\Hypertarget{ihmcreationcampagne_8cpp_source_l00104}\hyperlink{class_i_h_m_creation_campagne_aceedbe44750998444120ae6343bbdcc6}{00104} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_creation_campagne_aceedbe44750998444120ae6343bbdcc6}{IHMCreationCampagne::choixCheminSauvegarde}()
+00105 \{
+00106     \hyperlink{class_i_h_m_creation_campagne_a95c12e2d42063f9c510704b87e3357da}{cheminSauvegarde}->setText(QFileDialog::getExistingDirectory(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Choix du chemin de
+       sauvegarde des photos"}));
+00107 \}
+\end{DoxyCode}

@@ -1,0 +1,100 @@
+\hypertarget{rov_8h_source}{}\subsection{rov.\+h}
+\label{rov_8h_source}\index{rov.\+h@{rov.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef ROV\_H}
+00008 \textcolor{preprocessor}{#define ROV\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QObject>}
+00011 \textcolor{preprocessor}{#include "\hyperlink{camera_8h}{camera.h}"}
+00012 \textcolor{preprocessor}{#include "\hyperlink{communicationrov_8h}{communicationrov.h}"}
+00013 \textcolor{preprocessor}{#include "\hyperlink{manette_8h}{manette.h}"}
+00014 \textcolor{preprocessor}{#include "\hyperlink{capteurs_8h}{capteurs.h}"}
+00015 \textcolor{preprocessor}{#include "\hyperlink{ihmrov_8h}{ihmrov.h}"}
+00016 
+\Hypertarget{rov_8h_source_l00022}\hyperlink{rov_8h_aa4d7955cdbd3d56086855ed938b980d1}{00022} \textcolor{preprocessor}{#define DEBUT\_TRAME\_TELEMETRIE "$TEL"}
+00023 
+\Hypertarget{rov_8h_source_l00028}\hyperlink{rov_8h_a224f8acbc025db0e90045ce113761b0f}{00028} \textcolor{preprocessor}{#define DEBUT\_TRAME\_CAPTEUR    "$CAP"}
+00029 
+\Hypertarget{rov_8h_source_l00034}\hyperlink{rov_8h_a5bebf7c0b48103d44a372f28cf7f8981}{00034} \textcolor{preprocessor}{#define DEBUT\_TRAME\_DEPLACEMENT "$DEP"}
+00035 
+\Hypertarget{rov_8h_source_l00040}\hyperlink{rov_8h_a023822fa9447e76b37e5d5c78f5c64f9}{00040} \textcolor{preprocessor}{#define DEBUT\_TRAME\_PILOTAGE "$BRAS"}
+00041 
+\Hypertarget{rov_8h_source_l00046}\hyperlink{rov_8h_a8b313ffefec16809296d06146e0e75c8}{00046} \textcolor{preprocessor}{#define DEBUT\_TRAME\_ORDRE "$ORDRE"}
+00047 
+\Hypertarget{rov_8h_source_l00052}\hyperlink{rov_8h_ab9dc0e136712ab8227078e19a43e166a}{00052} \textcolor{preprocessor}{#define DEBUT\_TRAME\_PINCE "$PINCE"}
+00053 
+\Hypertarget{rov_8h_source_l00058}\hyperlink{rov_8h_ab218eea9b0b6d799e400a0d1ff835c13}{00058} \textcolor{preprocessor}{#define TRAME\_PILOTAGE\_IMMOBILE "$BRAS;0\(\backslash\)r\(\backslash\)n"}
+00059 
+\Hypertarget{rov_8h_source_l00064}\hyperlink{rov_8h_ab46e52d96e193353eadd9cd7f598f670}{00064} \textcolor{preprocessor}{#define TRAME\_PINCE\_IMMOBILE "$PINCE;0\(\backslash\)r\(\backslash\)n"}
+00065 
+\Hypertarget{rov_8h_source_l00070}\hyperlink{rov_8h_adc800d68618fc04d8386c438c5a890ca}{00070} \textcolor{preprocessor}{#define DEBUT\_TRAME\_CAMERA "$CAM"}
+00071 
+\Hypertarget{rov_8h_source_l00076}\hyperlink{rov_8h_a12ba48a9aa995ebb4c7a7ace01808a2e}{00076} \textcolor{preprocessor}{#define TRAME\_CAMERA\_IMMOBILE "$CAM;0;0\(\backslash\)r\(\backslash\)n"}
+00077 
+00078 \textcolor{keyword}{class }\hyperlink{class_camera}{Camera};
+00079 \textcolor{keyword}{class }\hyperlink{class_communication_rov}{CommunicationRov};
+00080 \textcolor{keyword}{class }\hyperlink{class_manette}{Manette};
+00081 \textcolor{keyword}{class }\hyperlink{class_capteurs}{Capteurs};
+00082 \textcolor{keyword}{class }\hyperlink{class_i_h_m_rov}{IHMRov};
+00083 \textcolor{keyword}{class }QCameraInfo;
+00084 
+\Hypertarget{rov_8h_source_l00090}\hyperlink{class_rov}{00090} \textcolor{keyword}{class }\hyperlink{class_rov}{Rov} : \textcolor{keyword}{public} \hyperlink{class_q_object}{QObject}
+00091 \{
+00092     Q\_OBJECT
+00093 \textcolor{keyword}{private}:
+\Hypertarget{rov_8h_source_l00094}\hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{00094}     \hyperlink{class_i_h_m_rov}{IHMRov} *\hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov};                         
+\Hypertarget{rov_8h_source_l00095}\hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{00095}     \hyperlink{class_capteurs}{Capteurs} *\hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs};                     
+\Hypertarget{rov_8h_source_l00096}\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{00096}     \hyperlink{class_camera}{Camera} *\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera};                         
+\Hypertarget{rov_8h_source_l00097}\hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{00097}     \hyperlink{class_communication_rov}{CommunicationRov} *\hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov};     
+\Hypertarget{rov_8h_source_l00098}\hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{00098}     QList<int> \hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{listeManettes};               
+\Hypertarget{rov_8h_source_l00099}\hyperlink{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}{00099}     QVector<Manette*> \hyperlink{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}{manettes}   ;          
+\Hypertarget{rov_8h_source_l00100}\hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{00100}     QString \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement};               
+\Hypertarget{rov_8h_source_l00101}\hyperlink{class_rov_a6e42b166c837f5103b53bb9eae35f087}{00101}     QString \hyperlink{class_rov_a6e42b166c837f5103b53bb9eae35f087}{tramePrecedenteDeplacement};     
+\Hypertarget{rov_8h_source_l00102}\hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{00102}     QString \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage};                  
+\Hypertarget{rov_8h_source_l00103}\hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{00103}     QString \hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage};        
+\Hypertarget{rov_8h_source_l00104}\hyperlink{class_rov_aa813010d76738e268a4bbe3773663a38}{00104}     QString \hyperlink{class_rov_aa813010d76738e268a4bbe3773663a38}{trameOrdre};                     
+\Hypertarget{rov_8h_source_l00105}\hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{00105}     QString \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince};                     
+\Hypertarget{rov_8h_source_l00106}\hyperlink{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}{00106}     QString \hyperlink{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}{tramePrecedentePince};           
+\Hypertarget{rov_8h_source_l00107}\hyperlink{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}{00107}     QString \hyperlink{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}{tramePrecedenteCamera};          
+\Hypertarget{rov_8h_source_l00108}\hyperlink{class_rov_a30595a8bd60324832b6a6eb5b542d211}{00108}     QString \hyperlink{class_rov_a30595a8bd60324832b6a6eb5b542d211}{tramePinceImmobile};             
+\Hypertarget{rov_8h_source_l00109}\hyperlink{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}{00109}     QTime \hyperlink{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}{dureeCampagne};                    
+\Hypertarget{rov_8h_source_l00110}\hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{00110}     \textcolor{keywordtype}{bool} \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours};                   
+00111 
+00116     \textcolor{keywordtype}{void} \hyperlink{class_rov_a53979bc347cda7cc30d18324f2146be1}{detecterManette}();
+00122     \textcolor{keywordtype}{void} \hyperlink{class_rov_a0d1863d7d230c0153253d7d2689429b5}{initialiserEvenementManette}(\hyperlink{class_manette}{Manette} *manette);
+00128     \textcolor{keywordtype}{void} \hyperlink{class_rov_a0d51099f9e1991ceffa0b6ed4a1c4e2e}{decoderTrameTelemetrie}(QString trameTelemetrie);
+00134     \textcolor{keywordtype}{void} \hyperlink{class_rov_ac1780c0484f427807f6207d17b564221}{decoderTrameCapteur}(QString trameCapteur);
+00139     \textcolor{keywordtype}{void} \hyperlink{class_rov_a3ba4939b5d1cbd837b9c42869e6b8114}{initialiserEvenements}();
+00144     \textcolor{keywordtype}{void} \hyperlink{class_rov_a31f810925200612a6bb4728236c695ed}{supprimerManette}();
+00145 
+00146 \textcolor{keyword}{public}:
+00153     \hyperlink{class_rov_a6e893548f3aadca5660540feb74f06f4}{Rov}(\hyperlink{class_i_h_m_rov}{IHMRov} *ihmRov, \hyperlink{class_q_object}{QObject} *parent = \textcolor{keyword}{nullptr});
+00158     \hyperlink{class_rov_a6e41f712195b9af74fd75b781745d1b5}{~Rov}();
+00159 
+00164     \textcolor{keywordtype}{bool} \hyperlink{class_rov_ab20c6d0a73d6b20d4bef9e9236535a3d}{demarrerCampagne}();
+00169     \textcolor{keywordtype}{void} \hyperlink{class_rov_ad53e8d86817c81f92e3113b0394bedc5}{arreterCampagne}();
+00175     \hyperlink{class_camera}{Camera}* \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}();
+00181     \hyperlink{class_capteurs}{Capteurs}* \hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{getCapteurs}();
+00187     QString \hyperlink{class_rov_aa977585d4377a57281004fd57208635a}{getTempsCampagne}();
+00194     \textcolor{keywordtype}{bool} \hyperlink{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}{demarrerVideo}(QString nomCamera, \textcolor{keywordtype}{int} choixResolution=-1);
+00200     \textcolor{keywordtype}{bool} \hyperlink{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}{getCampagneEncours}() \textcolor{keyword}{const};
+00201 
+00202 signals:
+00208     \textcolor{keywordtype}{void} \hyperlink{class_rov_ae868f3f3d691fcd6ecb97ee770541475}{donneesTelemetrieDecode}(QString donnes);
+00216     \textcolor{keywordtype}{void} \hyperlink{class_rov_a180b955cc5ee7e01196299377e0c5f33}{enregistrerMesures}(QString temperature, QString humidite, QString radiation);
+00217 
+00218 \textcolor{keyword}{public} slots:
+00224     \textcolor{keywordtype}{void} \hyperlink{class_rov_ad818ff6ee1210ae44a24106b2bbbee7d}{decoderTrame}(QString trame);
+00229     \textcolor{keywordtype}{void} \hyperlink{class_rov_aa264d0723f6b491425ac2f85b933bab2}{creerTrameDeplacement}(\textcolor{keywordtype}{char} deplacementAxeX, \textcolor{keywordtype}{int} puissance, \textcolor{keywordtype}{char} 
+      deplacementAxeY);
+00235     \textcolor{keywordtype}{void} \hyperlink{class_rov_a97be62676ab0d57d5a8ac498147905ec}{creerTramePilotage}(QString deplacement);
+00241     \textcolor{keywordtype}{void} \hyperlink{class_rov_a9e80eccfada890561e8af1f3426f6a2b}{creerTrameOrdre}(QString ordre);
+00247     \textcolor{keywordtype}{void} \hyperlink{class_rov_a66be7f6ff6e20da160d55e0cd0605965}{creerTramePince}(QString mouvementPince);
+00254     \textcolor{keywordtype}{void} \hyperlink{class_rov_a204b1f4efe5a89f4458d84e17858e7c8}{creerTrameCamera}(QString axeX, QString axeY);
+00259     \textcolor{keywordtype}{void} \hyperlink{class_rov_a241368439666a2549faff42931d82dfb}{arreterVideo}();
+00260 \};
+00261 
+00262 \textcolor{preprocessor}{#endif // ROV\_H}
+\end{DoxyCode}

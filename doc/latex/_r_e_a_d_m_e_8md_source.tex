@@ -1,0 +1,158 @@
+\hypertarget{_r_e_a_d_m_e_8md_source}{}\subsection{R\+E\+A\+D\+M\+E.\+md}
+
+\begin{DoxyCode}
+00001 \(\backslash\)mainpage Le projet 
+00002 
+00003 \(\backslash\)tableofcontents
+00004 
+00005 \(\backslash\)section section\_tdm Table des matières
+00006 - \(\backslash\)ref page\_README
+00007 - \(\backslash\)ref page\_changelog
+00008 - \(\backslash\)ref page\_about
+00009 - \(\backslash\)ref page\_licence
+00010 
+00011 \(\backslash\)section section\_infos Informations
+00012 
+00013 \(\backslash\)author Servan Tenaille <<servan.tenaille@gmail.com>>
+00014 \(\backslash\)author Anthony Bonnet <<bonnet.anthony0@gmail.com>>
+00015 \(\backslash\)date 2020
+00016 \(\backslash\)version 0.2
+00017 \(\backslash\)see https://svn.riouxsvn.com/rovnet/
+00018 
+00019 
+00020 \(\backslash\)page page\_README README
+00021 
+00022 [TOC]
+00023 
+00024 # Projet \{#projet\}
+00025 
+00026 ## Présentation \{#presentation\}
+00027 
+00028 Les objectifs du projet ROV'NET sont de se déplacer dans un milieu contaminé afin de faire des prises
+       de vues :
+00029 
+00030 * Le déplacement se fera à partir d'un châssis en liaison filaire​ à 4 roues motorisées
+       indépendamment.
+00031 * Le ROV sera équipé :
+00032     * d'une caméra d'aide au déplacements et/ou de capteurs d'obstacles
+00033     * d'un capteur de température et de radioactivité
+00034     * d'un dispositif de prise de vue motorisé
+00035     * d'un bras de robotique avec pince de préhension
+00036 
+00037 ## Base de données SQLite \{#bdd\}
+00038 
+00039 ![](./sql/campagnes-v1.1.png)
+00040 
+00041 ~~~ \{.sql\}
+00042 PRAGMA foreign\_keys = ON;
+00043 
+00044 --
+00045 -- Structure de la table `campagne`
+00046 --
+00047 
+00048 CREATE TABLE IF NOT EXISTS `campagne` (
+00049    `IdCampagne`    INTEGER PRIMARY KEY AUTOINCREMENT,
+00050    `IdTechnicien`  INTEGER NOT NULL,
+00051    `nom`   TEXT NOT NULL UNIQUE,
+00052    `lieu`  TEXT NOT NULL,
+00053    `cheminSauvegarde`  TEXT NOT NULL,
+00054    `date`  DATETIME NOT NULL,
+00055    `duree` INTEGER NOT NULL,
+00056    `enCours` NUMERIC NOT NULL,
+00057    UNIQUE(`IdCampagne`, `IdTechnicien`),
+00058    FOREIGN KEY(IdTechnicien) REFERENCES technicien(IdTechnicien)
+00059 );
+00060 
+00061 --
+00062 -- Structure de la table `mesure`
+00063 --
+00064 
+00065 CREATE TABLE IF NOT EXISTS `mesure` (
+00066    `IdMesure`  INTEGER PRIMARY KEY AUTOINCREMENT,
+00067    `IdCampagne`    INTEGER NOT NULL,
+00068    `heure` DATETIME NOT NULL,
+00069    `temperature`   REAL NOT NULL,
+00070    `radiation` REAL NOT NULL,
+00071    `humidite`  REAL NOT NULL,  
+00072    UNIQUE(`IdMesure`, `IdCampagne`),
+00073    FOREIGN KEY(IdCampagne) REFERENCES campagne(IdCampagne)
+00074 );
+00075 
+00076 --
+00077 -- Structure de la table `photo`
+00078 --
+00079 
+00080 CREATE TABLE IF NOT EXISTS `photo` (
+00081    `IdPhoto`   INTEGER PRIMARY KEY AUTOINCREMENT,
+00082    `IdCampagne`    INTEGER NOT NULL,
+00083    `cheminImage`   TEXT NOT NULL,
+00084    `aGarder`   NUMERIC NOT NULL,
+00085    UNIQUE(`IdPhoto`, `IdCampagne`),
+00086    FOREIGN KEY(IdCampagne) REFERENCES campagne(IdCampagne) 
+00087 );
+00088 
+00089 --
+00090 -- Structure de la table `technicien`
+00091 --
+00092 
+00093 CREATE TABLE IF NOT EXISTS `technicien` (
+00094    `IdTechnicien`  INTEGER PRIMARY KEY AUTOINCREMENT,
+00095    `nom`   TEXT NOT NULL,
+00096    `prenom`    TEXT NOT NULL
+00097 );
+00098 ~~~
+00099 
+00100 ## Recette \{#recette\}
+00101 
+00102 - Servan Tenaille
+00103 
+00104     * Prendre en charge une manette par le logiciel
+00105     * Recevoir et Visualiser les mesures des capteurs de température et d'irradiation
+00106     * Déplacer le robot
+00107     * Piloter le bras articulé
+00108     * Envoyer les ordres de déplacement au robot et au bras
+00109     * Archiver les mesures
+00110 
+00111 - Anthony Bonnet
+00112 
+00113     * Démarrer une campagne
+00114     * Visualiser l'environnement (le flux vidéo de la caméra et les données de télémétrie)
+00115     * Recevoir les données de télémétrie
+00116     * Prendre une photo
+00117     * Configurer le contrôle de la caméra
+00118     * Archiver les photos
+00119 
+00120 ## Informations \{#informations\}
+00121 
+00122 \(\backslash\)author Servan Tenaille <<servan.tenaille@gmail.com>>
+00123 \(\backslash\)author Anthony Bonnet <<bonnet.anthony0@gmail.com>>
+00124 \(\backslash\)date 2020
+00125 \(\backslash\)version 0.2
+00126 \(\backslash\)see https://svn.riouxsvn.com/rovnet/
+00127 
+00128 
+00129 \(\backslash\)page page\_about A propos
+00130 
+00131 \(\backslash\)author Servan Tenaille <<servan.tenaille@gmail.com>>
+00132 \(\backslash\)author Anthony Bonnet <<bonnet.anthony0@gmail.com>>
+00133 \(\backslash\)date 2020
+00134 \(\backslash\)version 0.2
+00135 \(\backslash\)see https://svn.riouxsvn.com/rovnet/
+00136 
+00137 
+00138 \(\backslash\)page page\_licence Licence GPL
+00139 
+00140 This program is free software; you can redistribute it and/or modify
+00141 it under the terms of the GNU General Public License as published by
+00142 the Free Software Foundation; either version 2 of the License, or
+00143 (at your option) any later version.
+00144 
+00145 This program is distributed in the hope that it will be useful,
+00146 but WITHOUT ANY WARRANTY; without even the implied warranty of
+00147 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+00148 GNU General Public License for more details.
+00149 
+00150 You should have received a copy of the GNU General Public License
+00151 along with this program; if not, write to the Free Software
+00152 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+\end{DoxyCode}

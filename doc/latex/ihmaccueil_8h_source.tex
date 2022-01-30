@@ -1,0 +1,74 @@
+\hypertarget{ihmaccueil_8h_source}{}\subsection{ihmaccueil.\+h}
+\label{ihmaccueil_8h_source}\index{ihmaccueil.\+h@{ihmaccueil.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef IHMACCUEIL\_H}
+00008 \textcolor{preprocessor}{#define IHMACCUEIL\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QVector>}
+00011 \textcolor{preprocessor}{#include <QtWidgets>}
+00012 \textcolor{preprocessor}{#include <QString>}
+00013 
+\Hypertarget{ihmaccueil_8h_source_l00014}\hyperlink{ihmaccueil_8h_a26ff7f60eb1bfd16fed17fed2d65c865}{00014} \textcolor{preprocessor}{#define NOM\_FENETRE\_ACCUEIL "Projet Rovnet 2020"}
+00015 
+00016 \textcolor{keyword}{class }\hyperlink{class_campagne}{Campagne};
+00017 \textcolor{keyword}{class }\hyperlink{class_base_de_donnees}{BaseDeDonnees};
+00018 \textcolor{keyword}{class }\hyperlink{class_i_h_m_rov}{IHMRov};
+00019 \textcolor{keyword}{struct }\hyperlink{struct_photo}{Photo};
+00020 
+\Hypertarget{ihmaccueil_8h_source_l00026}\hyperlink{class_i_h_m_accueil}{00026} \textcolor{keyword}{class }\hyperlink{class_i_h_m_accueil}{IHMAccueil} : \textcolor{keyword}{public} \hyperlink{class_q_widget}{QWidget}
+00027 \{
+00028     Q\_OBJECT
+00029 
+00030 \textcolor{keyword}{private}:
+\Hypertarget{ihmaccueil_8h_source_l00031}\hyperlink{class_i_h_m_accueil_a313a8c52763aa2978010db77ec6673ac}{00031}     QPushButton *\hyperlink{class_i_h_m_accueil_a313a8c52763aa2978010db77ec6673ac}{boutonArchives};            
+\Hypertarget{ihmaccueil_8h_source_l00032}\hyperlink{class_i_h_m_accueil_a8b8ed7d11ab66e3c6895b3c6129dc9c8}{00032}     QPushButton *\hyperlink{class_i_h_m_accueil_a8b8ed7d11ab66e3c6895b3c6129dc9c8}{boutonConfiguration};       
+\Hypertarget{ihmaccueil_8h_source_l00033}\hyperlink{class_i_h_m_accueil_a4186b4ef6a9c63f5b3c6431626ff3268}{00033}     QPushButton *\hyperlink{class_i_h_m_accueil_a4186b4ef6a9c63f5b3c6431626ff3268}{boutonCreationCampagne};    
+\Hypertarget{ihmaccueil_8h_source_l00034}\hyperlink{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}{00034}     QPushButton *\hyperlink{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}{boutonDemarrerCampagne};    
+\Hypertarget{ihmaccueil_8h_source_l00035}\hyperlink{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}{00035}     QPushButton *\hyperlink{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}{boutonArchiverCampagne};    
+\Hypertarget{ihmaccueil_8h_source_l00036}\hyperlink{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}{00036}     QPushButton *\hyperlink{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}{boutonSupprimerCampagne};   
+\Hypertarget{ihmaccueil_8h_source_l00037}\hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{00037}     QComboBox *\hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne};               
+\Hypertarget{ihmaccueil_8h_source_l00038}\hyperlink{class_i_h_m_accueil_a709440124f3307589eee68c517833e6d}{00038}     QLabel *\hyperlink{class_i_h_m_accueil_a709440124f3307589eee68c517833e6d}{logoAccueil};                    
+\Hypertarget{ihmaccueil_8h_source_l00039}\hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{00039}     QVector<Campagne*> \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours};    
+\Hypertarget{ihmaccueil_8h_source_l00040}\hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{00040}     \hyperlink{class_base_de_donnees}{BaseDeDonnees} *\hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees};           
+\Hypertarget{ihmaccueil_8h_source_l00041}\hyperlink{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}{00041}     \hyperlink{class_i_h_m_rov}{IHMRov} *\hyperlink{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}{ihmRov};                         
+00042 
+00047     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a1385a94c1a3d75d813429dc9bdc4b050}{initialisationWidgets}();
+00052     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_acaaa5d756165801403ea7d73ae40186b}{initialiserLayouts}();
+00057     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a63bc796a325066423ed6146b8bab1437}{configurerWidgets}();
+00062     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a5a571ab8f264c275580501753bb00674}{initialiserEvenements}();
+00067     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a44074f2d8d59e0d1b7a3d50c24d2a0df}{rechargerListeCampagnes}();
+00072     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a1ed3efefdf929c0d2a6b6d1bb10bbc27}{chargerCampagnes}();
+00077     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a36ce6ecca4e258562577bab1439e0a96}{supprimerCampagneListe}();
+00083     QString \hyperlink{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}{recupererIdCampagne}();
+00089     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a9dc22241cd0d4a227b8b0bf04c6404fd}{supprimerPhotoLocal}(QString requete);
+00094     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_acb9679f51e140e0bc28d8ac10afd87e9}{supprimerDossierPhotoLocal}();
+00095 
+00102     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_aa09878b2e3e3024220291165b5c528a6}{recupererNbPhotos}(QString &nombrePhotos, QString &requeteNombrePhotos);
+00110     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a0ffb0f0c7c9c613083933514690f2772}{recupererCampagneEnCours}(\textcolor{keywordtype}{bool} &retourCampagne, QString &
+      requeteInformationsCampagne, QVector<QStringList> &campagnesEnCours);
+00118     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_aebeef48b9bc345edd02e5185951c454e}{recupererPhotos}(\textcolor{keywordtype}{bool} &retourPhoto, QString &requeteInformationsPhotos, 
+      QVector<QStringList> &informationsPhotos);
+00119 
+00120 \textcolor{keyword}{public}:
+00126     \textcolor{keyword}{explicit} \hyperlink{class_i_h_m_accueil_a66cf4d5655e3132c1d313b76f3905e52}{IHMAccueil}(\hyperlink{class_q_widget}{QWidget} *parent = \textcolor{keyword}{nullptr});
+00131     \hyperlink{class_i_h_m_accueil_a5ea3926747dada8b9677ab9a33c03139}{~IHMAccueil}();
+00138     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a3087ce7a78561c79ce3148761750dd1d}{ajouterCampagne}(\hyperlink{class_campagne}{Campagne} *campagne, \textcolor{keywordtype}{bool} verification=\textcolor{keyword}{false});
+00144     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a5ab04fc3fa87817bec130f377d563b75}{enregistrerCampagneBDD}(\hyperlink{class_campagne}{Campagne} *campagne);
+00150     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a7f1e5f71843a99cb44e3efb7191a6d07}{modifierCampagneBDD}(\hyperlink{class_campagne}{Campagne} *campagne);
+00157     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_aa27c7334efe44c8c4cd582df6581fdff}{ajouterPhotoBDD}(\hyperlink{struct_photo}{Photo} &photo, \hyperlink{class_campagne}{Campagne} *campagne);
+00158 
+00159 
+00160 signals:
+00161 
+00162 \textcolor{keyword}{public} slots:
+00167     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a6e8935ff4e0ba8f0c0015f370d91eda3}{demarrerCampagne}();
+00172     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a1da45b17d6e4198f87a9a0e05d1f7fd5}{creerCampagne}();
+00177     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a5d38917dbe88751ee966834e1f6c558e}{archiverCampagne}();
+00182     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_a0d7c77277fe83ad13beee56d96c5c5ca}{supprimerCampagne}();
+00190     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_accueil_af61976178829ec1fc756bec7eff0354d}{enregisterMesureBDD}(QString temperature, QString humidite, QString radiation);
+00191 \};
+00192 
+00193 \textcolor{preprocessor}{#endif // IHMACCUEIL\_H}
+\end{DoxyCode}

@@ -1,0 +1,65 @@
+/**
+ * @brief
+ * Fichier qui contient la définition de la classe IHMCreationCampagne
+ * @file ihmcreationcampagne.cpp
+ */
+
+#include "ihmcreationcampagne.h"
+#include "campagne.h"
+#include "ihmaccueil.h"
+
+IHMCreationCampagne::IHMCreationCampagne(IHMAccueil *ihmAccueil, QWidget *parent) : QDialog(parent, Qt::Dialog), ihmAccueil(ihmAccueil)
+{
+    nomCampagne = new QLineEdit(this);
+    nomTechnicien = new QLineEdit(this);
+    lieu = new QLineEdit(this);
+    cheminSauvegarde = new QLineEdit(this);
+    boutonValider = new QPushButton("Valider", this);
+    boutonAnnuler = new QPushButton("Annuler", this);
+    boutonChoixChemin = new QPushButton("...", this);
+
+    QVBoxLayout *layoutPrincipal = new QVBoxLayout;
+    QFormLayout *layoutFormulaireCampagne = new QFormLayout;
+    QHBoxLayout *layoutValidation = new QHBoxLayout;
+    QHBoxLayout *layoutChoixChemin = new QHBoxLayout;
+
+    layoutPrincipal->addLayout(layoutFormulaireCampagne);
+    layoutPrincipal->addLayout(layoutValidation);
+
+    layoutFormulaireCampagne->addRow("Nom campagne : ", nomCampagne);
+    layoutFormulaireCampagne->addRow("Nom technicien : ", nomTechnicien);
+    layoutFormulaireCampagne->addRow("Lieu campagne : ", lieu);
+    layoutFormulaireCampagne->addRow("Chemin sauvegarde :", layoutChoixChemin);
+
+    layoutChoixChemin->addWidget(cheminSauvegarde);
+    layoutChoixChemin->addWidget(boutonChoixChemin);
+    layoutValidation->addWidget(boutonValider);
+    layoutValidation->addWidget(boutonAnnuler);
+
+    layoutValidation->setAlignment(Qt::AlignBottom);
+
+    setLayout(layoutPrincipal);
+
+    connect(boutonValider, SIGNAL(clicked()), this, SLOT(validerCampagne()));
+    connect(boutonAnnuler, SIGNAL(clicked()), this, SLOT(close()));
+    connect(boutonChoixChemin, SIGNAL(clicked()), this, SLOT(choisirCheminSauvegarde()));
+}
+
+void IHMCreationCampagne::validerCampagne()
+{
+    if(nomCampagne->text().isEmpty() || nomTechnicien->text().isEmpty() || cheminSauvegarde->text().isEmpty() || lieu->text().isEmpty())
+    {
+        QMessageBox::critical(nullptr, "Création campagne", "Informations incomplètes !");
+        return;
+    }
+
+    Campagne *campagne = new Campagne(nomCampagne->text(), nomTechnicien->text(), lieu->text(), cheminSauvegarde->text(), QDateTime::currentDateTime(), this);
+    ihmAccueil->ajouterCampagne(campagne);
+    ihmAccueil->enregistrerCampagneBDD(campagne);
+    close();
+}
+
+void IHMCreationCampagne::choisirCheminSauvegarde()
+{
+    cheminSauvegarde->setText(QFileDialog::getExistingDirectory(this, "Ouvrir un dossier", QString()));
+}

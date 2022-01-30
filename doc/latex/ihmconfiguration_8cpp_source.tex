@@ -1,0 +1,75 @@
+\hypertarget{ihmconfiguration_8cpp_source}{}\subsection{ihmconfiguration.\+cpp}
+\label{ihmconfiguration_8cpp_source}\index{ihmconfiguration.\+cpp@{ihmconfiguration.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{ihmconfiguration_8h}{ihmconfiguration.h}"}
+00008 
+\Hypertarget{ihmconfiguration_8cpp_source_l00009}\hyperlink{class_i_h_m_configuration_a1532c281d170546071352cfe05feb1b8}{00009} \hyperlink{class_i_h_m_configuration_a1532c281d170546071352cfe05feb1b8}{IHMConfiguration::IHMConfiguration}(\hyperlink{class_rov}{Rov} *rov, 
+      \hyperlink{class_q_widget}{QWidget} *parent) : \hyperlink{class_q_widget}{QWidget}(parent), rov(rov)
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO;
+00012 
+00013     \hyperlink{class_i_h_m_configuration_a76fe56bbd88aef5581186e05fb4ae67f}{initialiserWidgets}();
+00014     \hyperlink{class_i_h_m_configuration_a9ed73ca9584b8d9f33ad341081113a55}{configurerWidgets}();
+00015     \hyperlink{class_i_h_m_configuration_ab76abe78fff3b7945b675acddbd320f0}{initialiserLayouts}();
+00016 \}
+00017 
+\Hypertarget{ihmconfiguration_8cpp_source_l00018}\hyperlink{class_i_h_m_configuration_a59e2b693b4a1f1a8a6af3227996c3808}{00018} \hyperlink{class_i_h_m_configuration_a59e2b693b4a1f1a8a6af3227996c3808}{IHMConfiguration::~IHMConfiguration}()
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO;
+00021 \}
+00022 
+\Hypertarget{ihmconfiguration_8cpp_source_l00023}\hyperlink{class_i_h_m_configuration_a76fe56bbd88aef5581186e05fb4ae67f}{00023} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_configuration_a76fe56bbd88aef5581186e05fb4ae67f}{IHMConfiguration::initialiserWidgets}()
+00024 \{
+00025     \hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00026     \hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{listeDebit} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00027     \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00028     \hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{listeBitsStop} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00029     \hyperlink{class_i_h_m_configuration_a824b7f6c0d332b8f6f76801e545b14ad}{boutonOuvrirPort} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Ouvrir"}, \textcolor{keyword}{this});
+00030     \hyperlink{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}{boutonFermerPort} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Fermer"}, \textcolor{keyword}{this});
+00031 \}
+00032 
+\Hypertarget{ihmconfiguration_8cpp_source_l00033}\hyperlink{class_i_h_m_configuration_a9ed73ca9584b8d9f33ad341081113a55}{00033} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_configuration_a9ed73ca9584b8d9f33ad341081113a55}{IHMConfiguration::configurerWidgets}()
+00034 \{
+00035     \hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles}->addItems(
+      \hyperlink{class_communication_rov_ad9882c08083c66cd89b472b9244727e9}{CommunicationRov::detecterPortsDisponibles}());
+00036     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles}->currentText() == \textcolor{stringliteral}{""})
+00037         \hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles}->addItem(\textcolor{stringliteral}{"Aucun ports détécté"});
+00038     \hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{listeDebit}->addItem(\textcolor{stringliteral}{"9600"});
+00039     \hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{listeDebit}->addItem(\textcolor{stringliteral}{"115200"});
+00040 
+00041     \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees}->addItem(\textcolor{stringliteral}{"7"});
+00042     \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees}->addItem(\textcolor{stringliteral}{"8"});
+00043     \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees}->setCurrentIndex(1);
+00044 
+00045     \hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{listeBitsStop}->addItem(\textcolor{stringliteral}{"1"});
+00046     \hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{listeBitsStop}->addItem(\textcolor{stringliteral}{"2"});
+00047 
+00048     \hyperlink{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}{boutonFermerPort}->setDisabled(\textcolor{keyword}{true});
+00049 \}
+00050 
+\Hypertarget{ihmconfiguration_8cpp_source_l00051}\hyperlink{class_i_h_m_configuration_ab76abe78fff3b7945b675acddbd320f0}{00051} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_configuration_ab76abe78fff3b7945b675acddbd320f0}{IHMConfiguration::initialiserLayouts}()
+00052 \{
+00053     QVBoxLayout *layoutPrincipal = \textcolor{keyword}{new} QVBoxLayout;
+00054     QHBoxLayout *layoutInformation = \textcolor{keyword}{new} QHBoxLayout;
+00055     QFormLayout *layoutConfiguration = \textcolor{keyword}{new} QFormLayout;
+00056     QVBoxLayout *layoutCommande = \textcolor{keyword}{new} QVBoxLayout;
+00057 
+00058     layoutCommande->setAlignment(Qt::AlignTop);
+00059 
+00060     layoutPrincipal->addLayout(layoutInformation);
+00061     layoutInformation->addLayout(layoutConfiguration);
+00062     layoutInformation->addLayout(layoutCommande);
+00063     layoutConfiguration->addRow(\textcolor{stringliteral}{"Port:"}, \hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles});
+00064     layoutConfiguration->addRow(\textcolor{stringliteral}{"Débit:"}, \hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{listeDebit});
+00065     layoutConfiguration->addRow(\textcolor{stringliteral}{"Bits de données:"}, \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees});
+00066     layoutConfiguration->addRow(\textcolor{stringliteral}{"Bits de stop:"}, \hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{listeBitsStop});
+00067     layoutCommande->addWidget(\hyperlink{class_i_h_m_configuration_a824b7f6c0d332b8f6f76801e545b14ad}{boutonOuvrirPort});
+00068     layoutCommande->addWidget(\hyperlink{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}{boutonFermerPort});
+00069 
+00070     setLayout(layoutPrincipal);
+00071 \}
+00072 
+00073 
+\end{DoxyCode}

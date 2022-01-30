@@ -1,0 +1,92 @@
+\hypertarget{ihmalbumphoto_8cpp_source}{}\subsection{ihmalbumphoto.\+cpp}
+\label{ihmalbumphoto_8cpp_source}\index{ihmalbumphoto.\+cpp@{ihmalbumphoto.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{ihmalbumphoto_8h}{ihmalbumphoto.h}"}
+00008 \textcolor{preprocessor}{#include "\hyperlink{ihmrov_8h}{ihmrov.h}"}
+00009 \textcolor{preprocessor}{#include "\hyperlink{campagne_8h}{campagne.h}"}
+00010 
+\Hypertarget{ihmalbumphoto_8cpp_source_l00011}\hyperlink{class_i_h_m_album_photo_aefa56aaad40d6cb0ddcf769f149ab0ad}{00011} \hyperlink{class_i_h_m_album_photo_aefa56aaad40d6cb0ddcf769f149ab0ad}{IHMAlbumPhoto::IHMAlbumPhoto}(\hyperlink{class_i_h_m_rov}{IHMRov} *ihmRov, 
+      \hyperlink{class_q_widget}{QWidget} *parent) : \hyperlink{class_q_widget}{QWidget}(parent), imhRov(ihmRov)
+00012 \{
+00013     qDebug() << Q\_FUNC\_INFO;
+00014     \hyperlink{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}{photos} = \textcolor{keyword}{new} \hyperlink{class_q_widget}{QWidget}();
+00015     \hyperlink{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}{layoutPhotos} = \textcolor{keyword}{new} QHBoxLayout;
+00016     \hyperlink{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}{layoutAlbumPhoto} = \textcolor{keyword}{new} QVBoxLayout;
+00017     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea} = \textcolor{keyword}{new} QScrollArea();
+00018 
+00019     \hyperlink{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}{photos}->setLayout(\hyperlink{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}{layoutAlbumPhoto});
+00020     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea}->setWidgetResizable(\textcolor{keyword}{true});
+00021     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea}->setBackgroundRole(QPalette::Dark);
+00022     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea}->setFrameStyle(QFrame::Panel);
+00023     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea}->setWidget(\hyperlink{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}{photos});
+00024     \hyperlink{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}{layoutPhotos}->addWidget(\hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea});
+00025 
+00026     setLayout(\hyperlink{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}{layoutPhotos});
+00027 
+00028     \textcolor{keywordtype}{int} width = qApp->desktop()->availableGeometry().width();
+00029     \textcolor{keywordtype}{int} height = qApp->desktop()->availableGeometry().height();
+00030     resize(width, height);
+00031 \}
+00032 
+\Hypertarget{ihmalbumphoto_8cpp_source_l00033}\hyperlink{class_i_h_m_album_photo_a02812cbcaa5467a2e6419ed9d5904cc6}{00033} \hyperlink{class_i_h_m_album_photo_a02812cbcaa5467a2e6419ed9d5904cc6}{IHMAlbumPhoto::~IHMAlbumPhoto}()
+00034 \{
+00035     qDebug() << Q\_FUNC\_INFO;
+00036 \}
+00037 
+\Hypertarget{ihmalbumphoto_8cpp_source_l00038}\hyperlink{class_i_h_m_album_photo_a5aa9a9c1b04e00eaec1581e92649535f}{00038} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_album_photo_a5aa9a9c1b04e00eaec1581e92649535f}{IHMAlbumPhoto::ouvrirAlbumPhotos}(QVector<Photo> 
+      \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto})
+00039 \{
+00040     \textcolor{keywordflow}{if}(albumPhoto.isEmpty())
+00041     \{
+00042         QMessageBox::critical(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Erreur"}, \textcolor{stringliteral}{"Listes photos vide !"});
+00043         \textcolor{keywordflow}{return};
+00044     \}
+00045 
+00046     this->albumPhoto = \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto};
+00047     \hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signalMapper} = \textcolor{keyword}{new} QSignalMapper(\textcolor{keyword}{this});
+00048     \textcolor{keywordtype}{int} numeroPhoto = 0;
+00049     \textcolor{keywordflow}{for}(QVector<Photo>::iterator it = albumPhoto.begin(); it != albumPhoto.end(); ++it, numeroPhoto++)
+00050     \{
+00051         QHBoxLayout *layoutPhoto = \textcolor{keyword}{new} QHBoxLayout;
+00052         QFormLayout *layoutInformationsPhotos = \textcolor{keyword}{new} QFormLayout;
+00053 
+00054         QLabel *photo = \textcolor{keyword}{new} QLabel(\textcolor{keyword}{this});
+00055         photo->setPixmap((*it).image);
+00056 
+00057         QLabel *dateHeure = \textcolor{keyword}{new} QLabel((*it).dateheure.toString(), \textcolor{keyword}{this});
+00058         QLabel *chemin = \textcolor{keyword}{new} QLabel((*it).cheminSauvegarde,\textcolor{keyword}{this});
+00059         QCheckBox *photoGarde = \textcolor{keyword}{new} QCheckBox(\textcolor{keyword}{this});
+00060 
+00061         \textcolor{keywordflow}{if}(albumPhoto[numeroPhoto].aGarder)
+00062             photoGarde->setChecked(\textcolor{keyword}{true});
+00063         \textcolor{keywordflow}{else}
+00064             photoGarde->setChecked(\textcolor{keyword}{false});
+00065 
+00066         connect(photoGarde, SIGNAL(clicked()), \hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signalMapper}, SLOT(map()));
+00067         \hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signalMapper}->setMapping(photoGarde, numeroPhoto);
+00068 
+00069         \hyperlink{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}{layoutAlbumPhoto}->addLayout(layoutPhoto);
+00070         layoutPhoto->addWidget(photo);
+00071         layoutPhoto->addLayout(layoutInformationsPhotos);
+00072         layoutInformationsPhotos->addRow(\textcolor{stringliteral}{"Date/heure : "}, dateHeure);
+00073         layoutInformationsPhotos->addRow(\textcolor{stringliteral}{"Chemin photo : "}, chemin);
+00074         layoutInformationsPhotos->addRow(\textcolor{stringliteral}{"Photo à archiver : "}, photoGarde);
+00075     \}
+00076     connect(\hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signalMapper}, SIGNAL(mapped(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_album_photo_ad0760043151686deea04f8282e6d2210}{selectionnerPhoto}(\textcolor{keywordtype}{int})));
+00077 
+00078     this->show();
+00079 \}
+00080 
+\Hypertarget{ihmalbumphoto_8cpp_source_l00081}\hyperlink{class_i_h_m_album_photo_ad0760043151686deea04f8282e6d2210}{00081} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_album_photo_ad0760043151686deea04f8282e6d2210}{IHMAlbumPhoto::selectionnerPhoto}(\textcolor{keywordtype}{int} numeroPhoto)
+00082 \{
+00083     \textcolor{keywordflow}{if}(numeroPhoto < \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto}.size())
+00084     \{
+00085         \hyperlink{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}{imhRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_a7751a5a0b5d1be46384f57b5409163e8}{modifierArchivePhoto}(numeroPhoto);
+00086         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"numeroPhoto"} << numeroPhoto << \textcolor{stringliteral}{"A garder"} << 
+      \hyperlink{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}{imhRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{getAlbumPhoto}()[numeroPhoto].aGarder;
+00087     \}
+00088 \}
+\end{DoxyCode}

@@ -1,0 +1,376 @@
+\hypertarget{class_i_h_m_album_photo}{}\subsection{Référence de la classe I\+H\+M\+Album\+Photo}
+\label{class_i_h_m_album_photo}\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+
+
+Class permettant de visualiser les photos en cours de campagne.  
+
+
+
+
+{\ttfamily \#include \char`\"{}ihm\+Albumphoto.\+h\char`\"{}}
+
+
+
+Graphe de collaboration de I\+H\+M\+Album\+Photo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_i_h_m_album_photo__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_album_photo_ad0760043151686deea04f8282e6d2210}{selectionner\+Photo} (int numero)
+\begin{DoxyCompactList}\small\item\em Permet de selectionner la photo indiquer par le signal\+Mapper. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_h_m_album_photo_aefa56aaad40d6cb0ddcf769f149ab0ad}{I\+H\+M\+Album\+Photo} (\hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov} $\ast$ihm\+Rov, \hyperlink{class_q_widget}{Q\+Widget} $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe Album\+Photo. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_album_photo_a5aa9a9c1b04e00eaec1581e92649535f}{ouvrir\+Album\+Photos} (Q\+Vector$<$ \hyperlink{struct_photo}{Photo} $>$ \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{album\+Photo})
+\begin{DoxyCompactList}\small\item\em Ouvre une nouvelle fenetre contenant la liste des photos prises en cours de mission. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_album_photo_a02812cbcaa5467a2e6419ed9d5904cc6}{$\sim$\+I\+H\+M\+Album\+Photo} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe Album\+Photo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector$<$ \hyperlink{struct_photo}{Photo} $>$ \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{album\+Photo}
+\begin{DoxyCompactList}\small\item\em Conteneur de photo. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov} $\ast$ \hyperlink{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}{imh\+Rov}
+\begin{DoxyCompactList}\small\item\em Association avec l\textquotesingle{}\hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov}. \end{DoxyCompactList}\item 
+Q\+V\+Box\+Layout $\ast$ \hyperlink{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}{layout\+Album\+Photo}
+\begin{DoxyCompactList}\small\item\em Layout s\textquotesingle{}agrandissant selon l\textquotesingle{}ajout de nouvelle photos. \end{DoxyCompactList}\item 
+Q\+H\+Box\+Layout $\ast$ \hyperlink{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}{layout\+Photos}
+\begin{DoxyCompactList}\small\item\em Layout permettant d\textquotesingle{}accueillir les différentes photos. \end{DoxyCompactList}\item 
+\hyperlink{class_q_widget}{Q\+Widget} $\ast$ \hyperlink{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}{photos}
+\begin{DoxyCompactList}\small\item\em Emplacement permettant d\textquotesingle{}accueillir les différentes photos. \end{DoxyCompactList}\item 
+Q\+Scroll\+Area $\ast$ \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scroll\+Area}
+\begin{DoxyCompactList}\small\item\em Permet une defilement pour visualiser l\textquotesingle{}ensemble des photos prises durant la campagne. \end{DoxyCompactList}\item 
+Q\+Signal\+Mapper $\ast$ \hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signal\+Mapper}
+\begin{DoxyCompactList}\small\item\em Objet de type Q\+Signal\+Mapper, permet d\textquotesingle{}associer chaque photo de l\textquotesingle{}\hyperlink{class_i_h_m_album_photo}{I\+H\+M\+Album\+Photo} à un signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Class permettant de visualiser les photos en cours de campagne. 
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8h_source_l00035}{35} du fichier \hyperlink{ihmalbumphoto_8h_source}{ihmalbumphoto.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_i_h_m_album_photo_aefa56aaad40d6cb0ddcf769f149ab0ad}\label{class_i_h_m_album_photo_aefa56aaad40d6cb0ddcf769f149ab0ad}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{I\+H\+M\+Album\+Photo()}{IHMAlbumPhoto()}}
+{\footnotesize\ttfamily I\+H\+M\+Album\+Photo\+::\+I\+H\+M\+Album\+Photo (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov} $\ast$}]{ihm\+Rov,  }\item[{\hyperlink{class_q_widget}{Q\+Widget} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe Album\+Photo. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ihm\+Rov} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8cpp_source_l00011}{11} du fichier \hyperlink{ihmalbumphoto_8cpp_source}{ihmalbumphoto.\+cpp}.
+
+
+
+Références \hyperlink{ihmalbumphoto_8h_source_l00041}{layout\+Album\+Photo}, \hyperlink{ihmalbumphoto_8h_source_l00040}{layout\+Photos}, \hyperlink{ihmalbumphoto_8h_source_l00039}{photos}, et \hyperlink{ihmalbumphoto_8h_source_l00042}{scroll\+Area}.
+
+
+\begin{DoxyCode}
+00011                                                             : \hyperlink{class_q_widget}{QWidget}(parent), 
+      \hyperlink{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}{imhRov}(ihmRov)
+00012 \{
+00013     qDebug() << Q\_FUNC\_INFO;
+00014     \hyperlink{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}{photos} = \textcolor{keyword}{new} \hyperlink{class_q_widget}{QWidget}();
+00015     \hyperlink{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}{layoutPhotos} = \textcolor{keyword}{new} QHBoxLayout;
+00016     \hyperlink{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}{layoutAlbumPhoto} = \textcolor{keyword}{new} QVBoxLayout;
+00017     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea} = \textcolor{keyword}{new} QScrollArea();
+00018 
+00019     \hyperlink{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}{photos}->setLayout(\hyperlink{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}{layoutAlbumPhoto});
+00020     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea}->setWidgetResizable(\textcolor{keyword}{true});
+00021     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea}->setBackgroundRole(QPalette::Dark);
+00022     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea}->setFrameStyle(QFrame::Panel);
+00023     \hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea}->setWidget(\hyperlink{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}{photos});
+00024     \hyperlink{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}{layoutPhotos}->addWidget(\hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea});
+00025 
+00026     setLayout(\hyperlink{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}{layoutPhotos});
+00027 
+00028     \textcolor{keywordtype}{int} width = qApp->desktop()->availableGeometry().width();
+00029     \textcolor{keywordtype}{int} height = qApp->desktop()->availableGeometry().height();
+00030     resize(width, height);
+00031 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_album_photo_a02812cbcaa5467a2e6419ed9d5904cc6}\label{class_i_h_m_album_photo_a02812cbcaa5467a2e6419ed9d5904cc6}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!````~I\+H\+M\+Album\+Photo@{$\sim$\+I\+H\+M\+Album\+Photo}}
+\index{````~I\+H\+M\+Album\+Photo@{$\sim$\+I\+H\+M\+Album\+Photo}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{$\sim$\+I\+H\+M\+Album\+Photo()}{~IHMAlbumPhoto()}}
+{\footnotesize\ttfamily I\+H\+M\+Album\+Photo\+::$\sim$\+I\+H\+M\+Album\+Photo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe Album\+Photo. 
+
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8cpp_source_l00033}{33} du fichier \hyperlink{ihmalbumphoto_8cpp_source}{ihmalbumphoto.\+cpp}.
+
+
+\begin{DoxyCode}
+00034 \{
+00035     qDebug() << Q\_FUNC\_INFO;
+00036 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_i_h_m_album_photo_a5aa9a9c1b04e00eaec1581e92649535f}\label{class_i_h_m_album_photo_a5aa9a9c1b04e00eaec1581e92649535f}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!ouvrir\+Album\+Photos@{ouvrir\+Album\+Photos}}
+\index{ouvrir\+Album\+Photos@{ouvrir\+Album\+Photos}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{ouvrir\+Album\+Photos()}{ouvrirAlbumPhotos()}}
+{\footnotesize\ttfamily void I\+H\+M\+Album\+Photo\+::ouvrir\+Album\+Photos (\begin{DoxyParamCaption}\item[{Q\+Vector$<$ \hyperlink{struct_photo}{Photo} $>$}]{album\+Photo }\end{DoxyParamCaption})}
+
+
+
+Ouvre une nouvelle fenetre contenant la liste des photos prises en cours de mission. 
+
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8cpp_source_l00038}{38} du fichier \hyperlink{ihmalbumphoto_8cpp_source}{ihmalbumphoto.\+cpp}.
+
+
+
+Références \hyperlink{ihmalbumphoto_8h_source_l00044}{album\+Photo}, \hyperlink{ihmalbumphoto_8h_source_l00041}{layout\+Album\+Photo}, \hyperlink{ihmalbumphoto_8cpp_source_l00081}{selectionner\+Photo()}, et \hyperlink{ihmalbumphoto_8h_source_l00043}{signal\+Mapper}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00223}{I\+H\+M\+Rov\+::charger\+Photos()}.
+
+
+\begin{DoxyCode}
+00039 \{
+00040     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto}.isEmpty())
+00041     \{
+00042         QMessageBox::critical(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Erreur"}, \textcolor{stringliteral}{"Listes photos vide !"});
+00043         \textcolor{keywordflow}{return};
+00044     \}
+00045 
+00046     this->\hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto} = \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto};
+00047     \hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signalMapper} = \textcolor{keyword}{new} QSignalMapper(\textcolor{keyword}{this});
+00048     \textcolor{keywordtype}{int} numeroPhoto = 0;
+00049     \textcolor{keywordflow}{for}(QVector<Photo>::iterator it = \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto}.begin(); it != 
+      \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto}.end(); ++it, numeroPhoto++)
+00050     \{
+00051         QHBoxLayout *layoutPhoto = \textcolor{keyword}{new} QHBoxLayout;
+00052         QFormLayout *layoutInformationsPhotos = \textcolor{keyword}{new} QFormLayout;
+00053 
+00054         QLabel *photo = \textcolor{keyword}{new} QLabel(\textcolor{keyword}{this});
+00055         photo->setPixmap((*it).image);
+00056 
+00057         QLabel *dateHeure = \textcolor{keyword}{new} QLabel((*it).dateheure.toString(), \textcolor{keyword}{this});
+00058         QLabel *chemin = \textcolor{keyword}{new} QLabel((*it).cheminSauvegarde,\textcolor{keyword}{this});
+00059         QCheckBox *photoGarde = \textcolor{keyword}{new} QCheckBox(\textcolor{keyword}{this});
+00060 
+00061         \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto}[numeroPhoto].aGarder)
+00062             photoGarde->setChecked(\textcolor{keyword}{true});
+00063         \textcolor{keywordflow}{else}
+00064             photoGarde->setChecked(\textcolor{keyword}{false});
+00065 
+00066         connect(photoGarde, SIGNAL(clicked()), \hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signalMapper}, SLOT(map()));
+00067         \hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signalMapper}->setMapping(photoGarde, numeroPhoto);
+00068 
+00069         \hyperlink{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}{layoutAlbumPhoto}->addLayout(layoutPhoto);
+00070         layoutPhoto->addWidget(photo);
+00071         layoutPhoto->addLayout(layoutInformationsPhotos);
+00072         layoutInformationsPhotos->addRow(\textcolor{stringliteral}{"Date/heure : "}, dateHeure);
+00073         layoutInformationsPhotos->addRow(\textcolor{stringliteral}{"Chemin photo : "}, chemin);
+00074         layoutInformationsPhotos->addRow(\textcolor{stringliteral}{"Photo à archiver : "}, photoGarde);
+00075     \}
+00076     connect(\hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signalMapper}, SIGNAL(mapped(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_album_photo_ad0760043151686deea04f8282e6d2210}{selectionnerPhoto}(\textcolor{keywordtype}{int})));
+00077 
+00078     this->show();
+00079 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_album_photo_ad0760043151686deea04f8282e6d2210}\label{class_i_h_m_album_photo_ad0760043151686deea04f8282e6d2210}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!selectionner\+Photo@{selectionner\+Photo}}
+\index{selectionner\+Photo@{selectionner\+Photo}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{selectionner\+Photo}{selectionnerPhoto}}
+{\footnotesize\ttfamily void I\+H\+M\+Album\+Photo\+::selectionner\+Photo (\begin{DoxyParamCaption}\item[{int}]{numero }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Permet de selectionner la photo indiquer par le signal\+Mapper. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em numero} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8cpp_source_l00081}{81} du fichier \hyperlink{ihmalbumphoto_8cpp_source}{ihmalbumphoto.\+cpp}.
+
+
+
+Références \hyperlink{ihmalbumphoto_8h_source_l00044}{album\+Photo}, \hyperlink{campagne_8cpp_source_l00070}{Campagne\+::get\+Album\+Photo()}, \hyperlink{ihmrov_8cpp_source_l00149}{I\+H\+M\+Rov\+::get\+Campagne()}, \hyperlink{ihmalbumphoto_8h_source_l00045}{imh\+Rov}, et \hyperlink{campagne_8cpp_source_l00085}{Campagne\+::modifier\+Archive\+Photo()}.
+
+
+
+Référencé par \hyperlink{ihmalbumphoto_8cpp_source_l00038}{ouvrir\+Album\+Photos()}.
+
+
+\begin{DoxyCode}
+00082 \{
+00083     \textcolor{keywordflow}{if}(numeroPhoto < \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto}.size())
+00084     \{
+00085         \hyperlink{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}{imhRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_a7751a5a0b5d1be46384f57b5409163e8}{modifierArchivePhoto}(numeroPhoto);
+00086         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"numeroPhoto"} << numeroPhoto << \textcolor{stringliteral}{"A garder"} << 
+      \hyperlink{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}{imhRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{getAlbumPhoto}()[numeroPhoto].aGarder;
+00087     \}
+00088 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}\label{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!album\+Photo@{album\+Photo}}
+\index{album\+Photo@{album\+Photo}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{album\+Photo}{albumPhoto}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{struct_photo}{Photo}$>$ I\+H\+M\+Album\+Photo\+::album\+Photo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Conteneur de photo. 
+
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8h_source_l00044}{44} du fichier \hyperlink{ihmalbumphoto_8h_source}{ihmalbumphoto.\+h}.
+
+
+
+Référencé par \hyperlink{ihmalbumphoto_8cpp_source_l00038}{ouvrir\+Album\+Photos()}, et \hyperlink{ihmalbumphoto_8cpp_source_l00081}{selectionner\+Photo()}.
+
+\mbox{\Hypertarget{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}\label{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!imh\+Rov@{imh\+Rov}}
+\index{imh\+Rov@{imh\+Rov}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{imh\+Rov}{imhRov}}
+{\footnotesize\ttfamily \hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov}$\ast$ I\+H\+M\+Album\+Photo\+::imh\+Rov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Association avec l\textquotesingle{}\hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov}. 
+
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8h_source_l00045}{45} du fichier \hyperlink{ihmalbumphoto_8h_source}{ihmalbumphoto.\+h}.
+
+
+
+Référencé par \hyperlink{ihmalbumphoto_8cpp_source_l00081}{selectionner\+Photo()}.
+
+\mbox{\Hypertarget{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}\label{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!layout\+Album\+Photo@{layout\+Album\+Photo}}
+\index{layout\+Album\+Photo@{layout\+Album\+Photo}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{layout\+Album\+Photo}{layoutAlbumPhoto}}
+{\footnotesize\ttfamily Q\+V\+Box\+Layout$\ast$ I\+H\+M\+Album\+Photo\+::layout\+Album\+Photo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Layout s\textquotesingle{}agrandissant selon l\textquotesingle{}ajout de nouvelle photos. 
+
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8h_source_l00041}{41} du fichier \hyperlink{ihmalbumphoto_8h_source}{ihmalbumphoto.\+h}.
+
+
+
+Référencé par \hyperlink{ihmalbumphoto_8cpp_source_l00011}{I\+H\+M\+Album\+Photo()}, et \hyperlink{ihmalbumphoto_8cpp_source_l00038}{ouvrir\+Album\+Photos()}.
+
+\mbox{\Hypertarget{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}\label{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!layout\+Photos@{layout\+Photos}}
+\index{layout\+Photos@{layout\+Photos}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{layout\+Photos}{layoutPhotos}}
+{\footnotesize\ttfamily Q\+H\+Box\+Layout$\ast$ I\+H\+M\+Album\+Photo\+::layout\+Photos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Layout permettant d\textquotesingle{}accueillir les différentes photos. 
+
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8h_source_l00040}{40} du fichier \hyperlink{ihmalbumphoto_8h_source}{ihmalbumphoto.\+h}.
+
+
+
+Référencé par \hyperlink{ihmalbumphoto_8cpp_source_l00011}{I\+H\+M\+Album\+Photo()}.
+
+\mbox{\Hypertarget{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}\label{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!photos@{photos}}
+\index{photos@{photos}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{photos}{photos}}
+{\footnotesize\ttfamily \hyperlink{class_q_widget}{Q\+Widget}$\ast$ I\+H\+M\+Album\+Photo\+::photos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Emplacement permettant d\textquotesingle{}accueillir les différentes photos. 
+
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8h_source_l00039}{39} du fichier \hyperlink{ihmalbumphoto_8h_source}{ihmalbumphoto.\+h}.
+
+
+
+Référencé par \hyperlink{ihmalbumphoto_8cpp_source_l00011}{I\+H\+M\+Album\+Photo()}.
+
+\mbox{\Hypertarget{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}\label{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!scroll\+Area@{scroll\+Area}}
+\index{scroll\+Area@{scroll\+Area}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{scroll\+Area}{scrollArea}}
+{\footnotesize\ttfamily Q\+Scroll\+Area$\ast$ I\+H\+M\+Album\+Photo\+::scroll\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Permet une defilement pour visualiser l\textquotesingle{}ensemble des photos prises durant la campagne. 
+
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8h_source_l00042}{42} du fichier \hyperlink{ihmalbumphoto_8h_source}{ihmalbumphoto.\+h}.
+
+
+
+Référencé par \hyperlink{ihmalbumphoto_8cpp_source_l00011}{I\+H\+M\+Album\+Photo()}.
+
+\mbox{\Hypertarget{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}\label{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}} 
+\index{I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}!signal\+Mapper@{signal\+Mapper}}
+\index{signal\+Mapper@{signal\+Mapper}!I\+H\+M\+Album\+Photo@{I\+H\+M\+Album\+Photo}}
+\paragraph{\texorpdfstring{signal\+Mapper}{signalMapper}}
+{\footnotesize\ttfamily Q\+Signal\+Mapper$\ast$ I\+H\+M\+Album\+Photo\+::signal\+Mapper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Objet de type Q\+Signal\+Mapper, permet d\textquotesingle{}associer chaque photo de l\textquotesingle{}\hyperlink{class_i_h_m_album_photo}{I\+H\+M\+Album\+Photo} à un signal. 
+
+
+
+Définition à la ligne \hyperlink{ihmalbumphoto_8h_source_l00043}{43} du fichier \hyperlink{ihmalbumphoto_8h_source}{ihmalbumphoto.\+h}.
+
+
+
+Référencé par \hyperlink{ihmalbumphoto_8cpp_source_l00038}{ouvrir\+Album\+Photos()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ihmalbumphoto_8h}{ihmalbumphoto.\+h}\item 
+\hyperlink{ihmalbumphoto_8cpp}{ihmalbumphoto.\+cpp}\end{DoxyCompactItemize}

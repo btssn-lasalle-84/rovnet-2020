@@ -1,0 +1,448 @@
+\hypertarget{class_capteurs}{}\subsection{Référence de la classe Capteurs}
+\label{class_capteurs}\index{Capteurs@{Capteurs}}
+
+
+Classe contenant les dernières informations issues des capteurs du rov.  
+
+
+
+
+{\ttfamily \#include \char`\"{}capteurs.\+h\char`\"{}}
+
+
+
+Graphe de collaboration de Capteurs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_capteurs__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_capteurs_a9d34c185400db797961c72498c48bbc0}{Capteurs} (\hyperlink{class_q_object}{Q\+Object} $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_capteurs}{Capteurs}. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_capteurs_a419b69b8b2fcc02a9bb7bdff39f87b06}{get\+Humidite} () const
+\begin{DoxyCompactList}\small\item\em Récupère la dernière information issue du capteur de humidité \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_capteurs_aaee3d64c752b09f8674fa62907f38cbc}{get\+Radiation} () const
+\begin{DoxyCompactList}\small\item\em Récupère la dernière information issue du capteur de radiation. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_capteurs_ad8c2c486e92cc537dc014035b5634b60}{get\+Telemetrie} () const
+\begin{DoxyCompactList}\small\item\em Récupère la dernière information issue du capteur télémétrique. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_capteurs_aa1346e5cbea9e37afc3694a0ea86bd99}{get\+Temperature} () const
+\begin{DoxyCompactList}\small\item\em Récupère la dernière information issue du capteur de température. \end{DoxyCompactList}\item 
+void \hyperlink{class_capteurs_aafb06e1746006cdb72e92dc7a0519a2e}{set\+Humidite} (Q\+String \hyperlink{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}{humidite})
+\begin{DoxyCompactList}\small\item\em Modifie la dernière information issue du capteur de humidité \end{DoxyCompactList}\item 
+void \hyperlink{class_capteurs_a8692d145188df3129d88fef77efbb7b0}{set\+Radiation} (Q\+String \hyperlink{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}{radiation})
+\begin{DoxyCompactList}\small\item\em Modifie la dernière information issue du capteur de radiation. \end{DoxyCompactList}\item 
+void \hyperlink{class_capteurs_a399af986afb9d707138bc57a51e1f34f}{set\+Telemetrie} (Q\+String \hyperlink{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}{telemetrie})
+\begin{DoxyCompactList}\small\item\em Modifie la dernière information issue du capteur télémétrique. \end{DoxyCompactList}\item 
+void \hyperlink{class_capteurs_a8d6a0bceb4d236edf7b51335d9be8ecd}{set\+Temperature} (Q\+String \hyperlink{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}{temperature})
+\begin{DoxyCompactList}\small\item\em Modifie la dernière information issue du capteur de température. \end{DoxyCompactList}\item 
+\hyperlink{class_capteurs_a8d0e38fada71279279b2d3938485304b}{$\sim$\+Capteurs} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_capteurs}{Capteurs}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}{humidite}
+\begin{DoxyCompactList}\small\item\em Dernière données de température. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}{radiation}
+\begin{DoxyCompactList}\small\item\em Dernière données de radiation. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}{telemetrie}
+\begin{DoxyCompactList}\small\item\em Dernière données télémétriques. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}{temperature}
+\begin{DoxyCompactList}\small\item\em Dernière données de température. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Classe contenant les dernières informations issues des capteurs du rov. 
+
+Définition à la ligne \hyperlink{capteurs_8h_source_l00018}{18} du fichier \hyperlink{capteurs_8h_source}{capteurs.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_capteurs_a9d34c185400db797961c72498c48bbc0}\label{class_capteurs_a9d34c185400db797961c72498c48bbc0}} 
+\index{Capteurs@{Capteurs}!Capteurs@{Capteurs}}
+\index{Capteurs@{Capteurs}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{Capteurs()}{Capteurs()}}
+{\footnotesize\ttfamily Capteurs\+::\+Capteurs (\begin{DoxyParamCaption}\item[{\hyperlink{class_q_object}{Q\+Object} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_capteurs}{Capteurs}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00009}{9} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+\begin{DoxyCode}
+00009                                   : \hyperlink{class_q_object}{QObject}(parent), \hyperlink{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}{telemetrie}(\textcolor{stringliteral}{"0"}), 
+      \hyperlink{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}{temperature}(\textcolor{stringliteral}{"0"}), \hyperlink{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}{humidite}(\textcolor{stringliteral}{"0"}), \hyperlink{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}{radiation}(\textcolor{stringliteral}{"0"})
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO;
+00012 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_capteurs_a8d0e38fada71279279b2d3938485304b}\label{class_capteurs_a8d0e38fada71279279b2d3938485304b}} 
+\index{Capteurs@{Capteurs}!````~Capteurs@{$\sim$\+Capteurs}}
+\index{````~Capteurs@{$\sim$\+Capteurs}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{$\sim$\+Capteurs()}{~Capteurs()}}
+{\footnotesize\ttfamily Capteurs\+::$\sim$\+Capteurs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \hyperlink{class_capteurs}{Capteurs}. 
+
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00014}{14} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+\begin{DoxyCode}
+00015 \{
+00016     qDebug() << Q\_FUNC\_INFO;
+00017 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_capteurs_a419b69b8b2fcc02a9bb7bdff39f87b06}\label{class_capteurs_a419b69b8b2fcc02a9bb7bdff39f87b06}} 
+\index{Capteurs@{Capteurs}!get\+Humidite@{get\+Humidite}}
+\index{get\+Humidite@{get\+Humidite}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{get\+Humidite()}{getHumidite()}}
+{\footnotesize\ttfamily Q\+String Capteurs\+::get\+Humidite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Récupère la dernière information issue du capteur de humidité 
+
+\begin{DoxyReturn}{Renvoie}
+la dernière information issue du capteur de humidité 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00049}{49} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+
+Références \hyperlink{capteurs_8h_source_l00024}{humidite}.
+
+
+\begin{DoxyCode}
+00050 \{
+00051     \textcolor{keywordflow}{return} \hyperlink{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}{humidite};
+00052 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_capteurs_aaee3d64c752b09f8674fa62907f38cbc}\label{class_capteurs_aaee3d64c752b09f8674fa62907f38cbc}} 
+\index{Capteurs@{Capteurs}!get\+Radiation@{get\+Radiation}}
+\index{get\+Radiation@{get\+Radiation}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{get\+Radiation()}{getRadiation()}}
+{\footnotesize\ttfamily Q\+String Capteurs\+::get\+Radiation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Récupère la dernière information issue du capteur de radiation. 
+
+\begin{DoxyReturn}{Renvoie}
+la dernière information issue du capteur de radiation 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00054}{54} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+
+Références \hyperlink{capteurs_8h_source_l00025}{radiation}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00110}{I\+H\+M\+Rov\+::actualiser\+Informations()}.
+
+
+\begin{DoxyCode}
+00055 \{
+00056     \textcolor{keywordflow}{return} \hyperlink{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}{radiation};
+00057 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_capteurs_ad8c2c486e92cc537dc014035b5634b60}\label{class_capteurs_ad8c2c486e92cc537dc014035b5634b60}} 
+\index{Capteurs@{Capteurs}!get\+Telemetrie@{get\+Telemetrie}}
+\index{get\+Telemetrie@{get\+Telemetrie}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{get\+Telemetrie()}{getTelemetrie()}}
+{\footnotesize\ttfamily Q\+String Capteurs\+::get\+Telemetrie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Récupère la dernière information issue du capteur télémétrique. 
+
+\begin{DoxyReturn}{Renvoie}
+la dernière information issue du capteur télémétrique 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00039}{39} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+
+Références \hyperlink{capteurs_8h_source_l00022}{telemetrie}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00110}{I\+H\+M\+Rov\+::actualiser\+Informations()}.
+
+
+\begin{DoxyCode}
+00040 \{
+00041     \textcolor{keywordflow}{return} \hyperlink{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}{telemetrie};
+00042 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_capteurs_aa1346e5cbea9e37afc3694a0ea86bd99}\label{class_capteurs_aa1346e5cbea9e37afc3694a0ea86bd99}} 
+\index{Capteurs@{Capteurs}!get\+Temperature@{get\+Temperature}}
+\index{get\+Temperature@{get\+Temperature}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{get\+Temperature()}{getTemperature()}}
+{\footnotesize\ttfamily Q\+String Capteurs\+::get\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Récupère la dernière information issue du capteur de température. 
+
+\begin{DoxyReturn}{Renvoie}
+la dernière information issue du capteur de température 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00044}{44} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+
+Références \hyperlink{capteurs_8h_source_l00023}{temperature}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00110}{I\+H\+M\+Rov\+::actualiser\+Informations()}.
+
+
+\begin{DoxyCode}
+00045 \{
+00046     \textcolor{keywordflow}{return} \hyperlink{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}{temperature};
+00047 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_capteurs_aafb06e1746006cdb72e92dc7a0519a2e}\label{class_capteurs_aafb06e1746006cdb72e92dc7a0519a2e}} 
+\index{Capteurs@{Capteurs}!set\+Humidite@{set\+Humidite}}
+\index{set\+Humidite@{set\+Humidite}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{set\+Humidite()}{setHumidite()}}
+{\footnotesize\ttfamily void Capteurs\+::set\+Humidite (\begin{DoxyParamCaption}\item[{Q\+String}]{humidite }\end{DoxyParamCaption})}
+
+
+
+Modifie la dernière information issue du capteur de humidité 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em humidite} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00029}{29} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+
+Références \hyperlink{capteurs_8h_source_l00024}{humidite}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00086}{Rov\+::decoder\+Trame\+Capteur()}.
+
+
+\begin{DoxyCode}
+00030 \{
+00031     this->\hyperlink{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}{humidite} = \hyperlink{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}{humidite};
+00032 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_capteurs_a8692d145188df3129d88fef77efbb7b0}\label{class_capteurs_a8692d145188df3129d88fef77efbb7b0}} 
+\index{Capteurs@{Capteurs}!set\+Radiation@{set\+Radiation}}
+\index{set\+Radiation@{set\+Radiation}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{set\+Radiation()}{setRadiation()}}
+{\footnotesize\ttfamily void Capteurs\+::set\+Radiation (\begin{DoxyParamCaption}\item[{Q\+String}]{radiation }\end{DoxyParamCaption})}
+
+
+
+Modifie la dernière information issue du capteur de radiation. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em radiation} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00034}{34} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+
+Références \hyperlink{capteurs_8h_source_l00025}{radiation}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00086}{Rov\+::decoder\+Trame\+Capteur()}.
+
+
+\begin{DoxyCode}
+00035 \{
+00036     this->\hyperlink{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}{radiation} = \hyperlink{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}{radiation};
+00037 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_capteurs_a399af986afb9d707138bc57a51e1f34f}\label{class_capteurs_a399af986afb9d707138bc57a51e1f34f}} 
+\index{Capteurs@{Capteurs}!set\+Telemetrie@{set\+Telemetrie}}
+\index{set\+Telemetrie@{set\+Telemetrie}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{set\+Telemetrie()}{setTelemetrie()}}
+{\footnotesize\ttfamily void Capteurs\+::set\+Telemetrie (\begin{DoxyParamCaption}\item[{Q\+String}]{telemetrie }\end{DoxyParamCaption})}
+
+
+
+Modifie la dernière information issue du capteur télémétrique. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em telemetrie} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00019}{19} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+
+Références \hyperlink{capteurs_8h_source_l00022}{telemetrie}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00081}{Rov\+::decoder\+Trame\+Telemetrie()}.
+
+
+\begin{DoxyCode}
+00020 \{
+00021     this->\hyperlink{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}{telemetrie} = \hyperlink{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}{telemetrie};
+00022 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_capteurs_a8d6a0bceb4d236edf7b51335d9be8ecd}\label{class_capteurs_a8d6a0bceb4d236edf7b51335d9be8ecd}} 
+\index{Capteurs@{Capteurs}!set\+Temperature@{set\+Temperature}}
+\index{set\+Temperature@{set\+Temperature}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{set\+Temperature()}{setTemperature()}}
+{\footnotesize\ttfamily void Capteurs\+::set\+Temperature (\begin{DoxyParamCaption}\item[{Q\+String}]{temperature }\end{DoxyParamCaption})}
+
+
+
+Modifie la dernière information issue du capteur de température. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em temperature} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{capteurs_8cpp_source_l00024}{24} du fichier \hyperlink{capteurs_8cpp_source}{capteurs.\+cpp}.
+
+
+
+Références \hyperlink{capteurs_8h_source_l00023}{temperature}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00086}{Rov\+::decoder\+Trame\+Capteur()}.
+
+
+\begin{DoxyCode}
+00025 \{
+00026     this->\hyperlink{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}{temperature} = \hyperlink{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}{temperature};
+00027 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}\label{class_capteurs_a8967c76dbc9c1f2ff8339cb8f00c3adb}} 
+\index{Capteurs@{Capteurs}!humidite@{humidite}}
+\index{humidite@{humidite}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{humidite}{humidite}}
+{\footnotesize\ttfamily Q\+String Capteurs\+::humidite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dernière données de température. 
+
+
+
+Définition à la ligne \hyperlink{capteurs_8h_source_l00024}{24} du fichier \hyperlink{capteurs_8h_source}{capteurs.\+h}.
+
+
+
+Référencé par \hyperlink{capteurs_8cpp_source_l00049}{get\+Humidite()}, et \hyperlink{capteurs_8cpp_source_l00029}{set\+Humidite()}.
+
+\mbox{\Hypertarget{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}\label{class_capteurs_ad9d6f3fd6cc164c6cd5908fd7822f307}} 
+\index{Capteurs@{Capteurs}!radiation@{radiation}}
+\index{radiation@{radiation}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{radiation}{radiation}}
+{\footnotesize\ttfamily Q\+String Capteurs\+::radiation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dernière données de radiation. 
+
+
+
+Définition à la ligne \hyperlink{capteurs_8h_source_l00025}{25} du fichier \hyperlink{capteurs_8h_source}{capteurs.\+h}.
+
+
+
+Référencé par \hyperlink{capteurs_8cpp_source_l00054}{get\+Radiation()}, et \hyperlink{capteurs_8cpp_source_l00034}{set\+Radiation()}.
+
+\mbox{\Hypertarget{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}\label{class_capteurs_a336a4c4ad6ae1a49d21b265d2953e24b}} 
+\index{Capteurs@{Capteurs}!telemetrie@{telemetrie}}
+\index{telemetrie@{telemetrie}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{telemetrie}{telemetrie}}
+{\footnotesize\ttfamily Q\+String Capteurs\+::telemetrie\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dernière données télémétriques. 
+
+
+
+Définition à la ligne \hyperlink{capteurs_8h_source_l00022}{22} du fichier \hyperlink{capteurs_8h_source}{capteurs.\+h}.
+
+
+
+Référencé par \hyperlink{capteurs_8cpp_source_l00039}{get\+Telemetrie()}, et \hyperlink{capteurs_8cpp_source_l00019}{set\+Telemetrie()}.
+
+\mbox{\Hypertarget{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}\label{class_capteurs_acf6f97c1e121ae0f53c9a56430d42dfe}} 
+\index{Capteurs@{Capteurs}!temperature@{temperature}}
+\index{temperature@{temperature}!Capteurs@{Capteurs}}
+\paragraph{\texorpdfstring{temperature}{temperature}}
+{\footnotesize\ttfamily Q\+String Capteurs\+::temperature\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dernière données de température. 
+
+
+
+Définition à la ligne \hyperlink{capteurs_8h_source_l00023}{23} du fichier \hyperlink{capteurs_8h_source}{capteurs.\+h}.
+
+
+
+Référencé par \hyperlink{capteurs_8cpp_source_l00044}{get\+Temperature()}, et \hyperlink{capteurs_8cpp_source_l00024}{set\+Temperature()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{capteurs_8h}{capteurs.\+h}\item 
+\hyperlink{capteurs_8cpp}{capteurs.\+cpp}\end{DoxyCompactItemize}

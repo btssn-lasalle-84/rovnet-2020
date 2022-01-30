@@ -1,0 +1,89 @@
+\hypertarget{camera_8h_source}{}\subsection{camera.\+h}
+\label{camera_8h_source}\index{camera.\+h@{camera.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef CAMERA\_H}
+00008 \textcolor{preprocessor}{#define CAMERA\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QDebug>}
+00011 \textcolor{preprocessor}{#include <QObject>}
+00012 \textcolor{preprocessor}{#include <QThread>}
+00013 \textcolor{preprocessor}{#include <opencv.hpp>}
+00014 \textcolor{preprocessor}{#include <video/video.hpp>}
+00015 \textcolor{preprocessor}{#include <QPixmap>}
+00016 \textcolor{preprocessor}{#include <QImage>}
+00017 \textcolor{preprocessor}{#include <QTime>}
+00018 \textcolor{preprocessor}{#include <QCameraInfo>}
+00019 
+00020 \textcolor{preprocessor}{#include "\hyperlink{rov_8h}{rov.h}"}
+00021 
+00022 \textcolor{comment}{//#define SANS\_DETECTION}
+00023 
+\Hypertarget{camera_8h_source_l00029}\hyperlink{camera_8h_a87f76384d33bc9bba579afd1d5f3221a}{00029} \textcolor{preprocessor}{#define CAMERA\_DEFAUT       0}
+00030 
+\Hypertarget{camera_8h_source_l00035}\hyperlink{camera_8h_afe66edd1ec0aa05058aaa2a069248f65}{00035} \textcolor{preprocessor}{#define LARGEUR\_DEFAUT      1600 //2048}
+00036 
+\Hypertarget{camera_8h_source_l00041}\hyperlink{camera_8h_a70cf269dc21e5a921c2927034d6cadd2}{00041} \textcolor{preprocessor}{#define HAUTEUR\_DEFAUT      1200 //1024}
+00042 
+\Hypertarget{camera_8h_source_l00047}\hyperlink{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}{00047} \textcolor{preprocessor}{#define SEUIL\_DEFAUT        0.5}
+00048 
+00049 \textcolor{keyword}{using namespace }\hyperlink{namespacecv}{cv};
+00050 
+00051 \textcolor{keyword}{class }\hyperlink{class_rov}{Rov};
+00052 
+\Hypertarget{camera_8h_source_l00058}\hyperlink{class_camera}{00058} \textcolor{keyword}{class }\hyperlink{class_camera}{Camera} : \textcolor{keyword}{public} \hyperlink{class_q_thread}{QThread}
+00059 \{
+00060     Q\_OBJECT
+00061 \textcolor{keyword}{private}:
+\Hypertarget{camera_8h_source_l00062}\hyperlink{class_camera_ad1dde4d981877001281af01c392307f1}{00062}     \hyperlink{class_rov}{Rov} *\hyperlink{class_camera_ad1dde4d981877001281af01c392307f1}{rov};                            
+\Hypertarget{camera_8h_source_l00063}\hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{00063}     QString \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera};                   
+\Hypertarget{camera_8h_source_l00064}\hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{00064}     \textcolor{keywordtype}{int} \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero};                          
+\Hypertarget{camera_8h_source_l00065}\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{00065}     \textcolor{keywordtype}{int} \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur};                         
+\Hypertarget{camera_8h_source_l00066}\hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{00066}     \textcolor{keywordtype}{int} \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur};                         
+\Hypertarget{camera_8h_source_l00067}\hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{00067}     \textcolor{keywordtype}{double} \hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite};                   
+\Hypertarget{camera_8h_source_l00068}\hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{00068}     \textcolor{keywordtype}{double} \hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste};                    
+\Hypertarget{camera_8h_source_l00069}\hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{00069}     \textcolor{keywordtype}{double} \hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation};                   
+\Hypertarget{camera_8h_source_l00070}\hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{00070}     \textcolor{keywordtype}{bool} \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes};           
+\Hypertarget{camera_8h_source_l00071}\hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{00071}     QList<QSize> \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}; 
+\Hypertarget{camera_8h_source_l00072}\hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{00072}     \textcolor{keywordtype}{int} \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution};                 
+00073 
+00080     \textcolor{keywordtype}{void} acquerirImageVideo(cv::VideoCapture &camera, cv::Mat &frame);
+00081 
+00082 \textcolor{keyword}{public}:
+00090     \hyperlink{class_camera}{Camera}(\hyperlink{class_rov}{Rov} *rov, \textcolor{keywordtype}{int} numero, \textcolor{keywordtype}{int} choixResolution=-1);
+00098     \hyperlink{class_camera}{Camera}(\hyperlink{class_rov}{Rov} *rov, QString nomCamera, \textcolor{keywordtype}{int} choixResolution=-1);
+00099 
+00104     ~\hyperlink{class_camera}{Camera}();
+00105 
+00110     \textcolor{keywordtype}{void} run();
+00111 
+00117     QString getNom() \textcolor{keyword}{const};
+00123     \textcolor{keywordtype}{void} setProprietes(cv::VideoCapture &camera);
+00129     QSize getResolution();
+00135     \textcolor{keywordtype}{int} getChoixResolution();
+00140     \textcolor{keywordtype}{void} recupererListeResolutionsCamera();
+00146     \textcolor{keywordtype}{void} recupererListeResolutionsCamera(\textcolor{keywordtype}{int} numero);
+00152     \textcolor{keywordtype}{void} recupererListeResolutionsCamera(QString nomCamera);
+00158     \textcolor{keywordtype}{void} recupererListeResolutionsCamera(QCameraInfo &cameraInfo);
+00164     QList<QSize> getListeResolutionsCamera();
+00170     \textcolor{keyword}{static} \textcolor{keywordtype}{int} getNbCameras();
+00177     \textcolor{keyword}{static} \textcolor{keywordtype}{int} extraireNumero(QString nomCamera);
+00184     \textcolor{keyword}{static} QString creerNomCamera(\textcolor{keywordtype}{int} numero);
+00191     \textcolor{keyword}{static} QList<QSize> lireListeResolutionsCamera(QCameraInfo &cameraInfo);
+00192 
+00193 signals:
+00199     \textcolor{keywordtype}{void} nouvelleImage(QPixmap image);
+00204     \textcolor{keywordtype}{void} finVideo();
+00205 
+00206 \textcolor{keyword}{public} slots:    
+00213     \textcolor{keywordtype}{void} setResolution(\textcolor{keywordtype}{int} largeur, \textcolor{keywordtype}{int} hauteur);
+00219     \textcolor{keywordtype}{void} setResolution(QSize resolution);
+00225     \textcolor{keywordtype}{void} setResolution(\textcolor{keywordtype}{int} choix);
+00231     \textcolor{keywordtype}{void} setLuminosite(\textcolor{keywordtype}{int} luminosite);
+00237     \textcolor{keywordtype}{void} setContraste(\textcolor{keywordtype}{int} contraste);
+00243     \textcolor{keywordtype}{void} setSaturation(\textcolor{keywordtype}{int} saturation);
+00244 \};
+00245 
+00246 \textcolor{preprocessor}{#endif // CAMERA\_H}
+\end{DoxyCode}

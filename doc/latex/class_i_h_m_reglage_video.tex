@@ -1,0 +1,925 @@
+\hypertarget{class_i_h_m_reglage_video}{}\subsection{Référence de la classe I\+H\+M\+Reglage\+Video}
+\label{class_i_h_m_reglage_video}\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+
+
+Classe permettant de regler l\textquotesingle{}affichage du flux video.  
+
+
+
+
+{\ttfamily \#include \char`\"{}ihm\+Reglage\+Video.\+h\char`\"{}}
+
+
+
+Graphe de collaboration de I\+H\+M\+Reglage\+Video\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_i_h_m_reglage_video__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_reglage_video_a7e5c5d7515a6c745dfde5c3ad3b61a66}{activer\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Active la caméra. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{charger\+Liste\+Resolution\+Disponible} (int index)
+\begin{DoxyCompactList}\small\item\em Charge les résolutions pour une caméra sélectionnée. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_reglage_video_a25c0537f7d5b735f80f46f2ae993f424}{charger\+Liste\+Resolution\+Disponible} (Q\+String nom)
+\begin{DoxyCompactList}\small\item\em Charge les résolutions pour une caméra sélectionnée. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_reglage_video_ac838581ba03f52e79064cb91ebabb35d}{modifier\+Etat\+Boutons} ()
+\begin{DoxyCompactList}\small\item\em Modifie l\textquotesingle{}etat des boutons lors du démarrage du flux vidéo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_h_m_reglage_video_aa057ded6ad29a2d7fd117a8e9336c3ad}{I\+H\+M\+Reglage\+Video} (\hyperlink{class_rov}{Rov} $\ast$\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}, \hyperlink{class_q_widget}{Q\+Widget} $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe Reglage\+Video. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_reglage_video_aba318ba2789177dafcf2651f95603435}{initialiser\+Evenements\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Initialise les événements liés à la caméra. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_reglage_video_aaf105e0ca892a751632170a3a083dfec}{$\sim$\+I\+H\+M\+Reglage\+Video} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe Reglage\+Video. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_reglage_video_a0a480faa747bc705b4cf49df4ecc1d44}{charger\+Liste\+Camera\+Disponible} ()
+\begin{DoxyCompactList}\small\item\em Charge la liste des caméras disponibles dans la liste déroulante. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_reglage_video_a2e51529e3a822121ae999e13da2180c6}{configurer\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Configure l\textquotesingle{}etat des widgets à la création de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_reglage_video_a4576b1b6ccfcabf6b2b39d37db2dd248}{initialiser\+Evenements} ()
+\begin{DoxyCompactList}\small\item\em Initialise les événements de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_reglage_video_a6efcf5e8c7dfd272ecb1398985f7332a}{initialiser\+Layouts} ()
+\begin{DoxyCompactList}\small\item\em Initialise les layout de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_reglage_video_ad41172843e79eae9bb64048ec76b81e6}{initialiser\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Initialise les widgets de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{bouton\+Arreter\+Video}
+\begin{DoxyCompactList}\small\item\em Bouton permettant d\textquotesingle{}arrêter le flux vidéo de la caméra selectionner. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{bouton\+Demarrer\+Video}
+\begin{DoxyCompactList}\small\item\em Bouton permettant de démarrer le flux vidéo de la caméra selectionner. \end{DoxyCompactList}\item 
+Q\+Label $\ast$ \hyperlink{class_i_h_m_reglage_video_a5a57047117d423ba8bf62bbcb2baee74}{camera}
+\begin{DoxyCompactList}\small\item\em Texte informant de l\textquotesingle{}élément à selectionner (caméra) \end{DoxyCompactList}\item 
+Q\+Label $\ast$ \hyperlink{class_i_h_m_reglage_video_ad1aa173a98ced9f3aaeccb0c2712093c}{contraste}
+\begin{DoxyCompactList}\small\item\em Texte informant le reglage à modifier. \end{DoxyCompactList}\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contraste\+Video}
+\begin{DoxyCompactList}\small\item\em Zone de saisie permettant de modifier le contraste du flux vidéo. \end{DoxyCompactList}\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{liste\+Cameras}
+\begin{DoxyCompactList}\small\item\em Liste déroulante déstiné à accueillir la liste des caméra disponible. \end{DoxyCompactList}\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{liste\+Resolutions}
+\begin{DoxyCompactList}\small\item\em Liste déroulante déstiné à accueillir la liste des résolutions disponible. \end{DoxyCompactList}\item 
+Q\+Label $\ast$ \hyperlink{class_i_h_m_reglage_video_a16b65877af48863d0752e226371952ab}{luminosite}
+\begin{DoxyCompactList}\small\item\em Texte informant le reglage à modifier. \end{DoxyCompactList}\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminosite\+Video}
+\begin{DoxyCompactList}\small\item\em Zone de saisie permettant de modifier la luminosite du flux vidéo. \end{DoxyCompactList}\item 
+Q\+Label $\ast$ \hyperlink{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}{resolution}
+\begin{DoxyCompactList}\small\item\em Texte informant de l\textquotesingle{}élément à selectionner (résolution) \end{DoxyCompactList}\item 
+\hyperlink{class_rov}{Rov} $\ast$ \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}
+\begin{DoxyCompactList}\small\item\em Objet rov permettant de mofidier les reglage du flux vidéo. \end{DoxyCompactList}\item 
+Q\+Label $\ast$ \hyperlink{class_i_h_m_reglage_video_a452450793da1908cfe89fb9984b914d1}{saturation}
+\begin{DoxyCompactList}\small\item\em Texte informant le reglage à modifier. \end{DoxyCompactList}\item 
+Q\+Spin\+Box $\ast$ \hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturation\+Video}
+\begin{DoxyCompactList}\small\item\em Zone de saisie permettant de modifier la saturation du flux vidéo. \end{DoxyCompactList}\item 
+Q\+Slider $\ast$ \hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{slider\+Contraste\+Video}
+\begin{DoxyCompactList}\small\item\em Slider permettant de modifier le contraste du flux vidéo. \end{DoxyCompactList}\item 
+Q\+Slider $\ast$ \hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{slider\+Luminosite\+Video}
+\begin{DoxyCompactList}\small\item\em Slider permettant de modifier la luminosite du flux vidéo. \end{DoxyCompactList}\item 
+Q\+Slider $\ast$ \hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{slider\+Saturation\+Video}
+\begin{DoxyCompactList}\small\item\em Slider permettant de modifier la saturation du flux vidéo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Classe permettant de regler l\textquotesingle{}affichage du flux video. 
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00023}{23} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_aa057ded6ad29a2d7fd117a8e9336c3ad}\label{class_i_h_m_reglage_video_aa057ded6ad29a2d7fd117a8e9336c3ad}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{I\+H\+M\+Reglage\+Video()}{IHMReglageVideo()}}
+{\footnotesize\ttfamily I\+H\+M\+Reglage\+Video\+::\+I\+H\+M\+Reglage\+Video (\begin{DoxyParamCaption}\item[{\hyperlink{class_rov}{Rov} $\ast$}]{rov,  }\item[{\hyperlink{class_q_widget}{Q\+Widget} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe Reglage\+Video. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rov} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00009}{9} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8cpp_source_l00047}{configurer\+Widgets()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+
+\begin{DoxyCode}
+00009                                                           : \hyperlink{class_q_widget}{QWidget}(parent), 
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}(rov)
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO;
+00012     \hyperlink{class_i_h_m_reglage_video_ad41172843e79eae9bb64048ec76b81e6}{initialiserWidgets}();
+00013     \hyperlink{class_i_h_m_reglage_video_a2e51529e3a822121ae999e13da2180c6}{configurerWidgets}();
+00014     \hyperlink{class_i_h_m_reglage_video_a6efcf5e8c7dfd272ecb1398985f7332a}{initialiserLayouts}();
+00015     \hyperlink{class_i_h_m_reglage_video_a4576b1b6ccfcabf6b2b39d37db2dd248}{initialiserEvenements}();    
+00016 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_aaf105e0ca892a751632170a3a083dfec}\label{class_i_h_m_reglage_video_aaf105e0ca892a751632170a3a083dfec}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!````~I\+H\+M\+Reglage\+Video@{$\sim$\+I\+H\+M\+Reglage\+Video}}
+\index{````~I\+H\+M\+Reglage\+Video@{$\sim$\+I\+H\+M\+Reglage\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{$\sim$\+I\+H\+M\+Reglage\+Video()}{~IHMReglageVideo()}}
+{\footnotesize\ttfamily I\+H\+M\+Reglage\+Video\+::$\sim$\+I\+H\+M\+Reglage\+Video (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe Reglage\+Video. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00018}{18} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+\begin{DoxyCode}
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO;
+00021 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a7e5c5d7515a6c745dfde5c3ad3b61a66}\label{class_i_h_m_reglage_video_a7e5c5d7515a6c745dfde5c3ad3b61a66}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!activer\+Camera@{activer\+Camera}}
+\index{activer\+Camera@{activer\+Camera}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{activer\+Camera}{activerCamera}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::activer\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Active la caméra. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00203}{203} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8h_source_l00042}{bouton\+Arreter\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00041}{bouton\+Demarrer\+Video}, \hyperlink{rov_8cpp_source_l00161}{Rov\+::demarrer\+Video()}, \hyperlink{ihmreglagevideo_8h_source_l00038}{liste\+Cameras}, \hyperlink{ihmreglagevideo_8h_source_l00040}{liste\+Resolutions}, et \hyperlink{ihmreglagevideo_8h_source_l00027}{rov}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00204 \{
+00205     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->currentText() << 
+      \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->currentText() << \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->currentIndex();
+00206     \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}{demarrerVideo}(\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->currentText(), 
+      \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->currentIndex());
+00207     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setEnabled(\textcolor{keyword}{false});
+00208     \hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo}->setEnabled(\textcolor{keyword}{true});
+00209     \hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo}->setEnabled(\textcolor{keyword}{false});
+00210 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a0a480faa747bc705b4cf49df4ecc1d44}\label{class_i_h_m_reglage_video_a0a480faa747bc705b4cf49df4ecc1d44}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!charger\+Liste\+Camera\+Disponible@{charger\+Liste\+Camera\+Disponible}}
+\index{charger\+Liste\+Camera\+Disponible@{charger\+Liste\+Camera\+Disponible}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{charger\+Liste\+Camera\+Disponible()}{chargerListeCameraDisponible()}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::charger\+Liste\+Camera\+Disponible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Charge la liste des caméras disponibles dans la liste déroulante. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00132}{132} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8cpp_source_l00172}{charger\+Liste\+Resolution\+Disponible()}, \hyperlink{rov_8cpp_source_l00144}{Rov\+::get\+Camera()}, \hyperlink{camera_8cpp_source_l00103}{Camera\+::get\+Nom()}, \hyperlink{ihmreglagevideo_8h_source_l00038}{liste\+Cameras}, et \hyperlink{ihmreglagevideo_8h_source_l00027}{rov}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00117}{initialiser\+Evenements\+Camera()}.
+
+
+\begin{DoxyCode}
+00133 \{
+00134     \textcolor{keywordtype}{int} nbCameras = QCameraInfo::availableCameras().count();
+00135     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Caméra(s) disponible(s)"} << QCameraInfo::availableCameras().count();    
+00136     \textcolor{keywordflow}{if} (nbCameras > 0)
+00137     \{
+00138 \textcolor{preprocessor}{       #ifndef SANS\_DETECTION}
+00139        QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+00140        \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->clear();
+00141        \textcolor{keywordtype}{int} choix = -1, i = 0;
+00142        \textcolor{keywordflow}{foreach} (\textcolor{keyword}{const} QCameraInfo &cameraInfo, cameras)
+00143        \{
+00144            \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->addItem(cameraInfo.deviceName());
+00145            qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Device"} << cameraInfo.deviceName();
+00146            qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Description"} << cameraInfo.description();
+00147            \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00148            \{
+00149                \textcolor{keywordflow}{if}(cameraInfo.deviceName() == \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->
+      \hyperlink{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}{getNom}())
+00150                \{
+00151                    choix = i;
+00152                \}
+00153            \}
+00154            i++;
+00155        \}
+00156 \textcolor{preprocessor}{       #else}
+00157        \textcolor{keywordtype}{int} choix = 0;
+00158        qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Device"} << \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->
+      \hyperlink{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}{getNom}();
+00159        \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->addItem(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->\hyperlink{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}{getNom}());
+00160 \textcolor{preprocessor}{       #endif}
+00161 
+00162        \textcolor{keywordflow}{if}(choix != -1)
+00163        \{
+00164            \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00165                 \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->\hyperlink{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}{getNom}());
+00166            \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setCurrentIndex(choix);
+00167        \}       
+00168     \}
+00169 
+00170 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}\label{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!charger\+Liste\+Resolution\+Disponible@{charger\+Liste\+Resolution\+Disponible}}
+\index{charger\+Liste\+Resolution\+Disponible@{charger\+Liste\+Resolution\+Disponible}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{charger\+Liste\+Resolution\+Disponible}{chargerListeResolutionDisponible}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::charger\+Liste\+Resolution\+Disponible (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Charge les résolutions pour une caméra sélectionnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00172}{172} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8h_source_l00038}{liste\+Cameras}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00132}{charger\+Liste\+Camera\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00117}{initialiser\+Evenements\+Camera()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{modifier\+Etat\+Boutons()}.
+
+
+\begin{DoxyCode}
+00173 \{
+00174     \textcolor{keywordflow}{if}(index < 0)
+00175         \textcolor{keywordflow}{return};
+00176     \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(
+      \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->currentText());
+00177 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a25c0537f7d5b735f80f46f2ae993f424}\label{class_i_h_m_reglage_video_a25c0537f7d5b735f80f46f2ae993f424}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!charger\+Liste\+Resolution\+Disponible@{charger\+Liste\+Resolution\+Disponible}}
+\index{charger\+Liste\+Resolution\+Disponible@{charger\+Liste\+Resolution\+Disponible}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{charger\+Liste\+Resolution\+Disponible}{chargerListeResolutionDisponible}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::charger\+Liste\+Resolution\+Disponible (\begin{DoxyParamCaption}\item[{Q\+String}]{nom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Charge les résolutions pour une caméra sélectionnée. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00179}{179} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{rov_8cpp_source_l00144}{Rov\+::get\+Camera()}, \hyperlink{camera_8cpp_source_l00128}{Camera\+::get\+Choix\+Resolution()}, \hyperlink{camera_8cpp_source_l00121}{Camera\+::get\+Resolution()}, \hyperlink{camera_8cpp_source_l00304}{Camera\+::lire\+Liste\+Resolutions\+Camera()}, \hyperlink{ihmreglagevideo_8h_source_l00040}{liste\+Resolutions}, \hyperlink{ihmreglagevideo_8h_source_l00039}{resolution}, et \hyperlink{ihmreglagevideo_8h_source_l00027}{rov}.
+
+
+\begin{DoxyCode}
+00180 \{
+00181 \textcolor{preprocessor}{    #ifndef SANS\_DETECTION}
+00182     QCameraInfo cameraInfo(nom.toLatin1());
+00183     QList<QSize> liste = \hyperlink{class_camera_ac4756add4cb6bef60e38f3da79c2383f}{Camera::lireListeResolutionsCamera}(cameraInfo);
+00184     \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->clear();
+00185     \textcolor{keywordflow}{foreach} (\textcolor{keyword}{const} QSize &\hyperlink{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}{resolution}, liste)
+00186     \{
+00187         qDebug() << Q\_FUNC\_INFO << resolution.width() << \textcolor{stringliteral}{"x"} << resolution.height();
+00188         \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->addItem(QString::number(resolution.width()) + QString(\textcolor{stringliteral}{"x"}) + 
+      QString::number(resolution.height()));
+00189     \}
+00190 \textcolor{preprocessor}{    #else}
+00191     \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->clear();
+00192     QSize resolutionDefaut = \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->\hyperlink{class_camera_a9fae9d9b6fa352ff96c9874d9b085454}{getResolution}();
+00193     qDebug() << Q\_FUNC\_INFO << resolutionDefaut.width() << \textcolor{stringliteral}{"x"} << resolutionDefaut.height();
+00194     \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->addItem(QString::number(resolutionDefaut.width()) + QString(\textcolor{stringliteral}{"x"}) + 
+      QString::number(resolutionDefaut.height()));
+00195 \textcolor{preprocessor}{    #endif}
+00196     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00197     \{
+00198         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"choixResolution"} << \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->
+      \hyperlink{class_camera_ab9f05b05c29416dce6471b5a03db98ea}{getChoixResolution}();
+00199         \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->setCurrentIndex(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->
+      \hyperlink{class_camera_ab9f05b05c29416dce6471b5a03db98ea}{getChoixResolution}());
+00200     \}
+00201 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a2e51529e3a822121ae999e13da2180c6}\label{class_i_h_m_reglage_video_a2e51529e3a822121ae999e13da2180c6}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!configurer\+Widgets@{configurer\+Widgets}}
+\index{configurer\+Widgets@{configurer\+Widgets}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{configurer\+Widgets()}{configurerWidgets()}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::configurer\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Configure l\textquotesingle{}etat des widgets à la création de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00047}{47} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8h_source_l00041}{bouton\+Demarrer\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00035}{contraste\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00038}{liste\+Cameras}, \hyperlink{ihmreglagevideo_8h_source_l00034}{luminosite\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00036}{saturation\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00029}{slider\+Contraste\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00028}{slider\+Luminosite\+Video}, et \hyperlink{ihmreglagevideo_8h_source_l00030}{slider\+Saturation\+Video}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00009}{I\+H\+M\+Reglage\+Video()}.
+
+
+\begin{DoxyCode}
+00048 \{
+00049     \hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo}->setValue(50);
+00050     \hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo}->setValue(50);
+00051     \hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo}->setValue(50);
+00052 
+00053     \hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}->setValue(50);
+00054     \hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}->setValue(50);
+00055     \hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}->setValue(50);
+00056 
+00057     \hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo}->setEnabled(\textcolor{keyword}{false});
+00058     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setEnabled(\textcolor{keyword}{false});
+00059 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a4576b1b6ccfcabf6b2b39d37db2dd248}\label{class_i_h_m_reglage_video_a4576b1b6ccfcabf6b2b39d37db2dd248}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!initialiser\+Evenements@{initialiser\+Evenements}}
+\index{initialiser\+Evenements@{initialiser\+Evenements}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{initialiser\+Evenements()}{initialiserEvenements()}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::initialiser\+Evenements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les événements de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00105}{105} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8cpp_source_l00203}{activer\+Camera()}, \hyperlink{ihmreglagevideo_8h_source_l00042}{bouton\+Arreter\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00041}{bouton\+Demarrer\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00035}{contraste\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00034}{luminosite\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00027}{rov}, \hyperlink{ihmreglagevideo_8h_source_l00036}{saturation\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00029}{slider\+Contraste\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00028}{slider\+Luminosite\+Video}, et \hyperlink{ihmreglagevideo_8h_source_l00030}{slider\+Saturation\+Video}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00009}{I\+H\+M\+Reglage\+Video()}.
+
+
+\begin{DoxyCode}
+00106 \{
+00107     connect(\hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00108     connect(\hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00109     connect(\hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00110     connect(\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00111     connect(\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00112     connect(\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00113     connect(\hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo}, SIGNAL(clicked()), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}, SLOT(arreterVideo()));
+00114     connect(\hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_reglage_video_a7e5c5d7515a6c745dfde5c3ad3b61a66}{activerCamera}()));
+00115 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_aba318ba2789177dafcf2651f95603435}\label{class_i_h_m_reglage_video_aba318ba2789177dafcf2651f95603435}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!initialiser\+Evenements\+Camera@{initialiser\+Evenements\+Camera}}
+\index{initialiser\+Evenements\+Camera@{initialiser\+Evenements\+Camera}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{initialiser\+Evenements\+Camera()}{initialiserEvenementsCamera()}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::initialiser\+Evenements\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise les événements liés à la caméra. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00117}{117} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8cpp_source_l00132}{charger\+Liste\+Camera\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00172}{charger\+Liste\+Resolution\+Disponible()}, \hyperlink{ihmreglagevideo_8h_source_l00035}{contraste\+Video}, \hyperlink{rov_8cpp_source_l00144}{Rov\+::get\+Camera()}, \hyperlink{ihmreglagevideo_8h_source_l00038}{liste\+Cameras}, \hyperlink{ihmreglagevideo_8h_source_l00040}{liste\+Resolutions}, \hyperlink{ihmreglagevideo_8h_source_l00034}{luminosite\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00027}{rov}, et \hyperlink{ihmreglagevideo_8h_source_l00036}{saturation\+Video}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00229}{I\+H\+M\+Rov\+::initialiser\+Evenements\+Camera()}.
+
+
+\begin{DoxyCode}
+00118 \{
+00119     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00120     \{
+00121         \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->isRunning())
+00122             \textcolor{keywordflow}{return};
+00123         \hyperlink{class_i_h_m_reglage_video_a0a480faa747bc705b4cf49df4ecc1d44}{chargerListeCameraDisponible}();
+00124         connect(\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->
+      \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setLuminosite(\textcolor{keywordtype}{int})));
+00125         connect(\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->
+      \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setContraste(\textcolor{keywordtype}{int})));
+00126         connect(\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->
+      \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setSaturation(\textcolor{keywordtype}{int})));
+00127         connect(\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(\textcolor{keywordtype}{int})));
+00128         connect(\hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setResolution(\textcolor{keywordtype}{int})));
+00129     \}
+00130 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a6efcf5e8c7dfd272ecb1398985f7332a}\label{class_i_h_m_reglage_video_a6efcf5e8c7dfd272ecb1398985f7332a}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!initialiser\+Layouts@{initialiser\+Layouts}}
+\index{initialiser\+Layouts@{initialiser\+Layouts}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{initialiser\+Layouts()}{initialiserLayouts()}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::initialiser\+Layouts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les layout de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00061}{61} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8h_source_l00042}{bouton\+Arreter\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00041}{bouton\+Demarrer\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00037}{camera}, \hyperlink{ihmreglagevideo_8h_source_l00032}{contraste}, \hyperlink{ihmreglagevideo_8h_source_l00035}{contraste\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00038}{liste\+Cameras}, \hyperlink{ihmreglagevideo_8h_source_l00040}{liste\+Resolutions}, \hyperlink{ihmreglagevideo_8h_source_l00031}{luminosite}, \hyperlink{ihmreglagevideo_8h_source_l00034}{luminosite\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00014}{N\+O\+M\+\_\+\+F\+E\+N\+E\+T\+R\+E\+\_\+\+R\+E\+G\+L\+A\+G\+E\+V\+I\+D\+EO}, \hyperlink{ihmreglagevideo_8h_source_l00039}{resolution}, \hyperlink{ihmreglagevideo_8h_source_l00033}{saturation}, \hyperlink{ihmreglagevideo_8h_source_l00036}{saturation\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00029}{slider\+Contraste\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00028}{slider\+Luminosite\+Video}, et \hyperlink{ihmreglagevideo_8h_source_l00030}{slider\+Saturation\+Video}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00009}{I\+H\+M\+Reglage\+Video()}.
+
+
+\begin{DoxyCode}
+00062 \{
+00063     QVBoxLayout *layoutPrincipal = \textcolor{keyword}{new} QVBoxLayout;
+00064     QHBoxLayout *layoutReglageVideo = \textcolor{keyword}{new} QHBoxLayout;
+00065     QVBoxLayout *layoutConfigurationLuminosite = \textcolor{keyword}{new} QVBoxLayout;
+00066     QVBoxLayout *layoutConfigurationContraste = \textcolor{keyword}{new} QVBoxLayout;
+00067     QVBoxLayout *layoutConfigurationSaturation = \textcolor{keyword}{new} QVBoxLayout;
+00068     QHBoxLayout *layoutCamera = \textcolor{keyword}{new} QHBoxLayout;
+00069     QHBoxLayout *layoutBoutonCamera = \textcolor{keyword}{new} QHBoxLayout;
+00070 
+00071     layoutReglageVideo->setAlignment(Qt::AlignLeft);
+00072     layoutConfigurationContraste->setAlignment(Qt::AlignTop);
+00073     layoutConfigurationLuminosite->setAlignment(Qt::AlignTop);
+00074     layoutConfigurationSaturation->setAlignment(Qt::AlignTop);
+00075     layoutBoutonCamera->setAlignment(Qt::AlignLeft);
+00076 
+00077     layoutPrincipal->addLayout(layoutReglageVideo);
+00078     layoutPrincipal->addLayout(layoutCamera);
+00079     layoutPrincipal->addLayout(layoutBoutonCamera);
+00080 
+00081     layoutReglageVideo->addLayout(layoutConfigurationLuminosite);
+00082     layoutReglageVideo->addLayout(layoutConfigurationContraste);
+00083     layoutReglageVideo->addLayout(layoutConfigurationSaturation);
+00084 
+00085     layoutConfigurationLuminosite->addWidget(\hyperlink{class_i_h_m_reglage_video_a16b65877af48863d0752e226371952ab}{luminosite});
+00086     layoutConfigurationLuminosite->addWidget(\hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo});
+00087     layoutConfigurationLuminosite->addWidget(\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo});
+00088     layoutConfigurationContraste->addWidget(\hyperlink{class_i_h_m_reglage_video_ad1aa173a98ced9f3aaeccb0c2712093c}{contraste});
+00089     layoutConfigurationContraste->addWidget(\hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo});
+00090     layoutConfigurationContraste->addWidget(\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo});
+00091     layoutConfigurationSaturation->addWidget(\hyperlink{class_i_h_m_reglage_video_a452450793da1908cfe89fb9984b914d1}{saturation});
+00092     layoutConfigurationSaturation->addWidget(\hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo});
+00093     layoutConfigurationSaturation->addWidget(\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo});
+00094     layoutCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a5a57047117d423ba8bf62bbcb2baee74}{camera});
+00095     layoutCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras});
+00096     layoutCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}{resolution});
+00097     layoutCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions});
+00098     layoutBoutonCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo});
+00099     layoutBoutonCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo});
+00100 
+00101     setLayout(layoutPrincipal);
+00102     setWindowTitle(\hyperlink{ihmreglagevideo_8h_a4a739fa13f7cc257ce61e04383ed8a9a}{NOM\_FENETRE\_REGLAGEVIDEO});
+00103 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_ad41172843e79eae9bb64048ec76b81e6}\label{class_i_h_m_reglage_video_ad41172843e79eae9bb64048ec76b81e6}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!initialiser\+Widgets@{initialiser\+Widgets}}
+\index{initialiser\+Widgets@{initialiser\+Widgets}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{initialiser\+Widgets()}{initialiserWidgets()}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::initialiser\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les widgets de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00023}{23} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8h_source_l00042}{bouton\+Arreter\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00041}{bouton\+Demarrer\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00037}{camera}, \hyperlink{ihmreglagevideo_8h_source_l00032}{contraste}, \hyperlink{ihmreglagevideo_8h_source_l00035}{contraste\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00038}{liste\+Cameras}, \hyperlink{ihmreglagevideo_8h_source_l00040}{liste\+Resolutions}, \hyperlink{ihmreglagevideo_8h_source_l00031}{luminosite}, \hyperlink{ihmreglagevideo_8h_source_l00034}{luminosite\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00039}{resolution}, \hyperlink{ihmreglagevideo_8h_source_l00033}{saturation}, \hyperlink{ihmreglagevideo_8h_source_l00036}{saturation\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00029}{slider\+Contraste\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00028}{slider\+Luminosite\+Video}, et \hyperlink{ihmreglagevideo_8h_source_l00030}{slider\+Saturation\+Video}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00009}{I\+H\+M\+Reglage\+Video()}.
+
+
+\begin{DoxyCode}
+00024 \{
+00025     \hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo} = \textcolor{keyword}{new} QSlider(Qt::Horizontal, \textcolor{keyword}{this});
+00026     \hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo} = \textcolor{keyword}{new} QSlider(Qt::Horizontal, \textcolor{keyword}{this});
+00027     \hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo} = \textcolor{keyword}{new} QSlider(Qt::Horizontal, \textcolor{keyword}{this});
+00028 
+00029     \hyperlink{class_i_h_m_reglage_video_a16b65877af48863d0752e226371952ab}{luminosite} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Luminosité"}, \textcolor{keyword}{this});
+00030     \hyperlink{class_i_h_m_reglage_video_ad1aa173a98ced9f3aaeccb0c2712093c}{contraste} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Contraste"}, \textcolor{keyword}{this});
+00031     \hyperlink{class_i_h_m_reglage_video_a452450793da1908cfe89fb9984b914d1}{saturation} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Saturation"}, \textcolor{keyword}{this});
+00032 
+00033     \hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo} = \textcolor{keyword}{new} QSpinBox(\textcolor{keyword}{this});
+00034     \hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo} = \textcolor{keyword}{new} QSpinBox(\textcolor{keyword}{this});
+00035     \hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo} = \textcolor{keyword}{new} QSpinBox(\textcolor{keyword}{this});
+00036 
+00037     \hyperlink{class_i_h_m_reglage_video_a5a57047117d423ba8bf62bbcb2baee74}{camera} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Camera(s): "}, \textcolor{keyword}{this});
+00038     \hyperlink{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}{resolution} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Résolution: "}, \textcolor{keyword}{this});
+00039 
+00040     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00041     \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00042 
+00043     \hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Démarrer"}, \textcolor{keyword}{this});
+00044     \hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Arrêter"}, \textcolor{keyword}{this});
+00045 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_ac838581ba03f52e79064cb91ebabb35d}\label{class_i_h_m_reglage_video_ac838581ba03f52e79064cb91ebabb35d}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!modifier\+Etat\+Boutons@{modifier\+Etat\+Boutons}}
+\index{modifier\+Etat\+Boutons@{modifier\+Etat\+Boutons}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{modifier\+Etat\+Boutons}{modifierEtatBoutons}}
+{\footnotesize\ttfamily void I\+H\+M\+Reglage\+Video\+::modifier\+Etat\+Boutons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modifie l\textquotesingle{}etat des boutons lors du démarrage du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8cpp_source_l00212}{212} du fichier \hyperlink{ihmreglagevideo_8cpp_source}{ihmreglagevideo.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8h_source_l00042}{bouton\+Arreter\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00041}{bouton\+Demarrer\+Video}, \hyperlink{ihmreglagevideo_8cpp_source_l00172}{charger\+Liste\+Resolution\+Disponible()}, \hyperlink{ihmreglagevideo_8h_source_l00035}{contraste\+Video}, \hyperlink{rov_8cpp_source_l00144}{Rov\+::get\+Camera()}, \hyperlink{ihmreglagevideo_8h_source_l00038}{liste\+Cameras}, \hyperlink{ihmreglagevideo_8h_source_l00040}{liste\+Resolutions}, \hyperlink{ihmreglagevideo_8h_source_l00034}{luminosite\+Video}, \hyperlink{ihmreglagevideo_8h_source_l00027}{rov}, et \hyperlink{ihmreglagevideo_8h_source_l00036}{saturation\+Video}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00234}{I\+H\+M\+Rov\+::arreter\+Video()}.
+
+
+\begin{DoxyCode}
+00213 \{
+00214     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00215     \{
+00216         disconnect(\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setLuminosite(\textcolor{keywordtype}{int})));
+00217         disconnect(\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->
+      \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setContraste(\textcolor{keywordtype}{int})));
+00218         disconnect(\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setSaturation(\textcolor{keywordtype}{int})));
+00219         disconnect(\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(\textcolor{keywordtype}{int})));
+00220         disconnect(\hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setResolution(\textcolor{keywordtype}{int})));
+00221     \}
+00222     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setEnabled(\textcolor{keyword}{true});
+00223     \hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo}->setEnabled(\textcolor{keyword}{false});
+00224     \hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo}->setEnabled(\textcolor{keyword}{true});
+00225     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setEnabled(\textcolor{keyword}{true});
+00226     \hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo}->setDisabled(\textcolor{keyword}{true});
+00227 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}\label{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!bouton\+Arreter\+Video@{bouton\+Arreter\+Video}}
+\index{bouton\+Arreter\+Video@{bouton\+Arreter\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{bouton\+Arreter\+Video}{boutonArreterVideo}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Reglage\+Video\+::bouton\+Arreter\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant d\textquotesingle{}arrêter le flux vidéo de la caméra selectionner. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00042}{42} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00203}{activer\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{modifier\+Etat\+Boutons()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}\label{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!bouton\+Demarrer\+Video@{bouton\+Demarrer\+Video}}
+\index{bouton\+Demarrer\+Video@{bouton\+Demarrer\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{bouton\+Demarrer\+Video}{boutonDemarrerVideo}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Reglage\+Video\+::bouton\+Demarrer\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant de démarrer le flux vidéo de la caméra selectionner. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00041}{41} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00203}{activer\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00047}{configurer\+Widgets()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{modifier\+Etat\+Boutons()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a5a57047117d423ba8bf62bbcb2baee74}\label{class_i_h_m_reglage_video_a5a57047117d423ba8bf62bbcb2baee74}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!camera@{camera}}
+\index{camera@{camera}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily Q\+Label$\ast$ I\+H\+M\+Reglage\+Video\+::camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Texte informant de l\textquotesingle{}élément à selectionner (caméra) 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00037}{37} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_ad1aa173a98ced9f3aaeccb0c2712093c}\label{class_i_h_m_reglage_video_ad1aa173a98ced9f3aaeccb0c2712093c}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!contraste@{contraste}}
+\index{contraste@{contraste}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{contraste}{contraste}}
+{\footnotesize\ttfamily Q\+Label$\ast$ I\+H\+M\+Reglage\+Video\+::contraste\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Texte informant le reglage à modifier. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00032}{32} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}\label{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!contraste\+Video@{contraste\+Video}}
+\index{contraste\+Video@{contraste\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{contraste\+Video}{contrasteVideo}}
+{\footnotesize\ttfamily Q\+Spin\+Box$\ast$ I\+H\+M\+Reglage\+Video\+::contraste\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zone de saisie permettant de modifier le contraste du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00035}{35} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00047}{configurer\+Widgets()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00117}{initialiser\+Evenements\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{modifier\+Etat\+Boutons()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}\label{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!liste\+Cameras@{liste\+Cameras}}
+\index{liste\+Cameras@{liste\+Cameras}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{liste\+Cameras}{listeCameras}}
+{\footnotesize\ttfamily Q\+Combo\+Box$\ast$ I\+H\+M\+Reglage\+Video\+::liste\+Cameras\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste déroulante déstiné à accueillir la liste des caméra disponible. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00038}{38} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00203}{activer\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00132}{charger\+Liste\+Camera\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00172}{charger\+Liste\+Resolution\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00047}{configurer\+Widgets()}, \hyperlink{ihmreglagevideo_8cpp_source_l00117}{initialiser\+Evenements\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{modifier\+Etat\+Boutons()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}\label{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!liste\+Resolutions@{liste\+Resolutions}}
+\index{liste\+Resolutions@{liste\+Resolutions}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{liste\+Resolutions}{listeResolutions}}
+{\footnotesize\ttfamily Q\+Combo\+Box$\ast$ I\+H\+M\+Reglage\+Video\+::liste\+Resolutions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste déroulante déstiné à accueillir la liste des résolutions disponible. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00040}{40} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00203}{activer\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00179}{charger\+Liste\+Resolution\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00117}{initialiser\+Evenements\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{modifier\+Etat\+Boutons()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a16b65877af48863d0752e226371952ab}\label{class_i_h_m_reglage_video_a16b65877af48863d0752e226371952ab}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!luminosite@{luminosite}}
+\index{luminosite@{luminosite}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{luminosite}{luminosite}}
+{\footnotesize\ttfamily Q\+Label$\ast$ I\+H\+M\+Reglage\+Video\+::luminosite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Texte informant le reglage à modifier. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00031}{31} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}\label{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!luminosite\+Video@{luminosite\+Video}}
+\index{luminosite\+Video@{luminosite\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{luminosite\+Video}{luminositeVideo}}
+{\footnotesize\ttfamily Q\+Spin\+Box$\ast$ I\+H\+M\+Reglage\+Video\+::luminosite\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zone de saisie permettant de modifier la luminosite du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00034}{34} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00047}{configurer\+Widgets()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00117}{initialiser\+Evenements\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{modifier\+Etat\+Boutons()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}\label{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!resolution@{resolution}}
+\index{resolution@{resolution}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{resolution}{resolution}}
+{\footnotesize\ttfamily Q\+Label$\ast$ I\+H\+M\+Reglage\+Video\+::resolution\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Texte informant de l\textquotesingle{}élément à selectionner (résolution) 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00039}{39} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00179}{charger\+Liste\+Resolution\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}\label{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!rov@{rov}}
+\index{rov@{rov}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{rov}{rov}}
+{\footnotesize\ttfamily \hyperlink{class_rov}{Rov}$\ast$ I\+H\+M\+Reglage\+Video\+::rov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Objet rov permettant de mofidier les reglage du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00027}{27} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00203}{activer\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00132}{charger\+Liste\+Camera\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00179}{charger\+Liste\+Resolution\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00117}{initialiser\+Evenements\+Camera()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{modifier\+Etat\+Boutons()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a452450793da1908cfe89fb9984b914d1}\label{class_i_h_m_reglage_video_a452450793da1908cfe89fb9984b914d1}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!saturation@{saturation}}
+\index{saturation@{saturation}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{saturation}{saturation}}
+{\footnotesize\ttfamily Q\+Label$\ast$ I\+H\+M\+Reglage\+Video\+::saturation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Texte informant le reglage à modifier. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00033}{33} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}\label{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!saturation\+Video@{saturation\+Video}}
+\index{saturation\+Video@{saturation\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{saturation\+Video}{saturationVideo}}
+{\footnotesize\ttfamily Q\+Spin\+Box$\ast$ I\+H\+M\+Reglage\+Video\+::saturation\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zone de saisie permettant de modifier la saturation du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00036}{36} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00047}{configurer\+Widgets()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00117}{initialiser\+Evenements\+Camera()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{modifier\+Etat\+Boutons()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}\label{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!slider\+Contraste\+Video@{slider\+Contraste\+Video}}
+\index{slider\+Contraste\+Video@{slider\+Contraste\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{slider\+Contraste\+Video}{sliderContrasteVideo}}
+{\footnotesize\ttfamily Q\+Slider$\ast$ I\+H\+M\+Reglage\+Video\+::slider\+Contraste\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Slider permettant de modifier le contraste du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00029}{29} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00047}{configurer\+Widgets()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}\label{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!slider\+Luminosite\+Video@{slider\+Luminosite\+Video}}
+\index{slider\+Luminosite\+Video@{slider\+Luminosite\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{slider\+Luminosite\+Video}{sliderLuminositeVideo}}
+{\footnotesize\ttfamily Q\+Slider$\ast$ I\+H\+M\+Reglage\+Video\+::slider\+Luminosite\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Slider permettant de modifier la luminosite du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00028}{28} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00047}{configurer\+Widgets()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}\label{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}} 
+\index{I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}!slider\+Saturation\+Video@{slider\+Saturation\+Video}}
+\index{slider\+Saturation\+Video@{slider\+Saturation\+Video}!I\+H\+M\+Reglage\+Video@{I\+H\+M\+Reglage\+Video}}
+\paragraph{\texorpdfstring{slider\+Saturation\+Video}{sliderSaturationVideo}}
+{\footnotesize\ttfamily Q\+Slider$\ast$ I\+H\+M\+Reglage\+Video\+::slider\+Saturation\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Slider permettant de modifier la saturation du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmreglagevideo_8h_source_l00030}{30} du fichier \hyperlink{ihmreglagevideo_8h_source}{ihmreglagevideo.\+h}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00047}{configurer\+Widgets()}, \hyperlink{ihmreglagevideo_8cpp_source_l00105}{initialiser\+Evenements()}, \hyperlink{ihmreglagevideo_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ihmreglagevideo_8h}{ihmreglagevideo.\+h}\item 
+\hyperlink{ihmreglagevideo_8cpp}{ihmreglagevideo.\+cpp}\end{DoxyCompactItemize}

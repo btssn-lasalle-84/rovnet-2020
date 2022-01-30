@@ -1,0 +1,1033 @@
+\hypertarget{class_i_h_m_rov}{}\subsection{Référence de la classe I\+H\+M\+Rov}
+\label{class_i_h_m_rov}\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+
+
+I\+HM permettant d\textquotesingle{}obtenir le flux vidéo en direct placé sur le robot et d\textquotesingle{}obtenir les informations relatifs à ses capteurs.  
+
+
+
+
+{\ttfamily \#include \char`\"{}ihmrov.\+h\char`\"{}}
+
+
+
+Graphe de collaboration de I\+H\+M\+Rov\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_i_h_m_rov__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_rov_ae6e1c32c5dea20eb835f5c9036de8a5b}{afficher\+Image} (Q\+Pixmap image)
+\begin{DoxyCompactList}\small\item\em Affiche la nouvelle image du flux vidéo dans l\textquotesingle{}ihm. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_a81335964f1443d11e0929017b2f21267}{arreter\+Video} ()
+\begin{DoxyCompactList}\small\item\em Déconnecte les événements liés à la caméra et modifie l\textquotesingle{}état des boutons de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}{capturer\+Image} (bool etat=false)
+\begin{DoxyCompactList}\small\item\em Enregistre la dernière image du flux vidéo. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_aae5c264f7a1b6d27c1d2e25574c88c5b}{charger\+Photos} ()
+\begin{DoxyCompactList}\small\item\em Charge les photos disponible dans le conteneur album\+Photo de la classe campagne pour les afficher dans l\textquotesingle{}\hyperlink{class_i_h_m_album_photo}{I\+H\+M\+Album\+Photo}. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_a3660d3b4bf61367534eae9d0c3618a5e}{gerer\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Arrête la campagne en cours. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_a955daa231d959666fa7ed01346b2b6ef}{initialiser\+Evenements\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Initialise les événements liés à la caméra. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_a9b517b4891917634d64c903894bcc48b}{regler\+Configuration} ()
+\begin{DoxyCompactList}\small\item\em Ouvre une nouvelle fenetre permettant de régler la communication. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_a68653dfe09dbb9695797d60e9190366b}{regler\+Video} ()
+\begin{DoxyCompactList}\small\item\em Ouvre une nouvelle fenetre permettant de régler l\textquotesingle{}affichage vidéo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_campagne}{Campagne} $\ast$ \hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{get\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}objet campagne en cours. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_rov_a403274da2bd4ca316f2f1b64a48a315b}{I\+H\+M\+Rov} (\hyperlink{class_i_h_m_accueil}{I\+H\+M\+Accueil} $\ast$\hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihm\+Accueil}, \hyperlink{class_q_widget}{Q\+Widget} $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov}. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_a301a0b8cb323c2c9de71df9070bb7555}{set\+Campagne} (\hyperlink{class_campagne}{Campagne} $\ast$campagne)
+\begin{DoxyCompactList}\small\item\em Associe une campagne a la campagne en cours du rov. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_rov_ab861463889934a3b6083b7a29c6adf45}{$\sim$\+I\+H\+M\+Rov} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_rov_a68b11818797a6444a8fab81b7b45f670}{close\+Event} (Q\+Close\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em Gêre l\textquotesingle{}état de la campagne lors de la fermeture forcé de la fenêtre ihm\+Rov. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_rov_a58ba3661c111c9ab2d6f1e3c52f4ec21}{actualiser\+Informations} (Q\+Pixmap \&image)
+\begin{DoxyCompactList}\small\item\em Actualise les informations incrusté dans l\textquotesingle{}image (heure, données capteur, durée missions) \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_aba47130fb875a01eefa09bc875affe6c}{configurer\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Configure l\textquotesingle{}état des widgets à la création de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}{fermer} ()
+\begin{DoxyCompactList}\small\item\em Arrête la campagne et ferme l\textquotesingle{}ihm\+Rov. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_a61e34efc084bba9934bce0d91448ea04}{initialiser\+Evenements} ()
+\begin{DoxyCompactList}\small\item\em Initialise les événements de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_aa900473297415bf43a13c4152034135a}{initialiser\+Layouts} ()
+\begin{DoxyCompactList}\small\item\em Initialise les layouts de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_rov_a77d08efdfc3292d215af4df0e1af33a8}{initialiser\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Initialise les widgets de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{bouton\+Campagne}
+\begin{DoxyCompactList}\small\item\em Bouton permettant de mettre en pause la campagne en cours. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}{bouton\+Configuration}
+\begin{DoxyCompactList}\small\item\em Bouton permettant d\textquotesingle{}accéder à la configuration de la communication. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}{bouton\+Reglage\+Video}
+\begin{DoxyCompactList}\small\item\em Bouton permettant d\textquotesingle{}accéder aux reglage de la vidéo. \end{DoxyCompactList}\item 
+\hyperlink{class_campagne}{Campagne} $\ast$ \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagne\+En\+Cours}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet \hyperlink{class_campagne}{Campagne} possédant les informations de la campagne en cours. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_configuration}{I\+H\+M\+Configuration} $\ast$ \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet \hyperlink{class_i_h_m_configuration}{I\+H\+M\+Configuration} permettant de modifier les reglages de la communication. \end{DoxyCompactList}\item 
+Q\+Pixmap \hyperlink{class_i_h_m_rov_a2081e30323773ee895199ec026d82fc8}{derniere\+Image\+Video}
+\begin{DoxyCompactList}\small\item\em Dernière image reçue du flux vidéo. \end{DoxyCompactList}\item 
+Q\+Label $\ast$ \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{flux\+Video}
+\begin{DoxyCompactList}\small\item\em Emplacement permettant d\textquotesingle{}accueiller le flux vidéo. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_accueil}{I\+H\+M\+Accueil} $\ast$ \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihm\+Accueil}
+\begin{DoxyCompactList}\small\item\em Relation entre l\textquotesingle{}ihm\+Accueil et l\textquotesingle{}ihm\+Rov. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}{photos\+En\+Cours}
+\begin{DoxyCompactList}\small\item\em Bouton permettant d\textquotesingle{}accéder aux photo prise en cours de campagne. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_reglage_video}{I\+H\+M\+Reglage\+Video} $\ast$ \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglage\+Video}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet reglage\+Vidéo permettant de modifier les reglages du flux vidéo. \end{DoxyCompactList}\item 
+\hyperlink{class_rov}{Rov} $\ast$ \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet rov possédant le controle sur les autres classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+I\+HM permettant d\textquotesingle{}obtenir le flux vidéo en direct placé sur le robot et d\textquotesingle{}obtenir les informations relatifs à ses capteurs. 
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00041}{41} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_i_h_m_rov_a403274da2bd4ca316f2f1b64a48a315b}\label{class_i_h_m_rov_a403274da2bd4ca316f2f1b64a48a315b}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{I\+H\+M\+Rov()}{IHMRov()}}
+{\footnotesize\ttfamily I\+H\+M\+Rov\+::\+I\+H\+M\+Rov (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_h_m_accueil}{I\+H\+M\+Accueil} $\ast$}]{ihm\+Accueil,  }\item[{\hyperlink{class_q_widget}{Q\+Widget} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ihm\+Accueil} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00015}{15} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00049}{configuration}, \hyperlink{ihmrov_8cpp_source_l00050}{configurer\+Widgets()}, \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}, \hyperlink{ihmrov_8cpp_source_l00061}{initialiser\+Layouts()}, \hyperlink{ihmrov_8cpp_source_l00033}{initialiser\+Widgets()}, \hyperlink{ihmrov_8h_source_l00048}{reglage\+Video}, et \hyperlink{ihmrov_8h_source_l00047}{rov}.
+
+
+\begin{DoxyCode}
+00015                                                       : \hyperlink{class_q_widget}{QWidget}(parent), 
+      \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}(\textcolor{keyword}{nullptr}), \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil}(ihmAccueil)
+00016 \{    
+00017     qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this} << \textcolor{stringliteral}{"width"} << qApp->desktop()->screen()->width() << \textcolor{stringliteral}{"height"} << qApp->
+      desktop()->screen()->height();
+00018     \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov} = \textcolor{keyword}{new} \hyperlink{class_rov}{Rov}(\textcolor{keyword}{this});
+00019     \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} = \textcolor{keyword}{nullptr};
+00020     \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} = \textcolor{keyword}{nullptr};
+00021 
+00022     \hyperlink{class_i_h_m_rov_a77d08efdfc3292d215af4df0e1af33a8}{initialiserWidgets}();
+00023     \hyperlink{class_i_h_m_rov_aba47130fb875a01eefa09bc875affe6c}{configurerWidgets}();
+00024     \hyperlink{class_i_h_m_rov_aa900473297415bf43a13c4152034135a}{initialiserLayouts}();
+00025     \hyperlink{class_i_h_m_rov_a61e34efc084bba9934bce0d91448ea04}{initialiserEvenements}();
+00026 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_ab861463889934a3b6083b7a29c6adf45}\label{class_i_h_m_rov_ab861463889934a3b6083b7a29c6adf45}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!````~I\+H\+M\+Rov@{$\sim$\+I\+H\+M\+Rov}}
+\index{````~I\+H\+M\+Rov@{$\sim$\+I\+H\+M\+Rov}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{$\sim$\+I\+H\+M\+Rov()}{~IHMRov()}}
+{\footnotesize\ttfamily I\+H\+M\+Rov\+::$\sim$\+I\+H\+M\+Rov (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov}. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00028}{28} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+\begin{DoxyCode}
+00029 \{
+00030     qDebug() << Q\_FUNC\_INFO;
+00031 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_i_h_m_rov_a58ba3661c111c9ab2d6f1e3c52f4ec21}\label{class_i_h_m_rov_a58ba3661c111c9ab2d6f1e3c52f4ec21}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!actualiser\+Informations@{actualiser\+Informations}}
+\index{actualiser\+Informations@{actualiser\+Informations}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{actualiser\+Informations()}{actualiserInformations()}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::actualiser\+Informations (\begin{DoxyParamCaption}\item[{Q\+Pixmap \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Actualise les informations incrusté dans l\textquotesingle{}image (heure, données capteur, durée missions) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em image} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000001}{A faire}]Tenir compte de la résolution de l\textquotesingle{}image \end{DoxyRefDesc}
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00110}{110} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8cpp_source_l00149}{Rov\+::get\+Capteurs()}, \hyperlink{capteurs_8cpp_source_l00054}{Capteurs\+::get\+Radiation()}, \hyperlink{capteurs_8cpp_source_l00039}{Capteurs\+::get\+Telemetrie()}, \hyperlink{capteurs_8cpp_source_l00044}{Capteurs\+::get\+Temperature()}, \hyperlink{rov_8cpp_source_l00154}{Rov\+::get\+Temps\+Campagne()}, et \hyperlink{ihmrov_8h_source_l00047}{rov}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00154}{afficher\+Image()}.
+
+
+\begin{DoxyCode}
+00111 \{
+00112     QPainter p(&image);
+00113     p.setPen(Qt::darkRed);
+00114     p.setFont(QFont(\textcolor{stringliteral}{"Arial"}, 20));
+00115 
+00120     QImage logoHeure(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_heure.png"});
+00121     p.drawImage(5, 6, logoHeure.scaled(20,20));
+00122     p.drawText(30, 25, QTime::currentTime().toString());
+00123 
+00124     QImage logoDuree(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_duree.png"});
+00125     p.drawImage(600, 6, logoDuree.scaled(20,20));
+00126     p.drawText(490, 25, \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_aa977585d4377a57281004fd57208635a}{getTempsCampagne}());
+00127 
+00128     QImage logoTemperature(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_temperature.png"});
+00129     p.drawImage(5, 430, logoTemperature.scaled(20,40));
+00130     p.drawText(35, 460, \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{getCapteurs}()->\hyperlink{class_capteurs_aa1346e5cbea9e37afc3694a0ea86bd99}{getTemperature}() + \textcolor{stringliteral}{" °C"});
+00131 
+00132     QImage logoRadiation(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_radiation.png"});
+00133     p.drawImage(160, 430, logoRadiation.scaled(40,40));
+00134     p.drawText(210, 460, \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{getCapteurs}()->\hyperlink{class_capteurs_aaee3d64c752b09f8674fa62907f38cbc}{getRadiation}() + \textcolor{stringliteral}{" uS/h"});
+00135 
+00136     QImage logoObstacle(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_telemetrie.png"});
+00137     p.drawImage(400, 430, logoObstacle.scaled(40,40));
+00138     p.drawText(450, 460, \textcolor{stringliteral}{"Obstacle : "} + \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{getCapteurs}()->
+      \hyperlink{class_capteurs_ad8c2c486e92cc537dc014035b5634b60}{getTelemetrie}() + \textcolor{stringliteral}{" cm"});
+00139 
+00140     p.end();
+00141 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_ae6e1c32c5dea20eb835f5c9036de8a5b}\label{class_i_h_m_rov_ae6e1c32c5dea20eb835f5c9036de8a5b}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!afficher\+Image@{afficher\+Image}}
+\index{afficher\+Image@{afficher\+Image}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{afficher\+Image}{afficherImage}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::afficher\+Image (\begin{DoxyParamCaption}\item[{Q\+Pixmap}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Affiche la nouvelle image du flux vidéo dans l\textquotesingle{}ihm. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em image} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00154}{154} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8cpp_source_l00110}{actualiser\+Informations()}, \hyperlink{ihmrov_8h_source_l00053}{derniere\+Image\+Video}, et \hyperlink{ihmrov_8h_source_l00050}{flux\+Video}.
+
+
+\begin{DoxyCode}
+00155 \{
+00156     \hyperlink{class_i_h_m_rov_a2081e30323773ee895199ec026d82fc8}{derniereImageVideo} = image;
+00157     \hyperlink{class_i_h_m_rov_a58ba3661c111c9ab2d6f1e3c52f4ec21}{actualiserInformations}(image);
+00158     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setPixmap(image);
+00159 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a81335964f1443d11e0929017b2f21267}\label{class_i_h_m_rov_a81335964f1443d11e0929017b2f21267}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!arreter\+Video@{arreter\+Video}}
+\index{arreter\+Video@{arreter\+Video}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{arreter\+Video}{arreterVideo}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::arreter\+Video (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Déconnecte les événements liés à la caméra et modifie l\textquotesingle{}état des boutons de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00234}{234} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8cpp_source_l00212}{I\+H\+M\+Reglage\+Video\+::modifier\+Etat\+Boutons()}, et \hyperlink{ihmrov_8h_source_l00048}{reglage\+Video}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00263}{Rov\+::arreter\+Video()}.
+
+
+\begin{DoxyCode}
+00235 \{
+00236     \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo}->\hyperlink{class_i_h_m_reglage_video_ac838581ba03f52e79064cb91ebabb35d}{modifierEtatBoutons}();
+00237 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}\label{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!capturer\+Image@{capturer\+Image}}
+\index{capturer\+Image@{capturer\+Image}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{capturer\+Image}{capturerImage}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::capturer\+Image (\begin{DoxyParamCaption}\item[{bool}]{etat = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Enregistre la dernière image du flux vidéo. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em etat} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00179}{179} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmalbumphoto_8h_source_l00024}{Photo\+::a\+Garder}, \hyperlink{campagne_8cpp_source_l00080}{Campagne\+::ajouter\+Photo()}, \hyperlink{ihmaccueil_8cpp_source_l00313}{I\+H\+M\+Accueil\+::ajouter\+Photo\+B\+D\+D()}, \hyperlink{ihmrov_8h_source_l00045}{campagne\+En\+Cours}, \hyperlink{ihmalbumphoto_8h_source_l00025}{Photo\+::chemin\+Sauvegarde}, \hyperlink{ihmalbumphoto_8h_source_l00023}{Photo\+::dateheure}, \hyperlink{ihmrov_8h_source_l00053}{derniere\+Image\+Video}, \hyperlink{campagne_8cpp_source_l00055}{Campagne\+::get\+Chemin\+Sauvegarde()}, \hyperlink{campagne_8cpp_source_l00019}{Campagne\+::get\+Nom\+Campagne()}, \hyperlink{ihmrov_8h_source_l00046}{ihm\+Accueil}, \hyperlink{ihmalbumphoto_8h_source_l00022}{Photo\+::image}, et \hyperlink{campagne_8cpp_source_l00105}{Campagne\+::incremente\+Nombre\+Photo()}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}, et \hyperlink{ihmrov_8cpp_source_l00033}{initialiser\+Widgets()}.
+
+
+\begin{DoxyCode}
+00180 \{
+00181 \textcolor{preprocessor}{    #ifndef PAS\_DE\_MANETTE}
+00182     \textcolor{keywordflow}{if}(etat)
+00183 \textcolor{preprocessor}{    #endif}
+00184     \textcolor{comment}{//Q\_UNUSED(etat)}
+00185     \{        
+00186         \hyperlink{struct_photo}{Photo} photo;
+00187 
+00188         photo.\hyperlink{struct_photo_aa6ecfed8082bea5af2905208308a6adb}{image} = \hyperlink{class_i_h_m_rov_a2081e30323773ee895199ec026d82fc8}{derniereImageVideo};
+00189         photo.\hyperlink{struct_photo_a0ac4d5bba2d119ca73ba949d18a557bd}{dateheure} = QTime::currentTime();
+00190         photo.\hyperlink{struct_photo_afec1baefdd7d036432494bbb33b21366}{aGarder} = \textcolor{keyword}{true};
+00191         photo.\hyperlink{struct_photo_a3c28eb9ad160b65deb46a72146a1d14f}{cheminSauvegarde} = \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->
+      \hyperlink{class_campagne_ad752790357417d83a93056d9c9689a16}{getCheminSauvegarde}() + \textcolor{stringliteral}{"/"} + \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->
+      \hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}() + \textcolor{stringliteral}{"/"} + \textcolor{stringliteral}{"Capture\_"} + QString::number(
+      \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->\hyperlink{class_campagne_ab6a893a28bc18e054d2d19d2671ce6da}{incrementeNombrePhoto}());
+00192 
+00193         \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->\hyperlink{class_campagne_a472029bf46646d136a750dbaa7a3155f}{ajouterPhoto}(photo);
+00194         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Photo capturée"};
+00195 
+00196         photo.\hyperlink{struct_photo_aa6ecfed8082bea5af2905208308a6adb}{image}.save(photo.\hyperlink{struct_photo_a3c28eb9ad160b65deb46a72146a1d14f}{cheminSauvegarde}, \textcolor{stringliteral}{"PNG"});
+00197 
+00198         \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil}->\hyperlink{class_i_h_m_accueil_aa27c7334efe44c8c4cd582df6581fdff}{ajouterPhotoBDD}(photo, 
+      \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours});
+00199     \}
+00200 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_aae5c264f7a1b6d27c1d2e25574c88c5b}\label{class_i_h_m_rov_aae5c264f7a1b6d27c1d2e25574c88c5b}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!charger\+Photos@{charger\+Photos}}
+\index{charger\+Photos@{charger\+Photos}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{charger\+Photos}{chargerPhotos}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::charger\+Photos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Charge les photos disponible dans le conteneur album\+Photo de la classe campagne pour les afficher dans l\textquotesingle{}\hyperlink{class_i_h_m_album_photo}{I\+H\+M\+Album\+Photo}. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00223}{223} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00045}{campagne\+En\+Cours}, \hyperlink{campagne_8cpp_source_l00070}{Campagne\+::get\+Album\+Photo()}, et \hyperlink{ihmalbumphoto_8cpp_source_l00038}{I\+H\+M\+Album\+Photo\+::ouvrir\+Album\+Photos()}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00224 \{
+00225     \hyperlink{class_i_h_m_album_photo}{IHMAlbumPhoto} *ihmAlbumPhoto = \textcolor{keyword}{new} \hyperlink{class_i_h_m_album_photo}{IHMAlbumPhoto}(\textcolor{keyword}{this});
+00226     ihmAlbumPhoto->\hyperlink{class_i_h_m_album_photo_a5aa9a9c1b04e00eaec1581e92649535f}{ouvrirAlbumPhotos}(\hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->
+      \hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{getAlbumPhoto}());
+00227 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a68b11818797a6444a8fab81b7b45f670}\label{class_i_h_m_rov_a68b11818797a6444a8fab81b7b45f670}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!close\+Event@{close\+Event}}
+\index{close\+Event@{close\+Event}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{close\+Event()}{closeEvent()}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::close\+Event (\begin{DoxyParamCaption}\item[{Q\+Close\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Gêre l\textquotesingle{}état de la campagne lors de la fermeture forcé de la fenêtre ihm\+Rov. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00239}{239} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8cpp_source_l00253}{fermer()}, \hyperlink{rov_8cpp_source_l00175}{Rov\+::get\+Campagne\+Encours()}, et \hyperlink{ihmrov_8h_source_l00047}{rov}.
+
+
+\begin{DoxyCode}
+00240 \{
+00241     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}{getCampagneEncours}();
+00242     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}{getCampagneEncours}())
+00243     \{
+00244         \hyperlink{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}{fermer}();
+00245         \textcolor{keyword}{event}->accept(); \textcolor{comment}{// -> close}
+00246     \}
+00247     \textcolor{keywordflow}{else}
+00248     \{
+00249         \textcolor{keyword}{event}->ignore();
+00250     \}
+00251 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_aba47130fb875a01eefa09bc875affe6c}\label{class_i_h_m_rov_aba47130fb875a01eefa09bc875affe6c}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!configurer\+Widgets@{configurer\+Widgets}}
+\index{configurer\+Widgets@{configurer\+Widgets}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{configurer\+Widgets()}{configurerWidgets()}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::configurer\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Configure l\textquotesingle{}état des widgets à la création de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00050}{50} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00050}{flux\+Video}, et \hyperlink{ihmrov_8h_source_l00027}{R\+A\+T\+IO}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00015}{I\+H\+M\+Rov()}.
+
+
+\begin{DoxyCode}
+00051 \{    
+00052     \textcolor{keywordtype}{int} width = int(qApp->desktop()->screen()->width() * \hyperlink{ihmrov_8h_a7e8b3c8482e593df0ace933ad3de22ee}{RATIO});
+00053     \textcolor{keywordtype}{int} height = int(qApp->desktop()->screen()->height() * \hyperlink{ihmrov_8h_a7e8b3c8482e593df0ace933ad3de22ee}{RATIO});
+00054     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setMinimumWidth(width);
+00055     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setMinimumHeight(height);
+00056     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setMaximumWidth(width);
+00057     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setMaximumHeight(height);
+00058     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setScaledContents(\textcolor{keyword}{true});
+00059 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}\label{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!fermer@{fermer}}
+\index{fermer@{fermer}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{fermer()}{fermer()}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::fermer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Arrête la campagne et ferme l\textquotesingle{}ihm\+Rov. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00253}{253} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8cpp_source_l00136}{Rov\+::arreter\+Campagne()}, \hyperlink{ihmrov_8h_source_l00057}{bouton\+Campagne}, \hyperlink{ihmrov_8h_source_l00045}{campagne\+En\+Cours}, \hyperlink{ihmrov_8h_source_l00049}{configuration}, \hyperlink{ihmrov_8h_source_l00046}{ihm\+Accueil}, \hyperlink{ihmaccueil_8cpp_source_l00295}{I\+H\+M\+Accueil\+::modifier\+Campagne\+B\+D\+D()}, \hyperlink{ihmrov_8h_source_l00048}{reglage\+Video}, et \hyperlink{ihmrov_8h_source_l00047}{rov}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00239}{close\+Event()}, et \hyperlink{ihmrov_8cpp_source_l00202}{gerer\+Campagne()}.
+
+
+\begin{DoxyCode}
+00254 \{
+00255     \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_ad53e8d86817c81f92e3113b0394bedc5}{arreterCampagne}();
+00256     \textcolor{keyword}{delete} \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo};
+00257     \textcolor{keyword}{delete} \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration};
+00258     \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} = \textcolor{keyword}{nullptr};
+00259     \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} = \textcolor{keyword}{nullptr};
+00260     \hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->setText(QString::fromUtf8(\textcolor{stringliteral}{"Démarrer"}));
+00261     \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil}->\hyperlink{class_i_h_m_accueil_a7f1e5f71843a99cb44e3efb7191a6d07}{modifierCampagneBDD}(\hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours});
+00262     this->setVisible(\textcolor{keyword}{false});
+00263     \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil}->setVisible(\textcolor{keyword}{true});
+00264 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a3660d3b4bf61367534eae9d0c3618a5e}\label{class_i_h_m_rov_a3660d3b4bf61367534eae9d0c3618a5e}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!gerer\+Campagne@{gerer\+Campagne}}
+\index{gerer\+Campagne@{gerer\+Campagne}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{gerer\+Campagne}{gererCampagne}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::gerer\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrête la campagne en cours. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00202}{202} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00057}{bouton\+Campagne}, \hyperlink{ihmrov_8h_source_l00049}{configuration}, \hyperlink{rov_8cpp_source_l00123}{Rov\+::demarrer\+Campagne()}, \hyperlink{ihmrov_8cpp_source_l00253}{fermer()}, \hyperlink{ihmrov_8h_source_l00048}{reglage\+Video}, et \hyperlink{ihmrov_8h_source_l00047}{rov}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00323}{I\+H\+M\+Accueil\+::demarrer\+Campagne()}, et \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00203 \{    
+00204     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->text();
+00205     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->text() == QString::fromUtf8(\textcolor{stringliteral}{"Démarrer"}))
+00206     \{
+00207         \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} == \textcolor{keyword}{nullptr})
+00208             \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} = \textcolor{keyword}{new} \hyperlink{class_i_h_m_reglage_video}{IHMReglageVideo}(\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov});
+00209         \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} == \textcolor{keyword}{nullptr})
+00210             \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} = \textcolor{keyword}{new} \hyperlink{class_i_h_m_configuration}{IHMConfiguration}(
+      \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov});
+00211         \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_ab20c6d0a73d6b20d4bef9e9236535a3d}{demarrerCampagne}())
+00212         \{            
+00213             \hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->setText(QString::fromUtf8(\textcolor{stringliteral}{"Arrêter"}));
+00214         \}
+00215     \}
+00216     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->text() == QString::fromUtf8(\textcolor{stringliteral}{"Arrêter"}))
+00217     \{        
+00218         \hyperlink{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}{fermer}();
+00219         \textcolor{comment}{//this->close();}
+00220     \}
+00221 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}\label{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!get\+Campagne@{get\+Campagne}}
+\index{get\+Campagne@{get\+Campagne}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{get\+Campagne()}{getCampagne()}}
+{\footnotesize\ttfamily \hyperlink{class_campagne}{Campagne} $\ast$ I\+H\+M\+Rov\+::get\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne l\textquotesingle{}objet campagne en cours. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}objet campagne en cours 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00149}{149} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00045}{campagne\+En\+Cours}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00136}{Rov\+::arreter\+Campagne()}, \hyperlink{rov_8cpp_source_l00086}{Rov\+::decoder\+Trame\+Capteur()}, \hyperlink{rov_8cpp_source_l00154}{Rov\+::get\+Temps\+Campagne()}, et \hyperlink{ihmalbumphoto_8cpp_source_l00081}{I\+H\+M\+Album\+Photo\+::selectionner\+Photo()}.
+
+
+\begin{DoxyCode}
+00150 \{
+00151     \textcolor{keywordflow}{return} \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours};
+00152 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a61e34efc084bba9934bce0d91448ea04}\label{class_i_h_m_rov_a61e34efc084bba9934bce0d91448ea04}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!initialiser\+Evenements@{initialiser\+Evenements}}
+\index{initialiser\+Evenements@{initialiser\+Evenements}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{initialiser\+Evenements()}{initialiserEvenements()}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::initialiser\+Evenements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les événements de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00098}{98} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00057}{bouton\+Campagne}, \hyperlink{ihmrov_8h_source_l00058}{bouton\+Configuration}, \hyperlink{ihmrov_8h_source_l00052}{bouton\+Reglage\+Video}, \hyperlink{ihmrov_8cpp_source_l00179}{capturer\+Image()}, \hyperlink{ihmrov_8cpp_source_l00223}{charger\+Photos()}, \hyperlink{ihmrov_8cpp_source_l00202}{gerer\+Campagne()}, \hyperlink{ihmrov_8h_source_l00046}{ihm\+Accueil}, \hyperlink{ihmrov_8h_source_l00051}{photos\+En\+Cours}, \hyperlink{ihmrov_8cpp_source_l00170}{regler\+Configuration()}, \hyperlink{ihmrov_8cpp_source_l00161}{regler\+Video()}, et \hyperlink{ihmrov_8h_source_l00047}{rov}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00015}{I\+H\+M\+Rov()}.
+
+
+\begin{DoxyCode}
+00099 \{
+00100     connect(\hyperlink{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}{boutonReglageVideo}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_rov_a68653dfe09dbb9695797d60e9190366b}{reglerVideo}()));
+00101     connect(\hyperlink{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}{boutonConfiguration}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_rov_a9b517b4891917634d64c903894bcc48b}{reglerConfiguration}()));
+00102     connect(\hyperlink{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}{photosEnCours}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_rov_aae5c264f7a1b6d27c1d2e25574c88c5b}{chargerPhotos}()));
+00103 \textcolor{preprocessor}{    #ifdef PAS\_DE\_MANETTE}
+00104     connect(testCapturePhoto, SIGNAL(clicked(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(\hyperlink{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}{capturerImage}(\textcolor{keywordtype}{bool})));
+00105 \textcolor{preprocessor}{    #endif}
+00106     connect(\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_rov_a3660d3b4bf61367534eae9d0c3618a5e}{gererCampagne}()));
+00107     connect(\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}, SIGNAL(enregistrerMesures(QString, QString, QString)), 
+      \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil}, SLOT(enregisterMesureBDD(QString, QString, QString)));
+00108 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a955daa231d959666fa7ed01346b2b6ef}\label{class_i_h_m_rov_a955daa231d959666fa7ed01346b2b6ef}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!initialiser\+Evenements\+Camera@{initialiser\+Evenements\+Camera}}
+\index{initialiser\+Evenements\+Camera@{initialiser\+Evenements\+Camera}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{initialiser\+Evenements\+Camera}{initialiserEvenementsCamera}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::initialiser\+Evenements\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Initialise les événements liés à la caméra. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00229}{229} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmreglagevideo_8cpp_source_l00117}{I\+H\+M\+Reglage\+Video\+::initialiser\+Evenements\+Camera()}, et \hyperlink{ihmrov_8h_source_l00048}{reglage\+Video}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00161}{Rov\+::demarrer\+Video()}.
+
+
+\begin{DoxyCode}
+00230 \{
+00231     \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo}->\hyperlink{class_i_h_m_reglage_video_aba318ba2789177dafcf2651f95603435}{initialiserEvenementsCamera}();
+00232 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_aa900473297415bf43a13c4152034135a}\label{class_i_h_m_rov_aa900473297415bf43a13c4152034135a}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!initialiser\+Layouts@{initialiser\+Layouts}}
+\index{initialiser\+Layouts@{initialiser\+Layouts}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{initialiser\+Layouts()}{initialiserLayouts()}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::initialiser\+Layouts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les layouts de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00061}{61} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00057}{bouton\+Campagne}, \hyperlink{ihmrov_8h_source_l00058}{bouton\+Configuration}, \hyperlink{ihmrov_8h_source_l00052}{bouton\+Reglage\+Video}, \hyperlink{ihmrov_8h_source_l00050}{flux\+Video}, \hyperlink{ihmrov_8h_source_l00020}{N\+O\+M\+\_\+\+F\+E\+N\+E\+T\+R\+E\+\_\+\+R\+OV}, et \hyperlink{ihmrov_8h_source_l00051}{photos\+En\+Cours}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00015}{I\+H\+M\+Rov()}.
+
+
+\begin{DoxyCode}
+00062 \{
+00063     QVBoxLayout *layoutPrincipal = \textcolor{keyword}{new} QVBoxLayout;
+00064     QHBoxLayout *layoutInformationRov = \textcolor{keyword}{new} QHBoxLayout;
+00065     QVBoxLayout *layoutCamera = \textcolor{keyword}{new} QVBoxLayout;
+00066     QVBoxLayout *layoutOptionVideo = \textcolor{keyword}{new} QVBoxLayout;
+00067     QVBoxLayout *layoutGestionCampagne = \textcolor{keyword}{new} QVBoxLayout;
+00068     QVBoxLayout *layoutReglageVideo = \textcolor{keyword}{new} QVBoxLayout;
+00069 
+00070     layoutCamera->setAlignment(Qt::AlignTop);
+00071     layoutOptionVideo->setAlignment(Qt::AlignTop);
+00072     layoutGestionCampagne->setAlignment(Qt::AlignBottom);
+00073 
+00074     layoutCamera->addWidget(\hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo});
+00075     layoutOptionVideo->addWidget(\hyperlink{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}{boutonReglageVideo});
+00076     layoutOptionVideo->addWidget(\hyperlink{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}{boutonConfiguration});
+00077     layoutOptionVideo->addWidget(\hyperlink{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}{photosEnCours});
+00078 \textcolor{preprocessor}{    #ifdef PAS\_DE\_MANETTE}
+00079     layoutOptionVideo->addWidget(testCapturePhoto);
+00080 \textcolor{preprocessor}{    #endif}
+00081 
+00082     layoutPrincipal->addLayout(layoutInformationRov);
+00083     layoutInformationRov->addLayout(layoutCamera);
+00084     layoutInformationRov->addStretch();
+00085     layoutInformationRov->addLayout(layoutReglageVideo);
+00086     layoutReglageVideo->addLayout(layoutOptionVideo);
+00087     layoutReglageVideo->addLayout(layoutGestionCampagne);
+00088     layoutGestionCampagne->addWidget(\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne});
+00089 
+00090     setLayout(layoutPrincipal);
+00091 
+00092     setWindowTitle(\hyperlink{ihmrov_8h_aa7e4fcf0d5f67b5c84de425d1f4776ea}{NOM\_FENETRE\_ROV});
+00093     setWindowFlags(windowFlags() & ~Qt::WindowCloseButtonHint);
+00094     showNormal();
+00095     \textcolor{comment}{//showMaximized();}
+00096 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a77d08efdfc3292d215af4df0e1af33a8}\label{class_i_h_m_rov_a77d08efdfc3292d215af4df0e1af33a8}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!initialiser\+Widgets@{initialiser\+Widgets}}
+\index{initialiser\+Widgets@{initialiser\+Widgets}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{initialiser\+Widgets()}{initialiserWidgets()}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::initialiser\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les widgets de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00033}{33} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00057}{bouton\+Campagne}, \hyperlink{ihmrov_8h_source_l00058}{bouton\+Configuration}, \hyperlink{ihmrov_8h_source_l00052}{bouton\+Reglage\+Video}, \hyperlink{ihmrov_8cpp_source_l00179}{capturer\+Image()}, \hyperlink{ihmrov_8h_source_l00050}{flux\+Video}, et \hyperlink{ihmrov_8h_source_l00051}{photos\+En\+Cours}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00015}{I\+H\+M\+Rov()}.
+
+
+\begin{DoxyCode}
+00034 \{
+00035     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Aucune image détéctée"},\textcolor{keyword}{this});
+00036     \hyperlink{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}{photosEnCours} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Photos"}, \textcolor{keyword}{this});
+00037     \hyperlink{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}{boutonReglageVideo} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Réglages"}, \textcolor{keyword}{this});
+00038     \hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne} = \textcolor{keyword}{new} QPushButton(QString::fromUtf8(\textcolor{stringliteral}{"Démarrer"}), \textcolor{keyword}{this});
+00039     \hyperlink{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}{boutonConfiguration} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Configuration"}, \textcolor{keyword}{this});
+00040 
+00041 \textcolor{preprocessor}{    #ifdef PAS\_DE\_MANETTE}
+00042     testCapturePhoto = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Capturer"}, \textcolor{keyword}{this});
+00043     QAction *actionCapturerPhoto = \textcolor{keyword}{new} QAction(\textcolor{keyword}{this});
+00044     actionCapturerPhoto->setShortcut(QKeySequence(Qt::Key\_C));
+00045     addAction(actionCapturerPhoto);
+00046     connect(actionCapturerPhoto, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(\hyperlink{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}{capturerImage}()));
+00047 \textcolor{preprocessor}{    #endif}
+00048 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a9b517b4891917634d64c903894bcc48b}\label{class_i_h_m_rov_a9b517b4891917634d64c903894bcc48b}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!regler\+Configuration@{regler\+Configuration}}
+\index{regler\+Configuration@{regler\+Configuration}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{regler\+Configuration}{reglerConfiguration}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::regler\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ouvre une nouvelle fenetre permettant de régler la communication. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00170}{170} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00049}{configuration}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00171 \{
+00172     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} != \textcolor{keyword}{nullptr})
+00173     \{
+00174         \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration}->show();
+00175         \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration}->raise();
+00176     \}
+00177 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a68653dfe09dbb9695797d60e9190366b}\label{class_i_h_m_rov_a68653dfe09dbb9695797d60e9190366b}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!regler\+Video@{regler\+Video}}
+\index{regler\+Video@{regler\+Video}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{regler\+Video}{reglerVideo}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::regler\+Video (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Ouvre une nouvelle fenetre permettant de régler l\textquotesingle{}affichage vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00161}{161} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00048}{reglage\+Video}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00162 \{
+00163     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} != \textcolor{keyword}{nullptr})
+00164     \{
+00165         \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo}->show();
+00166         \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo}->raise();
+00167     \}
+00168 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_rov_a301a0b8cb323c2c9de71df9070bb7555}\label{class_i_h_m_rov_a301a0b8cb323c2c9de71df9070bb7555}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!set\+Campagne@{set\+Campagne}}
+\index{set\+Campagne@{set\+Campagne}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{set\+Campagne()}{setCampagne()}}
+{\footnotesize\ttfamily void I\+H\+M\+Rov\+::set\+Campagne (\begin{DoxyParamCaption}\item[{\hyperlink{class_campagne}{Campagne} $\ast$}]{campagne }\end{DoxyParamCaption})}
+
+
+
+Associe une campagne a la campagne en cours du rov. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em campagne} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmrov_8cpp_source_l00143}{143} du fichier \hyperlink{ihmrov_8cpp_source}{ihmrov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8h_source_l00045}{campagne\+En\+Cours}, \hyperlink{campagne_8cpp_source_l00039}{Campagne\+::get\+Date()}, \hyperlink{campagne_8cpp_source_l00019}{Campagne\+::get\+Nom\+Campagne()}, et \hyperlink{ihmrov_8h_source_l00020}{N\+O\+M\+\_\+\+F\+E\+N\+E\+T\+R\+E\+\_\+\+R\+OV}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00323}{I\+H\+M\+Accueil\+::demarrer\+Campagne()}.
+
+
+\begin{DoxyCode}
+00144 \{
+00145     \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours} = campagne;
+00146     setWindowTitle(\hyperlink{ihmrov_8h_aa7e4fcf0d5f67b5c84de425d1f4776ea}{NOM\_FENETRE\_ROV}  \textcolor{stringliteral}{" "} + campagne->
+      \hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}() + \textcolor{stringliteral}{" "} + campagne->\hyperlink{class_campagne_a319b5bb4ed2b0fc1a10fc4d099a7a6d2}{getDate}().toString());
+00147 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}\label{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!bouton\+Campagne@{bouton\+Campagne}}
+\index{bouton\+Campagne@{bouton\+Campagne}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{bouton\+Campagne}{boutonCampagne}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Rov\+::bouton\+Campagne\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant de mettre en pause la campagne en cours. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00057}{57} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00253}{fermer()}, \hyperlink{ihmrov_8cpp_source_l00202}{gerer\+Campagne()}, \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}, \hyperlink{ihmrov_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmrov_8cpp_source_l00033}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}\label{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!bouton\+Configuration@{bouton\+Configuration}}
+\index{bouton\+Configuration@{bouton\+Configuration}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{bouton\+Configuration}{boutonConfiguration}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Rov\+::bouton\+Configuration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant d\textquotesingle{}accéder à la configuration de la communication. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00058}{58} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}, \hyperlink{ihmrov_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmrov_8cpp_source_l00033}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}\label{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!bouton\+Reglage\+Video@{bouton\+Reglage\+Video}}
+\index{bouton\+Reglage\+Video@{bouton\+Reglage\+Video}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{bouton\+Reglage\+Video}{boutonReglageVideo}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Rov\+::bouton\+Reglage\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant d\textquotesingle{}accéder aux reglage de la vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00052}{52} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}, \hyperlink{ihmrov_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmrov_8cpp_source_l00033}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}\label{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!campagne\+En\+Cours@{campagne\+En\+Cours}}
+\index{campagne\+En\+Cours@{campagne\+En\+Cours}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{campagne\+En\+Cours}{campagneEnCours}}
+{\footnotesize\ttfamily \hyperlink{class_campagne}{Campagne}$\ast$ I\+H\+M\+Rov\+::campagne\+En\+Cours\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet \hyperlink{class_campagne}{Campagne} possédant les informations de la campagne en cours. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00045}{45} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00179}{capturer\+Image()}, \hyperlink{ihmrov_8cpp_source_l00223}{charger\+Photos()}, \hyperlink{ihmrov_8cpp_source_l00253}{fermer()}, \hyperlink{ihmrov_8cpp_source_l00149}{get\+Campagne()}, et \hyperlink{ihmrov_8cpp_source_l00143}{set\+Campagne()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}\label{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!configuration@{configuration}}
+\index{configuration@{configuration}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{configuration}{configuration}}
+{\footnotesize\ttfamily \hyperlink{class_i_h_m_configuration}{I\+H\+M\+Configuration}$\ast$ I\+H\+M\+Rov\+::configuration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet \hyperlink{class_i_h_m_configuration}{I\+H\+M\+Configuration} permettant de modifier les reglages de la communication. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00049}{49} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00253}{fermer()}, \hyperlink{ihmrov_8cpp_source_l00202}{gerer\+Campagne()}, \hyperlink{ihmrov_8cpp_source_l00015}{I\+H\+M\+Rov()}, et \hyperlink{ihmrov_8cpp_source_l00170}{regler\+Configuration()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_a2081e30323773ee895199ec026d82fc8}\label{class_i_h_m_rov_a2081e30323773ee895199ec026d82fc8}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!derniere\+Image\+Video@{derniere\+Image\+Video}}
+\index{derniere\+Image\+Video@{derniere\+Image\+Video}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{derniere\+Image\+Video}{derniereImageVideo}}
+{\footnotesize\ttfamily Q\+Pixmap I\+H\+M\+Rov\+::derniere\+Image\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dernière image reçue du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00053}{53} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00154}{afficher\+Image()}, et \hyperlink{ihmrov_8cpp_source_l00179}{capturer\+Image()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}\label{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!flux\+Video@{flux\+Video}}
+\index{flux\+Video@{flux\+Video}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{flux\+Video}{fluxVideo}}
+{\footnotesize\ttfamily Q\+Label$\ast$ I\+H\+M\+Rov\+::flux\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Emplacement permettant d\textquotesingle{}accueiller le flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00050}{50} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00154}{afficher\+Image()}, \hyperlink{ihmrov_8cpp_source_l00050}{configurer\+Widgets()}, \hyperlink{ihmrov_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmrov_8cpp_source_l00033}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}\label{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!ihm\+Accueil@{ihm\+Accueil}}
+\index{ihm\+Accueil@{ihm\+Accueil}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{ihm\+Accueil}{ihmAccueil}}
+{\footnotesize\ttfamily \hyperlink{class_i_h_m_accueil}{I\+H\+M\+Accueil}$\ast$ I\+H\+M\+Rov\+::ihm\+Accueil\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Relation entre l\textquotesingle{}ihm\+Accueil et l\textquotesingle{}ihm\+Rov. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00046}{46} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00179}{capturer\+Image()}, \hyperlink{ihmrov_8cpp_source_l00253}{fermer()}, et \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}\label{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!photos\+En\+Cours@{photos\+En\+Cours}}
+\index{photos\+En\+Cours@{photos\+En\+Cours}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{photos\+En\+Cours}{photosEnCours}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Rov\+::photos\+En\+Cours\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant d\textquotesingle{}accéder aux photo prise en cours de campagne. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00051}{51} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}, \hyperlink{ihmrov_8cpp_source_l00061}{initialiser\+Layouts()}, et \hyperlink{ihmrov_8cpp_source_l00033}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}\label{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!reglage\+Video@{reglage\+Video}}
+\index{reglage\+Video@{reglage\+Video}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{reglage\+Video}{reglageVideo}}
+{\footnotesize\ttfamily \hyperlink{class_i_h_m_reglage_video}{I\+H\+M\+Reglage\+Video}$\ast$ I\+H\+M\+Rov\+::reglage\+Video\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet reglage\+Vidéo permettant de modifier les reglages du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00048}{48} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00234}{arreter\+Video()}, \hyperlink{ihmrov_8cpp_source_l00253}{fermer()}, \hyperlink{ihmrov_8cpp_source_l00202}{gerer\+Campagne()}, \hyperlink{ihmrov_8cpp_source_l00015}{I\+H\+M\+Rov()}, \hyperlink{ihmrov_8cpp_source_l00229}{initialiser\+Evenements\+Camera()}, et \hyperlink{ihmrov_8cpp_source_l00161}{regler\+Video()}.
+
+\mbox{\Hypertarget{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}\label{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}} 
+\index{I\+H\+M\+Rov@{I\+H\+M\+Rov}!rov@{rov}}
+\index{rov@{rov}!I\+H\+M\+Rov@{I\+H\+M\+Rov}}
+\paragraph{\texorpdfstring{rov}{rov}}
+{\footnotesize\ttfamily \hyperlink{class_rov}{Rov}$\ast$ I\+H\+M\+Rov\+::rov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet rov possédant le controle sur les autres classes. 
+
+
+
+Définition à la ligne \hyperlink{ihmrov_8h_source_l00047}{47} du fichier \hyperlink{ihmrov_8h_source}{ihmrov.\+h}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00110}{actualiser\+Informations()}, \hyperlink{ihmrov_8cpp_source_l00239}{close\+Event()}, \hyperlink{ihmrov_8cpp_source_l00253}{fermer()}, \hyperlink{ihmrov_8cpp_source_l00202}{gerer\+Campagne()}, \hyperlink{ihmrov_8cpp_source_l00015}{I\+H\+M\+Rov()}, et \hyperlink{ihmrov_8cpp_source_l00098}{initialiser\+Evenements()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ihmrov_8h}{ihmrov.\+h}\item 
+\hyperlink{ihmrov_8cpp}{ihmrov.\+cpp}\end{DoxyCompactItemize}

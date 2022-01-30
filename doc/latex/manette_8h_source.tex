@@ -1,0 +1,207 @@
+\hypertarget{manette_8h_source}{}\subsection{manette.\+h}
+\label{manette_8h_source}\index{manette.\+h@{manette.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef MANETTE\_H}
+00008 \textcolor{preprocessor}{#define MANETTE\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QObject>}
+00011 \textcolor{preprocessor}{#include <QtCore/QCoreApplication>}
+00012 \textcolor{preprocessor}{#include <QtGamepad/QGamepad>}
+00013 \textcolor{preprocessor}{#include <QDebug>}
+00014 
+\Hypertarget{manette_8h_source_l00020}\hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{00020} \textcolor{preprocessor}{#define TAUX\_VALIDITE\_JOYSTICK 0.50}
+00021 
+\Hypertarget{manette_8h_source_l00026}\hyperlink{manette_8h_a26e43ead1d984ddabb462b55010d12f6}{00026} \textcolor{preprocessor}{#define REDUCTION\_VITESSE 0.75}
+00027 
+\Hypertarget{manette_8h_source_l00032}\hyperlink{manette_8h_a16ccf2890fcfc78a47402fe94becb6ca}{00032} \textcolor{preprocessor}{#define IMMOBILE "0"}
+00033 
+\Hypertarget{manette_8h_source_l00038}\hyperlink{manette_8h_af54a6d7aa82993b62caabaaf5b3f1459}{00038} \textcolor{preprocessor}{#define AVANCER "AVANCER"}
+00039 
+\Hypertarget{manette_8h_source_l00044}\hyperlink{manette_8h_a26da42c0f048eced1fff947bac0c2b3d}{00044} \textcolor{preprocessor}{#define RECULER "RECULER"}
+00045 
+\Hypertarget{manette_8h_source_l00050}\hyperlink{manette_8h_a0f61ab9ae13b77038540b31843a6c2ea}{00050} \textcolor{preprocessor}{#define DESCENDRE "DESCENDRE"}
+00051 
+\Hypertarget{manette_8h_source_l00056}\hyperlink{manette_8h_a765e6ea0e13ca38a457aa563930ce2df}{00056} \textcolor{preprocessor}{#define MONTER "MONTER"}
+00057 
+\Hypertarget{manette_8h_source_l00062}\hyperlink{manette_8h_af07f8bf974fdf76afd17f2b97ac15a22}{00062} \textcolor{preprocessor}{#define GAUCHE "GAUCHE"}
+00063 
+\Hypertarget{manette_8h_source_l00068}\hyperlink{manette_8h_af625d3f3bc022848a558f2b18def5b15}{00068} \textcolor{preprocessor}{#define DROITE "DROITE"}
+00069 
+\Hypertarget{manette_8h_source_l00074}\hyperlink{manette_8h_a0d14fc3b862ee6b41366ac22e9737025}{00074} \textcolor{preprocessor}{#define RETOUR\_ETAT\_INITIAL "INIT"}
+00075 
+\Hypertarget{manette_8h_source_l00080}\hyperlink{manette_8h_a0259cc955736c3970883196448e0476a}{00080} \textcolor{preprocessor}{#define OUVERTURE\_PINCE "O"}
+00081 
+\Hypertarget{manette_8h_source_l00086}\hyperlink{manette_8h_a1c242b29a47122b6c528f2bcb73a29e2}{00086} \textcolor{preprocessor}{#define FERMETURE\_PINCE "F"}
+00087 
+\Hypertarget{manette_8h_source_l00092}\hyperlink{manette_8h_afeb63c058f63189b11f10b79f90459e2}{00092} \textcolor{preprocessor}{#define POSER\_OBJET\_DANS\_BAC "BAC"}
+00093 
+\Hypertarget{manette_8h_source_l00098}\hyperlink{manette_8h_aa81fd560b0b9c7c7cde5ac335fefa4c3}{00098} \textcolor{preprocessor}{#define CAMERA\_DROITE  1}
+00099 
+\Hypertarget{manette_8h_source_l00104}\hyperlink{manette_8h_a7390be8c9f6019e070951ebef00c3529}{00104} \textcolor{preprocessor}{#define CAMERA\_GAUCHE -1}
+00105 
+00110 \textcolor{preprocessor}{#define CAMERA\_HAUT   -1}
+00111 
+\Hypertarget{manette_8h_source_l00116}\hyperlink{manette_8h_ac4938d166a83f56a4261513560c0139b}{00116} \textcolor{preprocessor}{#define CAMERA\_BAS     1}
+00117 
+\Hypertarget{manette_8h_source_l00122}\hyperlink{struct_etat_manette_bouton}{00122} \textcolor{keyword}{struct }\hyperlink{struct_etat_manette_bouton}{EtatManetteBouton}
+00123 \{
+\Hypertarget{manette_8h_source_l00124}\hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{00124}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a0a1bcb57b5ce1a3f4ff6de5e8749c052}{boutonA};                       
+\Hypertarget{manette_8h_source_l00125}\hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{00125}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a2a0f4d809b1b9b814fa689113becaad7}{boutonB};                       
+\Hypertarget{manette_8h_source_l00126}\hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{00126}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a4a1d74300413624fd13841eb11c6e974}{boutonX};                       
+\Hypertarget{manette_8h_source_l00127}\hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{00127}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_aae061f9e32f970787226ef9e0bdb5a17}{boutonY};                       
+00128 
+00135     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a7898661d3d19b6d8cf7005111d670ede}{operator==}(\textcolor{keyword}{const} \hyperlink{struct_etat_manette_bouton}{EtatManetteBouton} &maStructure) \textcolor{keyword}{const};
+00142     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a6ebd196e0fe68d30a8238b3e12194c93}{operator!=}(\textcolor{keyword}{const} \hyperlink{struct_etat_manette_bouton}{EtatManetteBouton} &maStructure) \textcolor{keyword}{const};
+00143 \};
+00144 
+\Hypertarget{manette_8h_source_l00150}\hyperlink{struct_etat_manette_pilotage}{00150} \textcolor{keyword}{struct }\hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage}
+00151 \{
+\Hypertarget{manette_8h_source_l00152}\hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{00152}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_pilotage_a12429b457b51cb45cc9d405f3a01bea6}{flecheEnAvant};                 
+\Hypertarget{manette_8h_source_l00153}\hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{00153}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_pilotage_ab7cce4480358d2e7ac189e96ab04b894}{flecheEnArriere};               
+\Hypertarget{manette_8h_source_l00154}\hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{00154}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_pilotage_aace02b9bb3feb3b618dd9133d4c5b87f}{flecheAGauche};                 
+\Hypertarget{manette_8h_source_l00155}\hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{00155}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_pilotage_a78a791f6f8968042efd8e2f64f70f882}{flecheADroite};                 
+\Hypertarget{manette_8h_source_l00156}\hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{00156}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_pilotage_aef8579e406e8766c1936db6da460492a}{boutonHautGauche};              
+\Hypertarget{manette_8h_source_l00157}\hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{00157}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_pilotage_ae0ca75dab8c31fe26d440ec319e2fa84}{boutonHautDroit};               
+00158 
+00165     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a7898661d3d19b6d8cf7005111d670ede}{operator==}(\textcolor{keyword}{const} \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} &maStructure) \textcolor{keyword}{const};
+00172     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a6ebd196e0fe68d30a8238b3e12194c93}{operator!=}(\textcolor{keyword}{const} \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} &maStructure) \textcolor{keyword}{const};
+00173 \};
+\Hypertarget{manette_8h_source_l00178}\hyperlink{struct_etat_manette_deplacement}{00178} \textcolor{keyword}{struct }\hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement}
+00179 \{
+\Hypertarget{manette_8h_source_l00180}\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{00180}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant};         
+\Hypertarget{manette_8h_source_l00181}\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{00181}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere};       
+\Hypertarget{manette_8h_source_l00182}\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{00182}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche};         
+\Hypertarget{manette_8h_source_l00183}\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{00183}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite};         
+\Hypertarget{manette_8h_source_l00184}\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{00184}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche};             
+\Hypertarget{manette_8h_source_l00185}\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{00185}     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit};              
+00186 
+00192     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a7898661d3d19b6d8cf7005111d670ede}{operator==}(\textcolor{keyword}{const} \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} &maStructure) \textcolor{keyword}{const};
+00199     \textcolor{keywordtype}{bool} \hyperlink{struct_etat_manette_bouton_a6ebd196e0fe68d30a8238b3e12194c93}{operator!=}(\textcolor{keyword}{const} \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} &maStructure) \textcolor{keyword}{const};
+00200 \};
+00201 
+00202 \textcolor{keyword}{class }\hyperlink{class_rov}{Rov};
+00203 
+00204 
+\Hypertarget{manette_8h_source_l00210}\hyperlink{class_manette}{00210} \textcolor{keyword}{class }\hyperlink{class_manette}{Manette} : \textcolor{keyword}{public} \hyperlink{class_q_gamepad}{QGamepad}
+00211 \{
+00212     Q\_OBJECT
+00213 
+00214 \textcolor{keyword}{private}:
+\Hypertarget{manette_8h_source_l00215}\hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{00215}     \hyperlink{struct_etat_manette_bouton}{EtatManetteBouton} \hyperlink{class_manette_ae69fd9baa0dad8a960fa93611b6a185f}{maManetteBouton};                        
+\Hypertarget{manette_8h_source_l00216}\hyperlink{class_manette_a066eacf19e615fd72690477c043e3703}{00216}     \hyperlink{struct_etat_manette_bouton}{EtatManetteBouton} \hyperlink{class_manette_a066eacf19e615fd72690477c043e3703}{ouvrirPince};                            
+\Hypertarget{manette_8h_source_l00217}\hyperlink{class_manette_a32adcccdddf35a04970b8b3b12462c00}{00217}     \hyperlink{struct_etat_manette_bouton}{EtatManetteBouton} \hyperlink{class_manette_a32adcccdddf35a04970b8b3b12462c00}{fermerPince};                            
+\Hypertarget{manette_8h_source_l00218}\hyperlink{class_manette_a93fc38a8ca8fbb1cc57cedbab059c56f}{00218}     \hyperlink{struct_etat_manette_bouton}{EtatManetteBouton} \hyperlink{class_manette_a93fc38a8ca8fbb1cc57cedbab059c56f}{poserObjetDansBac};                      
+\Hypertarget{manette_8h_source_l00219}\hyperlink{class_manette_a4c0e9611f08e363feb0a24f8c9d258f2}{00219}     \hyperlink{struct_etat_manette_bouton}{EtatManetteBouton} \hyperlink{class_manette_a4c0e9611f08e363feb0a24f8c9d258f2}{revenirEtatInitial};                     
+\Hypertarget{manette_8h_source_l00220}\hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{00220}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_af3d0f304c4c33e02bdf34fc99aa4dbff}{maManetteDeplacement};              
+\Hypertarget{manette_8h_source_l00221}\hyperlink{class_manette_ad6d8777e6a4885b343389a04174cf1c9}{00221}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_ad6d8777e6a4885b343389a04174cf1c9}{enAvantCas1};                       
+\Hypertarget{manette_8h_source_l00222}\hyperlink{class_manette_a37e31078db889bbf8202b7d8cb9c5947}{00222}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a37e31078db889bbf8202b7d8cb9c5947}{enAvantCas2};                       
+\Hypertarget{manette_8h_source_l00223}\hyperlink{class_manette_a4546e6f56bac4a9e99a92539a68f3c5c}{00223}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a4546e6f56bac4a9e99a92539a68f3c5c}{enAvantCas3};                       
+\Hypertarget{manette_8h_source_l00224}\hyperlink{class_manette_a915c1867ed0f8f9be3a1bf5d87c23813}{00224}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a915c1867ed0f8f9be3a1bf5d87c23813}{enArriereCas1};                     
+\Hypertarget{manette_8h_source_l00225}\hyperlink{class_manette_aa620cef4ea733aa3b9dee18377aee140}{00225}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_aa620cef4ea733aa3b9dee18377aee140}{enArriereCas2};                     
+\Hypertarget{manette_8h_source_l00226}\hyperlink{class_manette_a2dfc47df38251abd34a495005eae6572}{00226}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a2dfc47df38251abd34a495005eae6572}{enArriereCas3};                     
+\Hypertarget{manette_8h_source_l00227}\hyperlink{class_manette_a3aa7b857df1a364d70f1626f2f517056}{00227}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a3aa7b857df1a364d70f1626f2f517056}{rotationAGauche};                   
+\Hypertarget{manette_8h_source_l00228}\hyperlink{class_manette_ac24e87d64418d5667a378b2f508a0759}{00228}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_ac24e87d64418d5667a378b2f508a0759}{rotationAGaucheDoucementCas1}; 
+           
+\Hypertarget{manette_8h_source_l00229}\hyperlink{class_manette_a21fa44eaadd677f97cdc876da8fe3143}{00229}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a21fa44eaadd677f97cdc876da8fe3143}{rotationAGaucheDoucementCas2}; 
+           
+\Hypertarget{manette_8h_source_l00230}\hyperlink{class_manette_abeff301c65d7faeb68e7d38b8f0b5122}{00230}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_abeff301c65d7faeb68e7d38b8f0b5122}{rotationADroite};                   
+\Hypertarget{manette_8h_source_l00231}\hyperlink{class_manette_ac7bf8fa21acad7d4afe9e73c62c224a9}{00231}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_ac7bf8fa21acad7d4afe9e73c62c224a9}{rotationADroiteDoucementCas1}; 
+           
+\Hypertarget{manette_8h_source_l00232}\hyperlink{class_manette_a1ae7c87ab4c27fec817e7b02de9e546b}{00232}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a1ae7c87ab4c27fec817e7b02de9e546b}{rotationADroiteDoucementCas2}; 
+           
+\Hypertarget{manette_8h_source_l00233}\hyperlink{class_manette_a3f44a6304ed3b17176636bad8f2220db}{00233}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a3f44a6304ed3b17176636bad8f2220db}{virageAvantAGauche};                
+\Hypertarget{manette_8h_source_l00234}\hyperlink{class_manette_a0fe6d52d8ca1060a2a3c534847824c09}{00234}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a0fe6d52d8ca1060a2a3c534847824c09}{virageAvantAGaucheDoucementCas1}
+      ;   
+\Hypertarget{manette_8h_source_l00235}\hyperlink{class_manette_a575018c439de0fd1e8cf7be5907ca60d}{00235}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a575018c439de0fd1e8cf7be5907ca60d}{virageAvantAGaucheDoucementCas2}
+      ;   
+\Hypertarget{manette_8h_source_l00236}\hyperlink{class_manette_a91afd62402f690f74a7e351c9aa8f6ec}{00236}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a91afd62402f690f74a7e351c9aa8f6ec}{virageAvantADroite};                
+\Hypertarget{manette_8h_source_l00237}\hyperlink{class_manette_ad4aeabac283607d7d37823aabd4c5e0f}{00237}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_ad4aeabac283607d7d37823aabd4c5e0f}{virageAvantADroiteDoucementCas1}
+      ;   
+\Hypertarget{manette_8h_source_l00238}\hyperlink{class_manette_a6b8d8fd853462fa182a37122b692db90}{00238}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a6b8d8fd853462fa182a37122b692db90}{virageAvantADroiteDoucementCas2}
+      ;   
+\Hypertarget{manette_8h_source_l00239}\hyperlink{class_manette_a92a64ea372e58825097e049694e838a1}{00239}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a92a64ea372e58825097e049694e838a1}{virageArriereAGauche};              
+\Hypertarget{manette_8h_source_l00240}\hyperlink{class_manette_a984a465aac5dda20091f561339dd351d}{00240}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} 
+      \hyperlink{class_manette_a984a465aac5dda20091f561339dd351d}{virageArriereAGaucheDoucementCas1}; 
+\Hypertarget{manette_8h_source_l00241}\hyperlink{class_manette_ac509477cff14d1ab9562c03e9db833f8}{00241}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} 
+      \hyperlink{class_manette_ac509477cff14d1ab9562c03e9db833f8}{virageArriereAGaucheDoucementCas2}; 
+\Hypertarget{manette_8h_source_l00242}\hyperlink{class_manette_a6df334aec9f621e7394e9f398221fe9e}{00242}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} \hyperlink{class_manette_a6df334aec9f621e7394e9f398221fe9e}{virageArriereADroite};              
+\Hypertarget{manette_8h_source_l00243}\hyperlink{class_manette_a2dddb8a8a6f75abc15ddf58025b98ecc}{00243}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} 
+      \hyperlink{class_manette_a2dddb8a8a6f75abc15ddf58025b98ecc}{virageArriereADroiteDoucementCas1}; 
+\Hypertarget{manette_8h_source_l00244}\hyperlink{class_manette_a609f10f48e39eafac800eb232272f0cb}{00244}     \hyperlink{struct_etat_manette_deplacement}{EtatManetteDeplacement} 
+      \hyperlink{class_manette_a609f10f48e39eafac800eb232272f0cb}{virageArriereADroiteDoucementCas2}; 
+00245 
+\Hypertarget{manette_8h_source_l00246}\hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{00246}     \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} \hyperlink{class_manette_aeb3e02eaeaec4c656f78ed8fc6dae342}{maManettePilotage};   
+\Hypertarget{manette_8h_source_l00247}\hyperlink{class_manette_a6ff181eab8c2206ca3d40bf5112e72ec}{00247}     \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} \hyperlink{class_manette_a6ff181eab8c2206ca3d40bf5112e72ec}{avance};             
+\Hypertarget{manette_8h_source_l00248}\hyperlink{class_manette_a5ed3a0ab27f98cd11ecafe5f5b94e7e5}{00248}     \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} \hyperlink{class_manette_a5ed3a0ab27f98cd11ecafe5f5b94e7e5}{recule};             
+\Hypertarget{manette_8h_source_l00249}\hyperlink{class_manette_acc72f831540b93ac3a265d35d005c4fa}{00249}     \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} \hyperlink{class_manette_acc72f831540b93ac3a265d35d005c4fa}{gauche};              
+\Hypertarget{manette_8h_source_l00250}\hyperlink{class_manette_a40a2dc8420742b04c3eee14e477992b1}{00250}     \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} \hyperlink{class_manette_a40a2dc8420742b04c3eee14e477992b1}{droite};              
+\Hypertarget{manette_8h_source_l00251}\hyperlink{class_manette_a63d9a39ea238e105d7491b87f0a3f87d}{00251}     \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} \hyperlink{class_manette_a63d9a39ea238e105d7491b87f0a3f87d}{monte};              
+\Hypertarget{manette_8h_source_l00252}\hyperlink{class_manette_a95e7f41f1e15f01d7530062801817304}{00252}     \hyperlink{struct_etat_manette_pilotage}{EtatManettePilotage} \hyperlink{class_manette_a95e7f41f1e15f01d7530062801817304}{descend};           
+\Hypertarget{manette_8h_source_l00253}\hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{00253}     \textcolor{keywordtype}{bool} \hyperlink{class_manette_a4dc6231c8cc65fac03f59d323fa9a038}{modeDeplacement};                    
+\Hypertarget{manette_8h_source_l00254}\hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{00254}     \textcolor{keywordtype}{bool} \hyperlink{class_manette_acc2cd9afa45328c0da5c580e5c1a67db}{modePilotageBras};                   
+\Hypertarget{manette_8h_source_l00255}\hyperlink{class_manette_a135a3a6f567bbeeefd69b3a020f9f040}{00255}     \textcolor{keywordtype}{int} \hyperlink{class_manette_a135a3a6f567bbeeefd69b3a020f9f040}{puissanceGachetteDroite};             
+\Hypertarget{manette_8h_source_l00256}\hyperlink{class_manette_ab777328c9b35454ab45ed5e0b0a5f234}{00256}     \textcolor{keywordtype}{int} \hyperlink{class_manette_ab777328c9b35454ab45ed5e0b0a5f234}{puissanceGachetteGauche};             
+\Hypertarget{manette_8h_source_l00257}\hyperlink{class_manette_a0ca05a5c08455e74c8d944b96d8124a6}{00257}     QString \hyperlink{class_manette_a0ca05a5c08455e74c8d944b96d8124a6}{joystickAxeXCamera};              
+\Hypertarget{manette_8h_source_l00258}\hyperlink{class_manette_ab635d71c9e829d8950b9bbd13b9cdb01}{00258}     QString \hyperlink{class_manette_ab635d71c9e829d8950b9bbd13b9cdb01}{joystickAxeYCamera};              
+00259 
+00264     \textcolor{keywordtype}{void} initialiserEtats();
+00269     \textcolor{keywordtype}{void} initialiserTypesPilotage();
+00274     \textcolor{keywordtype}{void} initialiserTypesDeplacement();
+00279     \textcolor{keywordtype}{void} initialisationStructuresEnAvant();
+00284     \textcolor{keywordtype}{void} initialisationStructuresEnArriere();
+00289     \textcolor{keywordtype}{void} initialisationStructureRotationAGauche();
+00294     \textcolor{keywordtype}{void} initialisationStructuresRotationAGaucheDoucement();
+00299     \textcolor{keywordtype}{void} initialisationStructureRotationADroite();
+00304     \textcolor{keywordtype}{void} initialisationStructuresRotationADroiteDoucement();
+00309     \textcolor{keywordtype}{void} initialisationStructureVirageAvantAGauche();
+00314     \textcolor{keywordtype}{void} initialisationStructuresVirageAvantAGaucheDoucement();
+00319     \textcolor{keywordtype}{void} initialisationStructureVirageAvantADroite();
+00324     \textcolor{keywordtype}{void} initialisationStructuresVirageAvantADroiteDoucement();
+00329     \textcolor{keywordtype}{void} initialisationStructureVirageArriereAGauche();
+00334     \textcolor{keywordtype}{void} initialisationStructuresVirageArriereAGaucheDoucement();
+00339     \textcolor{keywordtype}{void} initialisationStructureVirageArriereADroite();
+00344     \textcolor{keywordtype}{void} initialisationStructuresVirageArriereADroiteDoucement();
+00349     \textcolor{keywordtype}{void} initialiserEtatBouton();
+00350 
+00351 \textcolor{keyword}{public}:
+00357     \textcolor{keyword}{explicit} \hyperlink{class_manette}{Manette}(\textcolor{keywordtype}{int} deviceId);
+00362     ~\hyperlink{class_manette}{Manette}();
+00363 
+00368     \textcolor{keywordtype}{void} determinerTrameDeplacementRobot();
+00373     \textcolor{keywordtype}{void} determinerTramePilotageBras();
+00378     \textcolor{keywordtype}{void} determinerTrameBouton();
+00383     \textcolor{keywordtype}{void} changerMode();
+00384 
+00385 signals:
+00393     \textcolor{keywordtype}{void} creationTrameDeplacement(\textcolor{keywordtype}{char} deplacementAxeX, \textcolor{keywordtype}{int} puissance, \textcolor{keywordtype}{char} deplacementAxeY);
+00399     \textcolor{keywordtype}{void} creationTramePilotage(QString direction);
+00404     \textcolor{keywordtype}{void} prendrePhoto();
+00410     \textcolor{keywordtype}{void} creationTrameOrdre(QString ordre);
+00415     \textcolor{keywordtype}{void} creationTramePince(QString mouvementPince);
+00422     \textcolor{keywordtype}{void} nouvelleTrameCamera(QString axeY, QString axeX);
+00423 
+00424 \textcolor{keyword}{public} slots:
+00430     \textcolor{keywordtype}{void} changerAxeXJoystickGauche(\textcolor{keywordtype}{double} valeur);
+00436     \textcolor{keywordtype}{void} changerAxeYJoystickGauche(\textcolor{keywordtype}{double} valeur);
+00442     \textcolor{keywordtype}{void} changerAxeXJoystickDroit(\textcolor{keywordtype}{double} valeur);
+00448     \textcolor{keywordtype}{void} changerAxeYJoystickDroit(\textcolor{keywordtype}{double} valeur);
+00453     \textcolor{keywordtype}{void} changerBoutonHautGauche(\textcolor{keywordtype}{bool} etat);
+00458     \textcolor{keywordtype}{void} changerBoutonHautDroit(\textcolor{keywordtype}{bool} etat);
+00464     \textcolor{keywordtype}{void} changerGachetteBasGauche(\textcolor{keywordtype}{double} valeur);
+00470     \textcolor{keywordtype}{void} changerGachetteBasDroit(\textcolor{keywordtype}{double} valeur);
+00476     \textcolor{keywordtype}{void} changerFlecheEnAvant(\textcolor{keywordtype}{bool} etat);
+00482     \textcolor{keywordtype}{void} changerFlecheEnArriere(\textcolor{keywordtype}{bool} etat);
+00488     \textcolor{keywordtype}{void} changerFlecheAGauche(\textcolor{keywordtype}{bool} etat);
+00494     \textcolor{keywordtype}{void} changerFlecheADroite(\textcolor{keywordtype}{bool} etat);
+00499     \textcolor{keywordtype}{void} changerBoutonA(\textcolor{keywordtype}{bool});
+00504     \textcolor{keywordtype}{void} changerBoutonB(\textcolor{keywordtype}{bool});
+00509     \textcolor{keywordtype}{void} changerBoutonX(\textcolor{keywordtype}{bool});
+00514     \textcolor{keywordtype}{void} changerBoutonY(\textcolor{keywordtype}{bool});
+00520     \textcolor{keywordtype}{void} changerBoutonSelect(\textcolor{keywordtype}{bool} etat);
+00526     \textcolor{keywordtype}{void} fermerApplication(\textcolor{keywordtype}{bool} etat);
+00527 \};
+00528 
+00529 \textcolor{preprocessor}{#endif // MANETTE\_H}
+\end{DoxyCode}

@@ -1,0 +1,257 @@
+\hypertarget{ihmreglagevideo_8cpp_source}{}\subsection{ihmreglagevideo.\+cpp}
+\label{ihmreglagevideo_8cpp_source}\index{ihmreglagevideo.\+cpp@{ihmreglagevideo.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{ihmreglagevideo_8h}{ihmreglagevideo.h}"}
+00008 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00009}\hyperlink{class_i_h_m_reglage_video_aa057ded6ad29a2d7fd117a8e9336c3ad}{00009} \hyperlink{class_i_h_m_reglage_video_aa057ded6ad29a2d7fd117a8e9336c3ad}{IHMReglageVideo::IHMReglageVideo}(\hyperlink{class_rov}{Rov} *rov, 
+      \hyperlink{class_q_widget}{QWidget} *parent) : \hyperlink{class_q_widget}{QWidget}(parent), rov(rov)
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO;
+00012     \hyperlink{class_i_h_m_reglage_video_ad41172843e79eae9bb64048ec76b81e6}{initialiserWidgets}();
+00013     \hyperlink{class_i_h_m_reglage_video_a2e51529e3a822121ae999e13da2180c6}{configurerWidgets}();
+00014     \hyperlink{class_i_h_m_reglage_video_a6efcf5e8c7dfd272ecb1398985f7332a}{initialiserLayouts}();
+00015     \hyperlink{class_i_h_m_reglage_video_a4576b1b6ccfcabf6b2b39d37db2dd248}{initialiserEvenements}();    
+00016 \}
+00017 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00018}\hyperlink{class_i_h_m_reglage_video_aaf105e0ca892a751632170a3a083dfec}{00018} \hyperlink{class_i_h_m_reglage_video_aaf105e0ca892a751632170a3a083dfec}{IHMReglageVideo::~IHMReglageVideo}()
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO;
+00021 \}
+00022 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00023}\hyperlink{class_i_h_m_reglage_video_ad41172843e79eae9bb64048ec76b81e6}{00023} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_ad41172843e79eae9bb64048ec76b81e6}{IHMReglageVideo::initialiserWidgets}()
+00024 \{
+00025     \hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo} = \textcolor{keyword}{new} QSlider(Qt::Horizontal, \textcolor{keyword}{this});
+00026     \hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo} = \textcolor{keyword}{new} QSlider(Qt::Horizontal, \textcolor{keyword}{this});
+00027     \hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo} = \textcolor{keyword}{new} QSlider(Qt::Horizontal, \textcolor{keyword}{this});
+00028 
+00029     \hyperlink{class_i_h_m_reglage_video_a16b65877af48863d0752e226371952ab}{luminosite} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Luminosité"}, \textcolor{keyword}{this});
+00030     \hyperlink{class_i_h_m_reglage_video_ad1aa173a98ced9f3aaeccb0c2712093c}{contraste} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Contraste"}, \textcolor{keyword}{this});
+00031     \hyperlink{class_i_h_m_reglage_video_a452450793da1908cfe89fb9984b914d1}{saturation} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Saturation"}, \textcolor{keyword}{this});
+00032 
+00033     \hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo} = \textcolor{keyword}{new} QSpinBox(\textcolor{keyword}{this});
+00034     \hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo} = \textcolor{keyword}{new} QSpinBox(\textcolor{keyword}{this});
+00035     \hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo} = \textcolor{keyword}{new} QSpinBox(\textcolor{keyword}{this});
+00036 
+00037     \hyperlink{class_i_h_m_reglage_video_a5a57047117d423ba8bf62bbcb2baee74}{camera} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Camera(s): "}, \textcolor{keyword}{this});
+00038     \hyperlink{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}{resolution} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Résolution: "}, \textcolor{keyword}{this});
+00039 
+00040     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00041     \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00042 
+00043     \hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Démarrer"}, \textcolor{keyword}{this});
+00044     \hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Arrêter"}, \textcolor{keyword}{this});
+00045 \}
+00046 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00047}\hyperlink{class_i_h_m_reglage_video_a2e51529e3a822121ae999e13da2180c6}{00047} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a2e51529e3a822121ae999e13da2180c6}{IHMReglageVideo::configurerWidgets}()
+00048 \{
+00049     \hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo}->setValue(50);
+00050     \hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo}->setValue(50);
+00051     \hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo}->setValue(50);
+00052 
+00053     \hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}->setValue(50);
+00054     \hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}->setValue(50);
+00055     \hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}->setValue(50);
+00056 
+00057     \hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo}->setEnabled(\textcolor{keyword}{false});
+00058     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setEnabled(\textcolor{keyword}{false});
+00059 \}
+00060 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00061}\hyperlink{class_i_h_m_reglage_video_a6efcf5e8c7dfd272ecb1398985f7332a}{00061} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a6efcf5e8c7dfd272ecb1398985f7332a}{IHMReglageVideo::initialiserLayouts}()
+00062 \{
+00063     QVBoxLayout *layoutPrincipal = \textcolor{keyword}{new} QVBoxLayout;
+00064     QHBoxLayout *layoutReglageVideo = \textcolor{keyword}{new} QHBoxLayout;
+00065     QVBoxLayout *layoutConfigurationLuminosite = \textcolor{keyword}{new} QVBoxLayout;
+00066     QVBoxLayout *layoutConfigurationContraste = \textcolor{keyword}{new} QVBoxLayout;
+00067     QVBoxLayout *layoutConfigurationSaturation = \textcolor{keyword}{new} QVBoxLayout;
+00068     QHBoxLayout *layoutCamera = \textcolor{keyword}{new} QHBoxLayout;
+00069     QHBoxLayout *layoutBoutonCamera = \textcolor{keyword}{new} QHBoxLayout;
+00070 
+00071     layoutReglageVideo->setAlignment(Qt::AlignLeft);
+00072     layoutConfigurationContraste->setAlignment(Qt::AlignTop);
+00073     layoutConfigurationLuminosite->setAlignment(Qt::AlignTop);
+00074     layoutConfigurationSaturation->setAlignment(Qt::AlignTop);
+00075     layoutBoutonCamera->setAlignment(Qt::AlignLeft);
+00076 
+00077     layoutPrincipal->addLayout(layoutReglageVideo);
+00078     layoutPrincipal->addLayout(layoutCamera);
+00079     layoutPrincipal->addLayout(layoutBoutonCamera);
+00080 
+00081     layoutReglageVideo->addLayout(layoutConfigurationLuminosite);
+00082     layoutReglageVideo->addLayout(layoutConfigurationContraste);
+00083     layoutReglageVideo->addLayout(layoutConfigurationSaturation);
+00084 
+00085     layoutConfigurationLuminosite->addWidget(\hyperlink{class_i_h_m_reglage_video_a16b65877af48863d0752e226371952ab}{luminosite});
+00086     layoutConfigurationLuminosite->addWidget(\hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo});
+00087     layoutConfigurationLuminosite->addWidget(\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo});
+00088     layoutConfigurationContraste->addWidget(\hyperlink{class_i_h_m_reglage_video_ad1aa173a98ced9f3aaeccb0c2712093c}{contraste});
+00089     layoutConfigurationContraste->addWidget(\hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo});
+00090     layoutConfigurationContraste->addWidget(\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo});
+00091     layoutConfigurationSaturation->addWidget(\hyperlink{class_i_h_m_reglage_video_a452450793da1908cfe89fb9984b914d1}{saturation});
+00092     layoutConfigurationSaturation->addWidget(\hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo});
+00093     layoutConfigurationSaturation->addWidget(\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo});
+00094     layoutCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a5a57047117d423ba8bf62bbcb2baee74}{camera});
+00095     layoutCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras});
+00096     layoutCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}{resolution});
+00097     layoutCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions});
+00098     layoutBoutonCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo});
+00099     layoutBoutonCamera->addWidget(\hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo});
+00100 
+00101     setLayout(layoutPrincipal);
+00102     setWindowTitle(\hyperlink{ihmreglagevideo_8h_a4a739fa13f7cc257ce61e04383ed8a9a}{NOM\_FENETRE\_REGLAGEVIDEO});
+00103 \}
+00104 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00105}\hyperlink{class_i_h_m_reglage_video_a4576b1b6ccfcabf6b2b39d37db2dd248}{00105} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a4576b1b6ccfcabf6b2b39d37db2dd248}{IHMReglageVideo::initialiserEvenements}()
+00106 \{
+00107     connect(\hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00108     connect(\hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00109     connect(\hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00110     connect(\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00111     connect(\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00112     connect(\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo}, SLOT(setValue(\textcolor{keywordtype}{int})));
+00113     connect(\hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo}, SIGNAL(clicked()), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}, SLOT(arreterVideo()));
+00114     connect(\hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_reglage_video_a7e5c5d7515a6c745dfde5c3ad3b61a66}{activerCamera}()));
+00115 \}
+00116 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00117}\hyperlink{class_i_h_m_reglage_video_aba318ba2789177dafcf2651f95603435}{00117} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_aba318ba2789177dafcf2651f95603435}{IHMReglageVideo::initialiserEvenementsCamera}()
+00118 \{
+00119     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00120     \{
+00121         \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->isRunning())
+00122             \textcolor{keywordflow}{return};
+00123         \hyperlink{class_i_h_m_reglage_video_a0a480faa747bc705b4cf49df4ecc1d44}{chargerListeCameraDisponible}();
+00124         connect(\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->
+      \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setLuminosite(\textcolor{keywordtype}{int})));
+00125         connect(\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->
+      \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setContraste(\textcolor{keywordtype}{int})));
+00126         connect(\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->
+      \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setSaturation(\textcolor{keywordtype}{int})));
+00127         connect(\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(\textcolor{keywordtype}{int})));
+00128         connect(\hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setResolution(\textcolor{keywordtype}{int})));
+00129     \}
+00130 \}
+00131 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00132}\hyperlink{class_i_h_m_reglage_video_a0a480faa747bc705b4cf49df4ecc1d44}{00132} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a0a480faa747bc705b4cf49df4ecc1d44}{IHMReglageVideo::chargerListeCameraDisponible}()
+00133 \{
+00134     \textcolor{keywordtype}{int} nbCameras = QCameraInfo::availableCameras().count();
+00135     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Caméra(s) disponible(s)"} << QCameraInfo::availableCameras().count();    
+00136     \textcolor{keywordflow}{if} (nbCameras > 0)
+00137     \{
+00138 \textcolor{preprocessor}{       #ifndef SANS\_DETECTION}
+00139        QList<QCameraInfo> cameras = QCameraInfo::availableCameras();
+00140        \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->clear();
+00141        \textcolor{keywordtype}{int} choix = -1, i = 0;
+00142        \textcolor{keywordflow}{foreach} (\textcolor{keyword}{const} QCameraInfo &cameraInfo, cameras)
+00143        \{
+00144            \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->addItem(cameraInfo.deviceName());
+00145            qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Device"} << cameraInfo.deviceName();
+00146            qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Description"} << cameraInfo.description();
+00147            \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00148            \{
+00149                \textcolor{keywordflow}{if}(cameraInfo.deviceName() == \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->
+      \hyperlink{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}{getNom}())
+00150                \{
+00151                    choix = i;
+00152                \}
+00153            \}
+00154            i++;
+00155        \}
+00156 \textcolor{preprocessor}{       #else}
+00157        \textcolor{keywordtype}{int} choix = 0;
+00158        qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Device"} << \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->
+      \hyperlink{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}{getNom}();
+00159        \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->addItem(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->\hyperlink{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}{getNom}());
+00160 \textcolor{preprocessor}{       #endif}
+00161 
+00162        \textcolor{keywordflow}{if}(choix != -1)
+00163        \{
+00164            \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00165                 \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->\hyperlink{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}{getNom}());
+00166            \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setCurrentIndex(choix);
+00167        \}       
+00168     \}
+00169 
+00170 \}
+00171 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00172}\hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{00172} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{IHMReglageVideo::chargerListeResolutionDisponible}(\textcolor{keywordtype}{int}
+       index)
+00173 \{
+00174     \textcolor{keywordflow}{if}(index < 0)
+00175         \textcolor{keywordflow}{return};
+00176     \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(
+      \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->currentText());
+00177 \}
+00178 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00179}\hyperlink{class_i_h_m_reglage_video_a25c0537f7d5b735f80f46f2ae993f424}{00179} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{IHMReglageVideo::chargerListeResolutionDisponible}(
+      QString nom)
+00180 \{
+00181 \textcolor{preprocessor}{    #ifndef SANS\_DETECTION}
+00182     QCameraInfo cameraInfo(nom.toLatin1());
+00183     QList<QSize> liste = \hyperlink{class_camera_ac4756add4cb6bef60e38f3da79c2383f}{Camera::lireListeResolutionsCamera}(cameraInfo);
+00184     \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->clear();
+00185     \textcolor{keywordflow}{foreach} (\textcolor{keyword}{const} QSize &\hyperlink{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}{resolution}, liste)
+00186     \{
+00187         qDebug() << Q\_FUNC\_INFO << resolution.width() << \textcolor{stringliteral}{"x"} << resolution.height();
+00188         \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->addItem(QString::number(resolution.width()) + QString(\textcolor{stringliteral}{"x"}) + 
+      QString::number(resolution.height()));
+00189     \}
+00190 \textcolor{preprocessor}{    #else}
+00191     \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->clear();
+00192     QSize resolutionDefaut = \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->\hyperlink{class_camera_a9fae9d9b6fa352ff96c9874d9b085454}{getResolution}();
+00193     qDebug() << Q\_FUNC\_INFO << resolutionDefaut.width() << \textcolor{stringliteral}{"x"} << resolutionDefaut.height();
+00194     \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->addItem(QString::number(resolutionDefaut.width()) + QString(\textcolor{stringliteral}{"x"}) + 
+      QString::number(resolutionDefaut.height()));
+00195 \textcolor{preprocessor}{    #endif}
+00196     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00197     \{
+00198         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"choixResolution"} << \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->
+      \hyperlink{class_camera_ab9f05b05c29416dce6471b5a03db98ea}{getChoixResolution}();
+00199         \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->setCurrentIndex(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}()->
+      \hyperlink{class_camera_ab9f05b05c29416dce6471b5a03db98ea}{getChoixResolution}());
+00200     \}
+00201 \}
+00202 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00203}\hyperlink{class_i_h_m_reglage_video_a7e5c5d7515a6c745dfde5c3ad3b61a66}{00203} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a7e5c5d7515a6c745dfde5c3ad3b61a66}{IHMReglageVideo::activerCamera}()
+00204 \{
+00205     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->currentText() << 
+      \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->currentText() << \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->currentIndex();
+00206     \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}{demarrerVideo}(\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->currentText(), 
+      \hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}->currentIndex());
+00207     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setEnabled(\textcolor{keyword}{false});
+00208     \hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo}->setEnabled(\textcolor{keyword}{true});
+00209     \hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo}->setEnabled(\textcolor{keyword}{false});
+00210 \}
+00211 
+\Hypertarget{ihmreglagevideo_8cpp_source_l00212}\hyperlink{class_i_h_m_reglage_video_ac838581ba03f52e79064cb91ebabb35d}{00212} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_ac838581ba03f52e79064cb91ebabb35d}{IHMReglageVideo::modifierEtatBoutons}()
+00213 \{
+00214     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}() != \textcolor{keyword}{nullptr})
+00215     \{
+00216         disconnect(\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setLuminosite(\textcolor{keywordtype}{int})));
+00217         disconnect(\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->
+      \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setContraste(\textcolor{keywordtype}{int})));
+00218         disconnect(\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo}, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setSaturation(\textcolor{keywordtype}{int})));
+00219         disconnect(\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(\textcolor{keywordtype}{int})));
+00220         disconnect(\hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions}, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), 
+      \hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov}->\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{getCamera}(), SLOT(setResolution(\textcolor{keywordtype}{int})));
+00221     \}
+00222     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setEnabled(\textcolor{keyword}{true});
+00223     \hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo}->setEnabled(\textcolor{keyword}{false});
+00224     \hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo}->setEnabled(\textcolor{keyword}{true});
+00225     \hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras}->setEnabled(\textcolor{keyword}{true});
+00226     \hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo}->setDisabled(\textcolor{keyword}{true});
+00227 \}
+\end{DoxyCode}

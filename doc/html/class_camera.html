@@ -1,0 +1,1563 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ROV&#39;NET: Référence de la classe Camera</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="icone_robot.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ROV&#39;NET
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">BTS SNIR LaSalle Avignon 2020</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_camera.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Connecteurs publics</a> &#124;
+<a href="#signals">Signaux</a> &#124;
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
+<a href="#pri-methods">Fonctions membres privées</a> &#124;
+<a href="#pri-attribs">Attributs privés</a> &#124;
+<a href="class_camera-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la classe Camera</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Class permettant de mettre en place une communication avec la camera.  
+ <a href="class_camera.html#details">Plus de détails...</a></p>
+
+<p><code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code></p>
+<div class="dynheader">
+Graphe de collaboration de Camera:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_camera__coll__graph.png" border="0" usemap="#_camera_coll__map" alt="Collaboration graph"/></div>
+<map name="_camera_coll__map" id="_camera_coll__map">
+<area shape="rect" id="node3" href="class_rov.html" title="Classe controlant tout les traitements en provenance et en direction de la communication avec le rov..." alt="" coords="251,1053,458,1615"/>
+<area shape="rect" id="node2" href="class_q_thread.html" title="La classe QThread fournit un moyen indépendant de gérer les threads dans Qt. " alt="" coords="254,5,326,83"/>
+<area shape="rect" id="node6" href="class_i_h_m_rov.html" title="IHM permettant d&#39;obtenir le flux vidéo en direct placé sur le robot et d&#39;obtenir les informations rel..." alt="" coords="410,2540,622,2955"/>
+<area shape="rect" id="node8" href="class_i_h_m_reglage_video.html" title="Classe permettant de regler l&#39;affichage du flux video. " alt="" coords="236,2033,472,2477"/>
+<area shape="rect" id="node10" href="class_i_h_m_configuration.html" title="Class permettant de configurer la communication avec le rov. " alt="" coords="547,2151,700,2360"/>
+<area shape="rect" id="node4" href="class_q_object.html" title="La classe QObject est la classe de base de tous les objets Qt. Elle permet à ces objets Qt de dispose..." alt="" coords="764,5,835,83"/>
+<area shape="rect" id="node5" href="class_capteurs.html" title="Classe contenant les dernières informations issues des capteurs du rov. " alt="" coords="416,308,549,561"/>
+<area shape="rect" id="node9" href="class_campagne.html" title="Class contenant les informations de la campagne en cours. " alt="" coords="759,1639,942,2009"/>
+<area shape="rect" id="node12" href="class_base_de_donnees.html" title="Class permettant de s&#39;interfacer avec la base de données. " alt="" coords="883,761,1028,1029"/>
+<area shape="rect" id="node13" href="class_communication_rov.html" title="Class permettant de mettre en place une communication avec le rov. " alt="" coords="574,337,762,532"/>
+<area shape="rect" id="node11" href="class_i_h_m_accueil.html" title="Class permettant de créer une nouvelle campagne, reprendre une campagne mise en pause, archiver une campagne, supprimer une campagne, accéder à la base de données et configurer le matériel. " alt="" coords="575,3017,782,3549"/>
+<area shape="rect" id="node7" href="class_q_widget.html" title="La classe QWidget est la classe de base de tous les objets graphiques d&#39;interface utilisateur..." alt="" coords="514,1295,587,1373"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Connecteurs publics</h2></td></tr>
+<tr class="memitem:acc596f589be1e2e2d8e46e071ce38036"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#acc596f589be1e2e2d8e46e071ce38036">setContraste</a> (int <a class="el" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a>)</td></tr>
+<tr class="memdesc:acc596f589be1e2e2d8e46e071ce38036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le contraste de la caméra.  <a href="#acc596f589be1e2e2d8e46e071ce38036">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acc596f589be1e2e2d8e46e071ce38036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25120dedc5f57638a866e1ff827fd641"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a25120dedc5f57638a866e1ff827fd641">setLuminosite</a> (int <a class="el" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a>)</td></tr>
+<tr class="memdesc:a25120dedc5f57638a866e1ff827fd641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie la luminosite de la caméra.  <a href="#a25120dedc5f57638a866e1ff827fd641">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a25120dedc5f57638a866e1ff827fd641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a966d13a5bf22c776f8d776d3da19182a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a966d13a5bf22c776f8d776d3da19182a">setResolution</a> (int <a class="el" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a>, int <a class="el" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>)</td></tr>
+<tr class="memdesc:a966d13a5bf22c776f8d776d3da19182a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie la résolution (largeur x hauteur)  <a href="#a966d13a5bf22c776f8d776d3da19182a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a966d13a5bf22c776f8d776d3da19182a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79630483bf9912a8fd1afe412ee8c848"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a79630483bf9912a8fd1afe412ee8c848">setResolution</a> (QSize resolution)</td></tr>
+<tr class="memdesc:a79630483bf9912a8fd1afe412ee8c848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie la résolution (largeur x hauteur)  <a href="#a79630483bf9912a8fd1afe412ee8c848">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a79630483bf9912a8fd1afe412ee8c848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff6343220c3ccd64ff513d2af37e1f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a7ff6343220c3ccd64ff513d2af37e1f3">setResolution</a> (int choix)</td></tr>
+<tr class="memdesc:a7ff6343220c3ccd64ff513d2af37e1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie la résolution (index dans la liste)  <a href="#a7ff6343220c3ccd64ff513d2af37e1f3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7ff6343220c3ccd64ff513d2af37e1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace85018db120a6d61a5326172f97df93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ace85018db120a6d61a5326172f97df93">setSaturation</a> (int <a class="el" href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">saturation</a>)</td></tr>
+<tr class="memdesc:ace85018db120a6d61a5326172f97df93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie la saturation de la caméra.  <a href="#ace85018db120a6d61a5326172f97df93">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ace85018db120a6d61a5326172f97df93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signaux</h2></td></tr>
+<tr class="memitem:a4c560c4add60ebce65e2d9717e3d668c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a4c560c4add60ebce65e2d9717e3d668c">finVideo</a> ()</td></tr>
+<tr class="memdesc:a4c560c4add60ebce65e2d9717e3d668c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie un signal lorsque la vidéo est interrompu.  <a href="#a4c560c4add60ebce65e2d9717e3d668c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4c560c4add60ebce65e2d9717e3d668c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c810d466375e950401e483f885c52f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a38c810d466375e950401e483f885c52f">nouvelleImage</a> (QPixmap image)</td></tr>
+<tr class="memdesc:a38c810d466375e950401e483f885c52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envoie un signal lorsque une nouvelle image du flux vidéo est disponible.  <a href="#a38c810d466375e950401e483f885c52f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a38c810d466375e950401e483f885c52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a26c49f76c98ece6ad6771351dd13583a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a26c49f76c98ece6ad6771351dd13583a">Camera</a> (<a class="el" href="class_rov.html">Rov</a> *<a class="el" href="class_camera.html#ad1dde4d981877001281af01c392307f1">rov</a>, int <a class="el" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>, int <a class="el" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>=-1)</td></tr>
+<tr class="memdesc:a26c49f76c98ece6ad6771351dd13583a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="class_camera.html" title="Class permettant de mettre en place une communication avec la camera. ">Camera</a>.  <a href="#a26c49f76c98ece6ad6771351dd13583a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a26c49f76c98ece6ad6771351dd13583a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae663da224161d1a78c8a7431ad1530d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ae663da224161d1a78c8a7431ad1530d7">Camera</a> (<a class="el" href="class_rov.html">Rov</a> *<a class="el" href="class_camera.html#ad1dde4d981877001281af01c392307f1">rov</a>, QString <a class="el" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>, int <a class="el" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>=-1)</td></tr>
+<tr class="memdesc:ae663da224161d1a78c8a7431ad1530d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de la classe <a class="el" href="class_camera.html" title="Class permettant de mettre en place une communication avec la camera. ">Camera</a>.  <a href="#ae663da224161d1a78c8a7431ad1530d7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae663da224161d1a78c8a7431ad1530d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f05b05c29416dce6471b5a03db98ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ab9f05b05c29416dce6471b5a03db98ea">getChoixResolution</a> ()</td></tr>
+<tr class="memdesc:ab9f05b05c29416dce6471b5a03db98ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère le choix de la resolution active.  <a href="#ab9f05b05c29416dce6471b5a03db98ea">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab9f05b05c29416dce6471b5a03db98ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a997441a0c1e33fe3eda800953548071d"><td class="memItemLeft" align="right" valign="top">QList&lt; QSize &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a997441a0c1e33fe3eda800953548071d">getListeResolutionsCamera</a> ()</td></tr>
+<tr class="memdesc:a997441a0c1e33fe3eda800953548071d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des résolutions supportées par la caméra.  <a href="#a997441a0c1e33fe3eda800953548071d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a997441a0c1e33fe3eda800953548071d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b27a8a444006f40548a9a4ecf4d7256"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a9b27a8a444006f40548a9a4ecf4d7256">getNom</a> () const</td></tr>
+<tr class="memdesc:a9b27a8a444006f40548a9a4ecf4d7256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom de la caméra.  <a href="#a9b27a8a444006f40548a9a4ecf4d7256">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9b27a8a444006f40548a9a4ecf4d7256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fae9d9b6fa352ff96c9874d9b085454"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a9fae9d9b6fa352ff96c9874d9b085454">getResolution</a> ()</td></tr>
+<tr class="memdesc:a9fae9d9b6fa352ff96c9874d9b085454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la resolution active.  <a href="#a9fae9d9b6fa352ff96c9874d9b085454">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9fae9d9b6fa352ff96c9874d9b085454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97267488c5756b4217d4e1fbc68008fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">recupererListeResolutionsCamera</a> ()</td></tr>
+<tr class="memdesc:a97267488c5756b4217d4e1fbc68008fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la liste des résolutions supportées par la caméra sélectionnée.  <a href="#a97267488c5756b4217d4e1fbc68008fd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a97267488c5756b4217d4e1fbc68008fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7554fa133bab58c16192041254a1d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#acf7554fa133bab58c16192041254a1d6">recupererListeResolutionsCamera</a> (int <a class="el" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>)</td></tr>
+<tr class="memdesc:acf7554fa133bab58c16192041254a1d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la liste des résolutions supportées par la caméra à partir de son numéro.  <a href="#acf7554fa133bab58c16192041254a1d6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acf7554fa133bab58c16192041254a1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d1ccb26bcd49340bc392dc1e7bb550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ae3d1ccb26bcd49340bc392dc1e7bb550">recupererListeResolutionsCamera</a> (QString <a class="el" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>)</td></tr>
+<tr class="memdesc:ae3d1ccb26bcd49340bc392dc1e7bb550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la liste des résolutions supportées par la caméra à partir de son nom.  <a href="#ae3d1ccb26bcd49340bc392dc1e7bb550">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae3d1ccb26bcd49340bc392dc1e7bb550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a9f1bcfa19bbd5add6c758c8ad85b5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a4a9f1bcfa19bbd5add6c758c8ad85b5c">recupererListeResolutionsCamera</a> (QCameraInfo &amp;cameraInfo)</td></tr>
+<tr class="memdesc:a4a9f1bcfa19bbd5add6c758c8ad85b5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la liste des résolutions supporté par la caméra.  <a href="#a4a9f1bcfa19bbd5add6c758c8ad85b5c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4a9f1bcfa19bbd5add6c758c8ad85b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3745c0cf0f286ef80b7eeebc248cc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#aaa3745c0cf0f286ef80b7eeebc248cc9">run</a> ()</td></tr>
+<tr class="memdesc:aaa3745c0cf0f286ef80b7eeebc248cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Démarre une nouveau thread afin de capturer le flux video et l'envoyer à l'IHM.  <a href="#aaa3745c0cf0f286ef80b7eeebc248cc9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aaa3745c0cf0f286ef80b7eeebc248cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77397d68d606172ccfafed5624c31213"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a77397d68d606172ccfafed5624c31213">setProprietes</a> (cv::VideoCapture &amp;camera)</td></tr>
+<tr class="memdesc:a77397d68d606172ccfafed5624c31213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Après l'acquisition d'une nouvelle frame modifie les propriété de la caméra si ceux-ci ont été modifié par l'IHM.  <a href="#a77397d68d606172ccfafed5624c31213">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a77397d68d606172ccfafed5624c31213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1897942d0ccf91052386388a497349f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ad1897942d0ccf91052386388a497349f">~Camera</a> ()</td></tr>
+<tr class="memdesc:ad1897942d0ccf91052386388a497349f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur de la classe <a class="el" href="class_camera.html" title="Class permettant de mettre en place une communication avec la camera. ">Camera</a>.  <a href="#ad1897942d0ccf91052386388a497349f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad1897942d0ccf91052386388a497349f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Fonctions membres publiques statiques</h2></td></tr>
+<tr class="memitem:a506d459df95042a03894afd5b781c2aa"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a506d459df95042a03894afd5b781c2aa">creerNomCamera</a> (int <a class="el" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>)</td></tr>
+<tr class="memdesc:a506d459df95042a03894afd5b781c2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom de caméra associé a son numéro.  <a href="#a506d459df95042a03894afd5b781c2aa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a506d459df95042a03894afd5b781c2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3fdc8b3feac7074911b472c4edb9dec"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#aa3fdc8b3feac7074911b472c4edb9dec">extraireNumero</a> (QString <a class="el" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>)</td></tr>
+<tr class="memdesc:aa3fdc8b3feac7074911b472c4edb9dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le numéro de caméra associé a son nom.  <a href="#aa3fdc8b3feac7074911b472c4edb9dec">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa3fdc8b3feac7074911b472c4edb9dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116b3869ff0647c851715605a1938a3c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a116b3869ff0647c851715605a1938a3c">getNbCameras</a> ()</td></tr>
+<tr class="memdesc:a116b3869ff0647c851715605a1938a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de caméras connectés.  <a href="#a116b3869ff0647c851715605a1938a3c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a116b3869ff0647c851715605a1938a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4756add4cb6bef60e38f3da79c2383f"><td class="memItemLeft" align="right" valign="top">static QList&lt; QSize &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ac4756add4cb6bef60e38f3da79c2383f">lireListeResolutionsCamera</a> (QCameraInfo &amp;cameraInfo)</td></tr>
+<tr class="memdesc:ac4756add4cb6bef60e38f3da79c2383f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la liste des résolutions supportés par la caméra passé en parametre.  <a href="#ac4756add4cb6bef60e38f3da79c2383f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac4756add4cb6bef60e38f3da79c2383f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:afbddcda62053404cbf06a4ba48c62732"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#afbddcda62053404cbf06a4ba48c62732">acquerirImageVideo</a> (cv::VideoCapture &amp;camera, cv::Mat &amp;frame)</td></tr>
+<tr class="memdesc:afbddcda62053404cbf06a4ba48c62732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait l'acquisition d'une nouvelle frame.  <a href="#afbddcda62053404cbf06a4ba48c62732">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afbddcda62053404cbf06a4ba48c62732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a50d2b3ef5c08f8b61bbe2115d71005bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a></td></tr>
+<tr class="memdesc:a50d2b3ef5c08f8b61bbe2115d71005bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut désignant si une propriete de la caméra doit être modifiée.  <a href="#a50d2b3ef5c08f8b61bbe2115d71005bd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a50d2b3ef5c08f8b61bbe2115d71005bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fdddf6f548f04d7bdc26f32602a03d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a></td></tr>
+<tr class="memdesc:a3fdddf6f548f04d7bdc26f32602a03d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choix dans la liste contenant les résolutions supportés par la caméra.  <a href="#a3fdddf6f548f04d7bdc26f32602a03d4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3fdddf6f548f04d7bdc26f32602a03d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b300e52c91341d985d3b54f562a0f7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a></td></tr>
+<tr class="memdesc:ad3b300e52c91341d985d3b54f562a0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut contenant le constraste de la vidéo.  <a href="#ad3b300e52c91341d985d3b54f562a0f7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad3b300e52c91341d985d3b54f562a0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d89d7f9d1a5eab4175dd168c7fbf1c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a></td></tr>
+<tr class="memdesc:a5d89d7f9d1a5eab4175dd168c7fbf1c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut contenant la hauteur (heigth) en pixels de la vidéo.  <a href="#a5d89d7f9d1a5eab4175dd168c7fbf1c7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5d89d7f9d1a5eab4175dd168c7fbf1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad64f26cdfc5aa561208b273d430938cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a></td></tr>
+<tr class="memdesc:ad64f26cdfc5aa561208b273d430938cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut contenant la largeur (width) en pixels de la vidéo.  <a href="#ad64f26cdfc5aa561208b273d430938cf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad64f26cdfc5aa561208b273d430938cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96af62eaf7828664865b56e7c69e771c"><td class="memItemLeft" align="right" valign="top">QList&lt; QSize &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a></td></tr>
+<tr class="memdesc:a96af62eaf7828664865b56e7c69e771c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste contenant les résolutions supportés par la caméra.  <a href="#a96af62eaf7828664865b56e7c69e771c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a96af62eaf7828664865b56e7c69e771c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca5433bf19773161142d73009469b1ed"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a></td></tr>
+<tr class="memdesc:aca5433bf19773161142d73009469b1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut contenant la luminosite de la vidéo.  <a href="#aca5433bf19773161142d73009469b1ed">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aca5433bf19773161142d73009469b1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1cdaf82921d2a2f3f941d867718eba2"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a></td></tr>
+<tr class="memdesc:ac1cdaf82921d2a2f3f941d867718eba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut contenant le nom de la caméra sélectionnée.  <a href="#ac1cdaf82921d2a2f3f941d867718eba2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac1cdaf82921d2a2f3f941d867718eba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5cda5df3c9c49b88fff15389a1bbc64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a></td></tr>
+<tr class="memdesc:ae5cda5df3c9c49b88fff15389a1bbc64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut contenant le numéro de la caméra sélectionnée.  <a href="#ae5cda5df3c9c49b88fff15389a1bbc64">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae5cda5df3c9c49b88fff15389a1bbc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1dde4d981877001281af01c392307f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rov.html">Rov</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ad1dde4d981877001281af01c392307f1">rov</a></td></tr>
+<tr class="memdesc:ad1dde4d981877001281af01c392307f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objet rov permettant de récuperer les dernière mesures issues des capteurs.  <a href="#ad1dde4d981877001281af01c392307f1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad1dde4d981877001281af01c392307f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd46d6d2451ee33b68dbc74713f2687c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">saturation</a></td></tr>
+<tr class="memdesc:afd46d6d2451ee33b68dbc74713f2687c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attribut contenant la saturation de la vidéo.  <a href="#afd46d6d2451ee33b68dbc74713f2687c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afd46d6d2451ee33b68dbc74713f2687c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Class permettant de mettre en place une communication avec la camera. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00058">58</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+</div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="a26c49f76c98ece6ad6771351dd13583a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c49f76c98ece6ad6771351dd13583a">&#9670;&nbsp;</a></span>Camera() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Camera::Camera </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_rov.html">Rov</a> *&#160;</td>
+          <td class="paramname"><em>rov</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numero</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>choixResolution</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur de la classe <a class="el" href="class_camera.html" title="Class permettant de mettre en place une communication avec la camera. ">Camera</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rov</td><td></td></tr>
+    <tr><td class="paramname">numero</td><td></td></tr>
+    <tr><td class="paramname">choixResolution</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00012">12</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00068">contraste</a>, <a class="el" href="camera_8cpp_source.html#l00293">creerNomCamera()</a>, <a class="el" href="camera_8cpp_source.html#l00270">getNbCameras()</a>, <a class="el" href="camera_8h_source.html#l00066">hauteur</a>, <a class="el" href="camera_8h_source.html#l00065">largeur</a>, <a class="el" href="camera_8h_source.html#l00067">luminosite</a>, <a class="el" href="camera_8h_source.html#l00063">nomCamera</a>, <a class="el" href="camera_8cpp_source.html#l00133">recupererListeResolutionsCamera()</a>, <a class="el" href="camera_8h_source.html#l00069">saturation</a>, et <a class="el" href="camera_8cpp_source.html#l00186">setResolution()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                                       : <a class="code" href="class_camera.html#ad1dde4d981877001281af01c392307f1">rov</a>(rov), <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>(<a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>), <a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a>(<a class="code" href="camera_8h.html#afe66edd1ec0aa05058aaa2a069248f65">LARGEUR_DEFAUT</a>), <a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>(<a class="code" href="camera_8h.html#a70cf269dc21e5a921c2927034d6cadd2">HAUTEUR_DEFAUT</a>), <a class="code" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a>(<a class="code" href="camera_8h.html#ae340bfbdd3eec3bbbea7d39d91c8aa91">SEUIL_DEFAUT</a>), <a class="code" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a>(<a class="code" href="camera_8h.html#ae340bfbdd3eec3bbbea7d39d91c8aa91">SEUIL_DEFAUT</a>), <a class="code" href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">saturation</a>(<a class="code" href="camera_8h.html#ae340bfbdd3eec3bbbea7d39d91c8aa91">SEUIL_DEFAUT</a>), <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a>(<span class="keyword">false</span>), <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>(<a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>)</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">    #if CV_VERSION_MAJOR == 3</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;OpenCV&quot;</span> &lt;&lt; CV_VERSION_MAJOR &lt;&lt; CV_VERSION_MINOR;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">    #else</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;OpenCV&quot;</span> &lt;&lt; CV_MAJOR_VERSION &lt;&lt; CV_MINOR_VERSION;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">    #endif</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_camera.html#a116b3869ff0647c851715605a1938a3c">Camera::getNbCameras</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a> = <a class="code" href="class_camera.html#a506d459df95042a03894afd5b781c2aa">Camera::creerNomCamera</a>(<a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>);    </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">recupererListeResolutionsCamera</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a> == -1)</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_camera.html#a966d13a5bf22c776f8d776d3da19182a">setResolution</a>(<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a>, <a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">else</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_camera.html#a966d13a5bf22c776f8d776d3da19182a">setResolution</a>(<a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;numero&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a> &lt;&lt; <span class="stringliteral">&quot;nomCamera&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;largeur&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> &lt;&lt; <span class="stringliteral">&quot;hauteur&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;luminosite&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a> &lt;&lt; <span class="stringliteral">&quot;contraste&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a> &lt;&lt; <span class="stringliteral">&quot;saturation&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">saturation</a>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div><div class="ttc" id="class_camera_html_ae5cda5df3c9c49b88fff15389a1bbc64"><div class="ttname"><a href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">Camera::numero</a></div><div class="ttdeci">int numero</div><div class="ttdoc">Attribut contenant le numéro de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00064">camera.h:64</a></div></div>
+<div class="ttc" id="class_camera_html_ac1cdaf82921d2a2f3f941d867718eba2"><div class="ttname"><a href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">Camera::nomCamera</a></div><div class="ttdeci">QString nomCamera</div><div class="ttdoc">Attribut contenant le nom de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00063">camera.h:63</a></div></div>
+<div class="ttc" id="camera_8h_html_ae340bfbdd3eec3bbbea7d39d91c8aa91"><div class="ttname"><a href="camera_8h.html#ae340bfbdd3eec3bbbea7d39d91c8aa91">SEUIL_DEFAUT</a></div><div class="ttdeci">#define SEUIL_DEFAUT</div><div class="ttdoc">Défini le seuil du contraste, luminosite et saturation de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00047">camera.h:47</a></div></div>
+<div class="ttc" id="class_camera_html_a966d13a5bf22c776f8d776d3da19182a"><div class="ttname"><a href="class_camera.html#a966d13a5bf22c776f8d776d3da19182a">Camera::setResolution</a></div><div class="ttdeci">void setResolution(int largeur, int hauteur)</div><div class="ttdoc">Modifie la résolution (largeur x hauteur) </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00186">camera.cpp:186</a></div></div>
+<div class="ttc" id="class_camera_html_aca5433bf19773161142d73009469b1ed"><div class="ttname"><a href="class_camera.html#aca5433bf19773161142d73009469b1ed">Camera::luminosite</a></div><div class="ttdeci">double luminosite</div><div class="ttdoc">Attribut contenant la luminosite de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00067">camera.h:67</a></div></div>
+<div class="ttc" id="class_camera_html_a3fdddf6f548f04d7bdc26f32602a03d4"><div class="ttname"><a href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">Camera::choixResolution</a></div><div class="ttdeci">int choixResolution</div><div class="ttdoc">Choix dans la liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00072">camera.h:72</a></div></div>
+<div class="ttc" id="camera_8h_html_a70cf269dc21e5a921c2927034d6cadd2"><div class="ttname"><a href="camera_8h.html#a70cf269dc21e5a921c2927034d6cadd2">HAUTEUR_DEFAUT</a></div><div class="ttdeci">#define HAUTEUR_DEFAUT</div><div class="ttdoc">Défini la hauteur en pixel de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00041">camera.h:41</a></div></div>
+<div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+<div class="ttc" id="class_camera_html_ad3b300e52c91341d985d3b54f562a0f7"><div class="ttname"><a href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">Camera::contraste</a></div><div class="ttdeci">double contraste</div><div class="ttdoc">Attribut contenant le constraste de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00068">camera.h:68</a></div></div>
+<div class="ttc" id="camera_8h_html_afe66edd1ec0aa05058aaa2a069248f65"><div class="ttname"><a href="camera_8h.html#afe66edd1ec0aa05058aaa2a069248f65">LARGEUR_DEFAUT</a></div><div class="ttdeci">#define LARGEUR_DEFAUT</div><div class="ttdoc">Défini la largeur en pixel de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00035">camera.h:35</a></div></div>
+<div class="ttc" id="class_camera_html_a5d89d7f9d1a5eab4175dd168c7fbf1c7"><div class="ttname"><a href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">Camera::hauteur</a></div><div class="ttdeci">int hauteur</div><div class="ttdoc">Attribut contenant la hauteur (heigth) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00066">camera.h:66</a></div></div>
+<div class="ttc" id="class_camera_html_ad64f26cdfc5aa561208b273d430938cf"><div class="ttname"><a href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">Camera::largeur</a></div><div class="ttdeci">int largeur</div><div class="ttdoc">Attribut contenant la largeur (width) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00065">camera.h:65</a></div></div>
+<div class="ttc" id="class_camera_html_a97267488c5756b4217d4e1fbc68008fd"><div class="ttname"><a href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">Camera::recupererListeResolutionsCamera</a></div><div class="ttdeci">void recupererListeResolutionsCamera()</div><div class="ttdoc">Récupère la liste des résolutions supportées par la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00133">camera.cpp:133</a></div></div>
+<div class="ttc" id="class_camera_html_a116b3869ff0647c851715605a1938a3c"><div class="ttname"><a href="class_camera.html#a116b3869ff0647c851715605a1938a3c">Camera::getNbCameras</a></div><div class="ttdeci">static int getNbCameras()</div><div class="ttdoc">Retourne le nombre de caméras connectés. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00270">camera.cpp:270</a></div></div>
+<div class="ttc" id="class_camera_html_a506d459df95042a03894afd5b781c2aa"><div class="ttname"><a href="class_camera.html#a506d459df95042a03894afd5b781c2aa">Camera::creerNomCamera</a></div><div class="ttdeci">static QString creerNomCamera(int numero)</div><div class="ttdoc">Retourne le nom de caméra associé a son numéro. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00293">camera.cpp:293</a></div></div>
+<div class="ttc" id="class_camera_html_afd46d6d2451ee33b68dbc74713f2687c"><div class="ttname"><a href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">Camera::saturation</a></div><div class="ttdeci">double saturation</div><div class="ttdoc">Attribut contenant la saturation de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00069">camera.h:69</a></div></div>
+<div class="ttc" id="class_camera_html_ad1dde4d981877001281af01c392307f1"><div class="ttname"><a href="class_camera.html#ad1dde4d981877001281af01c392307f1">Camera::rov</a></div><div class="ttdeci">Rov * rov</div><div class="ttdoc">Objet rov permettant de récuperer les dernière mesures issues des capteurs. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00062">camera.h:62</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae663da224161d1a78c8a7431ad1530d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae663da224161d1a78c8a7431ad1530d7">&#9670;&nbsp;</a></span>Camera() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Camera::Camera </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_rov.html">Rov</a> *&#160;</td>
+          <td class="paramname"><em>rov</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nomCamera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>choixResolution</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructeur de la classe <a class="el" href="class_camera.html" title="Class permettant de mettre en place une communication avec la camera. ">Camera</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rov</td><td></td></tr>
+    <tr><td class="paramname">nomCamera</td><td></td></tr>
+    <tr><td class="paramname">choixResolution</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00034">34</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00068">contraste</a>, <a class="el" href="camera_8cpp_source.html#l00276">extraireNumero()</a>, <a class="el" href="camera_8cpp_source.html#l00270">getNbCameras()</a>, <a class="el" href="camera_8h_source.html#l00066">hauteur</a>, <a class="el" href="camera_8h_source.html#l00065">largeur</a>, <a class="el" href="camera_8h_source.html#l00067">luminosite</a>, <a class="el" href="camera_8h_source.html#l00063">nomCamera</a>, <a class="el" href="camera_8h_source.html#l00064">numero</a>, <a class="el" href="camera_8cpp_source.html#l00133">recupererListeResolutionsCamera()</a>, <a class="el" href="camera_8h_source.html#l00069">saturation</a>, et <a class="el" href="camera_8cpp_source.html#l00186">setResolution()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                              : <a class="code" href="class_camera.html#ad1dde4d981877001281af01c392307f1">rov</a>(rov), <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>(<a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>), <a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a>(<a class="code" href="camera_8h.html#afe66edd1ec0aa05058aaa2a069248f65">LARGEUR_DEFAUT</a>), <a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>(<a class="code" href="camera_8h.html#a70cf269dc21e5a921c2927034d6cadd2">HAUTEUR_DEFAUT</a>), <a class="code" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a>(<a class="code" href="camera_8h.html#ae340bfbdd3eec3bbbea7d39d91c8aa91">SEUIL_DEFAUT</a>), <a class="code" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a>(<a class="code" href="camera_8h.html#ae340bfbdd3eec3bbbea7d39d91c8aa91">SEUIL_DEFAUT</a>), <a class="code" href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">saturation</a>(<a class="code" href="camera_8h.html#ae340bfbdd3eec3bbbea7d39d91c8aa91">SEUIL_DEFAUT</a>), <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a>(<span class="keyword">false</span>), <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>(<a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>)</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">    #if CV_VERSION_MAJOR == 3</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;OpenCV&quot;</span> &lt;&lt; CV_VERSION_MAJOR &lt;&lt; CV_VERSION_MINOR;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">    #else</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;OpenCV&quot;</span> &lt;&lt; CV_MAJOR_VERSION &lt;&lt; CV_MINOR_VERSION;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">    #endif</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_camera.html#a116b3869ff0647c851715605a1938a3c">Camera::getNbCameras</a>();</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a> = <a class="code" href="class_camera.html#aa3fdc8b3feac7074911b472c4edb9dec">Camera::extraireNumero</a>(<a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">recupererListeResolutionsCamera</a>();</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a> == -1)</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="class_camera.html#a966d13a5bf22c776f8d776d3da19182a">setResolution</a>(<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a>, <a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">else</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="class_camera.html#a966d13a5bf22c776f8d776d3da19182a">setResolution</a>(<a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>);</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;numero&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a> &lt;&lt; <span class="stringliteral">&quot;nomCamera&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;largeur&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> &lt;&lt; <span class="stringliteral">&quot;hauteur&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;luminosite&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a> &lt;&lt; <span class="stringliteral">&quot;contraste&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a> &lt;&lt; <span class="stringliteral">&quot;saturation&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">saturation</a>;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div><div class="ttc" id="class_camera_html_ae5cda5df3c9c49b88fff15389a1bbc64"><div class="ttname"><a href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">Camera::numero</a></div><div class="ttdeci">int numero</div><div class="ttdoc">Attribut contenant le numéro de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00064">camera.h:64</a></div></div>
+<div class="ttc" id="class_camera_html_aa3fdc8b3feac7074911b472c4edb9dec"><div class="ttname"><a href="class_camera.html#aa3fdc8b3feac7074911b472c4edb9dec">Camera::extraireNumero</a></div><div class="ttdeci">static int extraireNumero(QString nomCamera)</div><div class="ttdoc">Retourne le numéro de caméra associé a son nom. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00276">camera.cpp:276</a></div></div>
+<div class="ttc" id="class_camera_html_ac1cdaf82921d2a2f3f941d867718eba2"><div class="ttname"><a href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">Camera::nomCamera</a></div><div class="ttdeci">QString nomCamera</div><div class="ttdoc">Attribut contenant le nom de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00063">camera.h:63</a></div></div>
+<div class="ttc" id="camera_8h_html_ae340bfbdd3eec3bbbea7d39d91c8aa91"><div class="ttname"><a href="camera_8h.html#ae340bfbdd3eec3bbbea7d39d91c8aa91">SEUIL_DEFAUT</a></div><div class="ttdeci">#define SEUIL_DEFAUT</div><div class="ttdoc">Défini le seuil du contraste, luminosite et saturation de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00047">camera.h:47</a></div></div>
+<div class="ttc" id="class_camera_html_a966d13a5bf22c776f8d776d3da19182a"><div class="ttname"><a href="class_camera.html#a966d13a5bf22c776f8d776d3da19182a">Camera::setResolution</a></div><div class="ttdeci">void setResolution(int largeur, int hauteur)</div><div class="ttdoc">Modifie la résolution (largeur x hauteur) </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00186">camera.cpp:186</a></div></div>
+<div class="ttc" id="class_camera_html_aca5433bf19773161142d73009469b1ed"><div class="ttname"><a href="class_camera.html#aca5433bf19773161142d73009469b1ed">Camera::luminosite</a></div><div class="ttdeci">double luminosite</div><div class="ttdoc">Attribut contenant la luminosite de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00067">camera.h:67</a></div></div>
+<div class="ttc" id="class_camera_html_a3fdddf6f548f04d7bdc26f32602a03d4"><div class="ttname"><a href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">Camera::choixResolution</a></div><div class="ttdeci">int choixResolution</div><div class="ttdoc">Choix dans la liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00072">camera.h:72</a></div></div>
+<div class="ttc" id="camera_8h_html_a70cf269dc21e5a921c2927034d6cadd2"><div class="ttname"><a href="camera_8h.html#a70cf269dc21e5a921c2927034d6cadd2">HAUTEUR_DEFAUT</a></div><div class="ttdeci">#define HAUTEUR_DEFAUT</div><div class="ttdoc">Défini la hauteur en pixel de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00041">camera.h:41</a></div></div>
+<div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+<div class="ttc" id="class_camera_html_ad3b300e52c91341d985d3b54f562a0f7"><div class="ttname"><a href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">Camera::contraste</a></div><div class="ttdeci">double contraste</div><div class="ttdoc">Attribut contenant le constraste de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00068">camera.h:68</a></div></div>
+<div class="ttc" id="camera_8h_html_afe66edd1ec0aa05058aaa2a069248f65"><div class="ttname"><a href="camera_8h.html#afe66edd1ec0aa05058aaa2a069248f65">LARGEUR_DEFAUT</a></div><div class="ttdeci">#define LARGEUR_DEFAUT</div><div class="ttdoc">Défini la largeur en pixel de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00035">camera.h:35</a></div></div>
+<div class="ttc" id="class_camera_html_a5d89d7f9d1a5eab4175dd168c7fbf1c7"><div class="ttname"><a href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">Camera::hauteur</a></div><div class="ttdeci">int hauteur</div><div class="ttdoc">Attribut contenant la hauteur (heigth) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00066">camera.h:66</a></div></div>
+<div class="ttc" id="class_camera_html_ad64f26cdfc5aa561208b273d430938cf"><div class="ttname"><a href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">Camera::largeur</a></div><div class="ttdeci">int largeur</div><div class="ttdoc">Attribut contenant la largeur (width) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00065">camera.h:65</a></div></div>
+<div class="ttc" id="class_camera_html_a97267488c5756b4217d4e1fbc68008fd"><div class="ttname"><a href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">Camera::recupererListeResolutionsCamera</a></div><div class="ttdeci">void recupererListeResolutionsCamera()</div><div class="ttdoc">Récupère la liste des résolutions supportées par la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00133">camera.cpp:133</a></div></div>
+<div class="ttc" id="class_camera_html_a116b3869ff0647c851715605a1938a3c"><div class="ttname"><a href="class_camera.html#a116b3869ff0647c851715605a1938a3c">Camera::getNbCameras</a></div><div class="ttdeci">static int getNbCameras()</div><div class="ttdoc">Retourne le nombre de caméras connectés. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00270">camera.cpp:270</a></div></div>
+<div class="ttc" id="class_camera_html_afd46d6d2451ee33b68dbc74713f2687c"><div class="ttname"><a href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">Camera::saturation</a></div><div class="ttdeci">double saturation</div><div class="ttdoc">Attribut contenant la saturation de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00069">camera.h:69</a></div></div>
+<div class="ttc" id="class_camera_html_ad1dde4d981877001281af01c392307f1"><div class="ttname"><a href="class_camera.html#ad1dde4d981877001281af01c392307f1">Camera::rov</a></div><div class="ttdeci">Rov * rov</div><div class="ttdoc">Objet rov permettant de récuperer les dernière mesures issues des capteurs. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00062">camera.h:62</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad1897942d0ccf91052386388a497349f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1897942d0ccf91052386388a497349f">&#9670;&nbsp;</a></span>~Camera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Camera::~Camera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructeur de la classe <a class="el" href="class_camera.html" title="Class permettant de mettre en place une communication avec la camera. ">Camera</a>. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00058">58</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="afbddcda62053404cbf06a4ba48c62732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbddcda62053404cbf06a4ba48c62732">&#9670;&nbsp;</a></span>acquerirImageVideo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::acquerirImageVideo </td>
+          <td>(</td>
+          <td class="paramtype">cv::VideoCapture &amp;&#160;</td>
+          <td class="paramname"><em>camera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>frame</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fait l'acquisition d'une nouvelle frame. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td></td></tr>
+    <tr><td class="paramname">frame</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00063">63</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00068">run()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    camera &gt;&gt; frame;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a506d459df95042a03894afd5b781c2aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a506d459df95042a03894afd5b781c2aa">&#9670;&nbsp;</a></span>creerNomCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Camera::creerNomCamera </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numero</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le nom de caméra associé a son numéro. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>le nom de caméra associé a son numéro </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numero</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00293">293</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>, <a class="el" href="rov_8cpp_source.html#l00123">Rov::demarrerCampagne()</a>, et <a class="el" href="camera_8cpp_source.html#l00139">recupererListeResolutionsCamera()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    QString nom;</div><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div><div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a> &gt;= 0)</div><div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    {</div><div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        nom = QString(<span class="stringliteral">&quot;/dev/video&quot;</span>) + QString::number(<a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>);</div><div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    }</div><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">return</span> nom;</div><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;}</div><div class="ttc" id="class_camera_html_ae5cda5df3c9c49b88fff15389a1bbc64"><div class="ttname"><a href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">Camera::numero</a></div><div class="ttdeci">int numero</div><div class="ttdoc">Attribut contenant le numéro de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00064">camera.h:64</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa3fdc8b3feac7074911b472c4edb9dec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3fdc8b3feac7074911b472c4edb9dec">&#9670;&nbsp;</a></span>extraireNumero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::extraireNumero </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nomCamera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le numéro de caméra associé a son nom. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>le numéro de caméra associé a son nom </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nomCamera</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00276">276</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00064">numero</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00034">Camera()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div><div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a> = -1;</div><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    QString video = <span class="stringliteral">&quot;/dev/video&quot;</span>;</div><div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>.contains(video))</div><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    {</div><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        QString n = <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>.mid(video.length(), <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>.length());</div><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordtype">bool</span> ok;</div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;nom&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a> &lt;&lt; <span class="stringliteral">&quot;n&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>.right(<a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>.indexOf(<span class="stringliteral">&quot;/dev/video&quot;</span>)) &lt;&lt; <span class="stringliteral">&quot;index&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>.indexOf(<span class="stringliteral">&quot;/dev/video&quot;</span>);</div><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        numero = n.toInt(&amp;ok);</div><div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">if</span>(ok)</div><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>;</div><div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>;</div><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div><div class="ttc" id="class_camera_html_ae5cda5df3c9c49b88fff15389a1bbc64"><div class="ttname"><a href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">Camera::numero</a></div><div class="ttdeci">int numero</div><div class="ttdoc">Attribut contenant le numéro de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00064">camera.h:64</a></div></div>
+<div class="ttc" id="class_camera_html_ac1cdaf82921d2a2f3f941d867718eba2"><div class="ttname"><a href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">Camera::nomCamera</a></div><div class="ttdeci">QString nomCamera</div><div class="ttdoc">Attribut contenant le nom de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00063">camera.h:63</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4c560c4add60ebce65e2d9717e3d668c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c560c4add60ebce65e2d9717e3d668c">&#9670;&nbsp;</a></span>finVideo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::finVideo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Envoie un signal lorsque la vidéo est interrompu. </p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00068">run()</a>.</p>
+
+</div>
+</div>
+<a id="ab9f05b05c29416dce6471b5a03db98ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9f05b05c29416dce6471b5a03db98ea">&#9670;&nbsp;</a></span>getChoixResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::getChoixResolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère le choix de la resolution active. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>le choix de la resolution active </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00128">128</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00072">choixResolution</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="ihmreglagevideo_8cpp_source.html#l00179">IHMReglageVideo::chargerListeResolutionDisponible()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div><div class="ttc" id="class_camera_html_a3fdddf6f548f04d7bdc26f32602a03d4"><div class="ttname"><a href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">Camera::choixResolution</a></div><div class="ttdeci">int choixResolution</div><div class="ttdoc">Choix dans la liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00072">camera.h:72</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a997441a0c1e33fe3eda800953548071d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a997441a0c1e33fe3eda800953548071d">&#9670;&nbsp;</a></span>getListeResolutionsCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QSize &gt; Camera::getListeResolutionsCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne la liste des résolutions supportées par la caméra. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>la liste des résolutions supportées par la caméra </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00181">181</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00071">listeResolutionsCamera</a>.</p>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>;</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div><div class="ttc" id="class_camera_html_a96af62eaf7828664865b56e7c69e771c"><div class="ttname"><a href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">Camera::listeResolutionsCamera</a></div><div class="ttdeci">QList&lt; QSize &gt; listeResolutionsCamera</div><div class="ttdoc">Liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00071">camera.h:71</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a116b3869ff0647c851715605a1938a3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a116b3869ff0647c851715605a1938a3c">&#9670;&nbsp;</a></span>getNbCameras()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::getNbCameras </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne le nombre de caméras connectés. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>le nombre de caméras connectés </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00270">270</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>, et <a class="el" href="rov_8cpp_source.html#l00123">Rov::demarrerCampagne()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;{</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO  &lt;&lt; <span class="stringliteral">&quot;Caméra(s) disponible(s)&quot;</span> &lt;&lt; QCameraInfo::availableCameras().count();</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">return</span> QCameraInfo::availableCameras().count();</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a9b27a8a444006f40548a9a4ecf4d7256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b27a8a444006f40548a9a4ecf4d7256">&#9670;&nbsp;</a></span>getNom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Camera::getNom </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le nom de la caméra. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>nom de la caméra </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00103">103</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00063">nomCamera</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="ihmreglagevideo_8cpp_source.html#l00132">IHMReglageVideo::chargerListeCameraDisponible()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div><div class="ttc" id="class_camera_html_ac1cdaf82921d2a2f3f941d867718eba2"><div class="ttname"><a href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">Camera::nomCamera</a></div><div class="ttdeci">QString nomCamera</div><div class="ttdoc">Attribut contenant le nom de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00063">camera.h:63</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9fae9d9b6fa352ff96c9874d9b085454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fae9d9b6fa352ff96c9874d9b085454">&#9670;&nbsp;</a></span>getResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSize Camera::getResolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la resolution active. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>la resolution active </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00121">121</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00072">choixResolution</a>, <a class="el" href="camera_8h_source.html#l00041">HAUTEUR_DEFAUT</a>, <a class="el" href="camera_8h_source.html#l00035">LARGEUR_DEFAUT</a>, et <a class="el" href="camera_8h_source.html#l00071">listeResolutionsCamera</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="ihmreglagevideo_8cpp_source.html#l00179">IHMReglageVideo::chargerListeResolutionDisponible()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a> != -1)</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.at(<a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>);</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">return</span> QSize(<a class="code" href="camera_8h.html#afe66edd1ec0aa05058aaa2a069248f65">LARGEUR_DEFAUT</a>,<a class="code" href="camera_8h.html#a70cf269dc21e5a921c2927034d6cadd2">HAUTEUR_DEFAUT</a>);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div><div class="ttc" id="class_camera_html_a96af62eaf7828664865b56e7c69e771c"><div class="ttname"><a href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">Camera::listeResolutionsCamera</a></div><div class="ttdeci">QList&lt; QSize &gt; listeResolutionsCamera</div><div class="ttdoc">Liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00071">camera.h:71</a></div></div>
+<div class="ttc" id="class_camera_html_a3fdddf6f548f04d7bdc26f32602a03d4"><div class="ttname"><a href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">Camera::choixResolution</a></div><div class="ttdeci">int choixResolution</div><div class="ttdoc">Choix dans la liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00072">camera.h:72</a></div></div>
+<div class="ttc" id="camera_8h_html_a70cf269dc21e5a921c2927034d6cadd2"><div class="ttname"><a href="camera_8h.html#a70cf269dc21e5a921c2927034d6cadd2">HAUTEUR_DEFAUT</a></div><div class="ttdeci">#define HAUTEUR_DEFAUT</div><div class="ttdoc">Défini la hauteur en pixel de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00041">camera.h:41</a></div></div>
+<div class="ttc" id="camera_8h_html_afe66edd1ec0aa05058aaa2a069248f65"><div class="ttname"><a href="camera_8h.html#afe66edd1ec0aa05058aaa2a069248f65">LARGEUR_DEFAUT</a></div><div class="ttdeci">#define LARGEUR_DEFAUT</div><div class="ttdoc">Défini la largeur en pixel de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00035">camera.h:35</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac4756add4cb6bef60e38f3da79c2383f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4756add4cb6bef60e38f3da79c2383f">&#9670;&nbsp;</a></span>lireListeResolutionsCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt; QSize &gt; Camera::lireListeResolutionsCamera </td>
+          <td>(</td>
+          <td class="paramtype">QCameraInfo &amp;&#160;</td>
+          <td class="paramname"><em>cameraInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne la liste des résolutions supportés par la caméra passé en parametre. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>la liste des résolutions supportés par la caméra passé en parametre </dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraInfo</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00304">304</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="ihmreglagevideo_8cpp_source.html#l00179">IHMReglageVideo::chargerListeResolutionDisponible()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;{</div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    QList&lt;QSize&gt; listeResolutions;</div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    listeResolutions.clear();</div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">if</span>(QCameraInfo::availableCameras().count() &gt; 0)</div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    {</div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        QCamera *camera = <span class="keyword">new</span> QCamera(cameraInfo);</div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        QMediaRecorder *mediaRecorder = <span class="keyword">new</span> QMediaRecorder(camera);</div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        camera-&gt;load();</div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; mediaRecorder-&gt;supportedResolutions().size();</div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">if</span>(mediaRecorder-&gt;supportedResolutions().size() &gt; 0)</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        {</div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">foreach</span> (<span class="keyword">const</span> QSize &amp;resolution, mediaRecorder-&gt;supportedResolutions())</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            {</div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; resolution.width() &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; resolution.height();</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                listeResolutions.push_back(resolution);</div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            }</div><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        }</div><div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keyword">delete</span> mediaRecorder;</div><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keyword">delete</span> camera;</div><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    }</div><div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">return</span> listeResolutions;</div><div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a38c810d466375e950401e483f885c52f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38c810d466375e950401e483f885c52f">&#9670;&nbsp;</a></span>nouvelleImage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::nouvelleImage </td>
+          <td>(</td>
+          <td class="paramtype">QPixmap&#160;</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Envoie un signal lorsque une nouvelle image du flux vidéo est disponible. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00068">run()</a>.</p>
+
+</div>
+</div>
+<a id="a97267488c5756b4217d4e1fbc68008fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97267488c5756b4217d4e1fbc68008fd">&#9670;&nbsp;</a></span>recupererListeResolutionsCamera() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::recupererListeResolutionsCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la liste des résolutions supportées par la caméra sélectionnée. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00133">133</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00063">nomCamera</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>, et <a class="el" href="camera_8cpp_source.html#l00139">recupererListeResolutionsCamera()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    QCameraInfo cameraInfo(<a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>.toLatin1());</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">recupererListeResolutionsCamera</a>(cameraInfo);</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div><div class="ttc" id="class_camera_html_ac1cdaf82921d2a2f3f941d867718eba2"><div class="ttname"><a href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">Camera::nomCamera</a></div><div class="ttdeci">QString nomCamera</div><div class="ttdoc">Attribut contenant le nom de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00063">camera.h:63</a></div></div>
+<div class="ttc" id="class_camera_html_a97267488c5756b4217d4e1fbc68008fd"><div class="ttname"><a href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">Camera::recupererListeResolutionsCamera</a></div><div class="ttdeci">void recupererListeResolutionsCamera()</div><div class="ttdoc">Récupère la liste des résolutions supportées par la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00133">camera.cpp:133</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acf7554fa133bab58c16192041254a1d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf7554fa133bab58c16192041254a1d6">&#9670;&nbsp;</a></span>recupererListeResolutionsCamera() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::recupererListeResolutionsCamera </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numero</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la liste des résolutions supportées par la caméra à partir de son numéro. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numero</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00139">139</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8cpp_source.html#l00293">creerNomCamera()</a>, et <a class="el" href="camera_8cpp_source.html#l00133">recupererListeResolutionsCamera()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    QString nom = <a class="code" href="class_camera.html#a506d459df95042a03894afd5b781c2aa">Camera::creerNomCamera</a>(<a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>);</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    QCameraInfo cameraInfo(nom.toLatin1());</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">recupererListeResolutionsCamera</a>(cameraInfo);</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div><div class="ttc" id="class_camera_html_ae5cda5df3c9c49b88fff15389a1bbc64"><div class="ttname"><a href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">Camera::numero</a></div><div class="ttdeci">int numero</div><div class="ttdoc">Attribut contenant le numéro de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00064">camera.h:64</a></div></div>
+<div class="ttc" id="class_camera_html_a97267488c5756b4217d4e1fbc68008fd"><div class="ttname"><a href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">Camera::recupererListeResolutionsCamera</a></div><div class="ttdeci">void recupererListeResolutionsCamera()</div><div class="ttdoc">Récupère la liste des résolutions supportées par la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00133">camera.cpp:133</a></div></div>
+<div class="ttc" id="class_camera_html_a506d459df95042a03894afd5b781c2aa"><div class="ttname"><a href="class_camera.html#a506d459df95042a03894afd5b781c2aa">Camera::creerNomCamera</a></div><div class="ttdeci">static QString creerNomCamera(int numero)</div><div class="ttdoc">Retourne le nom de caméra associé a son numéro. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00293">camera.cpp:293</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae3d1ccb26bcd49340bc392dc1e7bb550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3d1ccb26bcd49340bc392dc1e7bb550">&#9670;&nbsp;</a></span>recupererListeResolutionsCamera() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::recupererListeResolutionsCamera </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nomCamera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la liste des résolutions supportées par la caméra à partir de son nom. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nomCamera</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00146">146</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8cpp_source.html#l00133">recupererListeResolutionsCamera()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    QCameraInfo cameraInfo(<a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>.toLatin1());</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">recupererListeResolutionsCamera</a>(cameraInfo);</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div><div class="ttc" id="class_camera_html_ac1cdaf82921d2a2f3f941d867718eba2"><div class="ttname"><a href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">Camera::nomCamera</a></div><div class="ttdeci">QString nomCamera</div><div class="ttdoc">Attribut contenant le nom de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00063">camera.h:63</a></div></div>
+<div class="ttc" id="class_camera_html_a97267488c5756b4217d4e1fbc68008fd"><div class="ttname"><a href="class_camera.html#a97267488c5756b4217d4e1fbc68008fd">Camera::recupererListeResolutionsCamera</a></div><div class="ttdeci">void recupererListeResolutionsCamera()</div><div class="ttdoc">Récupère la liste des résolutions supportées par la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00133">camera.cpp:133</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4a9f1bcfa19bbd5add6c758c8ad85b5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a9f1bcfa19bbd5add6c758c8ad85b5c">&#9670;&nbsp;</a></span>recupererListeResolutionsCamera() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::recupererListeResolutionsCamera </td>
+          <td>(</td>
+          <td class="paramtype">QCameraInfo &amp;&#160;</td>
+          <td class="paramname"><em>cameraInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la liste des résolutions supporté par la caméra. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraInfo</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00152">152</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00041">HAUTEUR_DEFAUT</a>, <a class="el" href="camera_8h_source.html#l00035">LARGEUR_DEFAUT</a>, et <a class="el" href="camera_8h_source.html#l00071">listeResolutionsCamera</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;{</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">    #ifndef SANS_DETECTION</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.clear();</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span>(QCameraInfo::availableCameras().count() &gt; 0)</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        QCamera *camera = <span class="keyword">new</span> QCamera(cameraInfo, <span class="keyword">this</span>);</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        QMediaRecorder *mediaRecorder = <span class="keyword">new</span> QMediaRecorder(camera, <span class="keyword">this</span>);</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        camera-&gt;load();</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span> &lt;&lt; mediaRecorder-&gt;supportedResolutions().size();</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span>(mediaRecorder-&gt;supportedResolutions().size() &gt; 0)</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        {</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <span class="keywordflow">foreach</span> (<span class="keyword">const</span> QSize &amp;resolution, mediaRecorder-&gt;supportedResolutions())</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            {</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; resolution.width() &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; resolution.height();</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.push_back(resolution);</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            }</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keyword">delete</span> mediaRecorder;</div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keyword">delete</span> camera;</div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">    #else</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    Q_UNUSED(cameraInfo);</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.clear();</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    QSize resolutionDefaut(<a class="code" href="camera_8h.html#afe66edd1ec0aa05058aaa2a069248f65">LARGEUR_DEFAUT</a>, <a class="code" href="camera_8h.html#a70cf269dc21e5a921c2927034d6cadd2">HAUTEUR_DEFAUT</a>);</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.push_back(resolutionDefaut);</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">    #endif</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div><div class="ttc" id="class_camera_html_a96af62eaf7828664865b56e7c69e771c"><div class="ttname"><a href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">Camera::listeResolutionsCamera</a></div><div class="ttdeci">QList&lt; QSize &gt; listeResolutionsCamera</div><div class="ttdoc">Liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00071">camera.h:71</a></div></div>
+<div class="ttc" id="camera_8h_html_a70cf269dc21e5a921c2927034d6cadd2"><div class="ttname"><a href="camera_8h.html#a70cf269dc21e5a921c2927034d6cadd2">HAUTEUR_DEFAUT</a></div><div class="ttdeci">#define HAUTEUR_DEFAUT</div><div class="ttdoc">Défini la hauteur en pixel de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00041">camera.h:41</a></div></div>
+<div class="ttc" id="camera_8h_html_afe66edd1ec0aa05058aaa2a069248f65"><div class="ttname"><a href="camera_8h.html#afe66edd1ec0aa05058aaa2a069248f65">LARGEUR_DEFAUT</a></div><div class="ttdeci">#define LARGEUR_DEFAUT</div><div class="ttdoc">Défini la largeur en pixel de la caméra par défaut. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00035">camera.h:35</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaa3745c0cf0f286ef80b7eeebc248cc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3745c0cf0f286ef80b7eeebc248cc9">&#9670;&nbsp;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Démarre une nouveau thread afin de capturer le flux video et l'envoyer à l'IHM. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00068">68</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8cpp_source.html#l00063">acquerirImageVideo()</a>, <a class="el" href="camera_8h_source.html#l00070">changementProprietes</a>, <a class="el" href="class_camera.html#a4c560c4add60ebce65e2d9717e3d668c">finVideo()</a>, <a class="el" href="camera_8h_source.html#l00063">nomCamera</a>, <a class="el" href="class_camera.html#a38c810d466375e950401e483f885c52f">nouvelleImage()</a>, <a class="el" href="camera_8h_source.html#l00064">numero</a>, et <a class="el" href="camera_8cpp_source.html#l00108">setProprietes()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;start&quot;</span> &lt;&lt; <span class="stringliteral">&quot;numero&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a> &lt;&lt; <span class="stringliteral">&quot;nomCamera&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    this-&gt;setPriority(QThread::NormalPriority);</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a> &lt; 0)</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        qDebug() &lt;&lt; Q_FUNC_INFO  &lt;&lt; <span class="stringliteral">&quot;Erreur numero&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a> &lt;&lt; <span class="stringliteral">&quot;nomCamera&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span>;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    cv::VideoCapture camera(<a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a>);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    cv::Mat frame;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="class_camera.html#a77397d68d606172ccfafed5624c31213">setProprietes</a>(camera);</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">while</span>(camera.isOpened() &amp;&amp; !isInterruptionRequested())</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="class_camera.html#afbddcda62053404cbf06a4ba48c62732">acquerirImageVideo</a>(camera, frame);</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span>(frame.empty())</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">continue</span>;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        QPixmap pixmap = QPixmap::fromImage(QImage(frame.data, frame.cols, frame.rows, frame.step, QImage::Format_RGB888).rgbSwapped());</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        emit <a class="code" href="class_camera.html#a38c810d466375e950401e483f885c52f">nouvelleImage</a>(pixmap);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a>)</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="class_camera.html#a77397d68d606172ccfafed5624c31213">setProprietes</a>(camera);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    camera.release();</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;stop&quot;</span> &lt;&lt; <span class="stringliteral">&quot;numero&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">numero</a> &lt;&lt; <span class="stringliteral">&quot;nomCamera&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">nomCamera</a>;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    emit <a class="code" href="class_camera.html#a4c560c4add60ebce65e2d9717e3d668c">finVideo</a>();</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div><div class="ttc" id="class_camera_html_ae5cda5df3c9c49b88fff15389a1bbc64"><div class="ttname"><a href="class_camera.html#ae5cda5df3c9c49b88fff15389a1bbc64">Camera::numero</a></div><div class="ttdeci">int numero</div><div class="ttdoc">Attribut contenant le numéro de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00064">camera.h:64</a></div></div>
+<div class="ttc" id="class_camera_html_afbddcda62053404cbf06a4ba48c62732"><div class="ttname"><a href="class_camera.html#afbddcda62053404cbf06a4ba48c62732">Camera::acquerirImageVideo</a></div><div class="ttdeci">void acquerirImageVideo(cv::VideoCapture &amp;camera, cv::Mat &amp;frame)</div><div class="ttdoc">Fait l&amp;#39;acquisition d&amp;#39;une nouvelle frame. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00063">camera.cpp:63</a></div></div>
+<div class="ttc" id="class_camera_html_a38c810d466375e950401e483f885c52f"><div class="ttname"><a href="class_camera.html#a38c810d466375e950401e483f885c52f">Camera::nouvelleImage</a></div><div class="ttdeci">void nouvelleImage(QPixmap image)</div><div class="ttdoc">Envoie un signal lorsque une nouvelle image du flux vidéo est disponible. </div></div>
+<div class="ttc" id="class_camera_html_ac1cdaf82921d2a2f3f941d867718eba2"><div class="ttname"><a href="class_camera.html#ac1cdaf82921d2a2f3f941d867718eba2">Camera::nomCamera</a></div><div class="ttdeci">QString nomCamera</div><div class="ttdoc">Attribut contenant le nom de la caméra sélectionnée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00063">camera.h:63</a></div></div>
+<div class="ttc" id="class_camera_html_a77397d68d606172ccfafed5624c31213"><div class="ttname"><a href="class_camera.html#a77397d68d606172ccfafed5624c31213">Camera::setProprietes</a></div><div class="ttdeci">void setProprietes(cv::VideoCapture &amp;camera)</div><div class="ttdoc">Après l&amp;#39;acquisition d&amp;#39;une nouvelle frame modifie les propriété de la caméra si ceux-ci ont été modifi...</div><div class="ttdef"><b>Definition:</b> <a href="camera_8cpp_source.html#l00108">camera.cpp:108</a></div></div>
+<div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+<div class="ttc" id="class_camera_html_a4c560c4add60ebce65e2d9717e3d668c"><div class="ttname"><a href="class_camera.html#a4c560c4add60ebce65e2d9717e3d668c">Camera::finVideo</a></div><div class="ttdeci">void finVideo()</div><div class="ttdoc">Envoie un signal lorsque la vidéo est interrompu. </div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acc596f589be1e2e2d8e46e071ce38036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc596f589be1e2e2d8e46e071ce38036">&#9670;&nbsp;</a></span>setContraste</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setContraste </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>contraste</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modifie le contraste de la caméra. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">contraste</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00258">258</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00070">changementProprietes</a>.</p>
+<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;{</div><div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    this-&gt;<a class="code" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a> = double(<a class="code" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a>)/100;</div><div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div><div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+<div class="ttc" id="class_camera_html_ad3b300e52c91341d985d3b54f562a0f7"><div class="ttname"><a href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">Camera::contraste</a></div><div class="ttdeci">double contraste</div><div class="ttdoc">Attribut contenant le constraste de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00068">camera.h:68</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a25120dedc5f57638a866e1ff827fd641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25120dedc5f57638a866e1ff827fd641">&#9670;&nbsp;</a></span>setLuminosite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setLuminosite </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>luminosite</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modifie la luminosite de la caméra. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">luminosite</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00252">252</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00070">changementProprietes</a>.</p>
+<div class="fragment"><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    this-&gt;<a class="code" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a> = double(<a class="code" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a>)/100;</div><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div><div class="ttc" id="class_camera_html_aca5433bf19773161142d73009469b1ed"><div class="ttname"><a href="class_camera.html#aca5433bf19773161142d73009469b1ed">Camera::luminosite</a></div><div class="ttdeci">double luminosite</div><div class="ttdoc">Attribut contenant la luminosite de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00067">camera.h:67</a></div></div>
+<div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a77397d68d606172ccfafed5624c31213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77397d68d606172ccfafed5624c31213">&#9670;&nbsp;</a></span>setProprietes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setProprietes </td>
+          <td>(</td>
+          <td class="paramtype">cv::VideoCapture &amp;&#160;</td>
+          <td class="paramname"><em>camera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Après l'acquisition d'une nouvelle frame modifie les propriété de la caméra si ceux-ci ont été modifié par l'IHM. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00108">108</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00070">changementProprietes</a>, <a class="el" href="camera_8h_source.html#l00068">contraste</a>, <a class="el" href="camera_8h_source.html#l00066">hauteur</a>, <a class="el" href="camera_8h_source.html#l00065">largeur</a>, <a class="el" href="camera_8h_source.html#l00067">luminosite</a>, et <a class="el" href="camera_8h_source.html#l00069">saturation</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00068">run()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;largeur&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> &lt;&lt; <span class="stringliteral">&quot;hauteur&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    camera.set(CV_CAP_PROP_FRAME_WIDTH, <a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a>);</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    camera.set(CV_CAP_PROP_FRAME_HEIGHT, hauteur);</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;luminosite&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a> &lt;&lt; <span class="stringliteral">&quot;contraste&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a> &lt;&lt; <span class="stringliteral">&quot;saturation&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">saturation</a>;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    camera.set(CV_CAP_PROP_BRIGHTNESS, <a class="code" href="class_camera.html#aca5433bf19773161142d73009469b1ed">luminosite</a>);</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    camera.set(CV_CAP_PROP_CONTRAST, <a class="code" href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">contraste</a>);</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    camera.set(CV_CAP_PROP_SATURATION, saturation);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">false</span>;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div><div class="ttc" id="class_camera_html_aca5433bf19773161142d73009469b1ed"><div class="ttname"><a href="class_camera.html#aca5433bf19773161142d73009469b1ed">Camera::luminosite</a></div><div class="ttdeci">double luminosite</div><div class="ttdoc">Attribut contenant la luminosite de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00067">camera.h:67</a></div></div>
+<div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+<div class="ttc" id="class_camera_html_ad3b300e52c91341d985d3b54f562a0f7"><div class="ttname"><a href="class_camera.html#ad3b300e52c91341d985d3b54f562a0f7">Camera::contraste</a></div><div class="ttdeci">double contraste</div><div class="ttdoc">Attribut contenant le constraste de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00068">camera.h:68</a></div></div>
+<div class="ttc" id="class_camera_html_a5d89d7f9d1a5eab4175dd168c7fbf1c7"><div class="ttname"><a href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">Camera::hauteur</a></div><div class="ttdeci">int hauteur</div><div class="ttdoc">Attribut contenant la hauteur (heigth) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00066">camera.h:66</a></div></div>
+<div class="ttc" id="class_camera_html_ad64f26cdfc5aa561208b273d430938cf"><div class="ttname"><a href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">Camera::largeur</a></div><div class="ttdeci">int largeur</div><div class="ttdoc">Attribut contenant la largeur (width) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00065">camera.h:65</a></div></div>
+<div class="ttc" id="class_camera_html_afd46d6d2451ee33b68dbc74713f2687c"><div class="ttname"><a href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">Camera::saturation</a></div><div class="ttdeci">double saturation</div><div class="ttdoc">Attribut contenant la saturation de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00069">camera.h:69</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a966d13a5bf22c776f8d776d3da19182a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a966d13a5bf22c776f8d776d3da19182a">&#9670;&nbsp;</a></span>setResolution <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setResolution </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>largeur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hauteur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modifie la résolution (largeur x hauteur) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">largeur</td><td></td></tr>
+    <tr><td class="paramname">hauteur</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00186">186</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00070">changementProprietes</a>, <a class="el" href="camera_8h_source.html#l00072">choixResolution</a>, <a class="el" href="camera_8h_source.html#l00066">hauteur</a>, <a class="el" href="camera_8h_source.html#l00065">largeur</a>, et <a class="el" href="camera_8h_source.html#l00071">listeResolutionsCamera</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{    </div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;largeur&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> &lt;&lt; <span class="stringliteral">&quot;hauteur&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>;</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    QSize size(<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a>, hauteur);</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">int</span> i = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.indexOf(size);</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span> (i != -1)</div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a> = i;</div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        this-&gt;<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> = <a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a>;</div><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        this-&gt;hauteur = <a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a>;</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">else</span></div><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    {</div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        size = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.last();</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a> = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.indexOf(size);;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        this-&gt;<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> = size.width();</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        this-&gt;hauteur = size.height();</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;largeur&quot;</span> &lt;&lt; this-&gt;<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> &lt;&lt; <span class="stringliteral">&quot;hauteur&quot;</span> &lt;&lt; this-&gt;hauteur &lt;&lt; <span class="stringliteral">&quot;choixResolution&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>;</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div><div class="ttc" id="class_camera_html_a96af62eaf7828664865b56e7c69e771c"><div class="ttname"><a href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">Camera::listeResolutionsCamera</a></div><div class="ttdeci">QList&lt; QSize &gt; listeResolutionsCamera</div><div class="ttdoc">Liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00071">camera.h:71</a></div></div>
+<div class="ttc" id="class_camera_html_a3fdddf6f548f04d7bdc26f32602a03d4"><div class="ttname"><a href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">Camera::choixResolution</a></div><div class="ttdeci">int choixResolution</div><div class="ttdoc">Choix dans la liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00072">camera.h:72</a></div></div>
+<div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+<div class="ttc" id="class_camera_html_a5d89d7f9d1a5eab4175dd168c7fbf1c7"><div class="ttname"><a href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">Camera::hauteur</a></div><div class="ttdeci">int hauteur</div><div class="ttdoc">Attribut contenant la hauteur (heigth) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00066">camera.h:66</a></div></div>
+<div class="ttc" id="class_camera_html_ad64f26cdfc5aa561208b273d430938cf"><div class="ttname"><a href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">Camera::largeur</a></div><div class="ttdeci">int largeur</div><div class="ttdoc">Attribut contenant la largeur (width) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00065">camera.h:65</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a79630483bf9912a8fd1afe412ee8c848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79630483bf9912a8fd1afe412ee8c848">&#9670;&nbsp;</a></span>setResolution <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setResolution </td>
+          <td>(</td>
+          <td class="paramtype">QSize&#160;</td>
+          <td class="paramname"><em>resolution</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modifie la résolution (largeur x hauteur) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resolution</td><td>(QSize) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00209">209</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00070">changementProprietes</a>, <a class="el" href="camera_8h_source.html#l00072">choixResolution</a>, <a class="el" href="camera_8h_source.html#l00066">hauteur</a>, <a class="el" href="camera_8h_source.html#l00065">largeur</a>, et <a class="el" href="camera_8h_source.html#l00071">listeResolutionsCamera</a>.</p>
+<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;largeur&quot;</span> &lt;&lt; resolution.width() &lt;&lt; <span class="stringliteral">&quot;hauteur&quot;</span> &lt;&lt; resolution.height();</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">int</span> i = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.indexOf(resolution);</div><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">if</span> (i != -1)</div><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    {</div><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a> = i;</div><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        this-&gt;<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> = resolution.width();</div><div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        this-&gt;<a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a> = resolution.height();</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">else</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        QSize size = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.last();</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a> = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.indexOf(size);;</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        this-&gt;<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> = size.width();</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        this-&gt;<a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a> = size.height();</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;largeur&quot;</span> &lt;&lt; this-&gt;<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> &lt;&lt; <span class="stringliteral">&quot;hauteur&quot;</span> &lt;&lt; this-&gt;<a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a> &lt;&lt; <span class="stringliteral">&quot;choixResolution&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>;</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}</div><div class="ttc" id="class_camera_html_a96af62eaf7828664865b56e7c69e771c"><div class="ttname"><a href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">Camera::listeResolutionsCamera</a></div><div class="ttdeci">QList&lt; QSize &gt; listeResolutionsCamera</div><div class="ttdoc">Liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00071">camera.h:71</a></div></div>
+<div class="ttc" id="class_camera_html_a3fdddf6f548f04d7bdc26f32602a03d4"><div class="ttname"><a href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">Camera::choixResolution</a></div><div class="ttdeci">int choixResolution</div><div class="ttdoc">Choix dans la liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00072">camera.h:72</a></div></div>
+<div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+<div class="ttc" id="class_camera_html_a5d89d7f9d1a5eab4175dd168c7fbf1c7"><div class="ttname"><a href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">Camera::hauteur</a></div><div class="ttdeci">int hauteur</div><div class="ttdoc">Attribut contenant la hauteur (heigth) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00066">camera.h:66</a></div></div>
+<div class="ttc" id="class_camera_html_ad64f26cdfc5aa561208b273d430938cf"><div class="ttname"><a href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">Camera::largeur</a></div><div class="ttdeci">int largeur</div><div class="ttdoc">Attribut contenant la largeur (width) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00065">camera.h:65</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7ff6343220c3ccd64ff513d2af37e1f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ff6343220c3ccd64ff513d2af37e1f3">&#9670;&nbsp;</a></span>setResolution <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setResolution </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>choix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modifie la résolution (index dans la liste) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">choix</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00231">231</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00070">changementProprietes</a>, <a class="el" href="camera_8h_source.html#l00072">choixResolution</a>, <a class="el" href="camera_8h_source.html#l00066">hauteur</a>, <a class="el" href="camera_8h_source.html#l00065">largeur</a>, et <a class="el" href="camera_8h_source.html#l00071">listeResolutionsCamera</a>.</p>
+<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;choix&quot;</span> &lt;&lt; choix;</div><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">if</span>(choix &lt; <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.size())</div><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    {</div><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a> = choix;</div><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        this-&gt;<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.at(choix).width();</div><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        this-&gt;<a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a> = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.at(choix).height();</div><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">else</span></div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        QSize size = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.last();</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a> = <a class="code" href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">listeResolutionsCamera</a>.indexOf(size);;</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        this-&gt;<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> = size.width();</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        this-&gt;<a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a> = size.height();</div><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div><div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    qDebug() &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;largeur&quot;</span> &lt;&lt; this-&gt;<a class="code" href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">largeur</a> &lt;&lt; <span class="stringliteral">&quot;hauteur&quot;</span> &lt;&lt; this-&gt;<a class="code" href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">hauteur</a> &lt;&lt; <span class="stringliteral">&quot;choixResolution&quot;</span> &lt;&lt; <a class="code" href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">choixResolution</a>;</div><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div><div class="ttc" id="class_camera_html_a96af62eaf7828664865b56e7c69e771c"><div class="ttname"><a href="class_camera.html#a96af62eaf7828664865b56e7c69e771c">Camera::listeResolutionsCamera</a></div><div class="ttdeci">QList&lt; QSize &gt; listeResolutionsCamera</div><div class="ttdoc">Liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00071">camera.h:71</a></div></div>
+<div class="ttc" id="class_camera_html_a3fdddf6f548f04d7bdc26f32602a03d4"><div class="ttname"><a href="class_camera.html#a3fdddf6f548f04d7bdc26f32602a03d4">Camera::choixResolution</a></div><div class="ttdeci">int choixResolution</div><div class="ttdoc">Choix dans la liste contenant les résolutions supportés par la caméra. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00072">camera.h:72</a></div></div>
+<div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+<div class="ttc" id="class_camera_html_a5d89d7f9d1a5eab4175dd168c7fbf1c7"><div class="ttname"><a href="class_camera.html#a5d89d7f9d1a5eab4175dd168c7fbf1c7">Camera::hauteur</a></div><div class="ttdeci">int hauteur</div><div class="ttdoc">Attribut contenant la hauteur (heigth) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00066">camera.h:66</a></div></div>
+<div class="ttc" id="class_camera_html_ad64f26cdfc5aa561208b273d430938cf"><div class="ttname"><a href="class_camera.html#ad64f26cdfc5aa561208b273d430938cf">Camera::largeur</a></div><div class="ttdeci">int largeur</div><div class="ttdoc">Attribut contenant la largeur (width) en pixels de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00065">camera.h:65</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ace85018db120a6d61a5326172f97df93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace85018db120a6d61a5326172f97df93">&#9670;&nbsp;</a></span>setSaturation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::setSaturation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>saturation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modifie la saturation de la caméra. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">saturation</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8cpp_source.html#l00264">264</a> du fichier <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+
+<p class="reference">Références <a class="el" href="camera_8h_source.html#l00070">changementProprietes</a>.</p>
+<div class="fragment"><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;{</div><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    this-&gt;<a class="code" href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">saturation</a> = double(<a class="code" href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">saturation</a>)/100;</div><div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">changementProprietes</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div><div class="ttc" id="class_camera_html_a50d2b3ef5c08f8b61bbe2115d71005bd"><div class="ttname"><a href="class_camera.html#a50d2b3ef5c08f8b61bbe2115d71005bd">Camera::changementProprietes</a></div><div class="ttdeci">bool changementProprietes</div><div class="ttdoc">Attribut désignant si une propriete de la caméra doit être modifiée. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00070">camera.h:70</a></div></div>
+<div class="ttc" id="class_camera_html_afd46d6d2451ee33b68dbc74713f2687c"><div class="ttname"><a href="class_camera.html#afd46d6d2451ee33b68dbc74713f2687c">Camera::saturation</a></div><div class="ttdeci">double saturation</div><div class="ttdoc">Attribut contenant la saturation de la vidéo. </div><div class="ttdef"><b>Definition:</b> <a href="camera_8h_source.html#l00069">camera.h:69</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a id="a50d2b3ef5c08f8b61bbe2115d71005bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50d2b3ef5c08f8b61bbe2115d71005bd">&#9670;&nbsp;</a></span>changementProprietes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Camera::changementProprietes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attribut désignant si une propriete de la caméra doit être modifiée. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00070">70</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00068">run()</a>, <a class="el" href="camera_8cpp_source.html#l00258">setContraste()</a>, <a class="el" href="camera_8cpp_source.html#l00252">setLuminosite()</a>, <a class="el" href="camera_8cpp_source.html#l00108">setProprietes()</a>, <a class="el" href="camera_8cpp_source.html#l00186">setResolution()</a>, et <a class="el" href="camera_8cpp_source.html#l00264">setSaturation()</a>.</p>
+
+</div>
+</div>
+<a id="a3fdddf6f548f04d7bdc26f32602a03d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fdddf6f548f04d7bdc26f32602a03d4">&#9670;&nbsp;</a></span>choixResolution</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::choixResolution</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Choix dans la liste contenant les résolutions supportés par la caméra. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00072">72</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00128">getChoixResolution()</a>, <a class="el" href="camera_8cpp_source.html#l00121">getResolution()</a>, et <a class="el" href="camera_8cpp_source.html#l00186">setResolution()</a>.</p>
+
+</div>
+</div>
+<a id="ad3b300e52c91341d985d3b54f562a0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b300e52c91341d985d3b54f562a0f7">&#9670;&nbsp;</a></span>contraste</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Camera::contraste</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attribut contenant le constraste de la vidéo. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00068">68</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>, et <a class="el" href="camera_8cpp_source.html#l00108">setProprietes()</a>.</p>
+
+</div>
+</div>
+<a id="a5d89d7f9d1a5eab4175dd168c7fbf1c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d89d7f9d1a5eab4175dd168c7fbf1c7">&#9670;&nbsp;</a></span>hauteur</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::hauteur</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attribut contenant la hauteur (heigth) en pixels de la vidéo. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00066">66</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>, <a class="el" href="camera_8cpp_source.html#l00108">setProprietes()</a>, et <a class="el" href="camera_8cpp_source.html#l00186">setResolution()</a>.</p>
+
+</div>
+</div>
+<a id="ad64f26cdfc5aa561208b273d430938cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad64f26cdfc5aa561208b273d430938cf">&#9670;&nbsp;</a></span>largeur</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::largeur</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attribut contenant la largeur (width) en pixels de la vidéo. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00065">65</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>, <a class="el" href="camera_8cpp_source.html#l00108">setProprietes()</a>, et <a class="el" href="camera_8cpp_source.html#l00186">setResolution()</a>.</p>
+
+</div>
+</div>
+<a id="a96af62eaf7828664865b56e7c69e771c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96af62eaf7828664865b56e7c69e771c">&#9670;&nbsp;</a></span>listeResolutionsCamera</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;QSize&gt; Camera::listeResolutionsCamera</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liste contenant les résolutions supportés par la caméra. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00071">71</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00181">getListeResolutionsCamera()</a>, <a class="el" href="camera_8cpp_source.html#l00121">getResolution()</a>, <a class="el" href="camera_8cpp_source.html#l00152">recupererListeResolutionsCamera()</a>, et <a class="el" href="camera_8cpp_source.html#l00186">setResolution()</a>.</p>
+
+</div>
+</div>
+<a id="aca5433bf19773161142d73009469b1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca5433bf19773161142d73009469b1ed">&#9670;&nbsp;</a></span>luminosite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Camera::luminosite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attribut contenant la luminosite de la vidéo. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00067">67</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>, et <a class="el" href="camera_8cpp_source.html#l00108">setProprietes()</a>.</p>
+
+</div>
+</div>
+<a id="ac1cdaf82921d2a2f3f941d867718eba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1cdaf82921d2a2f3f941d867718eba2">&#9670;&nbsp;</a></span>nomCamera</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Camera::nomCamera</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attribut contenant le nom de la caméra sélectionnée. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00063">63</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>, <a class="el" href="camera_8cpp_source.html#l00103">getNom()</a>, <a class="el" href="camera_8cpp_source.html#l00133">recupererListeResolutionsCamera()</a>, et <a class="el" href="camera_8cpp_source.html#l00068">run()</a>.</p>
+
+</div>
+</div>
+<a id="ae5cda5df3c9c49b88fff15389a1bbc64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5cda5df3c9c49b88fff15389a1bbc64">&#9670;&nbsp;</a></span>numero</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Camera::numero</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attribut contenant le numéro de la caméra sélectionnée. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00064">64</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00034">Camera()</a>, <a class="el" href="camera_8cpp_source.html#l00276">extraireNumero()</a>, et <a class="el" href="camera_8cpp_source.html#l00068">run()</a>.</p>
+
+</div>
+</div>
+<a id="ad1dde4d981877001281af01c392307f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1dde4d981877001281af01c392307f1">&#9670;&nbsp;</a></span>rov</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_rov.html">Rov</a>* Camera::rov</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Objet rov permettant de récuperer les dernière mesures issues des capteurs. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00062">62</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+</div>
+</div>
+<a id="afd46d6d2451ee33b68dbc74713f2687c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd46d6d2451ee33b68dbc74713f2687c">&#9670;&nbsp;</a></span>saturation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Camera::saturation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Attribut contenant la saturation de la vidéo. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="camera_8h_source.html#l00069">69</a> du fichier <a class="el" href="camera_8h_source.html">camera.h</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="camera_8cpp_source.html#l00012">Camera()</a>, et <a class="el" href="camera_8cpp_source.html#l00108">setProprietes()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li><a class="el" href="camera_8h_source.html">camera.h</a></li>
+<li><a class="el" href="camera_8cpp_source.html">camera.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+<!--Généré le Mardi 7 Avril 2020 19:56:09 pour ROV&#39;NET par &#160;<a href="http://www.doxygen.org/index.html">-->
+<img class="footer" src="lasalle-logo.png" alt="La Salle Avignon"/>
+<b>Campus La Salle Avignon</b> - 9 Rue Notre Dame des 7 douleurs - BP 50165 - 84008 Avignon
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

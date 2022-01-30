@@ -1,0 +1,1399 @@
+\hypertarget{class_i_h_m_accueil}{}\subsection{Référence de la classe I\+H\+M\+Accueil}
+\label{class_i_h_m_accueil}\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+
+
+Class permettant de créer une nouvelle campagne, reprendre une campagne mise en pause, archiver une campagne, supprimer une campagne, accéder à la base de données et configurer le matériel.  
+
+
+
+
+{\ttfamily \#include \char`\"{}ihmaccueil.\+h\char`\"{}}
+
+
+
+Graphe de collaboration de I\+H\+M\+Accueil\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_i_h_m_accueil__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_accueil_a5d38917dbe88751ee966834e1f6c558e}{archiver\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}archiver la campagne selectionner. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a1da45b17d6e4198f87a9a0e05d1f7fd5}{creer\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Permet de créer une nouvelle campagne. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a6e8935ff4e0ba8f0c0015f370d91eda3}{demarrer\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Permet de démarrer ou reprendre une campagne non archivé \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_af61976178829ec1fc756bec7eff0354d}{enregister\+Mesure\+B\+DD} (Q\+String temperature, Q\+String humidite, Q\+String radiation)
+\begin{DoxyCompactList}\small\item\em enregistre les mesures recues dans la base de données \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a0d7c77277fe83ad13beee56d96c5c5ca}{supprimer\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}archiver la campagne dans la base de données. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_accueil_a3087ce7a78561c79ce3148761750dd1d}{ajouter\+Campagne} (\hyperlink{class_campagne}{Campagne} $\ast$campagne, bool verification=false)
+\begin{DoxyCompactList}\small\item\em Ajoute une nouvelle campagne dans la liste des campagne non archivés. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_aa27c7334efe44c8c4cd582df6581fdff}{ajouter\+Photo\+B\+DD} (\hyperlink{struct_photo}{Photo} \&photo, \hyperlink{class_campagne}{Campagne} $\ast$campagne)
+\begin{DoxyCompactList}\small\item\em Ajoute la photo prise dans la B\+DD associé a la campagne. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a5ab04fc3fa87817bec130f377d563b75}{enregistrer\+Campagne\+B\+DD} (\hyperlink{class_campagne}{Campagne} $\ast$campagne)
+\begin{DoxyCompactList}\small\item\em Enregistre les informations de la campagne dans la B\+DD. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_accueil_a66cf4d5655e3132c1d313b76f3905e52}{I\+H\+M\+Accueil} (\hyperlink{class_q_widget}{Q\+Widget} $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_i_h_m_accueil}{I\+H\+M\+Accueil}. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a7f1e5f71843a99cb44e3efb7191a6d07}{modifier\+Campagne\+B\+DD} (\hyperlink{class_campagne}{Campagne} $\ast$campagne)
+\begin{DoxyCompactList}\small\item\em Met à jour les informations de la campagne lors de l\textquotesingle{}arret de celle-\/ci dans la B\+DD. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_accueil_a5ea3926747dada8b9677ab9a33c03139}{$\sim$\+I\+H\+M\+Accueil} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_i_h_m_accueil}{I\+H\+M\+Accueil}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_accueil_a1ed3efefdf929c0d2a6b6d1bb10bbc27}{charger\+Campagnes} ()
+\begin{DoxyCompactList}\small\item\em Récupere la liste des noms de campagne non terminés et ajoute les nom de la liste des campagnes disponibles. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a63bc796a325066423ed6146b8bab1437}{configurer\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Configure les widgets de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a1385a94c1a3d75d813429dc9bdc4b050}{initialisation\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Initialise les widgets de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a5a571ab8f264c275580501753bb00674}{initialiser\+Evenements} ()
+\begin{DoxyCompactList}\small\item\em Initialise les evenements de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_acaaa5d756165801403ea7d73ae40186b}{initialiser\+Layouts} ()
+\begin{DoxyCompactList}\small\item\em Initialise les layouts de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a44074f2d8d59e0d1b7a3d50c24d2a0df}{recharger\+Liste\+Campagnes} ()
+\begin{DoxyCompactList}\small\item\em Recharge la liste des campagnes en cours. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a0ffb0f0c7c9c613083933514690f2772}{recuperer\+Campagne\+En\+Cours} (bool \&retour\+Campagne, Q\+String \&requete\+Informations\+Campagne, Q\+Vector$<$ Q\+String\+List $>$ \&\hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnes\+En\+Cours})
+\begin{DoxyCompactList}\small\item\em Récupère les campagnes en cours dans la base de données, le paramètre campagnes\+En\+Cours passé en référence récupère les valeurs. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}{recuperer\+Id\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Recupere l\textquotesingle{}id de la campagne séléctionné dans la liste. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_aa09878b2e3e3024220291165b5c528a6}{recuperer\+Nb\+Photos} (Q\+String \&nombre\+Photos, Q\+String \&requete\+Nombre\+Photos)
+\begin{DoxyCompactList}\small\item\em Récupère le nombre de photos dans la base de données, le paramètre nombre\+Photos passé en référence récupère la valeur. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_aebeef48b9bc345edd02e5185951c454e}{recuperer\+Photos} (bool \&retour\+Photo, Q\+String \&requete\+Informations\+Photos, Q\+Vector$<$ Q\+String\+List $>$ \&informations\+Photos)
+\begin{DoxyCompactList}\small\item\em Récupère les photos associés a une campagne dans la base de données, le paramètre informations\+Photos passé en référence récupère les valeurs. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a36ce6ecca4e258562577bab1439e0a96}{supprimer\+Campagne\+Liste} ()
+\begin{DoxyCompactList}\small\item\em Permet de supprimer de lq liste la campagne selectionné \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_acb9679f51e140e0bc28d8ac10afd87e9}{supprimer\+Dossier\+Photo\+Local} ()
+\begin{DoxyCompactList}\small\item\em Supprime le dossier photo si il est vide. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_accueil_a9dc22241cd0d4a227b8b0bf04c6404fd}{supprimer\+Photo\+Local} (Q\+String requete)
+\begin{DoxyCompactList}\small\item\em Selectionne les chemin d\textquotesingle{}accès des photo à supprimer dans la base de données et les supprime en local. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_base_de_donnees}{Base\+De\+Donnees} $\ast$ \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{base\+De\+Donnees}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet \hyperlink{class_base_de_donnees}{Base\+De\+Donnees} permettant d\textquotesingle{}acceder a la B\+DD. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}{bouton\+Archiver\+Campagne}
+\begin{DoxyCompactList}\small\item\em Bouton permettant d\textquotesingle{}archiver la campagne sélectionner. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_accueil_a313a8c52763aa2978010db77ec6673ac}{bouton\+Archives}
+\begin{DoxyCompactList}\small\item\em Bouton permettant d\textquotesingle{}accéder aux archives. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_accueil_a8b8ed7d11ab66e3c6895b3c6129dc9c8}{bouton\+Configuration}
+\begin{DoxyCompactList}\small\item\em Bouton permettant de configurer le matériel. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_accueil_a4186b4ef6a9c63f5b3c6431626ff3268}{bouton\+Creation\+Campagne}
+\begin{DoxyCompactList}\small\item\em Bouton permettant de créer une nouvelle campagne. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}{bouton\+Demarrer\+Campagne}
+\begin{DoxyCompactList}\small\item\em Bouton permettant de démarrer ou reprendre la campagne seléctionner. \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}{bouton\+Supprimer\+Campagne}
+\begin{DoxyCompactList}\small\item\em Bouton permettant de supprimmer la campagne sélectionner. \end{DoxyCompactList}\item 
+Q\+Vector$<$ \hyperlink{class_campagne}{Campagne} $\ast$ $>$ \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnes\+En\+Cours}
+\begin{DoxyCompactList}\small\item\em Conteneur des campagnes non archivés. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov} $\ast$ \hyperlink{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}{ihm\+Rov}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet ihm\+Rov. \end{DoxyCompactList}\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{liste\+Campagne}
+\begin{DoxyCompactList}\small\item\em Liste des campagnes créer et non archivés. \end{DoxyCompactList}\item 
+Q\+Label $\ast$ \hyperlink{class_i_h_m_accueil_a709440124f3307589eee68c517833e6d}{logo\+Accueil}
+\begin{DoxyCompactList}\small\item\em Logo de l\textquotesingle{}I\+HM accueil. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Class permettant de créer une nouvelle campagne, reprendre une campagne mise en pause, archiver une campagne, supprimer une campagne, accéder à la base de données et configurer le matériel. 
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00026}{26} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_i_h_m_accueil_a66cf4d5655e3132c1d313b76f3905e52}\label{class_i_h_m_accueil_a66cf4d5655e3132c1d313b76f3905e52}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{I\+H\+M\+Accueil()}{IHMAccueil()}}
+{\footnotesize\ttfamily I\+H\+M\+Accueil\+::\+I\+H\+M\+Accueil (\begin{DoxyParamCaption}\item[{\hyperlink{class_q_widget}{Q\+Widget} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur de la classe \hyperlink{class_i_h_m_accueil}{I\+H\+M\+Accueil}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00014}{14} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, \hyperlink{ihmaccueil_8cpp_source_l00130}{charger\+Campagnes()}, \hyperlink{ihmaccueil_8cpp_source_l00077}{configurer\+Widgets()}, \hyperlink{basededonnees_8cpp_source_l00031}{Base\+De\+Donnees\+::get\+Instance()}, \hyperlink{ihmaccueil_8h_source_l00041}{ihm\+Rov}, \hyperlink{ihmaccueil_8cpp_source_l00037}{initialisation\+Widgets()}, \hyperlink{ihmaccueil_8cpp_source_l00084}{initialiser\+Evenements()}, \hyperlink{ihmaccueil_8cpp_source_l00049}{initialiser\+Layouts()}, et \hyperlink{ihmaccueil_8cpp_source_l00092}{recharger\+Liste\+Campagnes()}.
+
+
+\begin{DoxyCode}
+00014                                       : \hyperlink{class_q_widget}{QWidget}(parent), \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}()
+00015 \{
+00016     qDebug() << Q\_FUNC\_INFO;
+00017     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees} = \hyperlink{class_base_de_donnees_a58beb2f702f75b257e2e55e25d9f979b}{BaseDeDonnees::getInstance}();
+00018 
+00019     \hyperlink{class_i_h_m_accueil_a1385a94c1a3d75d813429dc9bdc4b050}{initialisationWidgets}();
+00020     \hyperlink{class_i_h_m_accueil_a5a571ab8f264c275580501753bb00674}{initialiserEvenements}();
+00021     \hyperlink{class_i_h_m_accueil_acaaa5d756165801403ea7d73ae40186b}{initialiserLayouts}();
+00022     \hyperlink{class_i_h_m_accueil_a63bc796a325066423ed6146b8bab1437}{configurerWidgets}();
+00023 
+00024     \hyperlink{class_i_h_m_accueil_a1ed3efefdf929c0d2a6b6d1bb10bbc27}{chargerCampagnes}();
+00025     \hyperlink{class_i_h_m_accueil_a44074f2d8d59e0d1b7a3d50c24d2a0df}{rechargerListeCampagnes}();
+00026 
+00027     \hyperlink{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}{ihmRov} = \textcolor{keyword}{new} \hyperlink{class_i_h_m_rov}{IHMRov}(\textcolor{keyword}{this});
+00028     \hyperlink{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}{ihmRov}->hide();
+00029 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a5ea3926747dada8b9677ab9a33c03139}\label{class_i_h_m_accueil_a5ea3926747dada8b9677ab9a33c03139}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!````~I\+H\+M\+Accueil@{$\sim$\+I\+H\+M\+Accueil}}
+\index{````~I\+H\+M\+Accueil@{$\sim$\+I\+H\+M\+Accueil}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{$\sim$\+I\+H\+M\+Accueil()}{~IHMAccueil()}}
+{\footnotesize\ttfamily I\+H\+M\+Accueil\+::$\sim$\+I\+H\+M\+Accueil (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \hyperlink{class_i_h_m_accueil}{I\+H\+M\+Accueil}. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00031}{31} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{basededonnees_8cpp_source_l00044}{Base\+De\+Donnees\+::detruire\+Instance()}.
+
+
+\begin{DoxyCode}
+00032 \{
+00033     \hyperlink{class_base_de_donnees_a457401c0816b888c77ce915997545f4e}{BaseDeDonnees::detruireInstance}();
+00034     qDebug() << Q\_FUNC\_INFO;
+00035 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_i_h_m_accueil_a3087ce7a78561c79ce3148761750dd1d}\label{class_i_h_m_accueil_a3087ce7a78561c79ce3148761750dd1d}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!ajouter\+Campagne@{ajouter\+Campagne}}
+\index{ajouter\+Campagne@{ajouter\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{ajouter\+Campagne()}{ajouterCampagne()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::ajouter\+Campagne (\begin{DoxyParamCaption}\item[{\hyperlink{class_campagne}{Campagne} $\ast$}]{campagne,  }\item[{bool}]{verification = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Ajoute une nouvelle campagne dans la liste des campagne non archivés. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em campagne} & \\
+\hline
+{\em verification} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00254}{254} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00039}{campagnes\+En\+Cours}, \hyperlink{campagne_8cpp_source_l00055}{Campagne\+::get\+Chemin\+Sauvegarde()}, \hyperlink{campagne_8cpp_source_l00019}{Campagne\+::get\+Nom\+Campagne()}, et \hyperlink{ihmaccueil_8cpp_source_l00092}{recharger\+Liste\+Campagnes()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00130}{charger\+Campagnes()}, et \hyperlink{ihmcreationcampagne_8cpp_source_l00071}{I\+H\+M\+Creation\+Campagne\+::valider\+Campagne()}.
+
+
+\begin{DoxyCode}
+00255 \{
+00256     QDir dossierCampagne(campagne->\hyperlink{class_campagne_ad752790357417d83a93056d9c9689a16}{getCheminSauvegarde}());
+00257     \textcolor{keywordflow}{if}(dossierCampagne.exists())
+00258     \{
+00259         \textcolor{keywordflow}{if}(!dossierCampagne.mkdir(campagne->\hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}()))
+00260         \{
+00261             qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Erreur : impossible de créer le dossier"} << campagne->
+      \hyperlink{class_campagne_ad752790357417d83a93056d9c9689a16}{getCheminSauvegarde}() << \textcolor{stringliteral}{"campagne"} << campagne->
+      \hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}();
+00262             \textcolor{keywordflow}{if}(verification)
+00263             \{
+00264                 QMessageBox::critical(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Erreur"}, \textcolor{stringliteral}{"Erreur : impossible de créer le dossier "} + campagne
+      ->\hyperlink{class_campagne_ad752790357417d83a93056d9c9689a16}{getCheminSauvegarde}() + \textcolor{stringliteral}{" !"});
+00265                 \textcolor{keywordflow}{return};
+00266             \}
+00267         \}
+00268     \}
+00269     \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.push\_back(campagne);
+00270     \hyperlink{class_i_h_m_accueil_a44074f2d8d59e0d1b7a3d50c24d2a0df}{rechargerListeCampagnes}();
+00271 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_aa27c7334efe44c8c4cd582df6581fdff}\label{class_i_h_m_accueil_aa27c7334efe44c8c4cd582df6581fdff}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!ajouter\+Photo\+B\+DD@{ajouter\+Photo\+B\+DD}}
+\index{ajouter\+Photo\+B\+DD@{ajouter\+Photo\+B\+DD}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{ajouter\+Photo\+B\+D\+D()}{ajouterPhotoBDD()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::ajouter\+Photo\+B\+DD (\begin{DoxyParamCaption}\item[{\hyperlink{struct_photo}{Photo} \&}]{photo,  }\item[{\hyperlink{class_campagne}{Campagne} $\ast$}]{campagne }\end{DoxyParamCaption})}
+
+
+
+Ajoute la photo prise dans la B\+DD associé a la campagne. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em photo} & \\
+\hline
+{\em campagne} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00313}{313} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, \hyperlink{ihmalbumphoto_8h_source_l00025}{Photo\+::chemin\+Sauvegarde}, \hyperlink{basededonnees_8cpp_source_l00104}{Base\+De\+Donnees\+::executer()}, \hyperlink{campagne_8cpp_source_l00019}{Campagne\+::get\+Nom\+Campagne()}, et \hyperlink{basededonnees_8cpp_source_l00139}{Base\+De\+Donnees\+::recuperer()}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00179}{I\+H\+M\+Rov\+::capturer\+Image()}.
+
+
+\begin{DoxyCode}
+00314 \{
+00315     QString idCampagne;
+00316     QString requeteIdCampagne = \textcolor{stringliteral}{"SELECT IdCampagne FROM campagne WHERE campagne.nom = '"} + campagne->
+      \hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}() + \textcolor{stringliteral}{"'"};
+00317     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requeteIdCampagne, idCampagne);
+00318 
+00319     QString requeteInsertion = \textcolor{stringliteral}{"INSERT INTO photo (idCampagne, cheminImage, aGarder) VALUES ('"} + 
+      idCampagne + \textcolor{stringliteral}{"', '"} + photo.\hyperlink{struct_photo_a3c28eb9ad160b65deb46a72146a1d14f}{cheminSauvegarde} + \textcolor{stringliteral}{"', '1')"};
+00320     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(requeteInsertion);
+00321 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a5d38917dbe88751ee966834e1f6c558e}\label{class_i_h_m_accueil_a5d38917dbe88751ee966834e1f6c558e}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!archiver\+Campagne@{archiver\+Campagne}}
+\index{archiver\+Campagne@{archiver\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{archiver\+Campagne}{archiverCampagne}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::archiver\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Permet d\textquotesingle{}archiver la campagne selectionner. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00350}{350} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, \hyperlink{basededonnees_8cpp_source_l00104}{Base\+De\+Donnees\+::executer()}, \hyperlink{ihmaccueil_8h_source_l00037}{liste\+Campagne}, \hyperlink{basededonnees_8cpp_source_l00063}{Base\+De\+Donnees\+::ouvrir()}, \hyperlink{ihmaccueil_8cpp_source_l00205}{recuperer\+Id\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00189}{supprimer\+Campagne\+Liste()}, et \hyperlink{ihmaccueil_8cpp_source_l00224}{supprimer\+Photo\+Local()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00084}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00351 \{
+00352     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a7f6a5510b08017b0d99115a84252f186}{ouvrir}(\textcolor{stringliteral}{"campagnes.sqlite"});
+00353     \textcolor{keywordtype}{bool} retourRequeteArchiver;
+00354     \textcolor{keywordtype}{bool} retourRequeteSuppressionPhoto;
+00355     QString requeteArchiver, requeteSuppressionPhoto;
+00356 
+00357     \hyperlink{class_i_h_m_accueil_a9dc22241cd0d4a227b8b0bf04c6404fd}{supprimerPhotoLocal}(\textcolor{stringliteral}{"SELECT photo.cheminImage FROM photo WHERE photo.IdCampagne = '"}
+       + \hyperlink{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}{recupererIdCampagne}() + \textcolor{stringliteral}{"' AND photo.aGarder = '0'"});
+00358 
+00359     requeteArchiver = \textcolor{stringliteral}{"UPDATE campagne SET enCours = '0' WHERE campagne.nom = '"} + 
+      \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->currentText() + \textcolor{stringliteral}{"'"};
+00360     requeteSuppressionPhoto = \textcolor{stringliteral}{"DELETE FROM photo WHERE photo.IdCampagne = '"} + 
+      \hyperlink{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}{recupererIdCampagne}() + \textcolor{stringliteral}{"' AND photo.aGarder = '0'"};
+00361 
+00362     retourRequeteArchiver = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(requeteArchiver);
+00363     retourRequeteSuppressionPhoto = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(requeteSuppressionPhoto);
+00364 
+00365     \textcolor{keywordflow}{if}(!retourRequeteArchiver && !retourRequeteSuppressionPhoto)
+00366     \{
+00367 \textcolor{preprocessor}{        #ifdef DEBUG\_BASEDEDONNEES}
+00368             qDebug() << Q\_FUNC\_INFO << QString::fromUtf8(\textcolor{stringliteral}{"erreur !"});
+00369 \textcolor{preprocessor}{        #endif}
+00370     \}
+00371     \textcolor{keywordflow}{else}
+00372         \hyperlink{class_i_h_m_accueil_a36ce6ecca4e258562577bab1439e0a96}{supprimerCampagneListe}();
+00373 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a1ed3efefdf929c0d2a6b6d1bb10bbc27}\label{class_i_h_m_accueil_a1ed3efefdf929c0d2a6b6d1bb10bbc27}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!charger\+Campagnes@{charger\+Campagnes}}
+\index{charger\+Campagnes@{charger\+Campagnes}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{charger\+Campagnes()}{chargerCampagnes()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::charger\+Campagnes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Récupere la liste des noms de campagne non terminés et ajoute les nom de la liste des campagnes disponibles. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00130}{130} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmalbumphoto_8h_source_l00024}{Photo\+::a\+Garder}, \hyperlink{ihmaccueil_8cpp_source_l00254}{ajouter\+Campagne()}, \hyperlink{campagne_8cpp_source_l00080}{Campagne\+::ajouter\+Photo()}, \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, \hyperlink{ihmaccueil_8h_source_l00039}{campagnes\+En\+Cours}, \hyperlink{ihmalbumphoto_8h_source_l00025}{Photo\+::chemin\+Sauvegarde}, \hyperlink{ihmalbumphoto_8h_source_l00022}{Photo\+::image}, \hyperlink{basededonnees_8cpp_source_l00063}{Base\+De\+Donnees\+::ouvrir()}, \hyperlink{ihmaccueil_8cpp_source_l00120}{recuperer\+Campagne\+En\+Cours()}, \hyperlink{ihmaccueil_8cpp_source_l00115}{recuperer\+Nb\+Photos()}, \hyperlink{ihmaccueil_8cpp_source_l00125}{recuperer\+Photos()}, \hyperlink{campagne_8cpp_source_l00060}{Campagne\+::set\+Chemin\+Sauvegarde()}, et \hyperlink{campagne_8cpp_source_l00065}{Campagne\+::set\+Nombre\+Photos()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00014}{I\+H\+M\+Accueil()}.
+
+
+\begin{DoxyCode}
+00131 \{
+00132     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a7f6a5510b08017b0d99115a84252f186}{ouvrir}(\textcolor{stringliteral}{"campagnes.sqlite"});
+00133 
+00134     \textcolor{keywordtype}{bool} retourCampagne, retourPhoto;
+00135     QVector<QStringList> \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours};
+00136     QString nombrePhotos;
+00137     QVector<QStringList> informationsPhotos;
+00138 
+00139     QString requeteInformationsCampagne = \textcolor{stringliteral}{"SELECT campagne.idCampagne, campagne.nom, campagne.lieu,
+       technicien.nom, technicien.prenom, campagne.date, campagne.duree, campagne.cheminSauvegarde FROM campagne INNER
+       JOIN technicien ON campagne.idTechnicien = technicien.idTechnicien WHERE campagne.enCours = '1' ORDER BY
+       campagne.date DESC"};
+00140 
+00141 \textcolor{preprocessor}{    #ifdef DEBUG\_BASEDEDONNEES}
+00142     qDebug() << Q\_FUNC\_INFO << QString::fromUtf8(\textcolor{stringliteral}{"requête : "}) << requeteInformationsCampagne;
+00143 \textcolor{preprocessor}{    #endif}
+00144 
+00145     \hyperlink{class_i_h_m_accueil_a0ffb0f0c7c9c613083933514690f2772}{recupererCampagneEnCours}(retourCampagne, requeteInformationsCampagne, 
+      campagnesEnCours);
+00146     \textcolor{keywordflow}{if}(retourCampagne)
+00147     \{
+00148         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i < campagnesEnCours.size(); i++)
+00149         \{
+00150             QStringList informationsCampagne = campagnesEnCours.at(i);
+00151             QString requeteNombrePhotos = \textcolor{stringliteral}{"SELECT COUNT(IdPhoto) FROM photo INNER JOIN campagne ON
+       photo.IdCampagne = campagne.IdCampagne WHERE campagne.IdCampagne = '"} + informationsCampagne.at(0) + \textcolor{stringliteral}{"' "};
+00152             \hyperlink{class_i_h_m_accueil_aa09878b2e3e3024220291165b5c528a6}{recupererNbPhotos}(nombrePhotos, requeteNombrePhotos);
+00153 
+00154 \textcolor{preprocessor}{            #ifdef DEBUG\_BASEDEDONNEES}
+00155             qDebug() << Q\_FUNC\_INFO << QString::fromUtf8(\textcolor{stringliteral}{"%0 %1 %2 %3 %4 %5 %6 %7"}).arg(
+      informationsCampagne.at(0)).arg(informationsCampagne.at(1)).arg(informationsCampagne.at(2)).arg(informationsCampagne.at(3)).arg
+      (informationsCampagne.at(4)).arg(informationsCampagne.at(5)).arg(informationsCampagne.at(6)).arg(
+      informationsCampagne.at(7));
+00156 \textcolor{preprocessor}{            #endif}
+00157             \hyperlink{class_campagne}{Campagne} *campagne = \textcolor{keyword}{new} \hyperlink{class_campagne}{Campagne}(informationsCampagne.at(1), 
+      informationsCampagne.at(2), informationsCampagne.at(3), informationsCampagne.at(4), QDateTime::fromString(
+      informationsCampagne.at(5)), \textcolor{keyword}{this}, informationsCampagne.at(6).toInt());
+00158 
+00159             campagne->\hyperlink{class_campagne_a68c7eb6776e46306b10f1ca2a409ae6e}{setCheminSauvegarde}(informationsCampagne.at(7));
+00160             campagne->\hyperlink{class_campagne_a2b8848ade0f97708571331ef71e4c9cb}{setNombrePhotos}(nombrePhotos.toInt());
+00161 
+00162             QString requeteInformationsPhotos =\textcolor{stringliteral}{"SELECT cheminImage, aGarder FROM photo INNER JOIN campagne
+       ON photo.IdCampagne = campagne.IdCampagne WHERE campagne.enCours = '1' AND photo.IdCampagne = '"} + 
+      informationsCampagne.at(0) + \textcolor{stringliteral}{"'"};
+00163             \hyperlink{class_i_h_m_accueil_aebeef48b9bc345edd02e5185951c454e}{recupererPhotos}(retourPhoto, requeteInformationsPhotos, informationsPhotos);
+00164             \textcolor{keywordflow}{if}(retourPhoto)
+00165             \{
+00166                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i < informationsPhotos.size(); i++)
+00167                 \{
+00168                     QStringList informationPhoto = informationsPhotos.at(i);
+00169                     \hyperlink{struct_photo}{Photo} photo;
+00170                     photo.\hyperlink{struct_photo_a3c28eb9ad160b65deb46a72146a1d14f}{cheminSauvegarde} = informationPhoto.at(0);
+00171                     photo.\hyperlink{struct_photo_afec1baefdd7d036432494bbb33b21366}{aGarder} = informationPhoto.at(1).toInt();
+00172                     photo.\hyperlink{struct_photo_aa6ecfed8082bea5af2905208308a6adb}{image} = QPixmap(informationPhoto.at(0));
+00173 
+00174                     campagne->\hyperlink{class_campagne_a472029bf46646d136a750dbaa7a3155f}{ajouterPhoto}(photo);
+00175                 \}
+00176             \}
+00177             \hyperlink{class_i_h_m_accueil_a3087ce7a78561c79ce3148761750dd1d}{ajouterCampagne}(campagne);
+00178             informationsPhotos.clear();
+00179         \}
+00180      \}
+00181      \textcolor{keywordflow}{else}
+00182      \{
+00183 \textcolor{preprocessor}{        #ifdef DEBUG\_BASEDEDONNEES}
+00184         qDebug() << Q\_FUNC\_INFO << QString::fromUtf8(\textcolor{stringliteral}{"erreur !"});
+00185 \textcolor{preprocessor}{        #endif}
+00186      \}
+00187 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a63bc796a325066423ed6146b8bab1437}\label{class_i_h_m_accueil_a63bc796a325066423ed6146b8bab1437}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!configurer\+Widgets@{configurer\+Widgets}}
+\index{configurer\+Widgets@{configurer\+Widgets}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{configurer\+Widgets()}{configurerWidgets()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::configurer\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Configure les widgets de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00077}{77} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00037}{liste\+Campagne}, et \hyperlink{ihmaccueil_8h_source_l00038}{logo\+Accueil}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00014}{I\+H\+M\+Accueil()}.
+
+
+\begin{DoxyCode}
+00078 \{
+00079     qDebug() << Q\_FUNC\_INFO << qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/Robot.png"};
+00080     \hyperlink{class_i_h_m_accueil_a709440124f3307589eee68c517833e6d}{logoAccueil}->setPixmap(QPixmap(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/Robot.png"}));
+00081     \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->setEditable(\textcolor{keyword}{false});
+00082 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a1da45b17d6e4198f87a9a0e05d1f7fd5}\label{class_i_h_m_accueil_a1da45b17d6e4198f87a9a0e05d1f7fd5}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!creer\+Campagne@{creer\+Campagne}}
+\index{creer\+Campagne@{creer\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{creer\+Campagne}{creerCampagne}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::creer\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Permet de créer une nouvelle campagne. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00339}{339} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, et \hyperlink{basededonnees_8cpp_source_l00139}{Base\+De\+Donnees\+::recuperer()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00084}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00340 \{
+00341     QVector<QStringList> listeTechniciens;
+00342     QString requete = \textcolor{stringliteral}{"SELECT technicien.nom, technicien.prenom FROM technicien"};
+00343 
+00344     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requete, listeTechniciens);
+00345 
+00346     \hyperlink{class_i_h_m_creation_campagne}{IHMCreationCampagne} *ihmCreationCampagne = \textcolor{keyword}{new} 
+      \hyperlink{class_i_h_m_creation_campagne}{IHMCreationCampagne}(\textcolor{keyword}{this}, listeTechniciens);
+00347     ihmCreationCampagne->exec();
+00348 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a6e8935ff4e0ba8f0c0015f370d91eda3}\label{class_i_h_m_accueil_a6e8935ff4e0ba8f0c0015f370d91eda3}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!demarrer\+Campagne@{demarrer\+Campagne}}
+\index{demarrer\+Campagne@{demarrer\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{demarrer\+Campagne}{demarrerCampagne}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::demarrer\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Permet de démarrer ou reprendre une campagne non archivé 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00323}{323} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00039}{campagnes\+En\+Cours}, \hyperlink{ihmrov_8cpp_source_l00202}{I\+H\+M\+Rov\+::gerer\+Campagne()}, \hyperlink{ihmaccueil_8h_source_l00041}{ihm\+Rov}, \hyperlink{ihmaccueil_8h_source_l00037}{liste\+Campagne}, et \hyperlink{ihmrov_8cpp_source_l00143}{I\+H\+M\+Rov\+::set\+Campagne()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00084}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00324 \{
+00325     \textcolor{keywordflow}{for}(QVector<Campagne*>::iterator it = \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.begin(); it != 
+      \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.end(); it++)
+00326     \{
+00327         \textcolor{keywordflow}{if}((*it)->getNomCampagne() == \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->currentText())
+00328         \{
+00329             qDebug() << Q\_FUNC\_INFO << \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->currentText();
+00330             \hyperlink{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}{ihmRov}->\hyperlink{class_i_h_m_rov_a301a0b8cb323c2c9de71df9070bb7555}{setCampagne}(*it);
+00331             \hyperlink{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}{ihmRov}->show();
+00332             \hyperlink{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}{ihmRov}->\hyperlink{class_i_h_m_rov_a3660d3b4bf61367534eae9d0c3618a5e}{gererCampagne}();
+00333             this->setVisible(\textcolor{keyword}{false});
+00334             \textcolor{keywordflow}{break};
+00335         \}
+00336     \}    
+00337 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_af61976178829ec1fc756bec7eff0354d}\label{class_i_h_m_accueil_af61976178829ec1fc756bec7eff0354d}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!enregister\+Mesure\+B\+DD@{enregister\+Mesure\+B\+DD}}
+\index{enregister\+Mesure\+B\+DD@{enregister\+Mesure\+B\+DD}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{enregister\+Mesure\+B\+DD}{enregisterMesureBDD}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::enregister\+Mesure\+B\+DD (\begin{DoxyParamCaption}\item[{Q\+String}]{temperature,  }\item[{Q\+String}]{humidite,  }\item[{Q\+String}]{radiation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+enregistre les mesures recues dans la base de données 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em temperature} & \\
+\hline
+{\em humidite} & \\
+\hline
+{\em radiation} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00404}{404} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, \hyperlink{basededonnees_8cpp_source_l00104}{Base\+De\+Donnees\+::executer()}, \hyperlink{basededonnees_8cpp_source_l00063}{Base\+De\+Donnees\+::ouvrir()}, et \hyperlink{ihmaccueil_8cpp_source_l00205}{recuperer\+Id\+Campagne()}.
+
+
+\begin{DoxyCode}
+00405 \{
+00406     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a7f6a5510b08017b0d99115a84252f186}{ouvrir}(\textcolor{stringliteral}{"campagnes.sqlite"});
+00407     \textcolor{keywordtype}{bool} retourRequeteEnregistrementMesure;
+00408 
+00409     QString requeteEnregistrementMesure = \textcolor{stringliteral}{"INSERT INTO mesure (idCampagne, heure, temperature, radiation,
+       humidite) VALUES ("} + \hyperlink{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}{recupererIdCampagne}() + \textcolor{stringliteral}{","} + QDateTime::currentDateTime().toString(
+      ) + \textcolor{stringliteral}{","} + temperature + \textcolor{stringliteral}{","} + humidite + \textcolor{stringliteral}{","} + radiation + \textcolor{stringliteral}{")"};
+00410 
+00411     retourRequeteEnregistrementMesure = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(
+      requeteEnregistrementMesure);
+00412 
+00413     \textcolor{keywordflow}{if}(!retourRequeteEnregistrementMesure)
+00414     \{
+00415 \textcolor{preprocessor}{        #ifdef DEBUG\_BASEDEDONNEES}
+00416             qDebug() << Q\_FUNC\_INFO << QString::fromUtf8(\textcolor{stringliteral}{"erreur !"});
+00417 \textcolor{preprocessor}{        #endif}
+00418     \}
+00419 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a5ab04fc3fa87817bec130f377d563b75}\label{class_i_h_m_accueil_a5ab04fc3fa87817bec130f377d563b75}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!enregistrer\+Campagne\+B\+DD@{enregistrer\+Campagne\+B\+DD}}
+\index{enregistrer\+Campagne\+B\+DD@{enregistrer\+Campagne\+B\+DD}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{enregistrer\+Campagne\+B\+D\+D()}{enregistrerCampagneBDD()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::enregistrer\+Campagne\+B\+DD (\begin{DoxyParamCaption}\item[{\hyperlink{class_campagne}{Campagne} $\ast$}]{campagne }\end{DoxyParamCaption})}
+
+
+
+Enregistre les informations de la campagne dans la B\+DD. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em campagne} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00273}{273} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, \hyperlink{basededonnees_8cpp_source_l00104}{Base\+De\+Donnees\+::executer()}, \hyperlink{campagne_8cpp_source_l00055}{Campagne\+::get\+Chemin\+Sauvegarde()}, \hyperlink{campagne_8cpp_source_l00039}{Campagne\+::get\+Date()}, \hyperlink{campagne_8cpp_source_l00044}{Campagne\+::get\+Duree()}, \hyperlink{campagne_8cpp_source_l00034}{Campagne\+::get\+Lieu()}, \hyperlink{campagne_8cpp_source_l00019}{Campagne\+::get\+Nom\+Campagne()}, \hyperlink{campagne_8cpp_source_l00024}{Campagne\+::get\+Nom\+Technicien()}, \hyperlink{campagne_8cpp_source_l00029}{Campagne\+::get\+Prenom\+Technicien()}, \hyperlink{basededonnees_8cpp_source_l00063}{Base\+De\+Donnees\+::ouvrir()}, et \hyperlink{basededonnees_8cpp_source_l00139}{Base\+De\+Donnees\+::recuperer()}.
+
+
+
+Référencé par \hyperlink{ihmcreationcampagne_8cpp_source_l00071}{I\+H\+M\+Creation\+Campagne\+::valider\+Campagne()}.
+
+
+\begin{DoxyCode}
+00274 \{
+00275 \textcolor{preprocessor}{    #ifdef DEBUG\_BASEDEDONNEES}
+00276     qDebug() << Q\_FUNC\_INFO << campagne->\hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}();
+00277 \textcolor{preprocessor}{    #endif}
+00278 
+00279     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a7f6a5510b08017b0d99115a84252f186}{ouvrir}(\textcolor{stringliteral}{"campagnes.sqlite"});
+00280 
+00281     QString idTechnicien;
+00282     QString requeteId = \textcolor{stringliteral}{"SELECT technicien.IdTechnicien FROM technicien WHERE technicien.nom = '"} + 
+      campagne->\hyperlink{class_campagne_ae1df1bd6234222ccdaf5a1d20d64ee46}{getNomTechnicien}() + \textcolor{stringliteral}{"' AND technicien.prenom = '"} + campagne->
+      \hyperlink{class_campagne_ac6c7772ef5d7b15964664d659b486263}{getPrenomTechnicien}() + \textcolor{stringliteral}{"'"};
+00283     \textcolor{keywordtype}{bool} retour = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requeteId, idTechnicien);
+00284     \textcolor{keywordflow}{if}(!retour)
+00285     \{
+00286         QString requeteInformation = \textcolor{stringliteral}{"INSERT INTO technicien (nom, prenom) VALUES ('"} + campagne->
+      \hyperlink{class_campagne_ae1df1bd6234222ccdaf5a1d20d64ee46}{getNomTechnicien}() + \textcolor{stringliteral}{"','"} + campagne->\hyperlink{class_campagne_ac6c7772ef5d7b15964664d659b486263}{getPrenomTechnicien}() + \textcolor{stringliteral}{"')"};
+00287         \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(requeteInformation);
+00288         \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requeteId, idTechnicien);
+00289     \}
+00290 
+00291     QString requeteInsertionCampagne = \textcolor{stringliteral}{"INSERT INTO campagne (idTechnicien, nom, lieu, date, duree,
+       enCours, cheminSauvegarde) VALUES ('"} + idTechnicien + \textcolor{stringliteral}{"', '"} + campagne->\hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}() + \textcolor{stringliteral}{"', '"} +
+       campagne->\hyperlink{class_campagne_a98d71a731d16dec7a882787387b29d8e}{getLieu}() + \textcolor{stringliteral}{"', '"} + campagne->\hyperlink{class_campagne_a319b5bb4ed2b0fc1a10fc4d099a7a6d2}{getDate}().toString() + \textcolor{stringliteral}{"', '"} + QString::number(
+      campagne->\hyperlink{class_campagne_abe02a9050f4a5ea9521dd40b855c350b}{getDuree}()) + \textcolor{stringliteral}{"', '1', '"} + campagne->\hyperlink{class_campagne_ad752790357417d83a93056d9c9689a16}{getCheminSauvegarde}() + \textcolor{stringliteral}{"')"};
+00292     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(requeteInsertionCampagne);
+00293 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a1385a94c1a3d75d813429dc9bdc4b050}\label{class_i_h_m_accueil_a1385a94c1a3d75d813429dc9bdc4b050}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!initialisation\+Widgets@{initialisation\+Widgets}}
+\index{initialisation\+Widgets@{initialisation\+Widgets}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{initialisation\+Widgets()}{initialisationWidgets()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::initialisation\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les widgets de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00037}{37} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00035}{bouton\+Archiver\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00031}{bouton\+Archives}, \hyperlink{ihmaccueil_8h_source_l00032}{bouton\+Configuration}, \hyperlink{ihmaccueil_8h_source_l00033}{bouton\+Creation\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00034}{bouton\+Demarrer\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00036}{bouton\+Supprimer\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00037}{liste\+Campagne}, et \hyperlink{ihmaccueil_8h_source_l00038}{logo\+Accueil}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00014}{I\+H\+M\+Accueil()}.
+
+
+\begin{DoxyCode}
+00038 \{
+00039     \hyperlink{class_i_h_m_accueil_a313a8c52763aa2978010db77ec6673ac}{boutonArchives} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Archives"}, \textcolor{keyword}{this});
+00040     \hyperlink{class_i_h_m_accueil_a8b8ed7d11ab66e3c6895b3c6129dc9c8}{boutonConfiguration} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Configuration"}, \textcolor{keyword}{this});
+00041     \hyperlink{class_i_h_m_accueil_a4186b4ef6a9c63f5b3c6431626ff3268}{boutonCreationCampagne} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Créer campagne"}, \textcolor{keyword}{this});
+00042     \hyperlink{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}{boutonDemarrerCampagne} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Démarrer"}, \textcolor{keyword}{this});
+00043     \hyperlink{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}{boutonArchiverCampagne} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Archiver"}, \textcolor{keyword}{this});
+00044     \hyperlink{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}{boutonSupprimerCampagne} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Supprimer"}, \textcolor{keyword}{this});
+00045     \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00046     \hyperlink{class_i_h_m_accueil_a709440124f3307589eee68c517833e6d}{logoAccueil} = \textcolor{keyword}{new} QLabel(\textcolor{keyword}{this});
+00047 
+00048 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a5a571ab8f264c275580501753bb00674}\label{class_i_h_m_accueil_a5a571ab8f264c275580501753bb00674}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!initialiser\+Evenements@{initialiser\+Evenements}}
+\index{initialiser\+Evenements@{initialiser\+Evenements}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{initialiser\+Evenements()}{initialiserEvenements()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::initialiser\+Evenements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les evenements de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00084}{84} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8cpp_source_l00350}{archiver\+Campagne()}, \hyperlink{ihmaccueil_8h_source_l00035}{bouton\+Archiver\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00033}{bouton\+Creation\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00034}{bouton\+Demarrer\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00036}{bouton\+Supprimer\+Campagne}, \hyperlink{ihmaccueil_8cpp_source_l00339}{creer\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00323}{demarrer\+Campagne()}, et \hyperlink{ihmaccueil_8cpp_source_l00375}{supprimer\+Campagne()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00014}{I\+H\+M\+Accueil()}.
+
+
+\begin{DoxyCode}
+00085 \{
+00086     connect(\hyperlink{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}{boutonDemarrerCampagne}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_accueil_a6e8935ff4e0ba8f0c0015f370d91eda3}{demarrerCampagne}()));
+00087     connect(\hyperlink{class_i_h_m_accueil_a4186b4ef6a9c63f5b3c6431626ff3268}{boutonCreationCampagne}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_accueil_a1da45b17d6e4198f87a9a0e05d1f7fd5}{creerCampagne}()));
+00088     connect(\hyperlink{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}{boutonSupprimerCampagne}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_accueil_a0d7c77277fe83ad13beee56d96c5c5ca}{supprimerCampagne}()));
+00089     connect(\hyperlink{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}{boutonArchiverCampagne}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_accueil_a5d38917dbe88751ee966834e1f6c558e}{archiverCampagne}()));
+00090 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_acaaa5d756165801403ea7d73ae40186b}\label{class_i_h_m_accueil_acaaa5d756165801403ea7d73ae40186b}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!initialiser\+Layouts@{initialiser\+Layouts}}
+\index{initialiser\+Layouts@{initialiser\+Layouts}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{initialiser\+Layouts()}{initialiserLayouts()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::initialiser\+Layouts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les layouts de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00049}{49} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00035}{bouton\+Archiver\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00031}{bouton\+Archives}, \hyperlink{ihmaccueil_8h_source_l00032}{bouton\+Configuration}, \hyperlink{ihmaccueil_8h_source_l00033}{bouton\+Creation\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00034}{bouton\+Demarrer\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00036}{bouton\+Supprimer\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00037}{liste\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00038}{logo\+Accueil}, et \hyperlink{ihmaccueil_8h_source_l00014}{N\+O\+M\+\_\+\+F\+E\+N\+E\+T\+R\+E\+\_\+\+A\+C\+C\+U\+E\+IL}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00014}{I\+H\+M\+Accueil()}.
+
+
+\begin{DoxyCode}
+00050 \{
+00051     QVBoxLayout *layoutPrincipal = \textcolor{keyword}{new} QVBoxLayout;
+00052     QHBoxLayout *layoutSuperieur = \textcolor{keyword}{new} QHBoxLayout;
+00053     QVBoxLayout *layoutCentral = \textcolor{keyword}{new} QVBoxLayout;
+00054     QHBoxLayout *layoutConfigurationCampagne = \textcolor{keyword}{new} QHBoxLayout;
+00055     QHBoxLayout *layoutCampagne = \textcolor{keyword}{new} QHBoxLayout;
+00056 
+00057     layoutPrincipal->addLayout(layoutSuperieur);
+00058     layoutPrincipal->addLayout(layoutCentral);
+00059     layoutPrincipal->addLayout(layoutConfigurationCampagne);
+00060     layoutPrincipal->addLayout(layoutCampagne);
+00061 
+00062     layoutCentral->setAlignment(Qt::AlignCenter);
+00063 
+00064     layoutSuperieur->addWidget(\hyperlink{class_i_h_m_accueil_a313a8c52763aa2978010db77ec6673ac}{boutonArchives});
+00065     layoutSuperieur->addWidget(\hyperlink{class_i_h_m_accueil_a8b8ed7d11ab66e3c6895b3c6129dc9c8}{boutonConfiguration});
+00066     layoutCentral->addWidget(\hyperlink{class_i_h_m_accueil_a709440124f3307589eee68c517833e6d}{logoAccueil});
+00067     layoutConfigurationCampagne->addWidget(\hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne});
+00068     layoutConfigurationCampagne->addWidget(\hyperlink{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}{boutonArchiverCampagne});
+00069     layoutConfigurationCampagne->addWidget(\hyperlink{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}{boutonSupprimerCampagne});
+00070     layoutCampagne->addWidget(\hyperlink{class_i_h_m_accueil_a4186b4ef6a9c63f5b3c6431626ff3268}{boutonCreationCampagne});
+00071     layoutCampagne->addWidget(\hyperlink{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}{boutonDemarrerCampagne});
+00072 
+00073     setLayout(layoutPrincipal);
+00074     setWindowTitle(\hyperlink{ihmaccueil_8h_a26ff7f60eb1bfd16fed17fed2d65c865}{NOM\_FENETRE\_ACCUEIL});
+00075 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a7f1e5f71843a99cb44e3efb7191a6d07}\label{class_i_h_m_accueil_a7f1e5f71843a99cb44e3efb7191a6d07}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!modifier\+Campagne\+B\+DD@{modifier\+Campagne\+B\+DD}}
+\index{modifier\+Campagne\+B\+DD@{modifier\+Campagne\+B\+DD}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{modifier\+Campagne\+B\+D\+D()}{modifierCampagneBDD()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::modifier\+Campagne\+B\+DD (\begin{DoxyParamCaption}\item[{\hyperlink{class_campagne}{Campagne} $\ast$}]{campagne }\end{DoxyParamCaption})}
+
+
+
+Met à jour les informations de la campagne lors de l\textquotesingle{}arret de celle-\/ci dans la B\+DD. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em campagne} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00295}{295} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, \hyperlink{basededonnees_8cpp_source_l00104}{Base\+De\+Donnees\+::executer()}, \hyperlink{campagne_8cpp_source_l00070}{Campagne\+::get\+Album\+Photo()}, \hyperlink{campagne_8cpp_source_l00044}{Campagne\+::get\+Duree()}, \hyperlink{campagne_8cpp_source_l00019}{Campagne\+::get\+Nom\+Campagne()}, \hyperlink{basededonnees_8cpp_source_l00139}{Base\+De\+Donnees\+::recuperer()}, et \hyperlink{campagne_8cpp_source_l00095}{Campagne\+::supprimer\+Mesures()}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00253}{I\+H\+M\+Rov\+::fermer()}.
+
+
+\begin{DoxyCode}
+00296 \{
+00297     QString idCampagne, requeteUpdateDuree, requeteIdCampagne, requeteInsertionMesures, 
+      requeteModifierPhotos;
+00298 
+00299     requeteUpdateDuree = \textcolor{stringliteral}{"UPDATE campagne SET duree = '"}+ QString::number(campagne->
+      \hyperlink{class_campagne_abe02a9050f4a5ea9521dd40b855c350b}{getDuree}()) + \textcolor{stringliteral}{"' WHERE campagne.nom = '"} + campagne->\hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}() + \textcolor{stringliteral}{"'"};
+00300     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(requeteUpdateDuree);
+00301 
+00302     requeteIdCampagne = \textcolor{stringliteral}{"SELECT campagne.idCampagne FROM campagne WHERE campagne.nom = '"} + campagne->
+      \hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}() + \textcolor{stringliteral}{"'"};
+00303     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requeteIdCampagne, idCampagne);
+00304 
+00305     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i =0; i < campagne->\hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{getAlbumPhoto}().size(); ++i)
+00306     \{
+00307         requeteModifierPhotos = \textcolor{stringliteral}{"UPDATE photo set aGarder = '"} + QString::number(campagne->
+      \hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{getAlbumPhoto}()[i].aGarder) + \textcolor{stringliteral}{"' WHERE cheminImage = '"} + campagne->
+      \hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{getAlbumPhoto}()[i].cheminSauvegarde + \textcolor{stringliteral}{"'"};
+00308         \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(requeteModifierPhotos);
+00309     \}
+00310     campagne->\hyperlink{class_campagne_a77066423e53f99bb6cd39fd25a6f2b5f}{supprimerMesures}();
+00311 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a44074f2d8d59e0d1b7a3d50c24d2a0df}\label{class_i_h_m_accueil_a44074f2d8d59e0d1b7a3d50c24d2a0df}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!recharger\+Liste\+Campagnes@{recharger\+Liste\+Campagnes}}
+\index{recharger\+Liste\+Campagnes@{recharger\+Liste\+Campagnes}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{recharger\+Liste\+Campagnes()}{rechargerListeCampagnes()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::recharger\+Liste\+Campagnes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recharge la liste des campagnes en cours. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00092}{92} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00035}{bouton\+Archiver\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00034}{bouton\+Demarrer\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00036}{bouton\+Supprimer\+Campagne}, \hyperlink{ihmaccueil_8h_source_l00039}{campagnes\+En\+Cours}, et \hyperlink{ihmaccueil_8h_source_l00037}{liste\+Campagne}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00254}{ajouter\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00014}{I\+H\+M\+Accueil()}, et \hyperlink{ihmaccueil_8cpp_source_l00189}{supprimer\+Campagne\+Liste()}.
+
+
+\begin{DoxyCode}
+00093 \{
+00094     \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->clear();
+00095 
+00096     \textcolor{keywordflow}{for}(QVector<Campagne*>::iterator it = \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.begin(); it != 
+      \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.end(); it++)
+00097     \{
+00098         \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->addItem((*it)->getNomCampagne());
+00099     \}
+00100 
+00101     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->currentText().isEmpty())
+00102     \{
+00103         \hyperlink{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}{boutonDemarrerCampagne}->setDisabled(\textcolor{keyword}{true});
+00104         \hyperlink{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}{boutonArchiverCampagne}->setDisabled(\textcolor{keyword}{true});
+00105         \hyperlink{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}{boutonSupprimerCampagne}->setDisabled(\textcolor{keyword}{true});
+00106     \}
+00107     \textcolor{keywordflow}{else}
+00108     \{
+00109         \hyperlink{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}{boutonDemarrerCampagne}->setEnabled(\textcolor{keyword}{true});
+00110         \hyperlink{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}{boutonArchiverCampagne}->setEnabled(\textcolor{keyword}{true});
+00111         \hyperlink{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}{boutonSupprimerCampagne}->setEnabled(\textcolor{keyword}{true});
+00112     \}
+00113 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a0ffb0f0c7c9c613083933514690f2772}\label{class_i_h_m_accueil_a0ffb0f0c7c9c613083933514690f2772}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!recuperer\+Campagne\+En\+Cours@{recuperer\+Campagne\+En\+Cours}}
+\index{recuperer\+Campagne\+En\+Cours@{recuperer\+Campagne\+En\+Cours}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{recuperer\+Campagne\+En\+Cours()}{recupererCampagneEnCours()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::recuperer\+Campagne\+En\+Cours (\begin{DoxyParamCaption}\item[{bool \&}]{retour\+Campagne,  }\item[{Q\+String \&}]{requete\+Informations\+Campagne,  }\item[{Q\+Vector$<$ Q\+String\+List $>$ \&}]{campagnes\+En\+Cours }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Récupère les campagnes en cours dans la base de données, le paramètre campagnes\+En\+Cours passé en référence récupère les valeurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em retour\+Campagne} & \\
+\hline
+{\em requete\+Informations\+Campagne} & \\
+\hline
+{\em campagnes\+En\+Cours} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00120}{120} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, et \hyperlink{basededonnees_8cpp_source_l00139}{Base\+De\+Donnees\+::recuperer()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00130}{charger\+Campagnes()}.
+
+
+\begin{DoxyCode}
+00121 \{
+00122     retourCampagne = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requeteInformationsCampagne, 
+      \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours});
+00123 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}\label{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!recuperer\+Id\+Campagne@{recuperer\+Id\+Campagne}}
+\index{recuperer\+Id\+Campagne@{recuperer\+Id\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{recuperer\+Id\+Campagne()}{recupererIdCampagne()}}
+{\footnotesize\ttfamily Q\+String I\+H\+M\+Accueil\+::recuperer\+Id\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recupere l\textquotesingle{}id de la campagne séléctionné dans la liste. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}id sous forme de Q\+String 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00205}{205} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, \hyperlink{ihmaccueil_8h_source_l00037}{liste\+Campagne}, et \hyperlink{basededonnees_8cpp_source_l00139}{Base\+De\+Donnees\+::recuperer()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00350}{archiver\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00404}{enregister\+Mesure\+B\+D\+D()}, et \hyperlink{ihmaccueil_8cpp_source_l00375}{supprimer\+Campagne()}.
+
+
+\begin{DoxyCode}
+00206 \{
+00207     \textcolor{keywordtype}{bool} retourRequeteIdCampagne;
+00208     QString idCampagne;
+00209     QString requeteIdCampagne = \textcolor{stringliteral}{"SELECT idCampagne FROM campagne WHERE campagne.nom = '"} + 
+      \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->currentText() + \textcolor{stringliteral}{"'"};
+00210 
+00211     retourRequeteIdCampagne = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requeteIdCampagne, idCampagne)
+      ;
+00212 
+00213     \textcolor{keywordflow}{if}(!retourRequeteIdCampagne)
+00214     \{
+00215 \textcolor{preprocessor}{        #ifdef DEBUG\_BASEDEDONNEES}
+00216             qDebug() << Q\_FUNC\_INFO << QString::fromUtf8(\textcolor{stringliteral}{"erreur !"});
+00217 \textcolor{preprocessor}{        #endif}
+00218         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"0"};
+00219     \}
+00220     \textcolor{keywordflow}{else}
+00221         \textcolor{keywordflow}{return} idCampagne;
+00222 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_aa09878b2e3e3024220291165b5c528a6}\label{class_i_h_m_accueil_aa09878b2e3e3024220291165b5c528a6}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!recuperer\+Nb\+Photos@{recuperer\+Nb\+Photos}}
+\index{recuperer\+Nb\+Photos@{recuperer\+Nb\+Photos}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{recuperer\+Nb\+Photos()}{recupererNbPhotos()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::recuperer\+Nb\+Photos (\begin{DoxyParamCaption}\item[{Q\+String \&}]{nombre\+Photos,  }\item[{Q\+String \&}]{requete\+Nombre\+Photos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Récupère le nombre de photos dans la base de données, le paramètre nombre\+Photos passé en référence récupère la valeur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nombre\+Photos} & \\
+\hline
+{\em requete\+Nombre\+Photos} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00115}{115} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, et \hyperlink{basededonnees_8cpp_source_l00139}{Base\+De\+Donnees\+::recuperer()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00130}{charger\+Campagnes()}.
+
+
+\begin{DoxyCode}
+00116 \{
+00117     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requeteNombrePhotos, nombrePhotos);
+00118 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_aebeef48b9bc345edd02e5185951c454e}\label{class_i_h_m_accueil_aebeef48b9bc345edd02e5185951c454e}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!recuperer\+Photos@{recuperer\+Photos}}
+\index{recuperer\+Photos@{recuperer\+Photos}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{recuperer\+Photos()}{recupererPhotos()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::recuperer\+Photos (\begin{DoxyParamCaption}\item[{bool \&}]{retour\+Photo,  }\item[{Q\+String \&}]{requete\+Informations\+Photos,  }\item[{Q\+Vector$<$ Q\+String\+List $>$ \&}]{informations\+Photos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Récupère les photos associés a une campagne dans la base de données, le paramètre informations\+Photos passé en référence récupère les valeurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em retour\+Photo} & \\
+\hline
+{\em requete\+Informations\+Photos} & \\
+\hline
+{\em informations\+Photos} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00125}{125} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, et \hyperlink{basededonnees_8cpp_source_l00139}{Base\+De\+Donnees\+::recuperer()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00130}{charger\+Campagnes()}.
+
+
+\begin{DoxyCode}
+00126 \{
+00127     retourPhoto = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requeteInformationsPhotos, 
+      informationsPhotos);
+00128 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a0d7c77277fe83ad13beee56d96c5c5ca}\label{class_i_h_m_accueil_a0d7c77277fe83ad13beee56d96c5c5ca}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!supprimer\+Campagne@{supprimer\+Campagne}}
+\index{supprimer\+Campagne@{supprimer\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{supprimer\+Campagne}{supprimerCampagne}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::supprimer\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Permet d\textquotesingle{}archiver la campagne dans la base de données. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00375}{375} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, \hyperlink{basededonnees_8cpp_source_l00104}{Base\+De\+Donnees\+::executer()}, \hyperlink{basededonnees_8cpp_source_l00063}{Base\+De\+Donnees\+::ouvrir()}, \hyperlink{ihmaccueil_8cpp_source_l00205}{recuperer\+Id\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00189}{supprimer\+Campagne\+Liste()}, \hyperlink{ihmaccueil_8cpp_source_l00234}{supprimer\+Dossier\+Photo\+Local()}, et \hyperlink{ihmaccueil_8cpp_source_l00224}{supprimer\+Photo\+Local()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00084}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00376 \{
+00377     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a7f6a5510b08017b0d99115a84252f186}{ouvrir}(\textcolor{stringliteral}{"campagnes.sqlite"});
+00378     \textcolor{keywordtype}{bool} retourRequeteSuppressionMesures;
+00379     \textcolor{keywordtype}{bool} retourRequeteSuppressionPhotos;
+00380     \textcolor{keywordtype}{bool} retourRequeteSuppressionCampagne;
+00381 
+00382     \hyperlink{class_i_h_m_accueil_a9dc22241cd0d4a227b8b0bf04c6404fd}{supprimerPhotoLocal}(\textcolor{stringliteral}{"SELECT photo.cheminImage FROM photo WHERE photo.IdCampagne = '"}
+       + \hyperlink{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}{recupererIdCampagne}() + \textcolor{stringliteral}{"'"});
+00383 
+00384     \hyperlink{class_i_h_m_accueil_acb9679f51e140e0bc28d8ac10afd87e9}{supprimerDossierPhotoLocal}();
+00385 
+00386     QString requeteSuppressionMesures = \textcolor{stringliteral}{"DELETE FROM mesure WHERE mesure.IdCampagne = '"} + 
+      \hyperlink{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}{recupererIdCampagne}() + \textcolor{stringliteral}{"'"};
+00387     QString requeteSuppressionPhotos = \textcolor{stringliteral}{"DELETE FROM photo WHERE photo.IdCampagne = '"} + 
+      \hyperlink{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}{recupererIdCampagne}() + \textcolor{stringliteral}{"'"};
+00388     QString requeteSuppressionCampagne = \textcolor{stringliteral}{"DELETE FROM campagne WHERE campagne.IdCampagne = '"} + 
+      \hyperlink{class_i_h_m_accueil_a5e222617897b2c1f7e032fa851aa1700}{recupererIdCampagne}() + \textcolor{stringliteral}{"'"};
+00389 
+00390     retourRequeteSuppressionMesures = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(
+      requeteSuppressionMesures);
+00391     retourRequeteSuppressionPhotos = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(requeteSuppressionPhotos)
+      ;
+00392     retourRequeteSuppressionCampagne = \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_aa8de5f8f8bb17edc43f5c0ee33712081}{executer}(
+      requeteSuppressionCampagne);
+00393 
+00394     \textcolor{keywordflow}{if}(!retourRequeteSuppressionMesures && !retourRequeteSuppressionPhotos && !
+      retourRequeteSuppressionCampagne)
+00395     \{
+00396 \textcolor{preprocessor}{        #ifdef DEBUG\_BASEDEDONNEES}
+00397             qDebug() << Q\_FUNC\_INFO << QString::fromUtf8(\textcolor{stringliteral}{"erreur !"});
+00398 \textcolor{preprocessor}{        #endif}
+00399     \}
+00400     \textcolor{keywordflow}{else}
+00401         \hyperlink{class_i_h_m_accueil_a36ce6ecca4e258562577bab1439e0a96}{supprimerCampagneListe}();
+00402 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a36ce6ecca4e258562577bab1439e0a96}\label{class_i_h_m_accueil_a36ce6ecca4e258562577bab1439e0a96}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!supprimer\+Campagne\+Liste@{supprimer\+Campagne\+Liste}}
+\index{supprimer\+Campagne\+Liste@{supprimer\+Campagne\+Liste}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{supprimer\+Campagne\+Liste()}{supprimerCampagneListe()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::supprimer\+Campagne\+Liste (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Permet de supprimer de lq liste la campagne selectionné 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00189}{189} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00039}{campagnes\+En\+Cours}, \hyperlink{ihmaccueil_8h_source_l00037}{liste\+Campagne}, et \hyperlink{ihmaccueil_8cpp_source_l00092}{recharger\+Liste\+Campagnes()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00350}{archiver\+Campagne()}, et \hyperlink{ihmaccueil_8cpp_source_l00375}{supprimer\+Campagne()}.
+
+
+\begin{DoxyCode}
+00190 \{
+00191     \textcolor{keywordtype}{int} nbCampagnes = \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.size();
+00192     \textcolor{keywordtype}{int} n = 0;
+00193     \textcolor{keywordflow}{for}(QVector<Campagne*>::iterator it = \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.begin(); n < nbCampagnes; it++)
+00194     \{
+00195         \textcolor{keywordflow}{if}((*it)->getNomCampagne() == \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->currentText())
+00196         \{
+00197             \textcolor{keyword}{delete} (*it);
+00198             \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.erase(it);
+00199         \}
+00200         n++;
+00201     \}
+00202     \hyperlink{class_i_h_m_accueil_a44074f2d8d59e0d1b7a3d50c24d2a0df}{rechargerListeCampagnes}();
+00203 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_acb9679f51e140e0bc28d8ac10afd87e9}\label{class_i_h_m_accueil_acb9679f51e140e0bc28d8ac10afd87e9}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!supprimer\+Dossier\+Photo\+Local@{supprimer\+Dossier\+Photo\+Local}}
+\index{supprimer\+Dossier\+Photo\+Local@{supprimer\+Dossier\+Photo\+Local}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{supprimer\+Dossier\+Photo\+Local()}{supprimerDossierPhotoLocal()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::supprimer\+Dossier\+Photo\+Local (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Supprime le dossier photo si il est vide. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00234}{234} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00039}{campagnes\+En\+Cours}, et \hyperlink{ihmaccueil_8h_source_l00037}{liste\+Campagne}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00375}{supprimer\+Campagne()}.
+
+
+\begin{DoxyCode}
+00235 \{
+00236     QDir qDir;
+00237 
+00238     \textcolor{keywordflow}{for}(QVector<Campagne*>::Iterator it = \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.begin(); it != 
+      \hyperlink{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}{campagnesEnCours}.end(); ++it)
+00239     \{
+00240         \textcolor{keywordflow}{if}((*it)->getNomCampagne() == \hyperlink{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}{listeCampagne}->currentText())
+00241         \{
+00242             \textcolor{keywordflow}{if}(qDir.exists((*it)->getCheminSauvegarde() + \textcolor{stringliteral}{"/"} + (*it)->getNomCampagne()))
+00243             \{
+00244                 \textcolor{keywordflow}{if}(!qDir.rmdir((*it)->getCheminSauvegarde() + \textcolor{stringliteral}{"/"} + (*it)->getNomCampagne()))
+00245                 \{
+00246                     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Erreur : impossible de supprimer le dossier"} << (*it)->
+      getCheminSauvegarde() + \textcolor{stringliteral}{"/"} + (*it)->getNomCampagne();
+00247                     QMessageBox::critical(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Erreur"}, \textcolor{stringliteral}{"Erreur : impossible de supprimer le dossier "} + 
+      (*it)->getCheminSauvegarde() + \textcolor{stringliteral}{"/"} + (*it)->getNomCampagne() + \textcolor{stringliteral}{" !"});
+00248                 \}
+00249             \}
+00250         \}
+00251     \}
+00252 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_accueil_a9dc22241cd0d4a227b8b0bf04c6404fd}\label{class_i_h_m_accueil_a9dc22241cd0d4a227b8b0bf04c6404fd}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!supprimer\+Photo\+Local@{supprimer\+Photo\+Local}}
+\index{supprimer\+Photo\+Local@{supprimer\+Photo\+Local}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{supprimer\+Photo\+Local()}{supprimerPhotoLocal()}}
+{\footnotesize\ttfamily void I\+H\+M\+Accueil\+::supprimer\+Photo\+Local (\begin{DoxyParamCaption}\item[{Q\+String}]{requete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Selectionne les chemin d\textquotesingle{}accès des photo à supprimer dans la base de données et les supprime en local. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em requete} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8cpp_source_l00224}{224} du fichier \hyperlink{ihmaccueil_8cpp_source}{ihmaccueil.\+cpp}.
+
+
+
+Références \hyperlink{ihmaccueil_8h_source_l00040}{base\+De\+Donnees}, et \hyperlink{basededonnees_8cpp_source_l00139}{Base\+De\+Donnees\+::recuperer()}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00350}{archiver\+Campagne()}, et \hyperlink{ihmaccueil_8cpp_source_l00375}{supprimer\+Campagne()}.
+
+
+\begin{DoxyCode}
+00225 \{
+00226     QVector<QString> photoASupprimer;
+00227     \hyperlink{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}{baseDeDonnees}->\hyperlink{class_base_de_donnees_a77539baad389f5acf754cd2cd452403e}{recuperer}(requete, photoASupprimer);
+00228     \textcolor{keywordflow}{for}(QVector<QString>::Iterator it = photoASupprimer.begin(); it != photoASupprimer.end(); ++it)
+00229     \{
+00230        QFile::remove((*it));
+00231     \}
+00232 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}\label{class_i_h_m_accueil_ab56d9846c071396a92f88272880e2c1f}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!base\+De\+Donnees@{base\+De\+Donnees}}
+\index{base\+De\+Donnees@{base\+De\+Donnees}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{base\+De\+Donnees}{baseDeDonnees}}
+{\footnotesize\ttfamily \hyperlink{class_base_de_donnees}{Base\+De\+Donnees}$\ast$ I\+H\+M\+Accueil\+::base\+De\+Donnees\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet \hyperlink{class_base_de_donnees}{Base\+De\+Donnees} permettant d\textquotesingle{}acceder a la B\+DD. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00040}{40} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00313}{ajouter\+Photo\+B\+D\+D()}, \hyperlink{ihmaccueil_8cpp_source_l00350}{archiver\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00130}{charger\+Campagnes()}, \hyperlink{ihmaccueil_8cpp_source_l00339}{creer\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00404}{enregister\+Mesure\+B\+D\+D()}, \hyperlink{ihmaccueil_8cpp_source_l00273}{enregistrer\+Campagne\+B\+D\+D()}, \hyperlink{ihmaccueil_8cpp_source_l00014}{I\+H\+M\+Accueil()}, \hyperlink{ihmaccueil_8cpp_source_l00295}{modifier\+Campagne\+B\+D\+D()}, \hyperlink{ihmaccueil_8cpp_source_l00120}{recuperer\+Campagne\+En\+Cours()}, \hyperlink{ihmaccueil_8cpp_source_l00205}{recuperer\+Id\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00115}{recuperer\+Nb\+Photos()}, \hyperlink{ihmaccueil_8cpp_source_l00125}{recuperer\+Photos()}, \hyperlink{ihmaccueil_8cpp_source_l00375}{supprimer\+Campagne()}, et \hyperlink{ihmaccueil_8cpp_source_l00224}{supprimer\+Photo\+Local()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}\label{class_i_h_m_accueil_a96d64cf254c0645eb45c317858b0a0f3}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!bouton\+Archiver\+Campagne@{bouton\+Archiver\+Campagne}}
+\index{bouton\+Archiver\+Campagne@{bouton\+Archiver\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{bouton\+Archiver\+Campagne}{boutonArchiverCampagne}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Accueil\+::bouton\+Archiver\+Campagne\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant d\textquotesingle{}archiver la campagne sélectionner. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00035}{35} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00037}{initialisation\+Widgets()}, \hyperlink{ihmaccueil_8cpp_source_l00084}{initialiser\+Evenements()}, \hyperlink{ihmaccueil_8cpp_source_l00049}{initialiser\+Layouts()}, et \hyperlink{ihmaccueil_8cpp_source_l00092}{recharger\+Liste\+Campagnes()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_a313a8c52763aa2978010db77ec6673ac}\label{class_i_h_m_accueil_a313a8c52763aa2978010db77ec6673ac}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!bouton\+Archives@{bouton\+Archives}}
+\index{bouton\+Archives@{bouton\+Archives}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{bouton\+Archives}{boutonArchives}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Accueil\+::bouton\+Archives\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant d\textquotesingle{}accéder aux archives. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00031}{31} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00037}{initialisation\+Widgets()}, et \hyperlink{ihmaccueil_8cpp_source_l00049}{initialiser\+Layouts()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_a8b8ed7d11ab66e3c6895b3c6129dc9c8}\label{class_i_h_m_accueil_a8b8ed7d11ab66e3c6895b3c6129dc9c8}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!bouton\+Configuration@{bouton\+Configuration}}
+\index{bouton\+Configuration@{bouton\+Configuration}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{bouton\+Configuration}{boutonConfiguration}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Accueil\+::bouton\+Configuration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant de configurer le matériel. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00032}{32} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00037}{initialisation\+Widgets()}, et \hyperlink{ihmaccueil_8cpp_source_l00049}{initialiser\+Layouts()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_a4186b4ef6a9c63f5b3c6431626ff3268}\label{class_i_h_m_accueil_a4186b4ef6a9c63f5b3c6431626ff3268}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!bouton\+Creation\+Campagne@{bouton\+Creation\+Campagne}}
+\index{bouton\+Creation\+Campagne@{bouton\+Creation\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{bouton\+Creation\+Campagne}{boutonCreationCampagne}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Accueil\+::bouton\+Creation\+Campagne\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant de créer une nouvelle campagne. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00033}{33} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00037}{initialisation\+Widgets()}, \hyperlink{ihmaccueil_8cpp_source_l00084}{initialiser\+Evenements()}, et \hyperlink{ihmaccueil_8cpp_source_l00049}{initialiser\+Layouts()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}\label{class_i_h_m_accueil_a9fd8ab3abc0c1e6addd70c8d7c46fb65}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!bouton\+Demarrer\+Campagne@{bouton\+Demarrer\+Campagne}}
+\index{bouton\+Demarrer\+Campagne@{bouton\+Demarrer\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{bouton\+Demarrer\+Campagne}{boutonDemarrerCampagne}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Accueil\+::bouton\+Demarrer\+Campagne\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant de démarrer ou reprendre la campagne seléctionner. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00034}{34} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00037}{initialisation\+Widgets()}, \hyperlink{ihmaccueil_8cpp_source_l00084}{initialiser\+Evenements()}, \hyperlink{ihmaccueil_8cpp_source_l00049}{initialiser\+Layouts()}, et \hyperlink{ihmaccueil_8cpp_source_l00092}{recharger\+Liste\+Campagnes()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}\label{class_i_h_m_accueil_afb409fb4395372f35f9f8699fcb4c89b}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!bouton\+Supprimer\+Campagne@{bouton\+Supprimer\+Campagne}}
+\index{bouton\+Supprimer\+Campagne@{bouton\+Supprimer\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{bouton\+Supprimer\+Campagne}{boutonSupprimerCampagne}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Accueil\+::bouton\+Supprimer\+Campagne\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant de supprimmer la campagne sélectionner. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00036}{36} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00037}{initialisation\+Widgets()}, \hyperlink{ihmaccueil_8cpp_source_l00084}{initialiser\+Evenements()}, \hyperlink{ihmaccueil_8cpp_source_l00049}{initialiser\+Layouts()}, et \hyperlink{ihmaccueil_8cpp_source_l00092}{recharger\+Liste\+Campagnes()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}\label{class_i_h_m_accueil_ad3827b81480eb201b5927c16a2ad1c46}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!campagnes\+En\+Cours@{campagnes\+En\+Cours}}
+\index{campagnes\+En\+Cours@{campagnes\+En\+Cours}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{campagnes\+En\+Cours}{campagnesEnCours}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{class_campagne}{Campagne}$\ast$$>$ I\+H\+M\+Accueil\+::campagnes\+En\+Cours\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Conteneur des campagnes non archivés. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00039}{39} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00254}{ajouter\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00130}{charger\+Campagnes()}, \hyperlink{ihmaccueil_8cpp_source_l00323}{demarrer\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00092}{recharger\+Liste\+Campagnes()}, \hyperlink{ihmaccueil_8cpp_source_l00189}{supprimer\+Campagne\+Liste()}, et \hyperlink{ihmaccueil_8cpp_source_l00234}{supprimer\+Dossier\+Photo\+Local()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}\label{class_i_h_m_accueil_af9f2613056b21bdf82e8f54a26146acc}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!ihm\+Rov@{ihm\+Rov}}
+\index{ihm\+Rov@{ihm\+Rov}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{ihm\+Rov}{ihmRov}}
+{\footnotesize\ttfamily \hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov}$\ast$ I\+H\+M\+Accueil\+::ihm\+Rov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet ihm\+Rov. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00041}{41} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00323}{demarrer\+Campagne()}, et \hyperlink{ihmaccueil_8cpp_source_l00014}{I\+H\+M\+Accueil()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}\label{class_i_h_m_accueil_afb828a4e06c25afa40341c310cd85b08}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!liste\+Campagne@{liste\+Campagne}}
+\index{liste\+Campagne@{liste\+Campagne}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{liste\+Campagne}{listeCampagne}}
+{\footnotesize\ttfamily Q\+Combo\+Box$\ast$ I\+H\+M\+Accueil\+::liste\+Campagne\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste des campagnes créer et non archivés. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00037}{37} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00350}{archiver\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00077}{configurer\+Widgets()}, \hyperlink{ihmaccueil_8cpp_source_l00323}{demarrer\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00037}{initialisation\+Widgets()}, \hyperlink{ihmaccueil_8cpp_source_l00049}{initialiser\+Layouts()}, \hyperlink{ihmaccueil_8cpp_source_l00092}{recharger\+Liste\+Campagnes()}, \hyperlink{ihmaccueil_8cpp_source_l00205}{recuperer\+Id\+Campagne()}, \hyperlink{ihmaccueil_8cpp_source_l00189}{supprimer\+Campagne\+Liste()}, et \hyperlink{ihmaccueil_8cpp_source_l00234}{supprimer\+Dossier\+Photo\+Local()}.
+
+\mbox{\Hypertarget{class_i_h_m_accueil_a709440124f3307589eee68c517833e6d}\label{class_i_h_m_accueil_a709440124f3307589eee68c517833e6d}} 
+\index{I\+H\+M\+Accueil@{I\+H\+M\+Accueil}!logo\+Accueil@{logo\+Accueil}}
+\index{logo\+Accueil@{logo\+Accueil}!I\+H\+M\+Accueil@{I\+H\+M\+Accueil}}
+\paragraph{\texorpdfstring{logo\+Accueil}{logoAccueil}}
+{\footnotesize\ttfamily Q\+Label$\ast$ I\+H\+M\+Accueil\+::logo\+Accueil\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Logo de l\textquotesingle{}I\+HM accueil. 
+
+
+
+Définition à la ligne \hyperlink{ihmaccueil_8h_source_l00038}{38} du fichier \hyperlink{ihmaccueil_8h_source}{ihmaccueil.\+h}.
+
+
+
+Référencé par \hyperlink{ihmaccueil_8cpp_source_l00077}{configurer\+Widgets()}, \hyperlink{ihmaccueil_8cpp_source_l00037}{initialisation\+Widgets()}, et \hyperlink{ihmaccueil_8cpp_source_l00049}{initialiser\+Layouts()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ihmaccueil_8h}{ihmaccueil.\+h}\item 
+\hyperlink{ihmaccueil_8cpp}{ihmaccueil.\+cpp}\end{DoxyCompactItemize}

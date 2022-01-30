@@ -1,0 +1,229 @@
+\hypertarget{rov_8h}{}\subsection{Référence du fichier rov.\+h}
+\label{rov_8h}\index{rov.\+h@{rov.\+h}}
+
+
+Fichier qui contient la déclaration de la classe rov.  
+
+
+{\ttfamily \#include $<$Q\+Object$>$}\newline
+{\ttfamily \#include \char`\"{}camera.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}communicationrov.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}manette.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}capteurs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ihmrov.\+h\char`\"{}}\newline
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_rov}{Rov}
+\begin{DoxyCompactList}\small\item\em Classe controlant tout les traitements en provenance et en direction de la communication avec le rov. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rov_8h_adc800d68618fc04d8386c438c5a890ca}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+RA}~\char`\"{}\$C\+AM\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant le début de la trame caméra selon le protocole. \end{DoxyCompactList}\item 
+\#define \hyperlink{rov_8h_a224f8acbc025db0e90045ce113761b0f}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+P\+T\+E\+UR}~\char`\"{}\$C\+AP\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant le début de la trame capteur selon le protocole. \end{DoxyCompactList}\item 
+\#define \hyperlink{rov_8h_a5bebf7c0b48103d44a372f28cf7f8981}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+D\+E\+P\+L\+A\+C\+E\+M\+E\+NT}~\char`\"{}\$D\+EP\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant le début de la trame déplacement selon le protocole. \end{DoxyCompactList}\item 
+\#define \hyperlink{rov_8h_a8b313ffefec16809296d06146e0e75c8}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+O\+R\+D\+RE}~\char`\"{}\$O\+R\+D\+RE\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant le début de la trame ordre selon le protocole. \end{DoxyCompactList}\item 
+\#define \hyperlink{rov_8h_a023822fa9447e76b37e5d5c78f5c64f9}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+GE}~\char`\"{}\$B\+R\+AS\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant le début de la trame pilotage selon le protocole. \end{DoxyCompactList}\item 
+\#define \hyperlink{rov_8h_ab9dc0e136712ab8227078e19a43e166a}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+CE}~\char`\"{}\$P\+I\+N\+CE\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant le début de la trame pince selon le protocole. \end{DoxyCompactList}\item 
+\#define \hyperlink{rov_8h_aa4d7955cdbd3d56086855ed938b980d1}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+T\+E\+L\+E\+M\+E\+T\+R\+IE}~\char`\"{}\$T\+EL\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant le début de la trame telemetrie selon le protocole. \end{DoxyCompactList}\item 
+\#define \hyperlink{rov_8h_a12ba48a9aa995ebb4c7a7ace01808a2e}{T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+R\+A\+\_\+\+I\+M\+M\+O\+B\+I\+LE}~\char`\"{}\$C\+AM;0;0\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant la trame pour immobiliser la caméra. \end{DoxyCompactList}\item 
+\#define \hyperlink{rov_8h_ab218eea9b0b6d799e400a0d1ff835c13}{T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+G\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}~\char`\"{}\$B\+R\+AS;0\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant la trame pilotage à zéro selon le protocole. \end{DoxyCompactList}\item 
+\#define \hyperlink{rov_8h_ab46e52d96e193353eadd9cd7f598f670}{T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+C\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}~\char`\"{}\$P\+I\+N\+CE;0\textbackslash{}r\textbackslash{}n\char`\"{}
+\begin{DoxyCompactList}\small\item\em Constante contenant la trame pince à zéro selon le protocole. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Fichier qui contient la déclaration de la classe rov. 
+
+
+
+Définition dans le fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+\subsubsection{Documentation des macros}
+\mbox{\Hypertarget{rov_8h_adc800d68618fc04d8386c438c5a890ca}\label{rov_8h_adc800d68618fc04d8386c438c5a890ca}} 
+\index{rov.\+h@{rov.\+h}!D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+RA@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+RA}}
+\index{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+RA@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+RA}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+RA}{DEBUT\_TRAME\_CAMERA}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+RA~\char`\"{}\$C\+AM\char`\"{}}
+
+
+
+Constante contenant le début de la trame caméra selon le protocole. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00070}{70} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00251}{Rov\+::creer\+Trame\+Camera()}.
+
+\mbox{\Hypertarget{rov_8h_a224f8acbc025db0e90045ce113761b0f}\label{rov_8h_a224f8acbc025db0e90045ce113761b0f}} 
+\index{rov.\+h@{rov.\+h}!D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+P\+T\+E\+UR@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+P\+T\+E\+UR}}
+\index{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+P\+T\+E\+UR@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+P\+T\+E\+UR}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+P\+T\+E\+UR}{DEBUT\_TRAME\_CAPTEUR}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+P\+T\+E\+UR~\char`\"{}\$C\+AP\char`\"{}}
+
+
+
+Constante contenant le début de la trame capteur selon le protocole. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00028}{28} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00180}{Rov\+::decoder\+Trame()}.
+
+\mbox{\Hypertarget{rov_8h_a5bebf7c0b48103d44a372f28cf7f8981}\label{rov_8h_a5bebf7c0b48103d44a372f28cf7f8981}} 
+\index{rov.\+h@{rov.\+h}!D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+D\+E\+P\+L\+A\+C\+E\+M\+E\+NT@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+D\+E\+P\+L\+A\+C\+E\+M\+E\+NT}}
+\index{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+D\+E\+P\+L\+A\+C\+E\+M\+E\+NT@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+D\+E\+P\+L\+A\+C\+E\+M\+E\+NT}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+D\+E\+P\+L\+A\+C\+E\+M\+E\+NT}{DEBUT\_TRAME\_DEPLACEMENT}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+D\+E\+P\+L\+A\+C\+E\+M\+E\+NT~\char`\"{}\$D\+EP\char`\"{}}
+
+
+
+Constante contenant le début de la trame déplacement selon le protocole. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00034}{34} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00208}{Rov\+::creer\+Trame\+Deplacement()}.
+
+\mbox{\Hypertarget{rov_8h_a8b313ffefec16809296d06146e0e75c8}\label{rov_8h_a8b313ffefec16809296d06146e0e75c8}} 
+\index{rov.\+h@{rov.\+h}!D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+O\+R\+D\+RE@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+O\+R\+D\+RE}}
+\index{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+O\+R\+D\+RE@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+O\+R\+D\+RE}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+O\+R\+D\+RE}{DEBUT\_TRAME\_ORDRE}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+O\+R\+D\+RE~\char`\"{}\$O\+R\+D\+RE\char`\"{}}
+
+
+
+Constante contenant le début de la trame ordre selon le protocole. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00046}{46} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00230}{Rov\+::creer\+Trame\+Ordre()}.
+
+\mbox{\Hypertarget{rov_8h_a023822fa9447e76b37e5d5c78f5c64f9}\label{rov_8h_a023822fa9447e76b37e5d5c78f5c64f9}} 
+\index{rov.\+h@{rov.\+h}!D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+GE@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+GE}}
+\index{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+GE@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+GE}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+GE}{DEBUT\_TRAME\_PILOTAGE}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+GE~\char`\"{}\$B\+R\+AS\char`\"{}}
+
+
+
+Constante contenant le début de la trame pilotage selon le protocole. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00040}{40} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00219}{Rov\+::creer\+Trame\+Pilotage()}.
+
+\mbox{\Hypertarget{rov_8h_ab9dc0e136712ab8227078e19a43e166a}\label{rov_8h_ab9dc0e136712ab8227078e19a43e166a}} 
+\index{rov.\+h@{rov.\+h}!D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+CE@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+CE}}
+\index{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+CE@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+CE}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+CE}{DEBUT\_TRAME\_PINCE}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+CE~\char`\"{}\$P\+I\+N\+CE\char`\"{}}
+
+
+
+Constante contenant le début de la trame pince selon le protocole. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00052}{52} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00240}{Rov\+::creer\+Trame\+Pince()}.
+
+\mbox{\Hypertarget{rov_8h_aa4d7955cdbd3d56086855ed938b980d1}\label{rov_8h_aa4d7955cdbd3d56086855ed938b980d1}} 
+\index{rov.\+h@{rov.\+h}!D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+T\+E\+L\+E\+M\+E\+T\+R\+IE@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+T\+E\+L\+E\+M\+E\+T\+R\+IE}}
+\index{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+T\+E\+L\+E\+M\+E\+T\+R\+IE@{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+T\+E\+L\+E\+M\+E\+T\+R\+IE}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+T\+E\+L\+E\+M\+E\+T\+R\+IE}{DEBUT\_TRAME\_TELEMETRIE}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+T\+E\+L\+E\+M\+E\+T\+R\+IE~\char`\"{}\$T\+EL\char`\"{}}
+
+
+
+Constante contenant le début de la trame telemetrie selon le protocole. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00022}{22} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00180}{Rov\+::decoder\+Trame()}.
+
+\mbox{\Hypertarget{rov_8h_a12ba48a9aa995ebb4c7a7ace01808a2e}\label{rov_8h_a12ba48a9aa995ebb4c7a7ace01808a2e}} 
+\index{rov.\+h@{rov.\+h}!T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+R\+A\+\_\+\+I\+M\+M\+O\+B\+I\+LE@{T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+R\+A\+\_\+\+I\+M\+M\+O\+B\+I\+LE}}
+\index{T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+R\+A\+\_\+\+I\+M\+M\+O\+B\+I\+LE@{T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+R\+A\+\_\+\+I\+M\+M\+O\+B\+I\+LE}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+R\+A\+\_\+\+I\+M\+M\+O\+B\+I\+LE}{TRAME\_CAMERA\_IMMOBILE}}
+{\footnotesize\ttfamily \#define T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+R\+A\+\_\+\+I\+M\+M\+O\+B\+I\+LE~\char`\"{}\$C\+AM;0;0\textbackslash{}r\textbackslash{}n\char`\"{}}
+
+
+
+Constante contenant la trame pour immobiliser la caméra. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00076}{76} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+\mbox{\Hypertarget{rov_8h_ab218eea9b0b6d799e400a0d1ff835c13}\label{rov_8h_ab218eea9b0b6d799e400a0d1ff835c13}} 
+\index{rov.\+h@{rov.\+h}!T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+G\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE@{T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+G\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}}
+\index{T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+G\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE@{T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+G\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+G\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}{TRAME\_PILOTAGE\_IMMOBILE}}
+{\footnotesize\ttfamily \#define T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+G\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE~\char`\"{}\$B\+R\+AS;0\textbackslash{}r\textbackslash{}n\char`\"{}}
+
+
+
+Constante contenant la trame pilotage à zéro selon le protocole. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00058}{58} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00230}{Rov\+::creer\+Trame\+Ordre()}, et \hyperlink{rov_8cpp_source_l00240}{Rov\+::creer\+Trame\+Pince()}.
+
+\mbox{\Hypertarget{rov_8h_ab46e52d96e193353eadd9cd7f598f670}\label{rov_8h_ab46e52d96e193353eadd9cd7f598f670}} 
+\index{rov.\+h@{rov.\+h}!T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+C\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE@{T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+C\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}}
+\index{T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+C\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE@{T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+C\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}!rov.\+h@{rov.\+h}}
+\paragraph{\texorpdfstring{T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+C\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}{TRAME\_PINCE\_IMMOBILE}}
+{\footnotesize\ttfamily \#define T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+C\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE~\char`\"{}\$P\+I\+N\+CE;0\textbackslash{}r\textbackslash{}n\char`\"{}}
+
+
+
+Constante contenant la trame pince à zéro selon le protocole. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00064}{64} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00230}{Rov\+::creer\+Trame\+Ordre()}, et \hyperlink{rov_8cpp_source_l00219}{Rov\+::creer\+Trame\+Pilotage()}.
+

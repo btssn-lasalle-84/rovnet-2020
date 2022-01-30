@@ -1,0 +1,275 @@
+\hypertarget{ihmrov_8cpp_source}{}\subsection{ihmrov.\+cpp}
+\label{ihmrov_8cpp_source}\index{ihmrov.\+cpp@{ihmrov.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{ihmrov_8h}{ihmrov.h}"}
+00008 \textcolor{preprocessor}{#include "\hyperlink{rov_8h}{rov.h}"}
+00009 \textcolor{preprocessor}{#include "\hyperlink{ihmreglagevideo_8h}{ihmreglagevideo.h}"}
+00010 \textcolor{preprocessor}{#include "\hyperlink{ihmalbumphoto_8h}{ihmalbumphoto.h}"}
+00011 \textcolor{preprocessor}{#include "\hyperlink{ihmaccueil_8h}{ihmaccueil.h}"}
+00012 \textcolor{preprocessor}{#include "\hyperlink{campagne_8h}{campagne.h}"}
+00013 \textcolor{preprocessor}{#include "\hyperlink{ihmconfiguration_8h}{ihmconfiguration.h}"}
+00014 
+\Hypertarget{ihmrov_8cpp_source_l00015}\hyperlink{class_i_h_m_rov_a403274da2bd4ca316f2f1b64a48a315b}{00015} \hyperlink{class_i_h_m_rov_a403274da2bd4ca316f2f1b64a48a315b}{IHMRov::IHMRov}(\hyperlink{class_i_h_m_accueil}{IHMAccueil} *ihmAccueil, \hyperlink{class_q_widget}{QWidget} *parent) : 
+      \hyperlink{class_q_widget}{QWidget}(parent), campagneEnCours(nullptr), ihmAccueil(ihmAccueil)
+00016 \{    
+00017     qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this} << \textcolor{stringliteral}{"width"} << qApp->desktop()->screen()->width() << \textcolor{stringliteral}{"height"} << qApp->
+      desktop()->screen()->height();
+00018     \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov} = \textcolor{keyword}{new} \hyperlink{class_rov}{Rov}(\textcolor{keyword}{this});
+00019     \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} = \textcolor{keyword}{nullptr};
+00020     \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} = \textcolor{keyword}{nullptr};
+00021 
+00022     \hyperlink{class_i_h_m_rov_a77d08efdfc3292d215af4df0e1af33a8}{initialiserWidgets}();
+00023     \hyperlink{class_i_h_m_rov_aba47130fb875a01eefa09bc875affe6c}{configurerWidgets}();
+00024     \hyperlink{class_i_h_m_rov_aa900473297415bf43a13c4152034135a}{initialiserLayouts}();
+00025     \hyperlink{class_i_h_m_rov_a61e34efc084bba9934bce0d91448ea04}{initialiserEvenements}();
+00026 \}
+00027 
+\Hypertarget{ihmrov_8cpp_source_l00028}\hyperlink{class_i_h_m_rov_ab861463889934a3b6083b7a29c6adf45}{00028} \hyperlink{class_i_h_m_rov_ab861463889934a3b6083b7a29c6adf45}{IHMRov::~IHMRov}()
+00029 \{
+00030     qDebug() << Q\_FUNC\_INFO;
+00031 \}
+00032 
+\Hypertarget{ihmrov_8cpp_source_l00033}\hyperlink{class_i_h_m_rov_a77d08efdfc3292d215af4df0e1af33a8}{00033} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a77d08efdfc3292d215af4df0e1af33a8}{IHMRov::initialiserWidgets}()
+00034 \{
+00035     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo} = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Aucune image détéctée"},\textcolor{keyword}{this});
+00036     \hyperlink{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}{photosEnCours} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Photos"}, \textcolor{keyword}{this});
+00037     \hyperlink{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}{boutonReglageVideo} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Réglages"}, \textcolor{keyword}{this});
+00038     \hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne} = \textcolor{keyword}{new} QPushButton(QString::fromUtf8(\textcolor{stringliteral}{"Démarrer"}), \textcolor{keyword}{this});
+00039     \hyperlink{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}{boutonConfiguration} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Configuration"}, \textcolor{keyword}{this});
+00040 
+00041 \textcolor{preprocessor}{    #ifdef PAS\_DE\_MANETTE}
+00042     testCapturePhoto = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Capturer"}, \textcolor{keyword}{this});
+00043     QAction *actionCapturerPhoto = \textcolor{keyword}{new} QAction(\textcolor{keyword}{this});
+00044     actionCapturerPhoto->setShortcut(QKeySequence(Qt::Key\_C));
+00045     addAction(actionCapturerPhoto);
+00046     connect(actionCapturerPhoto, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(\hyperlink{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}{capturerImage}()));
+00047 \textcolor{preprocessor}{    #endif}
+00048 \}
+00049 
+\Hypertarget{ihmrov_8cpp_source_l00050}\hyperlink{class_i_h_m_rov_aba47130fb875a01eefa09bc875affe6c}{00050} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_aba47130fb875a01eefa09bc875affe6c}{IHMRov::configurerWidgets}()
+00051 \{    
+00052     \textcolor{keywordtype}{int} width = int(qApp->desktop()->screen()->width() * \hyperlink{ihmrov_8h_a7e8b3c8482e593df0ace933ad3de22ee}{RATIO});
+00053     \textcolor{keywordtype}{int} height = int(qApp->desktop()->screen()->height() * \hyperlink{ihmrov_8h_a7e8b3c8482e593df0ace933ad3de22ee}{RATIO});
+00054     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setMinimumWidth(width);
+00055     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setMinimumHeight(height);
+00056     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setMaximumWidth(width);
+00057     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setMaximumHeight(height);
+00058     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setScaledContents(\textcolor{keyword}{true});
+00059 \}
+00060 
+\Hypertarget{ihmrov_8cpp_source_l00061}\hyperlink{class_i_h_m_rov_aa900473297415bf43a13c4152034135a}{00061} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_aa900473297415bf43a13c4152034135a}{IHMRov::initialiserLayouts}()
+00062 \{
+00063     QVBoxLayout *layoutPrincipal = \textcolor{keyword}{new} QVBoxLayout;
+00064     QHBoxLayout *layoutInformationRov = \textcolor{keyword}{new} QHBoxLayout;
+00065     QVBoxLayout *layoutCamera = \textcolor{keyword}{new} QVBoxLayout;
+00066     QVBoxLayout *layoutOptionVideo = \textcolor{keyword}{new} QVBoxLayout;
+00067     QVBoxLayout *layoutGestionCampagne = \textcolor{keyword}{new} QVBoxLayout;
+00068     QVBoxLayout *layoutReglageVideo = \textcolor{keyword}{new} QVBoxLayout;
+00069 
+00070     layoutCamera->setAlignment(Qt::AlignTop);
+00071     layoutOptionVideo->setAlignment(Qt::AlignTop);
+00072     layoutGestionCampagne->setAlignment(Qt::AlignBottom);
+00073 
+00074     layoutCamera->addWidget(\hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo});
+00075     layoutOptionVideo->addWidget(\hyperlink{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}{boutonReglageVideo});
+00076     layoutOptionVideo->addWidget(\hyperlink{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}{boutonConfiguration});
+00077     layoutOptionVideo->addWidget(\hyperlink{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}{photosEnCours});
+00078 \textcolor{preprocessor}{    #ifdef PAS\_DE\_MANETTE}
+00079     layoutOptionVideo->addWidget(testCapturePhoto);
+00080 \textcolor{preprocessor}{    #endif}
+00081 
+00082     layoutPrincipal->addLayout(layoutInformationRov);
+00083     layoutInformationRov->addLayout(layoutCamera);
+00084     layoutInformationRov->addStretch();
+00085     layoutInformationRov->addLayout(layoutReglageVideo);
+00086     layoutReglageVideo->addLayout(layoutOptionVideo);
+00087     layoutReglageVideo->addLayout(layoutGestionCampagne);
+00088     layoutGestionCampagne->addWidget(\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne});
+00089 
+00090     setLayout(layoutPrincipal);
+00091 
+00092     setWindowTitle(\hyperlink{ihmrov_8h_aa7e4fcf0d5f67b5c84de425d1f4776ea}{NOM\_FENETRE\_ROV});
+00093     setWindowFlags(windowFlags() & ~Qt::WindowCloseButtonHint);
+00094     showNormal();
+00095     \textcolor{comment}{//showMaximized();}
+00096 \}
+00097 
+\Hypertarget{ihmrov_8cpp_source_l00098}\hyperlink{class_i_h_m_rov_a61e34efc084bba9934bce0d91448ea04}{00098} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a61e34efc084bba9934bce0d91448ea04}{IHMRov::initialiserEvenements}()
+00099 \{
+00100     connect(\hyperlink{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}{boutonReglageVideo}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_rov_a68653dfe09dbb9695797d60e9190366b}{reglerVideo}()));
+00101     connect(\hyperlink{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}{boutonConfiguration}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_rov_a9b517b4891917634d64c903894bcc48b}{reglerConfiguration}()));
+00102     connect(\hyperlink{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}{photosEnCours}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_rov_aae5c264f7a1b6d27c1d2e25574c88c5b}{chargerPhotos}()));
+00103 \textcolor{preprocessor}{    #ifdef PAS\_DE\_MANETTE}
+00104     connect(testCapturePhoto, SIGNAL(clicked(\textcolor{keywordtype}{bool})), \textcolor{keyword}{this}, SLOT(\hyperlink{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}{capturerImage}(\textcolor{keywordtype}{bool})));
+00105 \textcolor{preprocessor}{    #endif}
+00106     connect(\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_rov_a3660d3b4bf61367534eae9d0c3618a5e}{gererCampagne}()));
+00107     connect(\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}, SIGNAL(enregistrerMesures(QString, QString, QString)), 
+      \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil}, SLOT(enregisterMesureBDD(QString, QString, QString)));
+00108 \}
+00109 
+\Hypertarget{ihmrov_8cpp_source_l00110}\hyperlink{class_i_h_m_rov_a58ba3661c111c9ab2d6f1e3c52f4ec21}{00110} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a58ba3661c111c9ab2d6f1e3c52f4ec21}{IHMRov::actualiserInformations}(QPixmap &image)
+00111 \{
+00112     QPainter p(&image);
+00113     p.setPen(Qt::darkRed);
+00114     p.setFont(QFont(\textcolor{stringliteral}{"Arial"}, 20));
+00115 
+00120     QImage logoHeure(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_heure.png"});
+00121     p.drawImage(5, 6, logoHeure.scaled(20,20));
+00122     p.drawText(30, 25, QTime::currentTime().toString());
+00123 
+00124     QImage logoDuree(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_duree.png"});
+00125     p.drawImage(600, 6, logoDuree.scaled(20,20));
+00126     p.drawText(490, 25, \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_aa977585d4377a57281004fd57208635a}{getTempsCampagne}());
+00127 
+00128     QImage logoTemperature(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_temperature.png"});
+00129     p.drawImage(5, 430, logoTemperature.scaled(20,40));
+00130     p.drawText(35, 460, \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{getCapteurs}()->\hyperlink{class_capteurs_aa1346e5cbea9e37afc3694a0ea86bd99}{getTemperature}() + \textcolor{stringliteral}{" °C"});
+00131 
+00132     QImage logoRadiation(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_radiation.png"});
+00133     p.drawImage(160, 430, logoRadiation.scaled(40,40));
+00134     p.drawText(210, 460, \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{getCapteurs}()->\hyperlink{class_capteurs_aaee3d64c752b09f8674fa62907f38cbc}{getRadiation}() + \textcolor{stringliteral}{" uS/h"});
+00135 
+00136     QImage logoObstacle(qApp->applicationDirPath() + \textcolor{stringliteral}{"/images/logo\_telemetrie.png"});
+00137     p.drawImage(400, 430, logoObstacle.scaled(40,40));
+00138     p.drawText(450, 460, \textcolor{stringliteral}{"Obstacle : "} + \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{getCapteurs}()->
+      \hyperlink{class_capteurs_ad8c2c486e92cc537dc014035b5634b60}{getTelemetrie}() + \textcolor{stringliteral}{" cm"});
+00139 
+00140     p.end();
+00141 \}
+00142 
+\Hypertarget{ihmrov_8cpp_source_l00143}\hyperlink{class_i_h_m_rov_a301a0b8cb323c2c9de71df9070bb7555}{00143} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a301a0b8cb323c2c9de71df9070bb7555}{IHMRov::setCampagne}(\hyperlink{class_campagne}{Campagne} *campagne)
+00144 \{
+00145     \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours} = campagne;
+00146     setWindowTitle(\hyperlink{ihmrov_8h_aa7e4fcf0d5f67b5c84de425d1f4776ea}{NOM\_FENETRE\_ROV}  \textcolor{stringliteral}{" "} + campagne->
+      \hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}() + \textcolor{stringliteral}{" "} + campagne->\hyperlink{class_campagne_a319b5bb4ed2b0fc1a10fc4d099a7a6d2}{getDate}().toString());
+00147 \}
+00148 
+\Hypertarget{ihmrov_8cpp_source_l00149}\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{00149} \hyperlink{class_campagne}{Campagne}* \hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{IHMRov::getCampagne}()
+00150 \{
+00151     \textcolor{keywordflow}{return} \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours};
+00152 \}
+00153 
+\Hypertarget{ihmrov_8cpp_source_l00154}\hyperlink{class_i_h_m_rov_ae6e1c32c5dea20eb835f5c9036de8a5b}{00154} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_ae6e1c32c5dea20eb835f5c9036de8a5b}{IHMRov::afficherImage}(QPixmap image)
+00155 \{
+00156     \hyperlink{class_i_h_m_rov_a2081e30323773ee895199ec026d82fc8}{derniereImageVideo} = image;
+00157     \hyperlink{class_i_h_m_rov_a58ba3661c111c9ab2d6f1e3c52f4ec21}{actualiserInformations}(image);
+00158     \hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo}->setPixmap(image);
+00159 \}
+00160 
+\Hypertarget{ihmrov_8cpp_source_l00161}\hyperlink{class_i_h_m_rov_a68653dfe09dbb9695797d60e9190366b}{00161} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a68653dfe09dbb9695797d60e9190366b}{IHMRov::reglerVideo}()
+00162 \{
+00163     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} != \textcolor{keyword}{nullptr})
+00164     \{
+00165         \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo}->show();
+00166         \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo}->raise();
+00167     \}
+00168 \}
+00169 
+\Hypertarget{ihmrov_8cpp_source_l00170}\hyperlink{class_i_h_m_rov_a9b517b4891917634d64c903894bcc48b}{00170} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a9b517b4891917634d64c903894bcc48b}{IHMRov::reglerConfiguration}()
+00171 \{
+00172     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} != \textcolor{keyword}{nullptr})
+00173     \{
+00174         \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration}->show();
+00175         \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration}->raise();
+00176     \}
+00177 \}
+00178 
+\Hypertarget{ihmrov_8cpp_source_l00179}\hyperlink{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}{00179} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}{IHMRov::capturerImage}(\textcolor{keywordtype}{bool} etat)
+00180 \{
+00181 \textcolor{preprocessor}{    #ifndef PAS\_DE\_MANETTE}
+00182     \textcolor{keywordflow}{if}(etat)
+00183 \textcolor{preprocessor}{    #endif}
+00184     \textcolor{comment}{//Q\_UNUSED(etat)}
+00185     \{        
+00186         \hyperlink{struct_photo}{Photo} photo;
+00187 
+00188         photo.\hyperlink{struct_photo_aa6ecfed8082bea5af2905208308a6adb}{image} = \hyperlink{class_i_h_m_rov_a2081e30323773ee895199ec026d82fc8}{derniereImageVideo};
+00189         photo.\hyperlink{struct_photo_a0ac4d5bba2d119ca73ba949d18a557bd}{dateheure} = QTime::currentTime();
+00190         photo.\hyperlink{struct_photo_afec1baefdd7d036432494bbb33b21366}{aGarder} = \textcolor{keyword}{true};
+00191         photo.\hyperlink{struct_photo_a3c28eb9ad160b65deb46a72146a1d14f}{cheminSauvegarde} = \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->
+      \hyperlink{class_campagne_ad752790357417d83a93056d9c9689a16}{getCheminSauvegarde}() + \textcolor{stringliteral}{"/"} + \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->
+      \hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{getNomCampagne}() + \textcolor{stringliteral}{"/"} + \textcolor{stringliteral}{"Capture\_"} + QString::number(
+      \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->\hyperlink{class_campagne_ab6a893a28bc18e054d2d19d2671ce6da}{incrementeNombrePhoto}());
+00192 
+00193         \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->\hyperlink{class_campagne_a472029bf46646d136a750dbaa7a3155f}{ajouterPhoto}(photo);
+00194         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Photo capturée"};
+00195 
+00196         photo.\hyperlink{struct_photo_aa6ecfed8082bea5af2905208308a6adb}{image}.save(photo.\hyperlink{struct_photo_a3c28eb9ad160b65deb46a72146a1d14f}{cheminSauvegarde}, \textcolor{stringliteral}{"PNG"});
+00197 
+00198         \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil}->\hyperlink{class_i_h_m_accueil_aa27c7334efe44c8c4cd582df6581fdff}{ajouterPhotoBDD}(photo, 
+      \hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours});
+00199     \}
+00200 \}
+00201 
+\Hypertarget{ihmrov_8cpp_source_l00202}\hyperlink{class_i_h_m_rov_a3660d3b4bf61367534eae9d0c3618a5e}{00202} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a3660d3b4bf61367534eae9d0c3618a5e}{IHMRov::gererCampagne}()
+00203 \{    
+00204     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->text();
+00205     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->text() == QString::fromUtf8(\textcolor{stringliteral}{"Démarrer"}))
+00206     \{
+00207         \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} == \textcolor{keyword}{nullptr})
+00208             \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} = \textcolor{keyword}{new} \hyperlink{class_i_h_m_reglage_video}{IHMReglageVideo}(\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov});
+00209         \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} == \textcolor{keyword}{nullptr})
+00210             \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} = \textcolor{keyword}{new} \hyperlink{class_i_h_m_configuration}{IHMConfiguration}(
+      \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov});
+00211         \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_ab20c6d0a73d6b20d4bef9e9236535a3d}{demarrerCampagne}())
+00212         \{            
+00213             \hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->setText(QString::fromUtf8(\textcolor{stringliteral}{"Arrêter"}));
+00214         \}
+00215     \}
+00216     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->text() == QString::fromUtf8(\textcolor{stringliteral}{"Arrêter"}))
+00217     \{        
+00218         \hyperlink{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}{fermer}();
+00219         \textcolor{comment}{//this->close();}
+00220     \}
+00221 \}
+00222 
+\Hypertarget{ihmrov_8cpp_source_l00223}\hyperlink{class_i_h_m_rov_aae5c264f7a1b6d27c1d2e25574c88c5b}{00223} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_aae5c264f7a1b6d27c1d2e25574c88c5b}{IHMRov::chargerPhotos}()
+00224 \{
+00225     \hyperlink{class_i_h_m_album_photo}{IHMAlbumPhoto} *ihmAlbumPhoto = \textcolor{keyword}{new} \hyperlink{class_i_h_m_album_photo}{IHMAlbumPhoto}(\textcolor{keyword}{this});
+00226     ihmAlbumPhoto->\hyperlink{class_i_h_m_album_photo_a5aa9a9c1b04e00eaec1581e92649535f}{ouvrirAlbumPhotos}(\hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours}->
+      \hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{getAlbumPhoto}());
+00227 \}
+00228 
+\Hypertarget{ihmrov_8cpp_source_l00229}\hyperlink{class_i_h_m_rov_a955daa231d959666fa7ed01346b2b6ef}{00229} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a955daa231d959666fa7ed01346b2b6ef}{IHMRov::initialiserEvenementsCamera}()
+00230 \{
+00231     \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo}->\hyperlink{class_i_h_m_reglage_video_aba318ba2789177dafcf2651f95603435}{initialiserEvenementsCamera}();
+00232 \}
+00233 
+\Hypertarget{ihmrov_8cpp_source_l00234}\hyperlink{class_i_h_m_rov_a81335964f1443d11e0929017b2f21267}{00234} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a81335964f1443d11e0929017b2f21267}{IHMRov::arreterVideo}()
+00235 \{
+00236     \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo}->\hyperlink{class_i_h_m_reglage_video_ac838581ba03f52e79064cb91ebabb35d}{modifierEtatBoutons}();
+00237 \}
+00238 
+\Hypertarget{ihmrov_8cpp_source_l00239}\hyperlink{class_i_h_m_rov_a68b11818797a6444a8fab81b7b45f670}{00239} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a68b11818797a6444a8fab81b7b45f670}{IHMRov::closeEvent}(QCloseEvent *event)
+00240 \{
+00241     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}{getCampagneEncours}();
+00242     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}{getCampagneEncours}())
+00243     \{
+00244         \hyperlink{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}{fermer}();
+00245         \textcolor{keyword}{event}->accept(); \textcolor{comment}{// -> close}
+00246     \}
+00247     \textcolor{keywordflow}{else}
+00248     \{
+00249         \textcolor{keyword}{event}->ignore();
+00250     \}
+00251 \}
+00252 
+\Hypertarget{ihmrov_8cpp_source_l00253}\hyperlink{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}{00253} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}{IHMRov::fermer}()
+00254 \{
+00255     \hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov}->\hyperlink{class_rov_ad53e8d86817c81f92e3113b0394bedc5}{arreterCampagne}();
+00256     \textcolor{keyword}{delete} \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo};
+00257     \textcolor{keyword}{delete} \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration};
+00258     \hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo} = \textcolor{keyword}{nullptr};
+00259     \hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration} = \textcolor{keyword}{nullptr};
+00260     \hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne}->setText(QString::fromUtf8(\textcolor{stringliteral}{"Démarrer"}));
+00261     \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil}->\hyperlink{class_i_h_m_accueil_a7f1e5f71843a99cb44e3efb7191a6d07}{modifierCampagneBDD}(\hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours});
+00262     this->setVisible(\textcolor{keyword}{false});
+00263     \hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil}->setVisible(\textcolor{keyword}{true});
+00264 \}
+\end{DoxyCode}

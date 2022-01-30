@@ -1,0 +1,1304 @@
+\hypertarget{class_camera}{}\subsection{Référence de la classe Camera}
+\label{class_camera}\index{Camera@{Camera}}
+
+
+Class permettant de mettre en place une communication avec la camera.  
+
+
+
+
+{\ttfamily \#include \char`\"{}camera.\+h\char`\"{}}
+
+
+
+Graphe de collaboration de Camera\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_camera__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_camera_acc596f589be1e2e2d8e46e071ce38036}{set\+Contraste} (int \hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste})
+\begin{DoxyCompactList}\small\item\em Modifie le contraste de la caméra. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_a25120dedc5f57638a866e1ff827fd641}{set\+Luminosite} (int \hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite})
+\begin{DoxyCompactList}\small\item\em Modifie la luminosite de la caméra. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_a966d13a5bf22c776f8d776d3da19182a}{set\+Resolution} (int \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur}, int \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur})
+\begin{DoxyCompactList}\small\item\em Modifie la résolution (largeur x hauteur) \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_a79630483bf9912a8fd1afe412ee8c848}{set\+Resolution} (Q\+Size resolution)
+\begin{DoxyCompactList}\small\item\em Modifie la résolution (largeur x hauteur) \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_a7ff6343220c3ccd64ff513d2af37e1f3}{set\+Resolution} (int choix)
+\begin{DoxyCompactList}\small\item\em Modifie la résolution (index dans la liste) \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_ace85018db120a6d61a5326172f97df93}{set\+Saturation} (int \hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation})
+\begin{DoxyCompactList}\small\item\em Modifie la saturation de la caméra. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_camera_a4c560c4add60ebce65e2d9717e3d668c}{fin\+Video} ()
+\begin{DoxyCompactList}\small\item\em Envoie un signal lorsque la vidéo est interrompu. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_a38c810d466375e950401e483f885c52f}{nouvelle\+Image} (Q\+Pixmap image)
+\begin{DoxyCompactList}\small\item\em Envoie un signal lorsque une nouvelle image du flux vidéo est disponible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_camera_a26c49f76c98ece6ad6771351dd13583a}{Camera} (\hyperlink{class_rov}{Rov} $\ast$\hyperlink{class_camera_ad1dde4d981877001281af01c392307f1}{rov}, int \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero}, int \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choix\+Resolution}=-\/1)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_camera}{Camera}. \end{DoxyCompactList}\item 
+\hyperlink{class_camera_ae663da224161d1a78c8a7431ad1530d7}{Camera} (\hyperlink{class_rov}{Rov} $\ast$\hyperlink{class_camera_ad1dde4d981877001281af01c392307f1}{rov}, Q\+String \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nom\+Camera}, int \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choix\+Resolution}=-\/1)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_camera}{Camera}. \end{DoxyCompactList}\item 
+int \hyperlink{class_camera_ab9f05b05c29416dce6471b5a03db98ea}{get\+Choix\+Resolution} ()
+\begin{DoxyCompactList}\small\item\em Récupère le choix de la resolution active. \end{DoxyCompactList}\item 
+Q\+List$<$ Q\+Size $>$ \hyperlink{class_camera_a997441a0c1e33fe3eda800953548071d}{get\+Liste\+Resolutions\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des résolutions supportées par la caméra. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}{get\+Nom} () const
+\begin{DoxyCompactList}\small\item\em Retourne le nom de la caméra. \end{DoxyCompactList}\item 
+Q\+Size \hyperlink{class_camera_a9fae9d9b6fa352ff96c9874d9b085454}{get\+Resolution} ()
+\begin{DoxyCompactList}\small\item\em Récupère la resolution active. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_a97267488c5756b4217d4e1fbc68008fd}{recuperer\+Liste\+Resolutions\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Récupère la liste des résolutions supportées par la caméra sélectionnée. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_acf7554fa133bab58c16192041254a1d6}{recuperer\+Liste\+Resolutions\+Camera} (int \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero})
+\begin{DoxyCompactList}\small\item\em Récupère la liste des résolutions supportées par la caméra à partir de son numéro. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_ae3d1ccb26bcd49340bc392dc1e7bb550}{recuperer\+Liste\+Resolutions\+Camera} (Q\+String \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nom\+Camera})
+\begin{DoxyCompactList}\small\item\em Récupère la liste des résolutions supportées par la caméra à partir de son nom. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_a4a9f1bcfa19bbd5add6c758c8ad85b5c}{recuperer\+Liste\+Resolutions\+Camera} (Q\+Camera\+Info \&camera\+Info)
+\begin{DoxyCompactList}\small\item\em Récupère la liste des résolutions supporté par la caméra. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_aaa3745c0cf0f286ef80b7eeebc248cc9}{run} ()
+\begin{DoxyCompactList}\small\item\em Démarre une nouveau thread afin de capturer le flux video et l\textquotesingle{}envoyer à l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_camera_a77397d68d606172ccfafed5624c31213}{set\+Proprietes} (cv\+::\+Video\+Capture \&camera)
+\begin{DoxyCompactList}\small\item\em Après l\textquotesingle{}acquisition d\textquotesingle{}une nouvelle frame modifie les propriété de la caméra si ceux-\/ci ont été modifié par l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+\hyperlink{class_camera_ad1897942d0ccf91052386388a497349f}{$\sim$\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_camera}{Camera}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static Q\+String \hyperlink{class_camera_a506d459df95042a03894afd5b781c2aa}{creer\+Nom\+Camera} (int \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero})
+\begin{DoxyCompactList}\small\item\em Retourne le nom de caméra associé a son numéro. \end{DoxyCompactList}\item 
+static int \hyperlink{class_camera_aa3fdc8b3feac7074911b472c4edb9dec}{extraire\+Numero} (Q\+String \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nom\+Camera})
+\begin{DoxyCompactList}\small\item\em Retourne le numéro de caméra associé a son nom. \end{DoxyCompactList}\item 
+static int \hyperlink{class_camera_a116b3869ff0647c851715605a1938a3c}{get\+Nb\+Cameras} ()
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de caméras connectés. \end{DoxyCompactList}\item 
+static Q\+List$<$ Q\+Size $>$ \hyperlink{class_camera_ac4756add4cb6bef60e38f3da79c2383f}{lire\+Liste\+Resolutions\+Camera} (Q\+Camera\+Info \&camera\+Info)
+\begin{DoxyCompactList}\small\item\em Retourne la liste des résolutions supportés par la caméra passé en parametre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_camera_afbddcda62053404cbf06a4ba48c62732}{acquerir\+Image\+Video} (cv\+::\+Video\+Capture \&camera, cv\+::\+Mat \&frame)
+\begin{DoxyCompactList}\small\item\em Fait l\textquotesingle{}acquisition d\textquotesingle{}une nouvelle frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changement\+Proprietes}
+\begin{DoxyCompactList}\small\item\em Attribut désignant si une propriete de la caméra doit être modifiée. \end{DoxyCompactList}\item 
+int \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choix\+Resolution}
+\begin{DoxyCompactList}\small\item\em Choix dans la liste contenant les résolutions supportés par la caméra. \end{DoxyCompactList}\item 
+double \hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste}
+\begin{DoxyCompactList}\small\item\em Attribut contenant le constraste de la vidéo. \end{DoxyCompactList}\item 
+int \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur}
+\begin{DoxyCompactList}\small\item\em Attribut contenant la hauteur (heigth) en pixels de la vidéo. \end{DoxyCompactList}\item 
+int \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur}
+\begin{DoxyCompactList}\small\item\em Attribut contenant la largeur (width) en pixels de la vidéo. \end{DoxyCompactList}\item 
+Q\+List$<$ Q\+Size $>$ \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{liste\+Resolutions\+Camera}
+\begin{DoxyCompactList}\small\item\em Liste contenant les résolutions supportés par la caméra. \end{DoxyCompactList}\item 
+double \hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite}
+\begin{DoxyCompactList}\small\item\em Attribut contenant la luminosite de la vidéo. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nom\+Camera}
+\begin{DoxyCompactList}\small\item\em Attribut contenant le nom de la caméra sélectionnée. \end{DoxyCompactList}\item 
+int \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero}
+\begin{DoxyCompactList}\small\item\em Attribut contenant le numéro de la caméra sélectionnée. \end{DoxyCompactList}\item 
+\hyperlink{class_rov}{Rov} $\ast$ \hyperlink{class_camera_ad1dde4d981877001281af01c392307f1}{rov}
+\begin{DoxyCompactList}\small\item\em Objet rov permettant de récuperer les dernière mesures issues des capteurs. \end{DoxyCompactList}\item 
+double \hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation}
+\begin{DoxyCompactList}\small\item\em Attribut contenant la saturation de la vidéo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Class permettant de mettre en place une communication avec la camera. 
+
+Définition à la ligne \hyperlink{camera_8h_source_l00058}{58} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_camera_a26c49f76c98ece6ad6771351dd13583a}\label{class_camera_a26c49f76c98ece6ad6771351dd13583a}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{\hyperlink{class_rov}{Rov} $\ast$}]{rov,  }\item[{int}]{numero,  }\item[{int}]{choix\+Resolution = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_camera}{Camera}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rov} & \\
+\hline
+{\em numero} & \\
+\hline
+{\em choix\+Resolution} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00012}{12} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00068}{contraste}, \hyperlink{camera_8cpp_source_l00293}{creer\+Nom\+Camera()}, \hyperlink{camera_8cpp_source_l00270}{get\+Nb\+Cameras()}, \hyperlink{camera_8h_source_l00066}{hauteur}, \hyperlink{camera_8h_source_l00065}{largeur}, \hyperlink{camera_8h_source_l00067}{luminosite}, \hyperlink{camera_8h_source_l00063}{nom\+Camera}, \hyperlink{camera_8cpp_source_l00133}{recuperer\+Liste\+Resolutions\+Camera()}, \hyperlink{camera_8h_source_l00069}{saturation}, et \hyperlink{camera_8cpp_source_l00186}{set\+Resolution()}.
+
+
+\begin{DoxyCode}
+00012                                                        : \hyperlink{class_camera_ad1dde4d981877001281af01c392307f1}{rov}(rov), \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero}(
+      \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero}), \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur}(\hyperlink{camera_8h_afe66edd1ec0aa05058aaa2a069248f65}{LARGEUR\_DEFAUT}), \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur}(
+      \hyperlink{camera_8h_a70cf269dc21e5a921c2927034d6cadd2}{HAUTEUR\_DEFAUT}), \hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite}(\hyperlink{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}{SEUIL\_DEFAUT}), 
+      \hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste}(\hyperlink{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}{SEUIL\_DEFAUT}), \hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation}(\hyperlink{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}{SEUIL\_DEFAUT}), 
+      \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes}(\textcolor{keyword}{false}), \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution}(
+      \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution})
+00013 \{
+00014 \textcolor{preprocessor}{    #if CV\_VERSION\_MAJOR == 3}
+00015     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"OpenCV"} << CV\_VERSION\_MAJOR << CV\_VERSION\_MINOR;
+00016 \textcolor{preprocessor}{    #else}
+00017     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"OpenCV"} << CV\_MAJOR\_VERSION << CV\_MINOR\_VERSION;
+00018 \textcolor{preprocessor}{    #endif}
+00019 
+00020     \hyperlink{class_camera_a116b3869ff0647c851715605a1938a3c}{Camera::getNbCameras}();
+00021 
+00022     \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera} = \hyperlink{class_camera_a506d459df95042a03894afd5b781c2aa}{Camera::creerNomCamera}(\hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero});    
+00023     \hyperlink{class_camera_a97267488c5756b4217d4e1fbc68008fd}{recupererListeResolutionsCamera}();
+00024     \textcolor{keywordflow}{if}(\hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution} == -1)
+00025         \hyperlink{class_camera_a966d13a5bf22c776f8d776d3da19182a}{setResolution}(\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur}, \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur});
+00026     \textcolor{keywordflow}{else}
+00027         \hyperlink{class_camera_a966d13a5bf22c776f8d776d3da19182a}{setResolution}(\hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution});
+00028     qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this};
+00029     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"numero"} << \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero} << \textcolor{stringliteral}{"nomCamera"} << 
+      \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera};
+00030     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"largeur"} << \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} << \textcolor{stringliteral}{"hauteur"} << 
+      \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur};
+00031     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"luminosite"} << \hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite} << \textcolor{stringliteral}{"contraste"} << 
+      \hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste} << \textcolor{stringliteral}{"saturation"} << \hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation};
+00032 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_ae663da224161d1a78c8a7431ad1530d7}\label{class_camera_ae663da224161d1a78c8a7431ad1530d7}} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{\hyperlink{class_rov}{Rov} $\ast$}]{rov,  }\item[{Q\+String}]{nom\+Camera,  }\item[{int}]{choix\+Resolution = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_camera}{Camera}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rov} & \\
+\hline
+{\em nom\+Camera} & \\
+\hline
+{\em choix\+Resolution} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00034}{34} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00068}{contraste}, \hyperlink{camera_8cpp_source_l00276}{extraire\+Numero()}, \hyperlink{camera_8cpp_source_l00270}{get\+Nb\+Cameras()}, \hyperlink{camera_8h_source_l00066}{hauteur}, \hyperlink{camera_8h_source_l00065}{largeur}, \hyperlink{camera_8h_source_l00067}{luminosite}, \hyperlink{camera_8h_source_l00063}{nom\+Camera}, \hyperlink{camera_8h_source_l00064}{numero}, \hyperlink{camera_8cpp_source_l00133}{recuperer\+Liste\+Resolutions\+Camera()}, \hyperlink{camera_8h_source_l00069}{saturation}, et \hyperlink{camera_8cpp_source_l00186}{set\+Resolution()}.
+
+
+\begin{DoxyCode}
+00034                                                               : \hyperlink{class_camera_ad1dde4d981877001281af01c392307f1}{rov}(rov), 
+      \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}(\hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}), \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur}(\hyperlink{camera_8h_afe66edd1ec0aa05058aaa2a069248f65}{LARGEUR\_DEFAUT}), 
+      \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur}(\hyperlink{camera_8h_a70cf269dc21e5a921c2927034d6cadd2}{HAUTEUR\_DEFAUT}), \hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite}(\hyperlink{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}{SEUIL\_DEFAUT}), 
+      \hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste}(\hyperlink{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}{SEUIL\_DEFAUT}), \hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation}(\hyperlink{camera_8h_ae340bfbdd3eec3bbbea7d39d91c8aa91}{SEUIL\_DEFAUT}), 
+      \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes}(\textcolor{keyword}{false}), \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution}(
+      \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution})
+00035 \{
+00036 \textcolor{preprocessor}{    #if CV\_VERSION\_MAJOR == 3}
+00037     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"OpenCV"} << CV\_VERSION\_MAJOR << CV\_VERSION\_MINOR;
+00038 \textcolor{preprocessor}{    #else}
+00039     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"OpenCV"} << CV\_MAJOR\_VERSION << CV\_MINOR\_VERSION;
+00040 \textcolor{preprocessor}{    #endif}
+00041 
+00042     \hyperlink{class_camera_a116b3869ff0647c851715605a1938a3c}{Camera::getNbCameras}();
+00043 
+00044     \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero} = \hyperlink{class_camera_aa3fdc8b3feac7074911b472c4edb9dec}{Camera::extraireNumero}(\hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera});
+00045 
+00046     \hyperlink{class_camera_a97267488c5756b4217d4e1fbc68008fd}{recupererListeResolutionsCamera}();
+00047     \textcolor{keywordflow}{if}(\hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution} == -1)
+00048         \hyperlink{class_camera_a966d13a5bf22c776f8d776d3da19182a}{setResolution}(\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur}, \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur});
+00049     \textcolor{keywordflow}{else}
+00050         \hyperlink{class_camera_a966d13a5bf22c776f8d776d3da19182a}{setResolution}(\hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution});
+00051 
+00052     qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this};
+00053     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"numero"} << \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero} << \textcolor{stringliteral}{"nomCamera"} << 
+      \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera};
+00054     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"largeur"} << \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} << \textcolor{stringliteral}{"hauteur"} << 
+      \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur};
+00055     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"luminosite"} << \hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite} << \textcolor{stringliteral}{"contraste"} << 
+      \hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste} << \textcolor{stringliteral}{"saturation"} << \hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation};
+00056 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_ad1897942d0ccf91052386388a497349f}\label{class_camera_ad1897942d0ccf91052386388a497349f}} 
+\index{Camera@{Camera}!````~Camera@{$\sim$\+Camera}}
+\index{````~Camera@{$\sim$\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{$\sim$\+Camera()}{~Camera()}}
+{\footnotesize\ttfamily Camera\+::$\sim$\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \hyperlink{class_camera}{Camera}. 
+
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00058}{58} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+\begin{DoxyCode}
+00059 \{
+00060     qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this};
+00061 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_camera_afbddcda62053404cbf06a4ba48c62732}\label{class_camera_afbddcda62053404cbf06a4ba48c62732}} 
+\index{Camera@{Camera}!acquerir\+Image\+Video@{acquerir\+Image\+Video}}
+\index{acquerir\+Image\+Video@{acquerir\+Image\+Video}!Camera@{Camera}}
+\paragraph{\texorpdfstring{acquerir\+Image\+Video()}{acquerirImageVideo()}}
+{\footnotesize\ttfamily void Camera\+::acquerir\+Image\+Video (\begin{DoxyParamCaption}\item[{cv\+::\+Video\+Capture \&}]{camera,  }\item[{cv\+::\+Mat \&}]{frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fait l\textquotesingle{}acquisition d\textquotesingle{}une nouvelle frame. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em camera} & \\
+\hline
+{\em frame} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00063}{63} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00068}{run()}.
+
+
+\begin{DoxyCode}
+00064 \{
+00065     camera >> frame;
+00066 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a506d459df95042a03894afd5b781c2aa}\label{class_camera_a506d459df95042a03894afd5b781c2aa}} 
+\index{Camera@{Camera}!creer\+Nom\+Camera@{creer\+Nom\+Camera}}
+\index{creer\+Nom\+Camera@{creer\+Nom\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{creer\+Nom\+Camera()}{creerNomCamera()}}
+{\footnotesize\ttfamily Q\+String Camera\+::creer\+Nom\+Camera (\begin{DoxyParamCaption}\item[{int}]{numero }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne le nom de caméra associé a son numéro. 
+
+\begin{DoxyReturn}{Renvoie}
+le nom de caméra associé a son numéro 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em numero} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00293}{293} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}, \hyperlink{rov_8cpp_source_l00123}{Rov\+::demarrer\+Campagne()}, et \hyperlink{camera_8cpp_source_l00139}{recuperer\+Liste\+Resolutions\+Camera()}.
+
+
+\begin{DoxyCode}
+00294 \{
+00295     QString nom;
+00296 
+00297     \textcolor{keywordflow}{if}(\hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero} >= 0)
+00298     \{
+00299         nom = QString(\textcolor{stringliteral}{"/dev/video"}) + QString::number(\hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero});
+00300     \}
+00301     \textcolor{keywordflow}{return} nom;
+00302 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_aa3fdc8b3feac7074911b472c4edb9dec}\label{class_camera_aa3fdc8b3feac7074911b472c4edb9dec}} 
+\index{Camera@{Camera}!extraire\+Numero@{extraire\+Numero}}
+\index{extraire\+Numero@{extraire\+Numero}!Camera@{Camera}}
+\paragraph{\texorpdfstring{extraire\+Numero()}{extraireNumero()}}
+{\footnotesize\ttfamily int Camera\+::extraire\+Numero (\begin{DoxyParamCaption}\item[{Q\+String}]{nom\+Camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne le numéro de caméra associé a son nom. 
+
+\begin{DoxyReturn}{Renvoie}
+le numéro de caméra associé a son nom 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Camera} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00276}{276} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00064}{numero}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00034}{Camera()}.
+
+
+\begin{DoxyCode}
+00277 \{
+00278     \textcolor{keywordtype}{int} \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero} = -1;
+00279     QString video = \textcolor{stringliteral}{"/dev/video"};
+00280 
+00281     \textcolor{keywordflow}{if}(\hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}.contains(video))
+00282     \{
+00283         QString n = \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}.mid(video.length(), \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}.length());
+00284         \textcolor{keywordtype}{bool} ok;
+00285         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"nom"} << \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera} << \textcolor{stringliteral}{"n"} << 
+      \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}.right(\hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}.indexOf(\textcolor{stringliteral}{"/dev/video"})) << \textcolor{stringliteral}{"index"} << 
+      \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}.indexOf(\textcolor{stringliteral}{"/dev/video"});
+00286         numero = n.toInt(&ok);
+00287         \textcolor{keywordflow}{if}(ok)
+00288             \textcolor{keywordflow}{return} \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero};
+00289     \}
+00290     \textcolor{keywordflow}{return} \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero};
+00291 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a4c560c4add60ebce65e2d9717e3d668c}\label{class_camera_a4c560c4add60ebce65e2d9717e3d668c}} 
+\index{Camera@{Camera}!fin\+Video@{fin\+Video}}
+\index{fin\+Video@{fin\+Video}!Camera@{Camera}}
+\paragraph{\texorpdfstring{fin\+Video}{finVideo}}
+{\footnotesize\ttfamily void Camera\+::fin\+Video (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Envoie un signal lorsque la vidéo est interrompu. 
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00068}{run()}.
+
+\mbox{\Hypertarget{class_camera_ab9f05b05c29416dce6471b5a03db98ea}\label{class_camera_ab9f05b05c29416dce6471b5a03db98ea}} 
+\index{Camera@{Camera}!get\+Choix\+Resolution@{get\+Choix\+Resolution}}
+\index{get\+Choix\+Resolution@{get\+Choix\+Resolution}!Camera@{Camera}}
+\paragraph{\texorpdfstring{get\+Choix\+Resolution()}{getChoixResolution()}}
+{\footnotesize\ttfamily int Camera\+::get\+Choix\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Récupère le choix de la resolution active. 
+
+\begin{DoxyReturn}{Renvoie}
+le choix de la resolution active 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00128}{128} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00072}{choix\+Resolution}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00179}{I\+H\+M\+Reglage\+Video\+::charger\+Liste\+Resolution\+Disponible()}.
+
+
+\begin{DoxyCode}
+00129 \{
+00130     \textcolor{keywordflow}{return} \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution};
+00131 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a997441a0c1e33fe3eda800953548071d}\label{class_camera_a997441a0c1e33fe3eda800953548071d}} 
+\index{Camera@{Camera}!get\+Liste\+Resolutions\+Camera@{get\+Liste\+Resolutions\+Camera}}
+\index{get\+Liste\+Resolutions\+Camera@{get\+Liste\+Resolutions\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{get\+Liste\+Resolutions\+Camera()}{getListeResolutionsCamera()}}
+{\footnotesize\ttfamily Q\+List$<$ Q\+Size $>$ Camera\+::get\+Liste\+Resolutions\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne la liste des résolutions supportées par la caméra. 
+
+\begin{DoxyReturn}{Renvoie}
+la liste des résolutions supportées par la caméra 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00181}{181} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00071}{liste\+Resolutions\+Camera}.
+
+
+\begin{DoxyCode}
+00182 \{
+00183     \textcolor{keywordflow}{return} \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera};
+00184 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a116b3869ff0647c851715605a1938a3c}\label{class_camera_a116b3869ff0647c851715605a1938a3c}} 
+\index{Camera@{Camera}!get\+Nb\+Cameras@{get\+Nb\+Cameras}}
+\index{get\+Nb\+Cameras@{get\+Nb\+Cameras}!Camera@{Camera}}
+\paragraph{\texorpdfstring{get\+Nb\+Cameras()}{getNbCameras()}}
+{\footnotesize\ttfamily int Camera\+::get\+Nb\+Cameras (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne le nombre de caméras connectés. 
+
+\begin{DoxyReturn}{Renvoie}
+le nombre de caméras connectés 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00270}{270} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}, et \hyperlink{rov_8cpp_source_l00123}{Rov\+::demarrer\+Campagne()}.
+
+
+\begin{DoxyCode}
+00271 \{
+00272     qDebug() << Q\_FUNC\_INFO  << \textcolor{stringliteral}{"Caméra(s) disponible(s)"} << QCameraInfo::availableCameras().count();
+00273     \textcolor{keywordflow}{return} QCameraInfo::availableCameras().count();
+00274 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}\label{class_camera_a9b27a8a444006f40548a9a4ecf4d7256}} 
+\index{Camera@{Camera}!get\+Nom@{get\+Nom}}
+\index{get\+Nom@{get\+Nom}!Camera@{Camera}}
+\paragraph{\texorpdfstring{get\+Nom()}{getNom()}}
+{\footnotesize\ttfamily Q\+String Camera\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le nom de la caméra. 
+
+\begin{DoxyReturn}{Renvoie}
+nom de la caméra 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00103}{103} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00063}{nom\+Camera}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00132}{I\+H\+M\+Reglage\+Video\+::charger\+Liste\+Camera\+Disponible()}.
+
+
+\begin{DoxyCode}
+00104 \{
+00105     \textcolor{keywordflow}{return} \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera};
+00106 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a9fae9d9b6fa352ff96c9874d9b085454}\label{class_camera_a9fae9d9b6fa352ff96c9874d9b085454}} 
+\index{Camera@{Camera}!get\+Resolution@{get\+Resolution}}
+\index{get\+Resolution@{get\+Resolution}!Camera@{Camera}}
+\paragraph{\texorpdfstring{get\+Resolution()}{getResolution()}}
+{\footnotesize\ttfamily Q\+Size Camera\+::get\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Récupère la resolution active. 
+
+\begin{DoxyReturn}{Renvoie}
+la resolution active 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00121}{121} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00072}{choix\+Resolution}, \hyperlink{camera_8h_source_l00041}{H\+A\+U\+T\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}, \hyperlink{camera_8h_source_l00035}{L\+A\+R\+G\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}, et \hyperlink{camera_8h_source_l00071}{liste\+Resolutions\+Camera}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00179}{I\+H\+M\+Reglage\+Video\+::charger\+Liste\+Resolution\+Disponible()}.
+
+
+\begin{DoxyCode}
+00122 \{
+00123     \textcolor{keywordflow}{if}(\hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution} != -1)
+00124         \textcolor{keywordflow}{return} \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.at(\hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution});
+00125     \textcolor{keywordflow}{return} QSize(\hyperlink{camera_8h_afe66edd1ec0aa05058aaa2a069248f65}{LARGEUR\_DEFAUT},\hyperlink{camera_8h_a70cf269dc21e5a921c2927034d6cadd2}{HAUTEUR\_DEFAUT});
+00126 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_ac4756add4cb6bef60e38f3da79c2383f}\label{class_camera_ac4756add4cb6bef60e38f3da79c2383f}} 
+\index{Camera@{Camera}!lire\+Liste\+Resolutions\+Camera@{lire\+Liste\+Resolutions\+Camera}}
+\index{lire\+Liste\+Resolutions\+Camera@{lire\+Liste\+Resolutions\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{lire\+Liste\+Resolutions\+Camera()}{lireListeResolutionsCamera()}}
+{\footnotesize\ttfamily Q\+List$<$ Q\+Size $>$ Camera\+::lire\+Liste\+Resolutions\+Camera (\begin{DoxyParamCaption}\item[{Q\+Camera\+Info \&}]{camera\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne la liste des résolutions supportés par la caméra passé en parametre. 
+
+\begin{DoxyReturn}{Renvoie}
+la liste des résolutions supportés par la caméra passé en parametre 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em camera\+Info} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00304}{304} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00179}{I\+H\+M\+Reglage\+Video\+::charger\+Liste\+Resolution\+Disponible()}.
+
+
+\begin{DoxyCode}
+00305 \{
+00306     QList<QSize> listeResolutions;
+00307     listeResolutions.clear();
+00308     \textcolor{keywordflow}{if}(QCameraInfo::availableCameras().count() > 0)
+00309     \{
+00310         QCamera *camera = \textcolor{keyword}{new} QCamera(cameraInfo);
+00311         QMediaRecorder *mediaRecorder = \textcolor{keyword}{new} QMediaRecorder(camera);
+00312         camera->load();
+00313         qDebug() << Q\_FUNC\_INFO << mediaRecorder->supportedResolutions().size();
+00314         \textcolor{keywordflow}{if}(mediaRecorder->supportedResolutions().size() > 0)
+00315         \{
+00316             \textcolor{keywordflow}{foreach} (\textcolor{keyword}{const} QSize &resolution, mediaRecorder->supportedResolutions())
+00317             \{
+00318                 qDebug() << Q\_FUNC\_INFO << resolution.width() << \textcolor{stringliteral}{"x"} << resolution.height();
+00319                 listeResolutions.push\_back(resolution);
+00320             \}
+00321         \}
+00322         \textcolor{keyword}{delete} mediaRecorder;
+00323         \textcolor{keyword}{delete} camera;
+00324     \}
+00325     \textcolor{keywordflow}{return} listeResolutions;
+00326 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a38c810d466375e950401e483f885c52f}\label{class_camera_a38c810d466375e950401e483f885c52f}} 
+\index{Camera@{Camera}!nouvelle\+Image@{nouvelle\+Image}}
+\index{nouvelle\+Image@{nouvelle\+Image}!Camera@{Camera}}
+\paragraph{\texorpdfstring{nouvelle\+Image}{nouvelleImage}}
+{\footnotesize\ttfamily void Camera\+::nouvelle\+Image (\begin{DoxyParamCaption}\item[{Q\+Pixmap}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Envoie un signal lorsque une nouvelle image du flux vidéo est disponible. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em image} & \\
+\hline
+\end{DoxyParams}
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00068}{run()}.
+
+\mbox{\Hypertarget{class_camera_a97267488c5756b4217d4e1fbc68008fd}\label{class_camera_a97267488c5756b4217d4e1fbc68008fd}} 
+\index{Camera@{Camera}!recuperer\+Liste\+Resolutions\+Camera@{recuperer\+Liste\+Resolutions\+Camera}}
+\index{recuperer\+Liste\+Resolutions\+Camera@{recuperer\+Liste\+Resolutions\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{recuperer\+Liste\+Resolutions\+Camera()}{recupererListeResolutionsCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Camera\+::recuperer\+Liste\+Resolutions\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Récupère la liste des résolutions supportées par la caméra sélectionnée. 
+
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00133}{133} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00063}{nom\+Camera}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}, et \hyperlink{camera_8cpp_source_l00139}{recuperer\+Liste\+Resolutions\+Camera()}.
+
+
+\begin{DoxyCode}
+00134 \{
+00135     QCameraInfo cameraInfo(\hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}.toLatin1());
+00136     \hyperlink{class_camera_a97267488c5756b4217d4e1fbc68008fd}{recupererListeResolutionsCamera}(cameraInfo);
+00137 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_acf7554fa133bab58c16192041254a1d6}\label{class_camera_acf7554fa133bab58c16192041254a1d6}} 
+\index{Camera@{Camera}!recuperer\+Liste\+Resolutions\+Camera@{recuperer\+Liste\+Resolutions\+Camera}}
+\index{recuperer\+Liste\+Resolutions\+Camera@{recuperer\+Liste\+Resolutions\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{recuperer\+Liste\+Resolutions\+Camera()}{recupererListeResolutionsCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Camera\+::recuperer\+Liste\+Resolutions\+Camera (\begin{DoxyParamCaption}\item[{int}]{numero }\end{DoxyParamCaption})}
+
+
+
+Récupère la liste des résolutions supportées par la caméra à partir de son numéro. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em numero} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00139}{139} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8cpp_source_l00293}{creer\+Nom\+Camera()}, et \hyperlink{camera_8cpp_source_l00133}{recuperer\+Liste\+Resolutions\+Camera()}.
+
+
+\begin{DoxyCode}
+00140 \{
+00141     QString nom = \hyperlink{class_camera_a506d459df95042a03894afd5b781c2aa}{Camera::creerNomCamera}(\hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero});
+00142     QCameraInfo cameraInfo(nom.toLatin1());
+00143     \hyperlink{class_camera_a97267488c5756b4217d4e1fbc68008fd}{recupererListeResolutionsCamera}(cameraInfo);
+00144 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_ae3d1ccb26bcd49340bc392dc1e7bb550}\label{class_camera_ae3d1ccb26bcd49340bc392dc1e7bb550}} 
+\index{Camera@{Camera}!recuperer\+Liste\+Resolutions\+Camera@{recuperer\+Liste\+Resolutions\+Camera}}
+\index{recuperer\+Liste\+Resolutions\+Camera@{recuperer\+Liste\+Resolutions\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{recuperer\+Liste\+Resolutions\+Camera()}{recupererListeResolutionsCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Camera\+::recuperer\+Liste\+Resolutions\+Camera (\begin{DoxyParamCaption}\item[{Q\+String}]{nom\+Camera }\end{DoxyParamCaption})}
+
+
+
+Récupère la liste des résolutions supportées par la caméra à partir de son nom. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Camera} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00146}{146} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8cpp_source_l00133}{recuperer\+Liste\+Resolutions\+Camera()}.
+
+
+\begin{DoxyCode}
+00147 \{
+00148     QCameraInfo cameraInfo(\hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera}.toLatin1());
+00149     \hyperlink{class_camera_a97267488c5756b4217d4e1fbc68008fd}{recupererListeResolutionsCamera}(cameraInfo);
+00150 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a4a9f1bcfa19bbd5add6c758c8ad85b5c}\label{class_camera_a4a9f1bcfa19bbd5add6c758c8ad85b5c}} 
+\index{Camera@{Camera}!recuperer\+Liste\+Resolutions\+Camera@{recuperer\+Liste\+Resolutions\+Camera}}
+\index{recuperer\+Liste\+Resolutions\+Camera@{recuperer\+Liste\+Resolutions\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{recuperer\+Liste\+Resolutions\+Camera()}{recupererListeResolutionsCamera()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Camera\+::recuperer\+Liste\+Resolutions\+Camera (\begin{DoxyParamCaption}\item[{Q\+Camera\+Info \&}]{camera\+Info }\end{DoxyParamCaption})}
+
+
+
+Récupère la liste des résolutions supporté par la caméra. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em camera\+Info} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00152}{152} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00041}{H\+A\+U\+T\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}, \hyperlink{camera_8h_source_l00035}{L\+A\+R\+G\+E\+U\+R\+\_\+\+D\+E\+F\+A\+UT}, et \hyperlink{camera_8h_source_l00071}{liste\+Resolutions\+Camera}.
+
+
+\begin{DoxyCode}
+00153 \{
+00154 \textcolor{preprocessor}{    #ifndef SANS\_DETECTION}
+00155     \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.clear();
+00156     \textcolor{keywordflow}{if}(QCameraInfo::availableCameras().count() > 0)
+00157     \{
+00158         QCamera *camera = \textcolor{keyword}{new} QCamera(cameraInfo, \textcolor{keyword}{this});
+00159         QMediaRecorder *mediaRecorder = \textcolor{keyword}{new} QMediaRecorder(camera, \textcolor{keyword}{this});
+00160         camera->load();
+00161         qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this} << mediaRecorder->supportedResolutions().size();
+00162         \textcolor{keywordflow}{if}(mediaRecorder->supportedResolutions().size() > 0)
+00163         \{
+00164             \textcolor{keywordflow}{foreach} (\textcolor{keyword}{const} QSize &resolution, mediaRecorder->supportedResolutions())
+00165             \{
+00166                 qDebug() << Q\_FUNC\_INFO << resolution.width() << \textcolor{stringliteral}{"x"} << resolution.height();
+00167                 \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.push\_back(resolution);
+00168             \}
+00169         \}
+00170         \textcolor{keyword}{delete} mediaRecorder;
+00171         \textcolor{keyword}{delete} camera;
+00172     \}
+00173 \textcolor{preprocessor}{    #else}
+00174     Q\_UNUSED(cameraInfo);
+00175     \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.clear();
+00176     QSize resolutionDefaut(\hyperlink{camera_8h_afe66edd1ec0aa05058aaa2a069248f65}{LARGEUR\_DEFAUT}, \hyperlink{camera_8h_a70cf269dc21e5a921c2927034d6cadd2}{HAUTEUR\_DEFAUT});
+00177     \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.push\_back(resolutionDefaut);
+00178 \textcolor{preprocessor}{    #endif}
+00179 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_aaa3745c0cf0f286ef80b7eeebc248cc9}\label{class_camera_aaa3745c0cf0f286ef80b7eeebc248cc9}} 
+\index{Camera@{Camera}!run@{run}}
+\index{run@{run}!Camera@{Camera}}
+\paragraph{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Camera\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Démarre une nouveau thread afin de capturer le flux video et l\textquotesingle{}envoyer à l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00068}{68} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8cpp_source_l00063}{acquerir\+Image\+Video()}, \hyperlink{camera_8h_source_l00070}{changement\+Proprietes}, \hyperlink{class_camera_a4c560c4add60ebce65e2d9717e3d668c}{fin\+Video()}, \hyperlink{camera_8h_source_l00063}{nom\+Camera}, \hyperlink{class_camera_a38c810d466375e950401e483f885c52f}{nouvelle\+Image()}, \hyperlink{camera_8h_source_l00064}{numero}, et \hyperlink{camera_8cpp_source_l00108}{set\+Proprietes()}.
+
+
+\begin{DoxyCode}
+00069 \{
+00070     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"start"} << \textcolor{stringliteral}{"numero"} << \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero} << \textcolor{stringliteral}{"nomCamera"} << 
+      \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera};
+00071     this->setPriority(QThread::NormalPriority);
+00072 
+00073     \textcolor{keywordflow}{if}(\hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero} < 0)
+00074     \{
+00075         qDebug() << Q\_FUNC\_INFO  << \textcolor{stringliteral}{"Erreur numero"} << \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero} << \textcolor{stringliteral}{"nomCamera"} << 
+      \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera};
+00076         \textcolor{keywordflow}{return};
+00077     \}
+00078 
+00079     cv::VideoCapture camera(\hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero});
+00080     cv::Mat frame;
+00081 
+00082     \hyperlink{class_camera_a77397d68d606172ccfafed5624c31213}{setProprietes}(camera);
+00083 
+00084     \textcolor{keywordflow}{while}(camera.isOpened() && !isInterruptionRequested())
+00085     \{
+00086         \hyperlink{class_camera_afbddcda62053404cbf06a4ba48c62732}{acquerirImageVideo}(camera, frame);
+00087         \textcolor{keywordflow}{if}(frame.empty())
+00088             \textcolor{keywordflow}{continue};
+00089 
+00090         QPixmap pixmap = QPixmap::fromImage(QImage(frame.data, frame.cols, frame.rows, frame.step, 
+      QImage::Format\_RGB888).rgbSwapped());
+00091         emit \hyperlink{class_camera_a38c810d466375e950401e483f885c52f}{nouvelleImage}(pixmap);
+00092 
+00093         \textcolor{keywordflow}{if}(\hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes})
+00094             \hyperlink{class_camera_a77397d68d606172ccfafed5624c31213}{setProprietes}(camera);
+00095     \}
+00096 
+00097     camera.release();
+00098     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"stop"} << \textcolor{stringliteral}{"numero"} << \hyperlink{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}{numero} << \textcolor{stringliteral}{"nomCamera"} << 
+      \hyperlink{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}{nomCamera};
+00099 
+00100     emit \hyperlink{class_camera_a4c560c4add60ebce65e2d9717e3d668c}{finVideo}();
+00101 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_acc596f589be1e2e2d8e46e071ce38036}\label{class_camera_acc596f589be1e2e2d8e46e071ce38036}} 
+\index{Camera@{Camera}!set\+Contraste@{set\+Contraste}}
+\index{set\+Contraste@{set\+Contraste}!Camera@{Camera}}
+\paragraph{\texorpdfstring{set\+Contraste}{setContraste}}
+{\footnotesize\ttfamily void Camera\+::set\+Contraste (\begin{DoxyParamCaption}\item[{int}]{contraste }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modifie le contraste de la caméra. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em contraste} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00258}{258} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00070}{changement\+Proprietes}.
+
+
+\begin{DoxyCode}
+00259 \{
+00260     this->\hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste} = double(\hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste})/100;
+00261     \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{true};
+00262 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a25120dedc5f57638a866e1ff827fd641}\label{class_camera_a25120dedc5f57638a866e1ff827fd641}} 
+\index{Camera@{Camera}!set\+Luminosite@{set\+Luminosite}}
+\index{set\+Luminosite@{set\+Luminosite}!Camera@{Camera}}
+\paragraph{\texorpdfstring{set\+Luminosite}{setLuminosite}}
+{\footnotesize\ttfamily void Camera\+::set\+Luminosite (\begin{DoxyParamCaption}\item[{int}]{luminosite }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modifie la luminosite de la caméra. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em luminosite} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00252}{252} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00070}{changement\+Proprietes}.
+
+
+\begin{DoxyCode}
+00253 \{
+00254     this->\hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite} = double(\hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite})/100;
+00255     \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{true};
+00256 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a77397d68d606172ccfafed5624c31213}\label{class_camera_a77397d68d606172ccfafed5624c31213}} 
+\index{Camera@{Camera}!set\+Proprietes@{set\+Proprietes}}
+\index{set\+Proprietes@{set\+Proprietes}!Camera@{Camera}}
+\paragraph{\texorpdfstring{set\+Proprietes()}{setProprietes()}}
+{\footnotesize\ttfamily void Camera\+::set\+Proprietes (\begin{DoxyParamCaption}\item[{cv\+::\+Video\+Capture \&}]{camera }\end{DoxyParamCaption})}
+
+
+
+Après l\textquotesingle{}acquisition d\textquotesingle{}une nouvelle frame modifie les propriété de la caméra si ceux-\/ci ont été modifié par l\textquotesingle{}I\+HM. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em camera} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00108}{108} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00070}{changement\+Proprietes}, \hyperlink{camera_8h_source_l00068}{contraste}, \hyperlink{camera_8h_source_l00066}{hauteur}, \hyperlink{camera_8h_source_l00065}{largeur}, \hyperlink{camera_8h_source_l00067}{luminosite}, et \hyperlink{camera_8h_source_l00069}{saturation}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00068}{run()}.
+
+
+\begin{DoxyCode}
+00109 \{
+00110     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"largeur"} << \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} << \textcolor{stringliteral}{"hauteur"} << 
+      \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur};
+00111     camera.set(CV\_CAP\_PROP\_FRAME\_WIDTH, \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur});
+00112     camera.set(CV\_CAP\_PROP\_FRAME\_HEIGHT, hauteur);
+00113 
+00114     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"luminosite"} << \hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite} << \textcolor{stringliteral}{"contraste"} << 
+      \hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste} << \textcolor{stringliteral}{"saturation"} << \hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation};
+00115     camera.set(CV\_CAP\_PROP\_BRIGHTNESS, \hyperlink{class_camera_aca5433bf19773161142d73009469b1ed}{luminosite});
+00116     camera.set(CV\_CAP\_PROP\_CONTRAST, \hyperlink{class_camera_ad3b300e52c91341d985d3b54f562a0f7}{contraste});
+00117     camera.set(CV\_CAP\_PROP\_SATURATION, saturation);
+00118     \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{false};
+00119 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a966d13a5bf22c776f8d776d3da19182a}\label{class_camera_a966d13a5bf22c776f8d776d3da19182a}} 
+\index{Camera@{Camera}!set\+Resolution@{set\+Resolution}}
+\index{set\+Resolution@{set\+Resolution}!Camera@{Camera}}
+\paragraph{\texorpdfstring{set\+Resolution}{setResolution}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Camera\+::set\+Resolution (\begin{DoxyParamCaption}\item[{int}]{largeur,  }\item[{int}]{hauteur }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modifie la résolution (largeur x hauteur) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em largeur} & \\
+\hline
+{\em hauteur} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00186}{186} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00070}{changement\+Proprietes}, \hyperlink{camera_8h_source_l00072}{choix\+Resolution}, \hyperlink{camera_8h_source_l00066}{hauteur}, \hyperlink{camera_8h_source_l00065}{largeur}, et \hyperlink{camera_8h_source_l00071}{liste\+Resolutions\+Camera}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}.
+
+
+\begin{DoxyCode}
+00187 \{    
+00188     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"largeur"} << \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} << \textcolor{stringliteral}{"hauteur"} << 
+      \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur};
+00189     QSize size(\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur}, hauteur);
+00190     \textcolor{keywordtype}{int} i = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.indexOf(size);
+00191     \textcolor{keywordflow}{if} (i != -1)
+00192     \{
+00193         \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution} = i;
+00194         this->\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} = \hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur};
+00195         this->hauteur = \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur};
+00196         \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{true};
+00197     \}
+00198     \textcolor{keywordflow}{else}
+00199     \{
+00200         size = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.last();
+00201         \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution} = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.indexOf(size);;
+00202         this->\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} = size.width();
+00203         this->hauteur = size.height();
+00204         \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{true};
+00205     \}
+00206     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"largeur"} << this->\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} << \textcolor{stringliteral}{"hauteur"} << this->hauteur << \textcolor{stringliteral}{"
+      choixResolution"} << \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution};
+00207 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a79630483bf9912a8fd1afe412ee8c848}\label{class_camera_a79630483bf9912a8fd1afe412ee8c848}} 
+\index{Camera@{Camera}!set\+Resolution@{set\+Resolution}}
+\index{set\+Resolution@{set\+Resolution}!Camera@{Camera}}
+\paragraph{\texorpdfstring{set\+Resolution}{setResolution}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Camera\+::set\+Resolution (\begin{DoxyParamCaption}\item[{Q\+Size}]{resolution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modifie la résolution (largeur x hauteur) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em resolution} & (Q\+Size) \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00209}{209} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00070}{changement\+Proprietes}, \hyperlink{camera_8h_source_l00072}{choix\+Resolution}, \hyperlink{camera_8h_source_l00066}{hauteur}, \hyperlink{camera_8h_source_l00065}{largeur}, et \hyperlink{camera_8h_source_l00071}{liste\+Resolutions\+Camera}.
+
+
+\begin{DoxyCode}
+00210 \{
+00211     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"largeur"} << resolution.width() << \textcolor{stringliteral}{"hauteur"} << resolution.height();
+00212     \textcolor{keywordtype}{int} i = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.indexOf(resolution);
+00213     \textcolor{keywordflow}{if} (i != -1)
+00214     \{
+00215         \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution} = i;
+00216         this->\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} = resolution.width();
+00217         this->\hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur} = resolution.height();
+00218         \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{true};
+00219     \}
+00220     \textcolor{keywordflow}{else}
+00221     \{
+00222         QSize size = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.last();
+00223         \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution} = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.indexOf(size);;
+00224         this->\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} = size.width();
+00225         this->\hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur} = size.height();
+00226         \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{true};
+00227     \}
+00228     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"largeur"} << this->\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} << \textcolor{stringliteral}{"hauteur"} << this->
+      \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur} << \textcolor{stringliteral}{"choixResolution"} << \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution};
+00229 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_a7ff6343220c3ccd64ff513d2af37e1f3}\label{class_camera_a7ff6343220c3ccd64ff513d2af37e1f3}} 
+\index{Camera@{Camera}!set\+Resolution@{set\+Resolution}}
+\index{set\+Resolution@{set\+Resolution}!Camera@{Camera}}
+\paragraph{\texorpdfstring{set\+Resolution}{setResolution}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Camera\+::set\+Resolution (\begin{DoxyParamCaption}\item[{int}]{choix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modifie la résolution (index dans la liste) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em choix} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00231}{231} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00070}{changement\+Proprietes}, \hyperlink{camera_8h_source_l00072}{choix\+Resolution}, \hyperlink{camera_8h_source_l00066}{hauteur}, \hyperlink{camera_8h_source_l00065}{largeur}, et \hyperlink{camera_8h_source_l00071}{liste\+Resolutions\+Camera}.
+
+
+\begin{DoxyCode}
+00232 \{
+00233     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"choix"} << choix;
+00234     \textcolor{keywordflow}{if}(choix < \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.size())
+00235     \{
+00236         \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution} = choix;
+00237         this->\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.at(choix).width();
+00238         this->\hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur} = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.at(choix).height();
+00239         \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{true};
+00240     \}
+00241     \textcolor{keywordflow}{else}
+00242     \{
+00243         QSize size = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.last();
+00244         \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution} = \hyperlink{class_camera_a96af62eaf7828664865b56e7c69e771c}{listeResolutionsCamera}.indexOf(size);;
+00245         this->\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} = size.width();
+00246         this->\hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur} = size.height();
+00247         \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{true};
+00248     \}
+00249     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"largeur"} << this->\hyperlink{class_camera_ad64f26cdfc5aa561208b273d430938cf}{largeur} << \textcolor{stringliteral}{"hauteur"} << this->
+      \hyperlink{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}{hauteur} << \textcolor{stringliteral}{"choixResolution"} << \hyperlink{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}{choixResolution};
+00250 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_ace85018db120a6d61a5326172f97df93}\label{class_camera_ace85018db120a6d61a5326172f97df93}} 
+\index{Camera@{Camera}!set\+Saturation@{set\+Saturation}}
+\index{set\+Saturation@{set\+Saturation}!Camera@{Camera}}
+\paragraph{\texorpdfstring{set\+Saturation}{setSaturation}}
+{\footnotesize\ttfamily void Camera\+::set\+Saturation (\begin{DoxyParamCaption}\item[{int}]{saturation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Modifie la saturation de la caméra. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em saturation} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{camera_8cpp_source_l00264}{264} du fichier \hyperlink{camera_8cpp_source}{camera.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00070}{changement\+Proprietes}.
+
+
+\begin{DoxyCode}
+00265 \{
+00266     this->\hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation} = double(\hyperlink{class_camera_afd46d6d2451ee33b68dbc74713f2687c}{saturation})/100;
+00267     \hyperlink{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}{changementProprietes} = \textcolor{keyword}{true};
+00268 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}\label{class_camera_a50d2b3ef5c08f8b61bbe2115d71005bd}} 
+\index{Camera@{Camera}!changement\+Proprietes@{changement\+Proprietes}}
+\index{changement\+Proprietes@{changement\+Proprietes}!Camera@{Camera}}
+\paragraph{\texorpdfstring{changement\+Proprietes}{changementProprietes}}
+{\footnotesize\ttfamily bool Camera\+::changement\+Proprietes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut désignant si une propriete de la caméra doit être modifiée. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00070}{70} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00068}{run()}, \hyperlink{camera_8cpp_source_l00258}{set\+Contraste()}, \hyperlink{camera_8cpp_source_l00252}{set\+Luminosite()}, \hyperlink{camera_8cpp_source_l00108}{set\+Proprietes()}, \hyperlink{camera_8cpp_source_l00186}{set\+Resolution()}, et \hyperlink{camera_8cpp_source_l00264}{set\+Saturation()}.
+
+\mbox{\Hypertarget{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}\label{class_camera_a3fdddf6f548f04d7bdc26f32602a03d4}} 
+\index{Camera@{Camera}!choix\+Resolution@{choix\+Resolution}}
+\index{choix\+Resolution@{choix\+Resolution}!Camera@{Camera}}
+\paragraph{\texorpdfstring{choix\+Resolution}{choixResolution}}
+{\footnotesize\ttfamily int Camera\+::choix\+Resolution\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Choix dans la liste contenant les résolutions supportés par la caméra. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00072}{72} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00128}{get\+Choix\+Resolution()}, \hyperlink{camera_8cpp_source_l00121}{get\+Resolution()}, et \hyperlink{camera_8cpp_source_l00186}{set\+Resolution()}.
+
+\mbox{\Hypertarget{class_camera_ad3b300e52c91341d985d3b54f562a0f7}\label{class_camera_ad3b300e52c91341d985d3b54f562a0f7}} 
+\index{Camera@{Camera}!contraste@{contraste}}
+\index{contraste@{contraste}!Camera@{Camera}}
+\paragraph{\texorpdfstring{contraste}{contraste}}
+{\footnotesize\ttfamily double Camera\+::contraste\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant le constraste de la vidéo. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00068}{68} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}, et \hyperlink{camera_8cpp_source_l00108}{set\+Proprietes()}.
+
+\mbox{\Hypertarget{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}\label{class_camera_a5d89d7f9d1a5eab4175dd168c7fbf1c7}} 
+\index{Camera@{Camera}!hauteur@{hauteur}}
+\index{hauteur@{hauteur}!Camera@{Camera}}
+\paragraph{\texorpdfstring{hauteur}{hauteur}}
+{\footnotesize\ttfamily int Camera\+::hauteur\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant la hauteur (heigth) en pixels de la vidéo. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00066}{66} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}, \hyperlink{camera_8cpp_source_l00108}{set\+Proprietes()}, et \hyperlink{camera_8cpp_source_l00186}{set\+Resolution()}.
+
+\mbox{\Hypertarget{class_camera_ad64f26cdfc5aa561208b273d430938cf}\label{class_camera_ad64f26cdfc5aa561208b273d430938cf}} 
+\index{Camera@{Camera}!largeur@{largeur}}
+\index{largeur@{largeur}!Camera@{Camera}}
+\paragraph{\texorpdfstring{largeur}{largeur}}
+{\footnotesize\ttfamily int Camera\+::largeur\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant la largeur (width) en pixels de la vidéo. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00065}{65} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}, \hyperlink{camera_8cpp_source_l00108}{set\+Proprietes()}, et \hyperlink{camera_8cpp_source_l00186}{set\+Resolution()}.
+
+\mbox{\Hypertarget{class_camera_a96af62eaf7828664865b56e7c69e771c}\label{class_camera_a96af62eaf7828664865b56e7c69e771c}} 
+\index{Camera@{Camera}!liste\+Resolutions\+Camera@{liste\+Resolutions\+Camera}}
+\index{liste\+Resolutions\+Camera@{liste\+Resolutions\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{liste\+Resolutions\+Camera}{listeResolutionsCamera}}
+{\footnotesize\ttfamily Q\+List$<$Q\+Size$>$ Camera\+::liste\+Resolutions\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste contenant les résolutions supportés par la caméra. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00071}{71} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00181}{get\+Liste\+Resolutions\+Camera()}, \hyperlink{camera_8cpp_source_l00121}{get\+Resolution()}, \hyperlink{camera_8cpp_source_l00152}{recuperer\+Liste\+Resolutions\+Camera()}, et \hyperlink{camera_8cpp_source_l00186}{set\+Resolution()}.
+
+\mbox{\Hypertarget{class_camera_aca5433bf19773161142d73009469b1ed}\label{class_camera_aca5433bf19773161142d73009469b1ed}} 
+\index{Camera@{Camera}!luminosite@{luminosite}}
+\index{luminosite@{luminosite}!Camera@{Camera}}
+\paragraph{\texorpdfstring{luminosite}{luminosite}}
+{\footnotesize\ttfamily double Camera\+::luminosite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant la luminosite de la vidéo. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00067}{67} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}, et \hyperlink{camera_8cpp_source_l00108}{set\+Proprietes()}.
+
+\mbox{\Hypertarget{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}\label{class_camera_ac1cdaf82921d2a2f3f941d867718eba2}} 
+\index{Camera@{Camera}!nom\+Camera@{nom\+Camera}}
+\index{nom\+Camera@{nom\+Camera}!Camera@{Camera}}
+\paragraph{\texorpdfstring{nom\+Camera}{nomCamera}}
+{\footnotesize\ttfamily Q\+String Camera\+::nom\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant le nom de la caméra sélectionnée. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00063}{63} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}, \hyperlink{camera_8cpp_source_l00103}{get\+Nom()}, \hyperlink{camera_8cpp_source_l00133}{recuperer\+Liste\+Resolutions\+Camera()}, et \hyperlink{camera_8cpp_source_l00068}{run()}.
+
+\mbox{\Hypertarget{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}\label{class_camera_ae5cda5df3c9c49b88fff15389a1bbc64}} 
+\index{Camera@{Camera}!numero@{numero}}
+\index{numero@{numero}!Camera@{Camera}}
+\paragraph{\texorpdfstring{numero}{numero}}
+{\footnotesize\ttfamily int Camera\+::numero\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant le numéro de la caméra sélectionnée. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00064}{64} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00034}{Camera()}, \hyperlink{camera_8cpp_source_l00276}{extraire\+Numero()}, et \hyperlink{camera_8cpp_source_l00068}{run()}.
+
+\mbox{\Hypertarget{class_camera_ad1dde4d981877001281af01c392307f1}\label{class_camera_ad1dde4d981877001281af01c392307f1}} 
+\index{Camera@{Camera}!rov@{rov}}
+\index{rov@{rov}!Camera@{Camera}}
+\paragraph{\texorpdfstring{rov}{rov}}
+{\footnotesize\ttfamily \hyperlink{class_rov}{Rov}$\ast$ Camera\+::rov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Objet rov permettant de récuperer les dernière mesures issues des capteurs. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00062}{62} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+\mbox{\Hypertarget{class_camera_afd46d6d2451ee33b68dbc74713f2687c}\label{class_camera_afd46d6d2451ee33b68dbc74713f2687c}} 
+\index{Camera@{Camera}!saturation@{saturation}}
+\index{saturation@{saturation}!Camera@{Camera}}
+\paragraph{\texorpdfstring{saturation}{saturation}}
+{\footnotesize\ttfamily double Camera\+::saturation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attribut contenant la saturation de la vidéo. 
+
+
+
+Définition à la ligne \hyperlink{camera_8h_source_l00069}{69} du fichier \hyperlink{camera_8h_source}{camera.\+h}.
+
+
+
+Référencé par \hyperlink{camera_8cpp_source_l00012}{Camera()}, et \hyperlink{camera_8cpp_source_l00108}{set\+Proprietes()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{camera_8h}{camera.\+h}\item 
+\hyperlink{camera_8cpp}{camera.\+cpp}\end{DoxyCompactItemize}

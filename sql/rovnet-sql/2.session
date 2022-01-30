@@ -1,0 +1,16 @@
+window_sizes 1920 1025 380 1534 972 0
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 128130 // dg
+    1227 777 100 A0 0 0
+end
+show_stereotypes
+selected attribute_ref 130050 // IdPhoto
+open
+  class_ref 128130 // campagne
+  class_ref 128258 // technicien
+  class_ref 128386 // mesure
+  class_ref 128514 // photo
+  deploymentview_ref 128130 // db
+end
+end

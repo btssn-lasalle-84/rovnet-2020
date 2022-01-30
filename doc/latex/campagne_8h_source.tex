@@ -1,0 +1,68 @@
+\hypertarget{campagne_8h_source}{}\subsection{campagne.\+h}
+\label{campagne_8h_source}\index{campagne.\+h@{campagne.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef CAMPAGNE\_H}
+00008 \textcolor{preprocessor}{#define CAMPAGNE\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QObject>}
+00011 \textcolor{preprocessor}{#include <QTime>}
+00012 \textcolor{preprocessor}{#include <QVector>}
+00013 
+00014 \textcolor{preprocessor}{#include "\hyperlink{ihmalbumphoto_8h}{ihmalbumphoto.h}"}
+00015 
+\Hypertarget{campagne_8h_source_l00021}\hyperlink{struct_mesure}{00021} \textcolor{keyword}{struct }\hyperlink{struct_mesure}{Mesure}
+00022 \{
+\Hypertarget{campagne_8h_source_l00023}\hyperlink{struct_mesure_a9958b0440aca6af40028e742123afd9e}{00023}     QDateTime \hyperlink{struct_mesure_a9958b0440aca6af40028e742123afd9e}{dateheure};    
+\Hypertarget{campagne_8h_source_l00024}\hyperlink{struct_mesure_ad354ba4d8a32c05600859c76a8af0282}{00024}     QString \hyperlink{struct_mesure_ad354ba4d8a32c05600859c76a8af0282}{humidite};       
+\Hypertarget{campagne_8h_source_l00025}\hyperlink{struct_mesure_ad0dba8933e4b65b3781be7811f0f86ac}{00025}     QString \hyperlink{struct_mesure_ad0dba8933e4b65b3781be7811f0f86ac}{temperature};    
+\Hypertarget{campagne_8h_source_l00026}\hyperlink{struct_mesure_a1dae237cf09302d426ea375b9afb12f7}{00026}     QString \hyperlink{struct_mesure_a1dae237cf09302d426ea375b9afb12f7}{radiation};      
+00027 \};
+00028 
+\Hypertarget{campagne_8h_source_l00034}\hyperlink{class_campagne}{00034} \textcolor{keyword}{class }\hyperlink{class_campagne}{Campagne} : \textcolor{keyword}{public} \hyperlink{class_q_object}{QObject}
+00035 \{
+00036     Q\_OBJECT
+00037 \textcolor{keyword}{private}:
+\Hypertarget{campagne_8h_source_l00038}\hyperlink{class_campagne_a4455078418041442fa3998b9b6cb6230}{00038}     QString \hyperlink{class_campagne_a4455078418041442fa3998b9b6cb6230}{nomCampagne};               
+\Hypertarget{campagne_8h_source_l00039}\hyperlink{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}{00039}     QString \hyperlink{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}{nomTechnicien};             
+\Hypertarget{campagne_8h_source_l00040}\hyperlink{class_campagne_a9cc37c9671136683b5dac87ff34017bc}{00040}     QString \hyperlink{class_campagne_a9cc37c9671136683b5dac87ff34017bc}{prenomTechnicien};          
+\Hypertarget{campagne_8h_source_l00041}\hyperlink{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}{00041}     QString \hyperlink{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}{lieu};                      
+\Hypertarget{campagne_8h_source_l00042}\hyperlink{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}{00042}     QDateTime \hyperlink{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}{date};                    
+\Hypertarget{campagne_8h_source_l00043}\hyperlink{class_campagne_a95484d0782021bc30157669d16c42208}{00043}     QString \hyperlink{class_campagne_a95484d0782021bc30157669d16c42208}{cheminSauvegardePhotos};    
+\Hypertarget{campagne_8h_source_l00044}\hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{00044}     \textcolor{keywordtype}{int} \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree};                         
+\Hypertarget{campagne_8h_source_l00045}\hyperlink{class_campagne_a6ff3284dd54897c32c2ab9478f1f50ec}{00045}     \textcolor{keywordtype}{bool} \hyperlink{class_campagne_a6ff3284dd54897c32c2ab9478f1f50ec}{estArchive};                   
+\Hypertarget{campagne_8h_source_l00046}\hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{00046}     QVector<Photo> \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto};         
+\Hypertarget{campagne_8h_source_l00047}\hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{00047}     QVector<Mesure> \hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{mesures};           
+\Hypertarget{campagne_8h_source_l00048}\hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{00048}     \textcolor{keywordtype}{int} \hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{nombrePhotos};                  
+00049 
+00050 \textcolor{keyword}{public}:
+00062     \hyperlink{class_campagne}{Campagne}(QString nomCampagne, QString lieu, QString nomTechnicien, QString prenomTechnicien, 
+      QDateTime date, \hyperlink{class_q_object}{QObject} *parent = \textcolor{keyword}{nullptr}, \textcolor{keywordtype}{int} duree = 0);
+00067     ~\hyperlink{class_campagne}{Campagne}();
+00073     QString getNomCampagne() \textcolor{keyword}{const};
+00079     QString getNomTechnicien() \textcolor{keyword}{const};
+00085     QString getPrenomTechnicien() \textcolor{keyword}{const};
+00091     QString getLieu() \textcolor{keyword}{const};
+00097     QDateTime getDate() \textcolor{keyword}{const};
+00103     \textcolor{keywordtype}{int} getDuree() \textcolor{keyword}{const};
+00109     \textcolor{keywordtype}{void} setDuree(\textcolor{keywordtype}{int} duree);
+00115     QString getCheminSauvegarde() \textcolor{keyword}{const};
+00121     \textcolor{keywordtype}{void} setCheminSauvegarde(QString chemin);
+00127     \textcolor{keywordtype}{void} setNombrePhotos(\textcolor{keywordtype}{int} nombre);
+00133     QVector<Photo> getAlbumPhoto() \textcolor{keyword}{const};
+00139     QVector<Mesure> getMesures() \textcolor{keyword}{const};
+00145     \textcolor{keywordtype}{void} ajouterPhoto(\hyperlink{struct_photo}{Photo} &photo);
+00151     \textcolor{keywordtype}{void} modifierArchivePhoto(\textcolor{keywordtype}{int} numeroPhoto);
+00157     \textcolor{keywordtype}{void} ajouterMesure(\hyperlink{struct_mesure}{Mesure} &mesure);
+00162     \textcolor{keywordtype}{void} supprimerMesures();
+00167     \textcolor{keywordtype}{void} supprimerPhotos();
+00173     \textcolor{keywordtype}{int} incrementeNombrePhoto();
+00174 
+00175 signals:
+00176 
+00177 \textcolor{keyword}{public} slots:
+00178 \};
+00179 
+00180 \textcolor{preprocessor}{#endif // CAMPAGNE\_H}
+\end{DoxyCode}

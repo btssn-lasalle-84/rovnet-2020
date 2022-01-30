@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ROV&#39;NET:  Fichier source de campagne.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="icone_robot.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ROV&#39;NET
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">BTS SNIR LaSalle Avignon 2020</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('campagne_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">campagne.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="campagne_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef CAMPAGNE_H</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define CAMPAGNE_H</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QTime&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ihmalbumphoto_8h.html">ihmalbumphoto.h</a>&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_mesure.html">   21</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_mesure.html">Mesure</a></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_mesure.html#a9958b0440aca6af40028e742123afd9e">   23</a></span>&#160;    QDateTime <a class="code" href="struct_mesure.html#a9958b0440aca6af40028e742123afd9e">dateheure</a>;    </div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_mesure.html#ad354ba4d8a32c05600859c76a8af0282">   24</a></span>&#160;    QString <a class="code" href="struct_mesure.html#ad354ba4d8a32c05600859c76a8af0282">humidite</a>;       </div><div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_mesure.html#ad0dba8933e4b65b3781be7811f0f86ac">   25</a></span>&#160;    QString <a class="code" href="struct_mesure.html#ad0dba8933e4b65b3781be7811f0f86ac">temperature</a>;    </div><div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_mesure.html#a1dae237cf09302d426ea375b9afb12f7">   26</a></span>&#160;    QString <a class="code" href="struct_mesure.html#a1dae237cf09302d426ea375b9afb12f7">radiation</a>;      </div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_campagne.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_campagne.html">Campagne</a> : <span class="keyword">public</span> <a class="code" href="class_q_object.html">QObject</a></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Q_OBJECT</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_campagne.html#a4455078418041442fa3998b9b6cb6230">   38</a></span>&#160;    QString <a class="code" href="class_campagne.html#a4455078418041442fa3998b9b6cb6230">nomCampagne</a>;               </div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_campagne.html#a6d3e88fb93b38cbcf1bc53cc9fc30f2f">   39</a></span>&#160;    QString <a class="code" href="class_campagne.html#a6d3e88fb93b38cbcf1bc53cc9fc30f2f">nomTechnicien</a>;             </div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_campagne.html#a9cc37c9671136683b5dac87ff34017bc">   40</a></span>&#160;    QString <a class="code" href="class_campagne.html#a9cc37c9671136683b5dac87ff34017bc">prenomTechnicien</a>;          </div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_campagne.html#a1df66832d5d700bfd2bd36fe548f7cba">   41</a></span>&#160;    QString <a class="code" href="class_campagne.html#a1df66832d5d700bfd2bd36fe548f7cba">lieu</a>;                      </div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_campagne.html#ac8180e3e533648770c4e6d9a182fe3ed">   42</a></span>&#160;    QDateTime <a class="code" href="class_campagne.html#ac8180e3e533648770c4e6d9a182fe3ed">date</a>;                    </div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_campagne.html#a95484d0782021bc30157669d16c42208">   43</a></span>&#160;    QString <a class="code" href="class_campagne.html#a95484d0782021bc30157669d16c42208">cheminSauvegardePhotos</a>;    </div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_campagne.html#a4fb4cb286275103c9b6946e25e301fbf">   44</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_campagne.html#a4fb4cb286275103c9b6946e25e301fbf">duree</a>;                         </div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_campagne.html#a6ff3284dd54897c32c2ab9478f1f50ec">   45</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_campagne.html#a6ff3284dd54897c32c2ab9478f1f50ec">estArchive</a>;                   </div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_campagne.html#a4d1fc7d4dbf10868a297fe3df7f08dbf">   46</a></span>&#160;    QVector&lt;Photo&gt; <a class="code" href="class_campagne.html#a4d1fc7d4dbf10868a297fe3df7f08dbf">albumPhoto</a>;         </div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_campagne.html#ac460df42e2fbc12aae7b97abbe219ad0">   47</a></span>&#160;    QVector&lt;Mesure&gt; <a class="code" href="class_campagne.html#ac460df42e2fbc12aae7b97abbe219ad0">mesures</a>;           </div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_campagne.html#a3696e02e3cefc30bf4f284152917718b">   48</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_campagne.html#a3696e02e3cefc30bf4f284152917718b">nombrePhotos</a>;                  </div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="class_campagne.html">Campagne</a>(QString nomCampagne, QString lieu, QString nomTechnicien, QString prenomTechnicien, QDateTime date, <a class="code" href="class_q_object.html">QObject</a> *parent = <span class="keyword">nullptr</span>, <span class="keywordtype">int</span> duree = 0);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ~<a class="code" href="class_campagne.html">Campagne</a>();</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    QString getNomCampagne() <span class="keyword">const</span>;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    QString getNomTechnicien() <span class="keyword">const</span>;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    QString getPrenomTechnicien() <span class="keyword">const</span>;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    QString getLieu() <span class="keyword">const</span>;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    QDateTime getDate() <span class="keyword">const</span>;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">int</span> getDuree() <span class="keyword">const</span>;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> setDuree(<span class="keywordtype">int</span> duree);</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    QString getCheminSauvegarde() <span class="keyword">const</span>;</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> setCheminSauvegarde(QString chemin);</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> setNombrePhotos(<span class="keywordtype">int</span> nombre);</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    QVector&lt;Photo&gt; getAlbumPhoto() <span class="keyword">const</span>;</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    QVector&lt;Mesure&gt; getMesures() <span class="keyword">const</span>;</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> ajouterPhoto(<a class="code" href="struct_photo.html">Photo</a> &amp;photo);</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> modifierArchivePhoto(<span class="keywordtype">int</span> numeroPhoto);</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">void</span> ajouterMesure(<a class="code" href="struct_mesure.html">Mesure</a> &amp;mesure);</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span> supprimerMesures();</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> supprimerPhotos();</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">int</span> incrementeNombrePhoto();</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;signals:</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">public</span> slots:</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;};</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#endif // CAMPAGNE_H</span></div><div class="ttc" id="class_campagne_html_a4d1fc7d4dbf10868a297fe3df7f08dbf"><div class="ttname"><a href="class_campagne.html#a4d1fc7d4dbf10868a297fe3df7f08dbf">Campagne::albumPhoto</a></div><div class="ttdeci">QVector&lt; Photo &gt; albumPhoto</div><div class="ttdoc">Conteneur des photos prises durant la campagne. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00046">campagne.h:46</a></div></div>
+<div class="ttc" id="struct_mesure_html_ad0dba8933e4b65b3781be7811f0f86ac"><div class="ttname"><a href="struct_mesure.html#ad0dba8933e4b65b3781be7811f0f86ac">Mesure::temperature</a></div><div class="ttdeci">QString temperature</div><div class="ttdoc">Donnée temperature. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00025">campagne.h:25</a></div></div>
+<div class="ttc" id="ihmalbumphoto_8h_html"><div class="ttname"><a href="ihmalbumphoto_8h.html">ihmalbumphoto.h</a></div><div class="ttdoc">Fichier qui contient la déclaration de la classe IHMAlbumPhoto. </div></div>
+<div class="ttc" id="class_campagne_html_a4fb4cb286275103c9b6946e25e301fbf"><div class="ttname"><a href="class_campagne.html#a4fb4cb286275103c9b6946e25e301fbf">Campagne::duree</a></div><div class="ttdeci">int duree</div><div class="ttdoc">Attribut contenant la durée de la campagne en millisecondes. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00044">campagne.h:44</a></div></div>
+<div class="ttc" id="struct_mesure_html_ad354ba4d8a32c05600859c76a8af0282"><div class="ttname"><a href="struct_mesure.html#ad354ba4d8a32c05600859c76a8af0282">Mesure::humidite</a></div><div class="ttdeci">QString humidite</div><div class="ttdoc">Donnée humidité </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00024">campagne.h:24</a></div></div>
+<div class="ttc" id="class_campagne_html_a95484d0782021bc30157669d16c42208"><div class="ttname"><a href="class_campagne.html#a95484d0782021bc30157669d16c42208">Campagne::cheminSauvegardePhotos</a></div><div class="ttdeci">QString cheminSauvegardePhotos</div><div class="ttdoc">Attribut contenant le chemin de sauvegarde des photos. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00043">campagne.h:43</a></div></div>
+<div class="ttc" id="class_campagne_html_ac8180e3e533648770c4e6d9a182fe3ed"><div class="ttname"><a href="class_campagne.html#ac8180e3e533648770c4e6d9a182fe3ed">Campagne::date</a></div><div class="ttdeci">QDateTime date</div><div class="ttdoc">Attribut contenant la date de la campagne. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00042">campagne.h:42</a></div></div>
+<div class="ttc" id="class_campagne_html_ac460df42e2fbc12aae7b97abbe219ad0"><div class="ttname"><a href="class_campagne.html#ac460df42e2fbc12aae7b97abbe219ad0">Campagne::mesures</a></div><div class="ttdeci">QVector&lt; Mesure &gt; mesures</div><div class="ttdoc">Conteneur des mesures enregistrés durant la campagne. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00047">campagne.h:47</a></div></div>
+<div class="ttc" id="class_campagne_html"><div class="ttname"><a href="class_campagne.html">Campagne</a></div><div class="ttdoc">Class contenant les informations de la campagne en cours. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00034">campagne.h:34</a></div></div>
+<div class="ttc" id="struct_mesure_html_a1dae237cf09302d426ea375b9afb12f7"><div class="ttname"><a href="struct_mesure.html#a1dae237cf09302d426ea375b9afb12f7">Mesure::radiation</a></div><div class="ttdeci">QString radiation</div><div class="ttdoc">Donnée radiation. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00026">campagne.h:26</a></div></div>
+<div class="ttc" id="class_campagne_html_a9cc37c9671136683b5dac87ff34017bc"><div class="ttname"><a href="class_campagne.html#a9cc37c9671136683b5dac87ff34017bc">Campagne::prenomTechnicien</a></div><div class="ttdeci">QString prenomTechnicien</div><div class="ttdoc">Attribut contenant le nom du technicien. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00040">campagne.h:40</a></div></div>
+<div class="ttc" id="class_campagne_html_a6ff3284dd54897c32c2ab9478f1f50ec"><div class="ttname"><a href="class_campagne.html#a6ff3284dd54897c32c2ab9478f1f50ec">Campagne::estArchive</a></div><div class="ttdeci">bool estArchive</div><div class="ttdoc">Attribut booléen afin de savoir si la campagne est toujours en cours. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00045">campagne.h:45</a></div></div>
+<div class="ttc" id="class_campagne_html_a6d3e88fb93b38cbcf1bc53cc9fc30f2f"><div class="ttname"><a href="class_campagne.html#a6d3e88fb93b38cbcf1bc53cc9fc30f2f">Campagne::nomTechnicien</a></div><div class="ttdeci">QString nomTechnicien</div><div class="ttdoc">Attribut contenant le nom du technicien. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00039">campagne.h:39</a></div></div>
+<div class="ttc" id="struct_mesure_html"><div class="ttname"><a href="struct_mesure.html">Mesure</a></div><div class="ttdoc">structure permettant de définir les propriété d&amp;#39;une mesure prise à une heure précise ...</div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00021">campagne.h:21</a></div></div>
+<div class="ttc" id="class_campagne_html_a1df66832d5d700bfd2bd36fe548f7cba"><div class="ttname"><a href="class_campagne.html#a1df66832d5d700bfd2bd36fe548f7cba">Campagne::lieu</a></div><div class="ttdeci">QString lieu</div><div class="ttdoc">Attribut contenant le lieu de la campagne. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00041">campagne.h:41</a></div></div>
+<div class="ttc" id="class_campagne_html_a3696e02e3cefc30bf4f284152917718b"><div class="ttname"><a href="class_campagne.html#a3696e02e3cefc30bf4f284152917718b">Campagne::nombrePhotos</a></div><div class="ttdeci">int nombrePhotos</div><div class="ttdoc">Attribut contenant le nombre de photos prise durant la campagne. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00048">campagne.h:48</a></div></div>
+<div class="ttc" id="struct_mesure_html_a9958b0440aca6af40028e742123afd9e"><div class="ttname"><a href="struct_mesure.html#a9958b0440aca6af40028e742123afd9e">Mesure::dateheure</a></div><div class="ttdeci">QDateTime dateheure</div><div class="ttdoc">Date/Heure. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00023">campagne.h:23</a></div></div>
+<div class="ttc" id="struct_photo_html"><div class="ttname"><a href="struct_photo.html">Photo</a></div><div class="ttdoc">structure contenant les informations d&amp;#39;une photo de campagne </div><div class="ttdef"><b>Definition:</b> <a href="ihmalbumphoto_8h_source.html#l00020">ihmalbumphoto.h:20</a></div></div>
+<div class="ttc" id="class_q_object_html"><div class="ttname"><a href="class_q_object.html">QObject</a></div><div class="ttdoc">La classe QObject est la classe de base de tous les objets Qt. Elle permet à ces objets Qt de dispose...</div></div>
+<div class="ttc" id="class_campagne_html_a4455078418041442fa3998b9b6cb6230"><div class="ttname"><a href="class_campagne.html#a4455078418041442fa3998b9b6cb6230">Campagne::nomCampagne</a></div><div class="ttdeci">QString nomCampagne</div><div class="ttdoc">Attribut contenant le nom de la campagne. </div><div class="ttdef"><b>Definition:</b> <a href="campagne_8h_source.html#l00038">campagne.h:38</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+<!--Généré le Mardi 7 Avril 2020 19:56:09 pour ROV&#39;NET par &#160;<a href="http://www.doxygen.org/index.html">-->
+<img class="footer" src="lasalle-logo.png" alt="La Salle Avignon"/>
+<b>Campus La Salle Avignon</b> - 9 Rue Notre Dame des 7 douleurs - BP 50165 - 84008 Avignon
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

@@ -1,0 +1,1330 @@
+\hypertarget{class_rov}{}\subsection{Référence de la classe Rov}
+\label{class_rov}\index{Rov@{Rov}}
+
+
+Classe controlant tout les traitements en provenance et en direction de la communication avec le rov.  
+
+
+
+
+{\ttfamily \#include \char`\"{}rov.\+h\char`\"{}}
+
+
+
+Graphe de collaboration de Rov\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_rov__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_rov_a241368439666a2549faff42931d82dfb}{arreter\+Video} ()
+\begin{DoxyCompactList}\small\item\em Arrete le flux vidéo. \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a204b1f4efe5a89f4458d84e17858e7c8}{creer\+Trame\+Camera} (Q\+String axeX, Q\+String axeY)
+\begin{DoxyCompactList}\small\item\em Crée les trames de la caméra. \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_aa264d0723f6b491425ac2f85b933bab2}{creer\+Trame\+Deplacement} (char deplacement\+AxeX, int puissance, char deplacement\+AxeY)
+\begin{DoxyCompactList}\small\item\em Crée les trames de déplacement. \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a9e80eccfada890561e8af1f3426f6a2b}{creer\+Trame\+Ordre} (Q\+String ordre)
+\begin{DoxyCompactList}\small\item\em Crée les trames d\textquotesingle{}ordre. \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a97be62676ab0d57d5a8ac498147905ec}{creer\+Trame\+Pilotage} (Q\+String deplacement)
+\begin{DoxyCompactList}\small\item\em Crée les trames de pilotage. \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a66be7f6ff6e20da160d55e0cd0605965}{creer\+Trame\+Pince} (Q\+String mouvement\+Pince)
+\begin{DoxyCompactList}\small\item\em Crée les trames de la pince. \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_ad818ff6ee1210ae44a24106b2bbbee7d}{decoder\+Trame} (Q\+String trame)
+\begin{DoxyCompactList}\small\item\em Décode la trame réçue par le port série selon le protocole établie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_rov_ae868f3f3d691fcd6ecb97ee770541475}{donnees\+Telemetrie\+Decode} (Q\+String donnes)
+\begin{DoxyCompactList}\small\item\em signal contenant les nouvelle données de télémetrie (pour l\textquotesingle{}ihm) \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a180b955cc5ee7e01196299377e0c5f33}{enregistrer\+Mesures} (Q\+String temperature, Q\+String humidite, Q\+String radiation)
+\begin{DoxyCompactList}\small\item\em signal contenant les nouvelles mesures recus du robot (pour les enregistrer dans la B\+DD) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_rov_ad53e8d86817c81f92e3113b0394bedc5}{arreter\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Arrête la campagne. \end{DoxyCompactList}\item 
+bool \hyperlink{class_rov_ab20c6d0a73d6b20d4bef9e9236535a3d}{demarrer\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Démarre la campagne. \end{DoxyCompactList}\item 
+bool \hyperlink{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}{demarrer\+Video} (Q\+String nom\+Camera, int choix\+Resolution=-\/1)
+\begin{DoxyCompactList}\small\item\em Démarre un nouveau flux vidéo. \end{DoxyCompactList}\item 
+\hyperlink{class_camera}{Camera} $\ast$ \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{get\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}objet caméra créée par le rov. \end{DoxyCompactList}\item 
+bool \hyperlink{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}{get\+Campagne\+Encours} () const
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}etat de la campagne. \end{DoxyCompactList}\item 
+\hyperlink{class_capteurs}{Capteurs} $\ast$ \hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{get\+Capteurs} ()
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}objet capteurs créée par le rov. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_aa977585d4377a57281004fd57208635a}{get\+Temps\+Campagne} ()
+\begin{DoxyCompactList}\small\item\em Retourne la durée de la campagne. \end{DoxyCompactList}\item 
+\hyperlink{class_rov_a6e893548f3aadca5660540feb74f06f4}{Rov} (\hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov} $\ast$\hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihm\+Rov}, \hyperlink{class_q_object}{Q\+Object} $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_rov}{Rov}. \end{DoxyCompactList}\item 
+\hyperlink{class_rov_a6e41f712195b9af74fd75b781745d1b5}{$\sim$\+Rov} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_rov}{Rov}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_rov_ac1780c0484f427807f6207d17b564221}{decoder\+Trame\+Capteur} (Q\+String trame\+Capteur)
+\begin{DoxyCompactList}\small\item\em Décode la trame capteur reçue selon le protocole. \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a0d51099f9e1991ceffa0b6ed4a1c4e2e}{decoder\+Trame\+Telemetrie} (Q\+String trame\+Telemetrie)
+\begin{DoxyCompactList}\small\item\em Décode la trame télémetrie reçue selon le protocole. \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a53979bc347cda7cc30d18324f2146be1}{detecter\+Manette} ()
+\begin{DoxyCompactList}\small\item\em detecte les mannettes \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a0d1863d7d230c0153253d7d2689429b5}{initialiser\+Evenement\+Manette} (\hyperlink{class_manette}{Manette} $\ast$manette)
+\begin{DoxyCompactList}\small\item\em Initialise les evenement de la manette. \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a3ba4939b5d1cbd837b9c42869e6b8114}{initialiser\+Evenements} ()
+\begin{DoxyCompactList}\small\item\em Initialise le(s) Evenement(s) \end{DoxyCompactList}\item 
+void \hyperlink{class_rov_a31f810925200612a6bb4728236c695ed}{supprimer\+Manette} ()
+\begin{DoxyCompactList}\small\item\em Supprime les manettes du conteneur des manettes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_camera}{Camera} $\ast$ \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet camera possedant les informations nécessaire à l\textquotesingle{}affichage du flux vidéo. \end{DoxyCompactList}\item 
+bool \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagne\+En\+Cours}
+\begin{DoxyCompactList}\small\item\em Etat de si une campagne est en cour. \end{DoxyCompactList}\item 
+\hyperlink{class_capteurs}{Capteurs} $\ast$ \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet contenant les dernières informations issues des capteurs du rov. \end{DoxyCompactList}\item 
+\hyperlink{class_communication_rov}{Communication\+Rov} $\ast$ \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communication\+Rov}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet permettant la récupération des trames envoyé par la liaison série. \end{DoxyCompactList}\item 
+Q\+Time \hyperlink{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}{duree\+Campagne}
+\begin{DoxyCompactList}\small\item\em Timer lancer au début de la campagne. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov} $\ast$ \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihm\+Rov}
+\begin{DoxyCompactList}\small\item\em Instance d\textquotesingle{}un objet ihm\+Rov permettant la connexion entre les autre classe associé aux rov et l\textquotesingle{}ihm. \end{DoxyCompactList}\item 
+Q\+List$<$ int $>$ \hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{liste\+Manettes}
+\begin{DoxyCompactList}\small\item\em Liste des mannettes connecté \end{DoxyCompactList}\item 
+Q\+Vector$<$ \hyperlink{class_manette}{Manette} $\ast$ $>$ \hyperlink{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}{manettes}
+\begin{DoxyCompactList}\small\item\em Conteneur des manettes. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trame\+Deplacement}
+\begin{DoxyCompactList}\small\item\em Contenu trame déplacement. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_aa813010d76738e268a4bbe3773663a38}{trame\+Ordre}
+\begin{DoxyCompactList}\small\item\em Contenu trame ordre. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{trame\+Pilotage}
+\begin{DoxyCompactList}\small\item\em Contenu trame pilotage. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{trame\+Pince}
+\begin{DoxyCompactList}\small\item\em Contenu trame pince. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_a30595a8bd60324832b6a6eb5b542d211}{trame\+Pince\+Immobile}
+\begin{DoxyCompactList}\small\item\em Contenu trame pince à zéro. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}{trame\+Precedente\+Camera}
+\begin{DoxyCompactList}\small\item\em Contenu précédente trame caméra. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_a6e42b166c837f5103b53bb9eae35f087}{trame\+Precedente\+Deplacement}
+\begin{DoxyCompactList}\small\item\em Contenu précédente trame déplacement. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{trame\+Precedente\+Pilotage}
+\begin{DoxyCompactList}\small\item\em Contenu précédente trame pilotage. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}{trame\+Precedente\+Pince}
+\begin{DoxyCompactList}\small\item\em Contenu précédente trame pince. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Classe controlant tout les traitements en provenance et en direction de la communication avec le rov. 
+
+Définition à la ligne \hyperlink{rov_8h_source_l00090}{90} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_rov_a6e893548f3aadca5660540feb74f06f4}\label{class_rov_a6e893548f3aadca5660540feb74f06f4}} 
+\index{Rov@{Rov}!Rov@{Rov}}
+\index{Rov@{Rov}!Rov@{Rov}}
+\paragraph{\texorpdfstring{Rov()}{Rov()}}
+{\footnotesize\ttfamily Rov\+::\+Rov (\begin{DoxyParamCaption}\item[{\hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov} $\ast$}]{ihm\+Rov,  }\item[{\hyperlink{class_q_object}{Q\+Object} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_rov}{Rov}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ihm\+Rov} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00011}{11} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00095}{capteurs}, \hyperlink{rov_8h_source_l00097}{communication\+Rov}, \hyperlink{rov_8cpp_source_l00029}{detecter\+Manette()}, et \hyperlink{rov_8cpp_source_l00112}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00011                                         : \hyperlink{class_q_object}{QObject}(parent), \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}(ihmRov), 
+      \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}(\textcolor{keyword}{nullptr}), \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement}(\textcolor{stringliteral}{"$DEP;0;0;0\(\backslash\)r\(\backslash\)n"}), 
+      \hyperlink{class_rov_a6e42b166c837f5103b53bb9eae35f087}{tramePrecedenteDeplacement}(\textcolor{stringliteral}{"$DEP;0;0;0\(\backslash\)r\(\backslash\)n"}), 
+      \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage}(\textcolor{stringliteral}{"$BRAS;0\(\backslash\)r\(\backslash\)n"}), \hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage}(\textcolor{stringliteral}{"$BRAS;0\(\backslash\)r\(\backslash\)n"}), 
+      \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince}(\textcolor{stringliteral}{"$PINCE;0\(\backslash\)r\(\backslash\)n"}), \hyperlink{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}{tramePrecedentePince}(\textcolor{stringliteral}{"$PINCE;0\(\backslash\)r\(\backslash\)n"}), 
+      \hyperlink{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}{tramePrecedenteCamera}(\hyperlink{rov_8h_a12ba48a9aa995ebb4c7a7ace01808a2e}{TRAME\_CAMERA\_IMMOBILE}),
+00012 \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours}(\textcolor{keyword}{false})
+00013 \{
+00014     qDebug() << Q\_FUNC\_INFO;
+00015     \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov} = \textcolor{keyword}{new} \hyperlink{class_communication_rov}{CommunicationRov}(\textcolor{keyword}{this});
+00016     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs} = \textcolor{keyword}{new} \hyperlink{class_capteurs}{Capteurs}(\textcolor{keyword}{this});
+00017 
+00018     \hyperlink{class_rov_a3ba4939b5d1cbd837b9c42869e6b8114}{initialiserEvenements}();
+00019     \hyperlink{class_rov_a53979bc347cda7cc30d18324f2146be1}{detecterManette}();
+00020 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a6e41f712195b9af74fd75b781745d1b5}\label{class_rov_a6e41f712195b9af74fd75b781745d1b5}} 
+\index{Rov@{Rov}!````~Rov@{$\sim$\+Rov}}
+\index{````~Rov@{$\sim$\+Rov}!Rov@{Rov}}
+\paragraph{\texorpdfstring{$\sim$\+Rov()}{~Rov()}}
+{\footnotesize\ttfamily Rov\+::$\sim$\+Rov (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \hyperlink{class_rov}{Rov}. 
+
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00022}{22} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8cpp_source_l00136}{arreter\+Campagne()}, et \hyperlink{rov_8cpp_source_l00117}{supprimer\+Manette()}.
+
+
+\begin{DoxyCode}
+00023 \{
+00024     \hyperlink{class_rov_a31f810925200612a6bb4728236c695ed}{supprimerManette}();
+00025     \hyperlink{class_rov_ad53e8d86817c81f92e3113b0394bedc5}{arreterCampagne}();
+00026     qDebug() << Q\_FUNC\_INFO;
+00027 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_rov_ad53e8d86817c81f92e3113b0394bedc5}\label{class_rov_ad53e8d86817c81f92e3113b0394bedc5}} 
+\index{Rov@{Rov}!arreter\+Campagne@{arreter\+Campagne}}
+\index{arreter\+Campagne@{arreter\+Campagne}!Rov@{Rov}}
+\paragraph{\texorpdfstring{arreter\+Campagne()}{arreterCampagne()}}
+{\footnotesize\ttfamily void Rov\+::arreter\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Arrête la campagne. 
+
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00136}{136} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8cpp_source_l00263}{arreter\+Video()}, \hyperlink{rov_8h_source_l00110}{campagne\+En\+Cours}, \hyperlink{rov_8h_source_l00109}{duree\+Campagne}, \hyperlink{ihmrov_8cpp_source_l00149}{I\+H\+M\+Rov\+::get\+Campagne()}, \hyperlink{rov_8h_source_l00094}{ihm\+Rov}, et \hyperlink{campagne_8cpp_source_l00049}{Campagne\+::set\+Duree()}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00253}{I\+H\+M\+Rov\+::fermer()}, et \hyperlink{rov_8cpp_source_l00022}{$\sim$\+Rov()}.
+
+
+\begin{DoxyCode}
+00137 \{
+00138     qDebug() << Q\_FUNC\_INFO;
+00139     \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_aff9aebbc64c40ce2c1b5ae584c7a8d71}{setDuree}(\hyperlink{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}{dureeCampagne}.elapsed());
+00140     \hyperlink{class_rov_a241368439666a2549faff42931d82dfb}{arreterVideo}();
+00141     \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours} = \textcolor{keyword}{false};
+00142 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a241368439666a2549faff42931d82dfb}\label{class_rov_a241368439666a2549faff42931d82dfb}} 
+\index{Rov@{Rov}!arreter\+Video@{arreter\+Video}}
+\index{arreter\+Video@{arreter\+Video}!Rov@{Rov}}
+\paragraph{\texorpdfstring{arreter\+Video}{arreterVideo}}
+{\footnotesize\ttfamily void Rov\+::arreter\+Video (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrete le flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00263}{263} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{ihmrov_8cpp_source_l00234}{I\+H\+M\+Rov\+::arreter\+Video()}, \hyperlink{rov_8h_source_l00096}{camera}, et \hyperlink{rov_8h_source_l00094}{ihm\+Rov}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00136}{arreter\+Campagne()}.
+
+
+\begin{DoxyCode}
+00264 \{
+00265     \textcolor{keywordflow}{if}(\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera} != \textcolor{keyword}{nullptr})
+00266     \{
+00267         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"isRunning"} << \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}->isRunning();
+00268         \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_a81335964f1443d11e0929017b2f21267}{arreterVideo}();
+00269         disconnect(\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}, SIGNAL(nouvelleImage(QPixmap)), \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}, SLOT(afficherImage(QPixmap))
+      );
+00270         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}->requestInterruption();
+00271         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}->wait();
+00272         \textcolor{keyword}{delete} \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera};
+00273         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera} = \textcolor{keyword}{nullptr};
+00274     \}
+00275 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a204b1f4efe5a89f4458d84e17858e7c8}\label{class_rov_a204b1f4efe5a89f4458d84e17858e7c8}} 
+\index{Rov@{Rov}!creer\+Trame\+Camera@{creer\+Trame\+Camera}}
+\index{creer\+Trame\+Camera@{creer\+Trame\+Camera}!Rov@{Rov}}
+\paragraph{\texorpdfstring{creer\+Trame\+Camera}{creerTrameCamera}}
+{\footnotesize\ttfamily void Rov\+::creer\+Trame\+Camera (\begin{DoxyParamCaption}\item[{Q\+String}]{axeX,  }\item[{Q\+String}]{axeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Crée les trames de la caméra. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em axeX} & \\
+\hline
+{\em axeY} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00251}{251} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00097}{communication\+Rov}, \hyperlink{rov_8h_source_l00070}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+M\+E\+RA}, \hyperlink{communicationrov_8cpp_source_l00060}{Communication\+Rov\+::emettre\+Trame()}, et \hyperlink{rov_8h_source_l00107}{trame\+Precedente\+Camera}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00052}{initialiser\+Evenement\+Manette()}.
+
+
+\begin{DoxyCode}
+00252 \{
+00253     QString trameCamera = \hyperlink{rov_8h_adc800d68618fc04d8386c438c5a890ca}{DEBUT\_TRAME\_CAMERA} \textcolor{stringliteral}{";"} + axeX + \textcolor{stringliteral}{";"} + axeY + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00254 
+00255     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}{tramePrecedenteCamera} != trameCamera)
+00256     \{
+00257         \hyperlink{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}{tramePrecedenteCamera} = trameCamera;
+00258         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(trameCamera);
+00259         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"trame camera"} << trameCamera;
+00260     \}
+00261 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_aa264d0723f6b491425ac2f85b933bab2}\label{class_rov_aa264d0723f6b491425ac2f85b933bab2}} 
+\index{Rov@{Rov}!creer\+Trame\+Deplacement@{creer\+Trame\+Deplacement}}
+\index{creer\+Trame\+Deplacement@{creer\+Trame\+Deplacement}!Rov@{Rov}}
+\paragraph{\texorpdfstring{creer\+Trame\+Deplacement}{creerTrameDeplacement}}
+{\footnotesize\ttfamily void Rov\+::creer\+Trame\+Deplacement (\begin{DoxyParamCaption}\item[{char}]{deplacement\+AxeX,  }\item[{int}]{puissance,  }\item[{char}]{deplacement\+AxeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Crée les trames de déplacement. 
+
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00208}{208} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00097}{communication\+Rov}, \hyperlink{rov_8h_source_l00034}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+D\+E\+P\+L\+A\+C\+E\+M\+E\+NT}, \hyperlink{communicationrov_8cpp_source_l00060}{Communication\+Rov\+::emettre\+Trame()}, \hyperlink{rov_8h_source_l00100}{trame\+Deplacement}, et \hyperlink{rov_8h_source_l00101}{trame\+Precedente\+Deplacement}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00052}{initialiser\+Evenement\+Manette()}.
+
+
+\begin{DoxyCode}
+00209 \{
+00210     \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement} = \hyperlink{rov_8h_a5bebf7c0b48103d44a372f28cf7f8981}{DEBUT\_TRAME\_DEPLACEMENT} \textcolor{stringliteral}{";"} + QString(
+      deplacementAxeX) + \textcolor{stringliteral}{";"} + QString::number(puissance) + \textcolor{stringliteral}{";"} + QString(deplacementAxeY) + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00211     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a6e42b166c837f5103b53bb9eae35f087}{tramePrecedenteDeplacement} != \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement})
+00212     \{
+00213         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"trameDeplacement :"} << \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement};
+00214         \hyperlink{class_rov_a6e42b166c837f5103b53bb9eae35f087}{tramePrecedenteDeplacement} = \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement};
+00215         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(trameDeplacement);
+00216     \}
+00217 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a9e80eccfada890561e8af1f3426f6a2b}\label{class_rov_a9e80eccfada890561e8af1f3426f6a2b}} 
+\index{Rov@{Rov}!creer\+Trame\+Ordre@{creer\+Trame\+Ordre}}
+\index{creer\+Trame\+Ordre@{creer\+Trame\+Ordre}!Rov@{Rov}}
+\paragraph{\texorpdfstring{creer\+Trame\+Ordre}{creerTrameOrdre}}
+{\footnotesize\ttfamily void Rov\+::creer\+Trame\+Ordre (\begin{DoxyParamCaption}\item[{Q\+String}]{ordre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Crée les trames d\textquotesingle{}ordre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ordre} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00230}{230} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00097}{communication\+Rov}, \hyperlink{rov_8h_source_l00046}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+O\+R\+D\+RE}, \hyperlink{communicationrov_8cpp_source_l00060}{Communication\+Rov\+::emettre\+Trame()}, \hyperlink{rov_8h_source_l00058}{T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+G\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}, \hyperlink{rov_8h_source_l00064}{T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+C\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}, \hyperlink{rov_8h_source_l00104}{trame\+Ordre}, \hyperlink{rov_8h_source_l00105}{trame\+Pince}, et \hyperlink{rov_8h_source_l00103}{trame\+Precedente\+Pilotage}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00052}{initialiser\+Evenement\+Manette()}.
+
+
+\begin{DoxyCode}
+00231 \{
+00232     \hyperlink{class_rov_aa813010d76738e268a4bbe3773663a38}{trameOrdre} = \hyperlink{rov_8h_a8b313ffefec16809296d06146e0e75c8}{DEBUT\_TRAME\_ORDRE} \textcolor{stringliteral}{";"} + ordre + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00233     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage} == \hyperlink{rov_8h_ab218eea9b0b6d799e400a0d1ff835c13}{TRAME\_PILOTAGE\_IMMOBILE} && 
+      \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince} == \hyperlink{rov_8h_ab46e52d96e193353eadd9cd7f598f670}{TRAME\_PINCE\_IMMOBILE})
+00234     \{
+00235         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"trameOrdre :"} << \hyperlink{class_rov_aa813010d76738e268a4bbe3773663a38}{trameOrdre};
+00236         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(trameOrdre);
+00237     \}
+00238 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a97be62676ab0d57d5a8ac498147905ec}\label{class_rov_a97be62676ab0d57d5a8ac498147905ec}} 
+\index{Rov@{Rov}!creer\+Trame\+Pilotage@{creer\+Trame\+Pilotage}}
+\index{creer\+Trame\+Pilotage@{creer\+Trame\+Pilotage}!Rov@{Rov}}
+\paragraph{\texorpdfstring{creer\+Trame\+Pilotage}{creerTramePilotage}}
+{\footnotesize\ttfamily void Rov\+::creer\+Trame\+Pilotage (\begin{DoxyParamCaption}\item[{Q\+String}]{deplacement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Crée les trames de pilotage. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em deplacement} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00219}{219} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00097}{communication\+Rov}, \hyperlink{rov_8h_source_l00040}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+GE}, \hyperlink{communicationrov_8cpp_source_l00060}{Communication\+Rov\+::emettre\+Trame()}, \hyperlink{rov_8h_source_l00064}{T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+C\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}, \hyperlink{rov_8h_source_l00102}{trame\+Pilotage}, \hyperlink{rov_8h_source_l00105}{trame\+Pince}, et \hyperlink{rov_8h_source_l00103}{trame\+Precedente\+Pilotage}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00052}{initialiser\+Evenement\+Manette()}.
+
+
+\begin{DoxyCode}
+00220 \{
+00221     \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage} = \hyperlink{rov_8h_a023822fa9447e76b37e5d5c78f5c64f9}{DEBUT\_TRAME\_PILOTAGE} \textcolor{stringliteral}{";"} + deplacement + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00222     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage} != \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage} && 
+      \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince} == \hyperlink{rov_8h_ab46e52d96e193353eadd9cd7f598f670}{TRAME\_PINCE\_IMMOBILE})
+00223     \{
+00224         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"tramePilotage :"} << \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage};
+00225         \hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage} = \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage};
+00226         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(tramePilotage);
+00227     \}
+00228 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a66be7f6ff6e20da160d55e0cd0605965}\label{class_rov_a66be7f6ff6e20da160d55e0cd0605965}} 
+\index{Rov@{Rov}!creer\+Trame\+Pince@{creer\+Trame\+Pince}}
+\index{creer\+Trame\+Pince@{creer\+Trame\+Pince}!Rov@{Rov}}
+\paragraph{\texorpdfstring{creer\+Trame\+Pince}{creerTramePince}}
+{\footnotesize\ttfamily void Rov\+::creer\+Trame\+Pince (\begin{DoxyParamCaption}\item[{Q\+String}]{mouvement\+Pince }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Crée les trames de la pince. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em mouvement\+Pince} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00240}{240} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00097}{communication\+Rov}, \hyperlink{rov_8h_source_l00052}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+P\+I\+N\+CE}, \hyperlink{communicationrov_8cpp_source_l00060}{Communication\+Rov\+::emettre\+Trame()}, \hyperlink{rov_8h_source_l00058}{T\+R\+A\+M\+E\+\_\+\+P\+I\+L\+O\+T\+A\+G\+E\+\_\+\+I\+M\+M\+O\+B\+I\+LE}, \hyperlink{rov_8h_source_l00105}{trame\+Pince}, \hyperlink{rov_8h_source_l00103}{trame\+Precedente\+Pilotage}, et \hyperlink{rov_8h_source_l00106}{trame\+Precedente\+Pince}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00052}{initialiser\+Evenement\+Manette()}.
+
+
+\begin{DoxyCode}
+00241 \{
+00242     \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince} = \hyperlink{rov_8h_ab9dc0e136712ab8227078e19a43e166a}{DEBUT\_TRAME\_PINCE} \textcolor{stringliteral}{";"} + mouvementPince + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00243     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage} == \hyperlink{rov_8h_ab218eea9b0b6d799e400a0d1ff835c13}{TRAME\_PILOTAGE\_IMMOBILE} && 
+      \hyperlink{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}{tramePrecedentePince} != \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince})
+00244     \{
+00245         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"tramePince :"} << \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince};
+00246         \hyperlink{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}{tramePrecedentePince} = \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince};
+00247         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(tramePince);
+00248     \}
+00249 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_ad818ff6ee1210ae44a24106b2bbbee7d}\label{class_rov_ad818ff6ee1210ae44a24106b2bbbee7d}} 
+\index{Rov@{Rov}!decoder\+Trame@{decoder\+Trame}}
+\index{decoder\+Trame@{decoder\+Trame}!Rov@{Rov}}
+\paragraph{\texorpdfstring{decoder\+Trame}{decoderTrame}}
+{\footnotesize\ttfamily void Rov\+::decoder\+Trame (\begin{DoxyParamCaption}\item[{Q\+String}]{trame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Décode la trame réçue par le port série selon le protocole établie. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em trame} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00180}{180} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00028}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+C\+A\+P\+T\+E\+UR}, \hyperlink{rov_8h_source_l00022}{D\+E\+B\+U\+T\+\_\+\+T\+R\+A\+M\+E\+\_\+\+T\+E\+L\+E\+M\+E\+T\+R\+IE}, \hyperlink{rov_8cpp_source_l00086}{decoder\+Trame\+Capteur()}, et \hyperlink{rov_8cpp_source_l00081}{decoder\+Trame\+Telemetrie()}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00112}{initialiser\+Evenements()}.
+
+
+\begin{DoxyCode}
+00181 \{
+00182     QString trameTelemetrie, trameCapteur;
+00183 
+00184     QStringList trames = trame.split(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"});
+00185     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"trame"} << trames.size();
+00186     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < trames.size(); i++)
+00187     \{
+00188         \textcolor{keywordflow}{if}(!trames[i].isEmpty())
+00189         \{
+00190             \textcolor{keywordflow}{if}(trames[i].startsWith(\hyperlink{rov_8h_aa4d7955cdbd3d56086855ed938b980d1}{DEBUT\_TRAME\_TELEMETRIE}))
+00191             \{
+00192                 trameTelemetrie = trames[i];
+00193                 \hyperlink{class_rov_a0d51099f9e1991ceffa0b6ed4a1c4e2e}{decoderTrameTelemetrie}(trameTelemetrie);
+00194             \}
+00195             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(trames[i].startsWith(\hyperlink{rov_8h_a224f8acbc025db0e90045ce113761b0f}{DEBUT\_TRAME\_CAPTEUR}))
+00196             \{
+00197                 trameCapteur = trames[i];
+00198                 \hyperlink{class_rov_ac1780c0484f427807f6207d17b564221}{decoderTrameCapteur}(trameCapteur);
+00199             \}
+00200         \}
+00201         \textcolor{keywordflow}{else}
+00202         \{
+00203             qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Trame inconnue !"};
+00204         \}
+00205     \}
+00206 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_ac1780c0484f427807f6207d17b564221}\label{class_rov_ac1780c0484f427807f6207d17b564221}} 
+\index{Rov@{Rov}!decoder\+Trame\+Capteur@{decoder\+Trame\+Capteur}}
+\index{decoder\+Trame\+Capteur@{decoder\+Trame\+Capteur}!Rov@{Rov}}
+\paragraph{\texorpdfstring{decoder\+Trame\+Capteur()}{decoderTrameCapteur()}}
+{\footnotesize\ttfamily void Rov\+::decoder\+Trame\+Capteur (\begin{DoxyParamCaption}\item[{Q\+String}]{trame\+Capteur }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Décode la trame capteur reçue selon le protocole. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em trame\+Capteur} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00086}{86} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{campagne_8cpp_source_l00090}{Campagne\+::ajouter\+Mesure()}, \hyperlink{rov_8h_source_l00095}{capteurs}, \hyperlink{campagne_8h_source_l00023}{Mesure\+::dateheure}, \hyperlink{class_rov_a180b955cc5ee7e01196299377e0c5f33}{enregistrer\+Mesures()}, \hyperlink{ihmrov_8cpp_source_l00149}{I\+H\+M\+Rov\+::get\+Campagne()}, \hyperlink{campagne_8h_source_l00024}{Mesure\+::humidite}, \hyperlink{rov_8h_source_l00094}{ihm\+Rov}, \hyperlink{campagne_8h_source_l00026}{Mesure\+::radiation}, \hyperlink{capteurs_8cpp_source_l00029}{Capteurs\+::set\+Humidite()}, \hyperlink{capteurs_8cpp_source_l00034}{Capteurs\+::set\+Radiation()}, \hyperlink{capteurs_8cpp_source_l00024}{Capteurs\+::set\+Temperature()}, et \hyperlink{campagne_8h_source_l00025}{Mesure\+::temperature}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00180}{decoder\+Trame()}.
+
+
+\begin{DoxyCode}
+00087 \{
+00088     QString temperature, humidite, radiation;
+00089 
+00090     temperature = trameCapteur.section(\textcolor{stringliteral}{";"},1,1);
+00091     humidite = trameCapteur.section(\textcolor{stringliteral}{";"},2,2);
+00092     radiation = trameCapteur.section(\textcolor{stringliteral}{";"},3,3);
+00093 
+00094     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs}->\hyperlink{class_capteurs_a8d6a0bceb4d236edf7b51335d9be8ecd}{setTemperature}(temperature);
+00095     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs}->\hyperlink{class_capteurs_aafb06e1746006cdb72e92dc7a0519a2e}{setHumidite}(humidite);
+00096     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs}->\hyperlink{class_capteurs_a8692d145188df3129d88fef77efbb7b0}{setRadiation}(radiation);
+00097 
+00098     \hyperlink{struct_mesure}{Mesure} mesure;
+00099     mesure.\hyperlink{struct_mesure_a9958b0440aca6af40028e742123afd9e}{dateheure} = QDateTime::currentDateTime();
+00100     mesure.\hyperlink{struct_mesure_ad0dba8933e4b65b3781be7811f0f86ac}{temperature} = temperature;
+00101     mesure.\hyperlink{struct_mesure_ad354ba4d8a32c05600859c76a8af0282}{humidite} = humidite;
+00102     mesure.\hyperlink{struct_mesure_a1dae237cf09302d426ea375b9afb12f7}{radiation} = radiation;
+00103 
+00104     QDateTime date;
+00105 
+00106     \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_ab301ceaacbe1186682c2b6f3282619d0}{ajouterMesure}(mesure);
+00107 
+00108     emit \hyperlink{class_rov_a180b955cc5ee7e01196299377e0c5f33}{enregistrerMesures}(temperature, humidite, radiation);
+00109 
+00110 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a0d51099f9e1991ceffa0b6ed4a1c4e2e}\label{class_rov_a0d51099f9e1991ceffa0b6ed4a1c4e2e}} 
+\index{Rov@{Rov}!decoder\+Trame\+Telemetrie@{decoder\+Trame\+Telemetrie}}
+\index{decoder\+Trame\+Telemetrie@{decoder\+Trame\+Telemetrie}!Rov@{Rov}}
+\paragraph{\texorpdfstring{decoder\+Trame\+Telemetrie()}{decoderTrameTelemetrie()}}
+{\footnotesize\ttfamily void Rov\+::decoder\+Trame\+Telemetrie (\begin{DoxyParamCaption}\item[{Q\+String}]{trame\+Telemetrie }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Décode la trame télémetrie reçue selon le protocole. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em trame\+Telemetrie} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00081}{81} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00095}{capteurs}, et \hyperlink{capteurs_8cpp_source_l00019}{Capteurs\+::set\+Telemetrie()}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00180}{decoder\+Trame()}.
+
+
+\begin{DoxyCode}
+00082 \{
+00083     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs}->\hyperlink{class_capteurs_a399af986afb9d707138bc57a51e1f34f}{setTelemetrie}(trameTelemetrie.section(\textcolor{stringliteral}{";"},1,1));
+00084 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_ab20c6d0a73d6b20d4bef9e9236535a3d}\label{class_rov_ab20c6d0a73d6b20d4bef9e9236535a3d}} 
+\index{Rov@{Rov}!demarrer\+Campagne@{demarrer\+Campagne}}
+\index{demarrer\+Campagne@{demarrer\+Campagne}!Rov@{Rov}}
+\paragraph{\texorpdfstring{demarrer\+Campagne()}{demarrerCampagne()}}
+{\footnotesize\ttfamily bool Rov\+::demarrer\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Démarre la campagne. 
+
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00123}{123} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{camera_8h_source_l00029}{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+UT}, \hyperlink{rov_8h_source_l00110}{campagne\+En\+Cours}, \hyperlink{camera_8cpp_source_l00293}{Camera\+::creer\+Nom\+Camera()}, \hyperlink{rov_8cpp_source_l00161}{demarrer\+Video()}, \hyperlink{rov_8h_source_l00109}{duree\+Campagne}, et \hyperlink{camera_8cpp_source_l00270}{Camera\+::get\+Nb\+Cameras()}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00202}{I\+H\+M\+Rov\+::gerer\+Campagne()}.
+
+
+\begin{DoxyCode}
+00124 \{
+00125     qDebug() << Q\_FUNC\_INFO;
+00126     \textcolor{keywordflow}{if}(\hyperlink{class_camera_a116b3869ff0647c851715605a1938a3c}{Camera::getNbCameras}() > 0)
+00127     \{
+00128         \hyperlink{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}{dureeCampagne}.start();
+00129         QString nom = \hyperlink{class_camera_a506d459df95042a03894afd5b781c2aa}{Camera::creerNomCamera}(\hyperlink{camera_8h_a87f76384d33bc9bba579afd1d5f3221a}{CAMERA\_DEFAUT});
+00130         \textcolor{keywordflow}{if}(\hyperlink{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}{demarrerVideo}(nom))
+00131             \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours} = \textcolor{keyword}{true};
+00132     \}
+00133     \textcolor{keywordflow}{return} \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours};
+00134 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}\label{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}} 
+\index{Rov@{Rov}!demarrer\+Video@{demarrer\+Video}}
+\index{demarrer\+Video@{demarrer\+Video}!Rov@{Rov}}
+\paragraph{\texorpdfstring{demarrer\+Video()}{demarrerVideo()}}
+{\footnotesize\ttfamily bool Rov\+::demarrer\+Video (\begin{DoxyParamCaption}\item[{Q\+String}]{nom\+Camera,  }\item[{int}]{choix\+Resolution = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Démarre un nouveau flux vidéo. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Camera} & \\
+\hline
+{\em choix\+Resolution} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00161}{161} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00096}{camera}, \hyperlink{rov_8h_source_l00094}{ihm\+Rov}, et \hyperlink{ihmrov_8cpp_source_l00229}{I\+H\+M\+Rov\+::initialiser\+Evenements\+Camera()}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00203}{I\+H\+M\+Reglage\+Video\+::activer\+Camera()}, et \hyperlink{rov_8cpp_source_l00123}{demarrer\+Campagne()}.
+
+
+\begin{DoxyCode}
+00162 \{
+00163     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"nomCamera"} << nomCamera << \textcolor{stringliteral}{"choixResolution"} << choixResolution;
+00164     \textcolor{keywordflow}{if}(\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera} == \textcolor{keyword}{nullptr})
+00165     \{
+00166         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera} = \textcolor{keyword}{new} \hyperlink{class_camera}{Camera}(\textcolor{keyword}{this}, nomCamera, choixResolution);
+00167         connect(\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}, SIGNAL(nouvelleImage(QPixmap)), \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}, SLOT(afficherImage(QPixmap)));
+00168         \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_a955daa231d959666fa7ed01346b2b6ef}{initialiserEvenementsCamera}();
+00169         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}->start();
+00170         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00171     \}
+00172     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00173 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a53979bc347cda7cc30d18324f2146be1}\label{class_rov_a53979bc347cda7cc30d18324f2146be1}} 
+\index{Rov@{Rov}!detecter\+Manette@{detecter\+Manette}}
+\index{detecter\+Manette@{detecter\+Manette}!Rov@{Rov}}
+\paragraph{\texorpdfstring{detecter\+Manette()}{detecterManette()}}
+{\footnotesize\ttfamily void Rov\+::detecter\+Manette (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+detecte les mannettes 
+
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00029}{29} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8cpp_source_l00052}{initialiser\+Evenement\+Manette()}, \hyperlink{rov_8h_source_l00098}{liste\+Manettes}, et \hyperlink{rov_8h_source_l00099}{manettes}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00011}{Rov()}.
+
+
+\begin{DoxyCode}
+00030 \{
+00031     \hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{listeManettes} = QGamepadManager::instance()->connectedGamepads();
+00032 
+00033     \textcolor{keywordflow}{if} (\hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{listeManettes}.isEmpty())
+00034     \{
+00035         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Aucune manette détectée !"};
+00036 
+00037     \}
+00038     \textcolor{keywordflow}{else}
+00039     \{
+00040         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Nombre de manettes"} << \hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{listeManettes}.size();
+00041     \}
+00042 
+00043     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} m : \hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{listeManettes})
+00044     \{
+00045         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"-> Manette"} << m;
+00046         \hyperlink{class_manette}{Manette} *manette = \textcolor{keyword}{new} \hyperlink{class_manette}{Manette}(m);
+00047         \hyperlink{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}{manettes}.push\_back(manette);
+00048         \hyperlink{class_rov_a0d1863d7d230c0153253d7d2689429b5}{initialiserEvenementManette}(manette);
+00049     \}
+00050 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_ae868f3f3d691fcd6ecb97ee770541475}\label{class_rov_ae868f3f3d691fcd6ecb97ee770541475}} 
+\index{Rov@{Rov}!donnees\+Telemetrie\+Decode@{donnees\+Telemetrie\+Decode}}
+\index{donnees\+Telemetrie\+Decode@{donnees\+Telemetrie\+Decode}!Rov@{Rov}}
+\paragraph{\texorpdfstring{donnees\+Telemetrie\+Decode}{donneesTelemetrieDecode}}
+{\footnotesize\ttfamily void Rov\+::donnees\+Telemetrie\+Decode (\begin{DoxyParamCaption}\item[{Q\+String}]{donnes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+signal contenant les nouvelle données de télémetrie (pour l\textquotesingle{}ihm) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em donnes} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rov_a180b955cc5ee7e01196299377e0c5f33}\label{class_rov_a180b955cc5ee7e01196299377e0c5f33}} 
+\index{Rov@{Rov}!enregistrer\+Mesures@{enregistrer\+Mesures}}
+\index{enregistrer\+Mesures@{enregistrer\+Mesures}!Rov@{Rov}}
+\paragraph{\texorpdfstring{enregistrer\+Mesures}{enregistrerMesures}}
+{\footnotesize\ttfamily void Rov\+::enregistrer\+Mesures (\begin{DoxyParamCaption}\item[{Q\+String}]{temperature,  }\item[{Q\+String}]{humidite,  }\item[{Q\+String}]{radiation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+signal contenant les nouvelles mesures recus du robot (pour les enregistrer dans la B\+DD) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em temperature} & \\
+\hline
+{\em humidite} & \\
+\hline
+{\em radiation} & \\
+\hline
+\end{DoxyParams}
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00086}{decoder\+Trame\+Capteur()}.
+
+\mbox{\Hypertarget{class_rov_ac1eeb568d39018359b89384c2ee6ee86}\label{class_rov_ac1eeb568d39018359b89384c2ee6ee86}} 
+\index{Rov@{Rov}!get\+Camera@{get\+Camera}}
+\index{get\+Camera@{get\+Camera}!Rov@{Rov}}
+\paragraph{\texorpdfstring{get\+Camera()}{getCamera()}}
+{\footnotesize\ttfamily \hyperlink{class_camera}{Camera} $\ast$ Rov\+::get\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne l\textquotesingle{}objet caméra créée par le rov. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}objet caméra créée par le rov 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00144}{144} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00096}{camera}.
+
+
+
+Référencé par \hyperlink{ihmreglagevideo_8cpp_source_l00132}{I\+H\+M\+Reglage\+Video\+::charger\+Liste\+Camera\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00179}{I\+H\+M\+Reglage\+Video\+::charger\+Liste\+Resolution\+Disponible()}, \hyperlink{ihmreglagevideo_8cpp_source_l00117}{I\+H\+M\+Reglage\+Video\+::initialiser\+Evenements\+Camera()}, et \hyperlink{ihmreglagevideo_8cpp_source_l00212}{I\+H\+M\+Reglage\+Video\+::modifier\+Etat\+Boutons()}.
+
+
+\begin{DoxyCode}
+00145 \{
+00146     \textcolor{keywordflow}{return} \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera};
+00147 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}\label{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}} 
+\index{Rov@{Rov}!get\+Campagne\+Encours@{get\+Campagne\+Encours}}
+\index{get\+Campagne\+Encours@{get\+Campagne\+Encours}!Rov@{Rov}}
+\paragraph{\texorpdfstring{get\+Campagne\+Encours()}{getCampagneEncours()}}
+{\footnotesize\ttfamily bool Rov\+::get\+Campagne\+Encours (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne l\textquotesingle{}etat de la campagne. 
+
+\begin{DoxyReturn}{Renvoie}
+l\textquotesingle{}etat de campagne\+En\+Cours (indiquant si la campagne est en cours ou pas) 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00175}{175} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00110}{campagne\+En\+Cours}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00239}{I\+H\+M\+Rov\+::close\+Event()}.
+
+
+\begin{DoxyCode}
+00176 \{
+00177     \textcolor{keywordflow}{return} \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours};
+00178 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a7e231245b39e7cc8026324e337b34c64}\label{class_rov_a7e231245b39e7cc8026324e337b34c64}} 
+\index{Rov@{Rov}!get\+Capteurs@{get\+Capteurs}}
+\index{get\+Capteurs@{get\+Capteurs}!Rov@{Rov}}
+\paragraph{\texorpdfstring{get\+Capteurs()}{getCapteurs()}}
+{\footnotesize\ttfamily \hyperlink{class_capteurs}{Capteurs} $\ast$ Rov\+::get\+Capteurs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne l\textquotesingle{}objet capteurs créée par le rov. 
+
+\begin{DoxyReturn}{Renvoie}
+L\textquotesingle{}objet capteurs créée par le rov 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00149}{149} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00095}{capteurs}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00110}{I\+H\+M\+Rov\+::actualiser\+Informations()}.
+
+
+\begin{DoxyCode}
+00150 \{
+00151     \textcolor{keywordflow}{return} \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs};
+00152 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_aa977585d4377a57281004fd57208635a}\label{class_rov_aa977585d4377a57281004fd57208635a}} 
+\index{Rov@{Rov}!get\+Temps\+Campagne@{get\+Temps\+Campagne}}
+\index{get\+Temps\+Campagne@{get\+Temps\+Campagne}!Rov@{Rov}}
+\paragraph{\texorpdfstring{get\+Temps\+Campagne()}{getTempsCampagne()}}
+{\footnotesize\ttfamily Q\+String Rov\+::get\+Temps\+Campagne (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retourne la durée de la campagne. 
+
+\begin{DoxyReturn}{Renvoie}
+La durée de la campagne 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00154}{154} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00109}{duree\+Campagne}, \hyperlink{ihmrov_8cpp_source_l00149}{I\+H\+M\+Rov\+::get\+Campagne()}, \hyperlink{campagne_8cpp_source_l00044}{Campagne\+::get\+Duree()}, et \hyperlink{rov_8h_source_l00094}{ihm\+Rov}.
+
+
+
+Référencé par \hyperlink{ihmrov_8cpp_source_l00110}{I\+H\+M\+Rov\+::actualiser\+Informations()}.
+
+
+\begin{DoxyCode}
+00155 \{
+00156     QTime duree(0,0);
+00157     QTime dureeMission = duree.addMSecs(\hyperlink{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}{dureeCampagne}.elapsed() + 
+      \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_abe02a9050f4a5ea9521dd40b855c350b}{getDuree}());
+00158     \textcolor{keywordflow}{return} dureeMission.toString(\textcolor{stringliteral}{"hh:mm:ss"});
+00159 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a0d1863d7d230c0153253d7d2689429b5}\label{class_rov_a0d1863d7d230c0153253d7d2689429b5}} 
+\index{Rov@{Rov}!initialiser\+Evenement\+Manette@{initialiser\+Evenement\+Manette}}
+\index{initialiser\+Evenement\+Manette@{initialiser\+Evenement\+Manette}!Rov@{Rov}}
+\paragraph{\texorpdfstring{initialiser\+Evenement\+Manette()}{initialiserEvenementManette()}}
+{\footnotesize\ttfamily void Rov\+::initialiser\+Evenement\+Manette (\begin{DoxyParamCaption}\item[{\hyperlink{class_manette}{Manette} $\ast$}]{manette }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les evenement de la manette. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em manette} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00052}{52} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8cpp_source_l00251}{creer\+Trame\+Camera()}, \hyperlink{rov_8cpp_source_l00208}{creer\+Trame\+Deplacement()}, \hyperlink{rov_8cpp_source_l00230}{creer\+Trame\+Ordre()}, \hyperlink{rov_8cpp_source_l00219}{creer\+Trame\+Pilotage()}, \hyperlink{rov_8cpp_source_l00240}{creer\+Trame\+Pince()}, et \hyperlink{rov_8h_source_l00094}{ihm\+Rov}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00029}{detecter\+Manette()}.
+
+
+\begin{DoxyCode}
+00053 \{
+00054     connect(manette, SIGNAL(creationTrameDeplacement(\textcolor{keywordtype}{char}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_aa264d0723f6b491425ac2f85b933bab2}{creerTrameDeplacement}(\textcolor{keywordtype}{char}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char})));
+00055     connect(manette, SIGNAL(creationTramePilotage(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_a97be62676ab0d57d5a8ac498147905ec}{creerTramePilotage}(QString)));
+00056     connect(manette, SIGNAL(creationTrameOrdre(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_a9e80eccfada890561e8af1f3426f6a2b}{creerTrameOrdre}(QString)));
+00057     connect(manette, SIGNAL(creationTramePince(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_a66be7f6ff6e20da160d55e0cd0605965}{creerTramePince}(QString)));
+00058     connect(manette, SIGNAL(nouvelleTrameCamera(QString,QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_a204b1f4efe5a89f4458d84e17858e7c8}{creerTrameCamera}(QString,QString)));
+00059 
+00060     connect(manette, SIGNAL(axisLeftXChanged(\textcolor{keywordtype}{double})), manette, SLOT(changerAxeXJoystickGauche(\textcolor{keywordtype}{double})));
+00061     connect(manette, SIGNAL(axisLeftYChanged(\textcolor{keywordtype}{double})), manette, SLOT(changerAxeYJoystickGauche(\textcolor{keywordtype}{double})));
+00062     connect(manette, SIGNAL(axisRightXChanged(\textcolor{keywordtype}{double})), manette, SLOT(changerAxeXJoystickDroit(\textcolor{keywordtype}{double})));
+00063     connect(manette, SIGNAL(axisRightYChanged(\textcolor{keywordtype}{double})), manette, SLOT(changerAxeYJoystickDroit(\textcolor{keywordtype}{double})));
+00064     connect(manette, SIGNAL(buttonL1Changed(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonHautGauche(\textcolor{keywordtype}{bool})));
+00065     connect(manette, SIGNAL(buttonR1Changed(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonHautDroit(\textcolor{keywordtype}{bool})));
+00066     connect(manette, SIGNAL(buttonL2Changed(\textcolor{keywordtype}{double})), manette, SLOT(changerGachetteBasGauche(\textcolor{keywordtype}{double})));
+00067     connect(manette, SIGNAL(buttonR2Changed(\textcolor{keywordtype}{double})), manette, SLOT(changerGachetteBasDroit(\textcolor{keywordtype}{double})));
+00068     connect(manette, SIGNAL(buttonUpChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerFlecheEnAvant(\textcolor{keywordtype}{bool})));
+00069     connect(manette, SIGNAL(buttonDownChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerFlecheEnArriere(\textcolor{keywordtype}{bool})));
+00070     connect(manette, SIGNAL(buttonLeftChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerFlecheAGauche(\textcolor{keywordtype}{bool})));
+00071     connect(manette, SIGNAL(buttonRightChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerFlecheADroite(\textcolor{keywordtype}{bool})));
+00072     connect(manette, SIGNAL(buttonAChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonA(\textcolor{keywordtype}{bool})));
+00073     connect(manette, SIGNAL(buttonBChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonB(\textcolor{keywordtype}{bool})));
+00074     connect(manette, SIGNAL(buttonXChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonX(\textcolor{keywordtype}{bool})));
+00075     connect(manette, SIGNAL(buttonYChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonY(\textcolor{keywordtype}{bool})));
+00076     connect(manette, SIGNAL(buttonSelectChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonSelect(\textcolor{keywordtype}{bool})));
+00077     connect(manette, SIGNAL(buttonGuideChanged(\textcolor{keywordtype}{bool})), manette, SLOT(fermerApplication(\textcolor{keywordtype}{bool})));
+00078     connect(manette, SIGNAL(buttonR3Changed(\textcolor{keywordtype}{bool})), \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}, SLOT(capturerImage(\textcolor{keywordtype}{bool})));
+00079 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a3ba4939b5d1cbd837b9c42869e6b8114}\label{class_rov_a3ba4939b5d1cbd837b9c42869e6b8114}} 
+\index{Rov@{Rov}!initialiser\+Evenements@{initialiser\+Evenements}}
+\index{initialiser\+Evenements@{initialiser\+Evenements}!Rov@{Rov}}
+\paragraph{\texorpdfstring{initialiser\+Evenements()}{initialiserEvenements()}}
+{\footnotesize\ttfamily void Rov\+::initialiser\+Evenements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise le(s) Evenement(s) 
+
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00112}{112} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00097}{communication\+Rov}, et \hyperlink{rov_8cpp_source_l00180}{decoder\+Trame()}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00011}{Rov()}.
+
+
+\begin{DoxyCode}
+00113 \{
+00114     connect(\hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}, SIGNAL(nouvelleTrame(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_ad818ff6ee1210ae44a24106b2bbbee7d}{decoderTrame}(QString)));
+00115 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rov_a31f810925200612a6bb4728236c695ed}\label{class_rov_a31f810925200612a6bb4728236c695ed}} 
+\index{Rov@{Rov}!supprimer\+Manette@{supprimer\+Manette}}
+\index{supprimer\+Manette@{supprimer\+Manette}!Rov@{Rov}}
+\paragraph{\texorpdfstring{supprimer\+Manette()}{supprimerManette()}}
+{\footnotesize\ttfamily void Rov\+::supprimer\+Manette (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Supprime les manettes du conteneur des manettes. 
+
+
+
+Définition à la ligne \hyperlink{rov_8cpp_source_l00117}{117} du fichier \hyperlink{rov_8cpp_source}{rov.\+cpp}.
+
+
+
+Références \hyperlink{rov_8h_source_l00099}{manettes}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00022}{$\sim$\+Rov()}.
+
+
+\begin{DoxyCode}
+00118 \{
+00119     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\hyperlink{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}{manettes}.size();i++)
+00120         \textcolor{keyword}{delete} \hyperlink{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}{manettes}[i];
+00121 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_rov_ad0461ecece812497ee9b4a962f168c18}\label{class_rov_ad0461ecece812497ee9b4a962f168c18}} 
+\index{Rov@{Rov}!camera@{camera}}
+\index{camera@{camera}!Rov@{Rov}}
+\paragraph{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily \hyperlink{class_camera}{Camera}$\ast$ Rov\+::camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet camera possedant les informations nécessaire à l\textquotesingle{}affichage du flux vidéo. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00096}{96} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00263}{arreter\+Video()}, \hyperlink{rov_8cpp_source_l00161}{demarrer\+Video()}, et \hyperlink{rov_8cpp_source_l00144}{get\+Camera()}.
+
+\mbox{\Hypertarget{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}\label{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}} 
+\index{Rov@{Rov}!campagne\+En\+Cours@{campagne\+En\+Cours}}
+\index{campagne\+En\+Cours@{campagne\+En\+Cours}!Rov@{Rov}}
+\paragraph{\texorpdfstring{campagne\+En\+Cours}{campagneEnCours}}
+{\footnotesize\ttfamily bool Rov\+::campagne\+En\+Cours\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Etat de si une campagne est en cour. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00110}{110} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00136}{arreter\+Campagne()}, \hyperlink{rov_8cpp_source_l00123}{demarrer\+Campagne()}, et \hyperlink{rov_8cpp_source_l00175}{get\+Campagne\+Encours()}.
+
+\mbox{\Hypertarget{class_rov_a1b34d63d505da660be27b75ad93754c3}\label{class_rov_a1b34d63d505da660be27b75ad93754c3}} 
+\index{Rov@{Rov}!capteurs@{capteurs}}
+\index{capteurs@{capteurs}!Rov@{Rov}}
+\paragraph{\texorpdfstring{capteurs}{capteurs}}
+{\footnotesize\ttfamily \hyperlink{class_capteurs}{Capteurs}$\ast$ Rov\+::capteurs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet contenant les dernières informations issues des capteurs du rov. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00095}{95} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00086}{decoder\+Trame\+Capteur()}, \hyperlink{rov_8cpp_source_l00081}{decoder\+Trame\+Telemetrie()}, \hyperlink{rov_8cpp_source_l00149}{get\+Capteurs()}, et \hyperlink{rov_8cpp_source_l00011}{Rov()}.
+
+\mbox{\Hypertarget{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}\label{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}} 
+\index{Rov@{Rov}!communication\+Rov@{communication\+Rov}}
+\index{communication\+Rov@{communication\+Rov}!Rov@{Rov}}
+\paragraph{\texorpdfstring{communication\+Rov}{communicationRov}}
+{\footnotesize\ttfamily \hyperlink{class_communication_rov}{Communication\+Rov}$\ast$ Rov\+::communication\+Rov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet permettant la récupération des trames envoyé par la liaison série. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00097}{97} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00251}{creer\+Trame\+Camera()}, \hyperlink{rov_8cpp_source_l00208}{creer\+Trame\+Deplacement()}, \hyperlink{rov_8cpp_source_l00230}{creer\+Trame\+Ordre()}, \hyperlink{rov_8cpp_source_l00219}{creer\+Trame\+Pilotage()}, \hyperlink{rov_8cpp_source_l00240}{creer\+Trame\+Pince()}, \hyperlink{rov_8cpp_source_l00112}{initialiser\+Evenements()}, et \hyperlink{rov_8cpp_source_l00011}{Rov()}.
+
+\mbox{\Hypertarget{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}\label{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}} 
+\index{Rov@{Rov}!duree\+Campagne@{duree\+Campagne}}
+\index{duree\+Campagne@{duree\+Campagne}!Rov@{Rov}}
+\paragraph{\texorpdfstring{duree\+Campagne}{dureeCampagne}}
+{\footnotesize\ttfamily Q\+Time Rov\+::duree\+Campagne\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Timer lancer au début de la campagne. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00109}{109} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00136}{arreter\+Campagne()}, \hyperlink{rov_8cpp_source_l00123}{demarrer\+Campagne()}, et \hyperlink{rov_8cpp_source_l00154}{get\+Temps\+Campagne()}.
+
+\mbox{\Hypertarget{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}\label{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}} 
+\index{Rov@{Rov}!ihm\+Rov@{ihm\+Rov}}
+\index{ihm\+Rov@{ihm\+Rov}!Rov@{Rov}}
+\paragraph{\texorpdfstring{ihm\+Rov}{ihmRov}}
+{\footnotesize\ttfamily \hyperlink{class_i_h_m_rov}{I\+H\+M\+Rov}$\ast$ Rov\+::ihm\+Rov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Instance d\textquotesingle{}un objet ihm\+Rov permettant la connexion entre les autre classe associé aux rov et l\textquotesingle{}ihm. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00094}{94} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00136}{arreter\+Campagne()}, \hyperlink{rov_8cpp_source_l00263}{arreter\+Video()}, \hyperlink{rov_8cpp_source_l00086}{decoder\+Trame\+Capteur()}, \hyperlink{rov_8cpp_source_l00161}{demarrer\+Video()}, \hyperlink{rov_8cpp_source_l00154}{get\+Temps\+Campagne()}, et \hyperlink{rov_8cpp_source_l00052}{initialiser\+Evenement\+Manette()}.
+
+\mbox{\Hypertarget{class_rov_ac3bf6c7552073bd2d780e005205919a9}\label{class_rov_ac3bf6c7552073bd2d780e005205919a9}} 
+\index{Rov@{Rov}!liste\+Manettes@{liste\+Manettes}}
+\index{liste\+Manettes@{liste\+Manettes}!Rov@{Rov}}
+\paragraph{\texorpdfstring{liste\+Manettes}{listeManettes}}
+{\footnotesize\ttfamily Q\+List$<$int$>$ Rov\+::liste\+Manettes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste des mannettes connecté 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00098}{98} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00029}{detecter\+Manette()}.
+
+\mbox{\Hypertarget{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}\label{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}} 
+\index{Rov@{Rov}!manettes@{manettes}}
+\index{manettes@{manettes}!Rov@{Rov}}
+\paragraph{\texorpdfstring{manettes}{manettes}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{class_manette}{Manette}$\ast$$>$ Rov\+::manettes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Conteneur des manettes. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00099}{99} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00029}{detecter\+Manette()}, et \hyperlink{rov_8cpp_source_l00117}{supprimer\+Manette()}.
+
+\mbox{\Hypertarget{class_rov_ad30a06154c31cdb02eb28a0c7197731f}\label{class_rov_ad30a06154c31cdb02eb28a0c7197731f}} 
+\index{Rov@{Rov}!trame\+Deplacement@{trame\+Deplacement}}
+\index{trame\+Deplacement@{trame\+Deplacement}!Rov@{Rov}}
+\paragraph{\texorpdfstring{trame\+Deplacement}{trameDeplacement}}
+{\footnotesize\ttfamily Q\+String Rov\+::trame\+Deplacement\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contenu trame déplacement. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00100}{100} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00208}{creer\+Trame\+Deplacement()}.
+
+\mbox{\Hypertarget{class_rov_aa813010d76738e268a4bbe3773663a38}\label{class_rov_aa813010d76738e268a4bbe3773663a38}} 
+\index{Rov@{Rov}!trame\+Ordre@{trame\+Ordre}}
+\index{trame\+Ordre@{trame\+Ordre}!Rov@{Rov}}
+\paragraph{\texorpdfstring{trame\+Ordre}{trameOrdre}}
+{\footnotesize\ttfamily Q\+String Rov\+::trame\+Ordre\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contenu trame ordre. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00104}{104} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00230}{creer\+Trame\+Ordre()}.
+
+\mbox{\Hypertarget{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}\label{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}} 
+\index{Rov@{Rov}!trame\+Pilotage@{trame\+Pilotage}}
+\index{trame\+Pilotage@{trame\+Pilotage}!Rov@{Rov}}
+\paragraph{\texorpdfstring{trame\+Pilotage}{tramePilotage}}
+{\footnotesize\ttfamily Q\+String Rov\+::trame\+Pilotage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contenu trame pilotage. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00102}{102} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00219}{creer\+Trame\+Pilotage()}.
+
+\mbox{\Hypertarget{class_rov_a2c24d7c884d8fae07e452105037f8e2c}\label{class_rov_a2c24d7c884d8fae07e452105037f8e2c}} 
+\index{Rov@{Rov}!trame\+Pince@{trame\+Pince}}
+\index{trame\+Pince@{trame\+Pince}!Rov@{Rov}}
+\paragraph{\texorpdfstring{trame\+Pince}{tramePince}}
+{\footnotesize\ttfamily Q\+String Rov\+::trame\+Pince\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contenu trame pince. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00105}{105} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00230}{creer\+Trame\+Ordre()}, \hyperlink{rov_8cpp_source_l00219}{creer\+Trame\+Pilotage()}, et \hyperlink{rov_8cpp_source_l00240}{creer\+Trame\+Pince()}.
+
+\mbox{\Hypertarget{class_rov_a30595a8bd60324832b6a6eb5b542d211}\label{class_rov_a30595a8bd60324832b6a6eb5b542d211}} 
+\index{Rov@{Rov}!trame\+Pince\+Immobile@{trame\+Pince\+Immobile}}
+\index{trame\+Pince\+Immobile@{trame\+Pince\+Immobile}!Rov@{Rov}}
+\paragraph{\texorpdfstring{trame\+Pince\+Immobile}{tramePinceImmobile}}
+{\footnotesize\ttfamily Q\+String Rov\+::trame\+Pince\+Immobile\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contenu trame pince à zéro. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00108}{108} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+\mbox{\Hypertarget{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}\label{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}} 
+\index{Rov@{Rov}!trame\+Precedente\+Camera@{trame\+Precedente\+Camera}}
+\index{trame\+Precedente\+Camera@{trame\+Precedente\+Camera}!Rov@{Rov}}
+\paragraph{\texorpdfstring{trame\+Precedente\+Camera}{tramePrecedenteCamera}}
+{\footnotesize\ttfamily Q\+String Rov\+::trame\+Precedente\+Camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contenu précédente trame caméra. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00107}{107} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00251}{creer\+Trame\+Camera()}.
+
+\mbox{\Hypertarget{class_rov_a6e42b166c837f5103b53bb9eae35f087}\label{class_rov_a6e42b166c837f5103b53bb9eae35f087}} 
+\index{Rov@{Rov}!trame\+Precedente\+Deplacement@{trame\+Precedente\+Deplacement}}
+\index{trame\+Precedente\+Deplacement@{trame\+Precedente\+Deplacement}!Rov@{Rov}}
+\paragraph{\texorpdfstring{trame\+Precedente\+Deplacement}{tramePrecedenteDeplacement}}
+{\footnotesize\ttfamily Q\+String Rov\+::trame\+Precedente\+Deplacement\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contenu précédente trame déplacement. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00101}{101} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00208}{creer\+Trame\+Deplacement()}.
+
+\mbox{\Hypertarget{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}\label{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}} 
+\index{Rov@{Rov}!trame\+Precedente\+Pilotage@{trame\+Precedente\+Pilotage}}
+\index{trame\+Precedente\+Pilotage@{trame\+Precedente\+Pilotage}!Rov@{Rov}}
+\paragraph{\texorpdfstring{trame\+Precedente\+Pilotage}{tramePrecedentePilotage}}
+{\footnotesize\ttfamily Q\+String Rov\+::trame\+Precedente\+Pilotage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contenu précédente trame pilotage. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00103}{103} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00230}{creer\+Trame\+Ordre()}, \hyperlink{rov_8cpp_source_l00219}{creer\+Trame\+Pilotage()}, et \hyperlink{rov_8cpp_source_l00240}{creer\+Trame\+Pince()}.
+
+\mbox{\Hypertarget{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}\label{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}} 
+\index{Rov@{Rov}!trame\+Precedente\+Pince@{trame\+Precedente\+Pince}}
+\index{trame\+Precedente\+Pince@{trame\+Precedente\+Pince}!Rov@{Rov}}
+\paragraph{\texorpdfstring{trame\+Precedente\+Pince}{tramePrecedentePince}}
+{\footnotesize\ttfamily Q\+String Rov\+::trame\+Precedente\+Pince\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contenu précédente trame pince. 
+
+
+
+Définition à la ligne \hyperlink{rov_8h_source_l00106}{106} du fichier \hyperlink{rov_8h_source}{rov.\+h}.
+
+
+
+Référencé par \hyperlink{rov_8cpp_source_l00240}{creer\+Trame\+Pince()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{rov_8h}{rov.\+h}\item 
+\hyperlink{rov_8cpp}{rov.\+cpp}\end{DoxyCompactItemize}

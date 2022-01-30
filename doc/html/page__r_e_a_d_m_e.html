@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ROV&#39;NET: README</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="customdoxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="icone_robot.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">ROV&#39;NET
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">BTS SNIR LaSalle Avignon 2020</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('page__r_e_a_d_m_e.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">README </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Table des matières</h3>
+<ul><li class="level1"><a href="#projet">Projet</a><ul><li class="level2"><a href="#presentation">Présentation</a></li>
+<li class="level2"><a href="#bdd">Base de données SQLite</a></li>
+<li class="level2"><a href="#recette">Recette</a></li>
+<li class="level2"><a href="#informations">Informations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="projet"></a>
+Projet</h1>
+<h2><a class="anchor" id="presentation"></a>
+Présentation</h2>
+<p>Les objectifs du projet ROV'NET sont de se déplacer dans un milieu contaminé afin de faire des prises de vues :</p>
+<ul>
+<li>Le déplacement se fera à partir d'un châssis en liaison filaire​ à 4 roues motorisées indépendamment.</li>
+<li>Le ROV sera équipé :<ul>
+<li>d'une caméra d'aide au déplacements et/ou de capteurs d'obstacles</li>
+<li>d'un capteur de température et de radioactivité</li>
+<li>d'un dispositif de prise de vue motorisé</li>
+<li>d'un bras de robotique avec pince de préhension</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="bdd"></a>
+Base de données SQLite</h2>
+<div class="image">
+<img src="campagnes-v1.1.png" alt="campagnes-v1.1.png"/>
+</div>
+<div class="fragment"><div class="line">PRAGMA foreign_keys = ON;</div><div class="line"></div><div class="line">--</div><div class="line">-- Structure de la table `campagne`</div><div class="line">--</div><div class="line"></div><div class="line">CREATE TABLE IF NOT EXISTS `campagne` (</div><div class="line">    `IdCampagne`    INTEGER PRIMARY KEY AUTOINCREMENT,</div><div class="line">    `IdTechnicien`  INTEGER NOT NULL,</div><div class="line">    `nom`   TEXT NOT NULL UNIQUE,</div><div class="line">    `lieu`  TEXT NOT NULL,</div><div class="line">    `cheminSauvegarde`  TEXT NOT NULL,</div><div class="line">    `date`  DATETIME NOT NULL,</div><div class="line">    `duree` INTEGER NOT NULL,</div><div class="line">    `enCours` NUMERIC NOT NULL,</div><div class="line">    UNIQUE(`IdCampagne`, `IdTechnicien`),</div><div class="line">    FOREIGN KEY(IdTechnicien) REFERENCES technicien(IdTechnicien)</div><div class="line">);</div><div class="line"></div><div class="line">--</div><div class="line">-- Structure de la table `mesure`</div><div class="line">--</div><div class="line"></div><div class="line">CREATE TABLE IF NOT EXISTS `mesure` (</div><div class="line">    `IdMesure`  INTEGER PRIMARY KEY AUTOINCREMENT,</div><div class="line">    `IdCampagne`    INTEGER NOT NULL,</div><div class="line">    `heure` DATETIME NOT NULL,</div><div class="line">    `temperature`   REAL NOT NULL,</div><div class="line">    `radiation` REAL NOT NULL,</div><div class="line">    `humidite`  REAL NOT NULL,  </div><div class="line">    UNIQUE(`IdMesure`, `IdCampagne`),</div><div class="line">    FOREIGN KEY(IdCampagne) REFERENCES campagne(IdCampagne)</div><div class="line">);</div><div class="line"></div><div class="line">--</div><div class="line">-- Structure de la table `photo`</div><div class="line">--</div><div class="line"></div><div class="line">CREATE TABLE IF NOT EXISTS `photo` (</div><div class="line">    `IdPhoto`   INTEGER PRIMARY KEY AUTOINCREMENT,</div><div class="line">    `IdCampagne`    INTEGER NOT NULL,</div><div class="line">    `cheminImage`   TEXT NOT NULL,</div><div class="line">    `aGarder`   NUMERIC NOT NULL,</div><div class="line">    UNIQUE(`IdPhoto`, `IdCampagne`),</div><div class="line">    FOREIGN KEY(IdCampagne) REFERENCES campagne(IdCampagne) </div><div class="line">);</div><div class="line"></div><div class="line">--</div><div class="line">-- Structure de la table `technicien`</div><div class="line">--</div><div class="line"></div><div class="line">CREATE TABLE IF NOT EXISTS `technicien` (</div><div class="line">    `IdTechnicien`  INTEGER PRIMARY KEY AUTOINCREMENT,</div><div class="line">    `nom`   TEXT NOT NULL,</div><div class="line">    `prenom`    TEXT NOT NULL</div><div class="line">);</div></div><!-- fragment --><h2><a class="anchor" id="recette"></a>
+Recette</h2>
+<ul>
+<li>Servan Tenaille<ul>
+<li>Prendre en charge une manette par le logiciel</li>
+<li>Recevoir et Visualiser les mesures des capteurs de température et d'irradiation</li>
+<li>Déplacer le robot</li>
+<li>Piloter le bras articulé</li>
+<li>Envoyer les ordres de déplacement au robot et au bras</li>
+<li>Archiver les mesures</li>
+</ul>
+</li>
+<li>Anthony Bonnet<ul>
+<li>Démarrer une campagne</li>
+<li>Visualiser l'environnement (le flux vidéo de la caméra et les données de télémétrie)</li>
+<li>Recevoir les données de télémétrie</li>
+<li>Prendre une photo</li>
+<li>Configurer le contrôle de la caméra</li>
+<li>Archiver les photos</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="informations"></a>
+Informations</h2>
+<dl class="section author"><dt>Auteur</dt><dd>Servan Tenaille &lt;<a href="#" onclick="location.href='mai'+'lto:'+'ser'+'va'+'n.t'+'en'+'ail'+'le'+'@gm'+'ai'+'l.c'+'om'; return false;">serva<span style="display: none;">.nosp@m.</span>n.te<span style="display: none;">.nosp@m.</span>naill<span style="display: none;">.nosp@m.</span>e@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>&gt; </dd>
+<dd>
+Anthony Bonnet &lt;<a href="#" onclick="location.href='mai'+'lto:'+'bon'+'ne'+'t.a'+'nt'+'hon'+'y0'+'@gm'+'ai'+'l.c'+'om'; return false;">bonne<span style="display: none;">.nosp@m.</span>t.an<span style="display: none;">.nosp@m.</span>thony<span style="display: none;">.nosp@m.</span>0@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>&gt; </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2020 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.2 </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://svn.riouxsvn.com/rovnet/">https://svn.riouxsvn.com/rovnet/</a> </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+<!--Généré le Mardi 7 Avril 2020 19:56:09 pour ROV&#39;NET par &#160;<a href="http://www.doxygen.org/index.html">-->
+<img class="footer" src="lasalle-logo.png" alt="La Salle Avignon"/>
+<b>Campus La Salle Avignon</b> - 9 Rue Notre Dame des 7 douleurs - BP 50165 - 84008 Avignon
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

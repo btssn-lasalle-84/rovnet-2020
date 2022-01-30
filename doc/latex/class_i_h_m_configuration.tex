@@ -1,0 +1,375 @@
+\hypertarget{class_i_h_m_configuration}{}\subsection{Référence de la classe I\+H\+M\+Configuration}
+\label{class_i_h_m_configuration}\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+
+
+Class permettant de configurer la communication avec le rov.  
+
+
+
+
+{\ttfamily \#include \char`\"{}ihmconfiguration.\+h\char`\"{}}
+
+
+
+Graphe de collaboration de I\+H\+M\+Configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_i_h_m_configuration__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_h_m_configuration_a1532c281d170546071352cfe05feb1b8}{I\+H\+M\+Configuration} (\hyperlink{class_rov}{Rov} $\ast$\hyperlink{class_i_h_m_configuration_a75a7e5b7312d9eb3377bc96372fc0b3a}{rov}, \hyperlink{class_q_widget}{Q\+Widget} $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_i_h_m_configuration}{I\+H\+M\+Configuration}. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_configuration_a59e2b693b4a1f1a8a6af3227996c3808}{$\sim$\+I\+H\+M\+Configuration} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_i_h_m_configuration}{I\+H\+M\+Configuration}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_configuration_a9ed73ca9584b8d9f33ad341081113a55}{configurer\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Configure l\textquotesingle{}état des widgets à la création de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_configuration_ab76abe78fff3b7945b675acddbd320f0}{initialiser\+Layouts} ()
+\begin{DoxyCompactList}\small\item\em Initialise les layouts de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_configuration_a76fe56bbd88aef5581186e05fb4ae67f}{initialiser\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Initialise les widgets de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}{bouton\+Fermer\+Port}
+\begin{DoxyCompactList}\small\item\em Bouton permettant de fermer le port sélectionné \end{DoxyCompactList}\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_i_h_m_configuration_a824b7f6c0d332b8f6f76801e545b14ad}{bouton\+Ouvrir\+Port}
+\begin{DoxyCompactList}\small\item\em Bouton permettant d\textquotesingle{}ouvrir le port sélectionné \end{DoxyCompactList}\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{liste\+Bits\+Donnees}
+\begin{DoxyCompactList}\small\item\em Liste permettant de configurer le nombre de bits de données de la communication. \end{DoxyCompactList}\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{liste\+Bits\+Stop}
+\begin{DoxyCompactList}\small\item\em Liste permettant de configurer le nombre de bits de stop de la communication. \end{DoxyCompactList}\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{liste\+Debit}
+\begin{DoxyCompactList}\small\item\em Liste permettant de configurer le debit de la communication. \end{DoxyCompactList}\item 
+Q\+Combo\+Box $\ast$ \hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{liste\+Ports\+Disponibles}
+\begin{DoxyCompactList}\small\item\em Liste des ports détéctés. \end{DoxyCompactList}\item 
+\hyperlink{class_rov}{Rov} $\ast$ \hyperlink{class_i_h_m_configuration_a75a7e5b7312d9eb3377bc96372fc0b3a}{rov}
+\begin{DoxyCompactList}\small\item\em Objet rov permettant de mofidier les reglage de la communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Class permettant de configurer la communication avec le rov. 
+
+Définition à la ligne \hyperlink{ihmconfiguration_8h_source_l00020}{20} du fichier \hyperlink{ihmconfiguration_8h_source}{ihmconfiguration.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_i_h_m_configuration_a1532c281d170546071352cfe05feb1b8}\label{class_i_h_m_configuration_a1532c281d170546071352cfe05feb1b8}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{I\+H\+M\+Configuration()}{IHMConfiguration()}}
+{\footnotesize\ttfamily I\+H\+M\+Configuration\+::\+I\+H\+M\+Configuration (\begin{DoxyParamCaption}\item[{\hyperlink{class_rov}{Rov} $\ast$}]{rov,  }\item[{\hyperlink{class_q_widget}{Q\+Widget} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_i_h_m_configuration}{I\+H\+M\+Configuration}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em rov} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8cpp_source_l00009}{9} du fichier \hyperlink{ihmconfiguration_8cpp_source}{ihmconfiguration.\+cpp}.
+
+
+
+Références \hyperlink{ihmconfiguration_8cpp_source_l00033}{configurer\+Widgets()}, \hyperlink{ihmconfiguration_8cpp_source_l00051}{initialiser\+Layouts()}, et \hyperlink{ihmconfiguration_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+
+\begin{DoxyCode}
+00009                                                             : \hyperlink{class_q_widget}{QWidget}(parent), 
+      \hyperlink{class_i_h_m_configuration_a75a7e5b7312d9eb3377bc96372fc0b3a}{rov}(rov)
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO;
+00012 
+00013     \hyperlink{class_i_h_m_configuration_a76fe56bbd88aef5581186e05fb4ae67f}{initialiserWidgets}();
+00014     \hyperlink{class_i_h_m_configuration_a9ed73ca9584b8d9f33ad341081113a55}{configurerWidgets}();
+00015     \hyperlink{class_i_h_m_configuration_ab76abe78fff3b7945b675acddbd320f0}{initialiserLayouts}();
+00016 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_configuration_a59e2b693b4a1f1a8a6af3227996c3808}\label{class_i_h_m_configuration_a59e2b693b4a1f1a8a6af3227996c3808}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!````~I\+H\+M\+Configuration@{$\sim$\+I\+H\+M\+Configuration}}
+\index{````~I\+H\+M\+Configuration@{$\sim$\+I\+H\+M\+Configuration}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{$\sim$\+I\+H\+M\+Configuration()}{~IHMConfiguration()}}
+{\footnotesize\ttfamily I\+H\+M\+Configuration\+::$\sim$\+I\+H\+M\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \hyperlink{class_i_h_m_configuration}{I\+H\+M\+Configuration}. 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8cpp_source_l00018}{18} du fichier \hyperlink{ihmconfiguration_8cpp_source}{ihmconfiguration.\+cpp}.
+
+
+\begin{DoxyCode}
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO;
+00021 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_i_h_m_configuration_a9ed73ca9584b8d9f33ad341081113a55}\label{class_i_h_m_configuration_a9ed73ca9584b8d9f33ad341081113a55}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!configurer\+Widgets@{configurer\+Widgets}}
+\index{configurer\+Widgets@{configurer\+Widgets}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{configurer\+Widgets()}{configurerWidgets()}}
+{\footnotesize\ttfamily void I\+H\+M\+Configuration\+::configurer\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Configure l\textquotesingle{}état des widgets à la création de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8cpp_source_l00033}{33} du fichier \hyperlink{ihmconfiguration_8cpp_source}{ihmconfiguration.\+cpp}.
+
+
+
+Références \hyperlink{ihmconfiguration_8h_source_l00030}{bouton\+Fermer\+Port}, \hyperlink{communicationrov_8cpp_source_l00090}{Communication\+Rov\+::detecter\+Ports\+Disponibles()}, \hyperlink{ihmconfiguration_8h_source_l00027}{liste\+Bits\+Donnees}, \hyperlink{ihmconfiguration_8h_source_l00028}{liste\+Bits\+Stop}, \hyperlink{ihmconfiguration_8h_source_l00026}{liste\+Debit}, et \hyperlink{ihmconfiguration_8h_source_l00025}{liste\+Ports\+Disponibles}.
+
+
+
+Référencé par \hyperlink{ihmconfiguration_8cpp_source_l00009}{I\+H\+M\+Configuration()}.
+
+
+\begin{DoxyCode}
+00034 \{
+00035     \hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles}->addItems(
+      \hyperlink{class_communication_rov_ad9882c08083c66cd89b472b9244727e9}{CommunicationRov::detecterPortsDisponibles}());
+00036     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles}->currentText() == \textcolor{stringliteral}{""})
+00037         \hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles}->addItem(\textcolor{stringliteral}{"Aucun ports détécté"});
+00038     \hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{listeDebit}->addItem(\textcolor{stringliteral}{"9600"});
+00039     \hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{listeDebit}->addItem(\textcolor{stringliteral}{"115200"});
+00040 
+00041     \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees}->addItem(\textcolor{stringliteral}{"7"});
+00042     \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees}->addItem(\textcolor{stringliteral}{"8"});
+00043     \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees}->setCurrentIndex(1);
+00044 
+00045     \hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{listeBitsStop}->addItem(\textcolor{stringliteral}{"1"});
+00046     \hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{listeBitsStop}->addItem(\textcolor{stringliteral}{"2"});
+00047 
+00048     \hyperlink{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}{boutonFermerPort}->setDisabled(\textcolor{keyword}{true});
+00049 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_configuration_ab76abe78fff3b7945b675acddbd320f0}\label{class_i_h_m_configuration_ab76abe78fff3b7945b675acddbd320f0}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!initialiser\+Layouts@{initialiser\+Layouts}}
+\index{initialiser\+Layouts@{initialiser\+Layouts}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{initialiser\+Layouts()}{initialiserLayouts()}}
+{\footnotesize\ttfamily void I\+H\+M\+Configuration\+::initialiser\+Layouts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les layouts de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8cpp_source_l00051}{51} du fichier \hyperlink{ihmconfiguration_8cpp_source}{ihmconfiguration.\+cpp}.
+
+
+
+Références \hyperlink{ihmconfiguration_8h_source_l00030}{bouton\+Fermer\+Port}, \hyperlink{ihmconfiguration_8h_source_l00029}{bouton\+Ouvrir\+Port}, \hyperlink{ihmconfiguration_8h_source_l00027}{liste\+Bits\+Donnees}, \hyperlink{ihmconfiguration_8h_source_l00028}{liste\+Bits\+Stop}, \hyperlink{ihmconfiguration_8h_source_l00026}{liste\+Debit}, et \hyperlink{ihmconfiguration_8h_source_l00025}{liste\+Ports\+Disponibles}.
+
+
+
+Référencé par \hyperlink{ihmconfiguration_8cpp_source_l00009}{I\+H\+M\+Configuration()}.
+
+
+\begin{DoxyCode}
+00052 \{
+00053     QVBoxLayout *layoutPrincipal = \textcolor{keyword}{new} QVBoxLayout;
+00054     QHBoxLayout *layoutInformation = \textcolor{keyword}{new} QHBoxLayout;
+00055     QFormLayout *layoutConfiguration = \textcolor{keyword}{new} QFormLayout;
+00056     QVBoxLayout *layoutCommande = \textcolor{keyword}{new} QVBoxLayout;
+00057 
+00058     layoutCommande->setAlignment(Qt::AlignTop);
+00059 
+00060     layoutPrincipal->addLayout(layoutInformation);
+00061     layoutInformation->addLayout(layoutConfiguration);
+00062     layoutInformation->addLayout(layoutCommande);
+00063     layoutConfiguration->addRow(\textcolor{stringliteral}{"Port:"}, \hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles});
+00064     layoutConfiguration->addRow(\textcolor{stringliteral}{"Débit:"}, \hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{listeDebit});
+00065     layoutConfiguration->addRow(\textcolor{stringliteral}{"Bits de données:"}, \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees});
+00066     layoutConfiguration->addRow(\textcolor{stringliteral}{"Bits de stop:"}, \hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{listeBitsStop});
+00067     layoutCommande->addWidget(\hyperlink{class_i_h_m_configuration_a824b7f6c0d332b8f6f76801e545b14ad}{boutonOuvrirPort});
+00068     layoutCommande->addWidget(\hyperlink{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}{boutonFermerPort});
+00069 
+00070     setLayout(layoutPrincipal);
+00071 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_configuration_a76fe56bbd88aef5581186e05fb4ae67f}\label{class_i_h_m_configuration_a76fe56bbd88aef5581186e05fb4ae67f}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!initialiser\+Widgets@{initialiser\+Widgets}}
+\index{initialiser\+Widgets@{initialiser\+Widgets}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{initialiser\+Widgets()}{initialiserWidgets()}}
+{\footnotesize\ttfamily void I\+H\+M\+Configuration\+::initialiser\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les widgets de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8cpp_source_l00023}{23} du fichier \hyperlink{ihmconfiguration_8cpp_source}{ihmconfiguration.\+cpp}.
+
+
+
+Références \hyperlink{ihmconfiguration_8h_source_l00030}{bouton\+Fermer\+Port}, \hyperlink{ihmconfiguration_8h_source_l00029}{bouton\+Ouvrir\+Port}, \hyperlink{ihmconfiguration_8h_source_l00027}{liste\+Bits\+Donnees}, \hyperlink{ihmconfiguration_8h_source_l00028}{liste\+Bits\+Stop}, \hyperlink{ihmconfiguration_8h_source_l00026}{liste\+Debit}, et \hyperlink{ihmconfiguration_8h_source_l00025}{liste\+Ports\+Disponibles}.
+
+
+
+Référencé par \hyperlink{ihmconfiguration_8cpp_source_l00009}{I\+H\+M\+Configuration()}.
+
+
+\begin{DoxyCode}
+00024 \{
+00025     \hyperlink{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}{listePortsDisponibles} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00026     \hyperlink{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}{listeDebit} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00027     \hyperlink{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}{listeBitsDonnees} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00028     \hyperlink{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}{listeBitsStop} = \textcolor{keyword}{new} QComboBox(\textcolor{keyword}{this});
+00029     \hyperlink{class_i_h_m_configuration_a824b7f6c0d332b8f6f76801e545b14ad}{boutonOuvrirPort} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Ouvrir"}, \textcolor{keyword}{this});
+00030     \hyperlink{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}{boutonFermerPort} = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Fermer"}, \textcolor{keyword}{this});
+00031 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}\label{class_i_h_m_configuration_a25c0b3c51a8d162ae3439a56ec644909}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!bouton\+Fermer\+Port@{bouton\+Fermer\+Port}}
+\index{bouton\+Fermer\+Port@{bouton\+Fermer\+Port}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{bouton\+Fermer\+Port}{boutonFermerPort}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Configuration\+::bouton\+Fermer\+Port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant de fermer le port sélectionné 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8h_source_l00030}{30} du fichier \hyperlink{ihmconfiguration_8h_source}{ihmconfiguration.\+h}.
+
+
+
+Référencé par \hyperlink{ihmconfiguration_8cpp_source_l00033}{configurer\+Widgets()}, \hyperlink{ihmconfiguration_8cpp_source_l00051}{initialiser\+Layouts()}, et \hyperlink{ihmconfiguration_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_configuration_a824b7f6c0d332b8f6f76801e545b14ad}\label{class_i_h_m_configuration_a824b7f6c0d332b8f6f76801e545b14ad}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!bouton\+Ouvrir\+Port@{bouton\+Ouvrir\+Port}}
+\index{bouton\+Ouvrir\+Port@{bouton\+Ouvrir\+Port}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{bouton\+Ouvrir\+Port}{boutonOuvrirPort}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ I\+H\+M\+Configuration\+::bouton\+Ouvrir\+Port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton permettant d\textquotesingle{}ouvrir le port sélectionné 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8h_source_l00029}{29} du fichier \hyperlink{ihmconfiguration_8h_source}{ihmconfiguration.\+h}.
+
+
+
+Référencé par \hyperlink{ihmconfiguration_8cpp_source_l00051}{initialiser\+Layouts()}, et \hyperlink{ihmconfiguration_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}\label{class_i_h_m_configuration_a83c61d075d53758bd753aada9a0bb452}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!liste\+Bits\+Donnees@{liste\+Bits\+Donnees}}
+\index{liste\+Bits\+Donnees@{liste\+Bits\+Donnees}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{liste\+Bits\+Donnees}{listeBitsDonnees}}
+{\footnotesize\ttfamily Q\+Combo\+Box$\ast$ I\+H\+M\+Configuration\+::liste\+Bits\+Donnees\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste permettant de configurer le nombre de bits de données de la communication. 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8h_source_l00027}{27} du fichier \hyperlink{ihmconfiguration_8h_source}{ihmconfiguration.\+h}.
+
+
+
+Référencé par \hyperlink{ihmconfiguration_8cpp_source_l00033}{configurer\+Widgets()}, \hyperlink{ihmconfiguration_8cpp_source_l00051}{initialiser\+Layouts()}, et \hyperlink{ihmconfiguration_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}\label{class_i_h_m_configuration_a16ae724388b797983c78e87e7d5485cb}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!liste\+Bits\+Stop@{liste\+Bits\+Stop}}
+\index{liste\+Bits\+Stop@{liste\+Bits\+Stop}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{liste\+Bits\+Stop}{listeBitsStop}}
+{\footnotesize\ttfamily Q\+Combo\+Box$\ast$ I\+H\+M\+Configuration\+::liste\+Bits\+Stop\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste permettant de configurer le nombre de bits de stop de la communication. 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8h_source_l00028}{28} du fichier \hyperlink{ihmconfiguration_8h_source}{ihmconfiguration.\+h}.
+
+
+
+Référencé par \hyperlink{ihmconfiguration_8cpp_source_l00033}{configurer\+Widgets()}, \hyperlink{ihmconfiguration_8cpp_source_l00051}{initialiser\+Layouts()}, et \hyperlink{ihmconfiguration_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}\label{class_i_h_m_configuration_a98e8133a04509b3a80b232d2f031e81f}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!liste\+Debit@{liste\+Debit}}
+\index{liste\+Debit@{liste\+Debit}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{liste\+Debit}{listeDebit}}
+{\footnotesize\ttfamily Q\+Combo\+Box$\ast$ I\+H\+M\+Configuration\+::liste\+Debit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste permettant de configurer le debit de la communication. 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8h_source_l00026}{26} du fichier \hyperlink{ihmconfiguration_8h_source}{ihmconfiguration.\+h}.
+
+
+
+Référencé par \hyperlink{ihmconfiguration_8cpp_source_l00033}{configurer\+Widgets()}, \hyperlink{ihmconfiguration_8cpp_source_l00051}{initialiser\+Layouts()}, et \hyperlink{ihmconfiguration_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}\label{class_i_h_m_configuration_af3ce74444e24237aedf1d2ef2053b574}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!liste\+Ports\+Disponibles@{liste\+Ports\+Disponibles}}
+\index{liste\+Ports\+Disponibles@{liste\+Ports\+Disponibles}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{liste\+Ports\+Disponibles}{listePortsDisponibles}}
+{\footnotesize\ttfamily Q\+Combo\+Box$\ast$ I\+H\+M\+Configuration\+::liste\+Ports\+Disponibles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Liste des ports détéctés. 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8h_source_l00025}{25} du fichier \hyperlink{ihmconfiguration_8h_source}{ihmconfiguration.\+h}.
+
+
+
+Référencé par \hyperlink{ihmconfiguration_8cpp_source_l00033}{configurer\+Widgets()}, \hyperlink{ihmconfiguration_8cpp_source_l00051}{initialiser\+Layouts()}, et \hyperlink{ihmconfiguration_8cpp_source_l00023}{initialiser\+Widgets()}.
+
+\mbox{\Hypertarget{class_i_h_m_configuration_a75a7e5b7312d9eb3377bc96372fc0b3a}\label{class_i_h_m_configuration_a75a7e5b7312d9eb3377bc96372fc0b3a}} 
+\index{I\+H\+M\+Configuration@{I\+H\+M\+Configuration}!rov@{rov}}
+\index{rov@{rov}!I\+H\+M\+Configuration@{I\+H\+M\+Configuration}}
+\paragraph{\texorpdfstring{rov}{rov}}
+{\footnotesize\ttfamily \hyperlink{class_rov}{Rov}$\ast$ I\+H\+M\+Configuration\+::rov\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Objet rov permettant de mofidier les reglage de la communication. 
+
+
+
+Définition à la ligne \hyperlink{ihmconfiguration_8h_source_l00024}{24} du fichier \hyperlink{ihmconfiguration_8h_source}{ihmconfiguration.\+h}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ihmconfiguration_8h}{ihmconfiguration.\+h}\item 
+\hyperlink{ihmconfiguration_8cpp}{ihmconfiguration.\+cpp}\end{DoxyCompactItemize}

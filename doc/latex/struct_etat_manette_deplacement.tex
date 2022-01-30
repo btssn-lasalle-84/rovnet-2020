@@ -1,0 +1,247 @@
+\hypertarget{struct_etat_manette_deplacement}{}\subsection{Référence de la structure Etat\+Manette\+Deplacement}
+\label{struct_etat_manette_deplacement}\index{Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}}
+
+
+Structure qui définit l\textquotesingle{}état de la manette en mode déplacement du robot.  
+
+
+
+
+{\ttfamily \#include $<$manette.\+h$>$}
+
+
+
+Graphe de collaboration de Etat\+Manette\+Deplacement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{struct_etat_manette_deplacement__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_etat_manette_deplacement_aa57df0ecb60478f389d84c6e5d0cc1b8}{operator!=} (const \hyperlink{struct_etat_manette_deplacement}{Etat\+Manette\+Deplacement} \&ma\+Structure) const
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur != afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_deplacement_a8f248b6ec1788c058e161b74fb371c5b}{operator==} (const \hyperlink{struct_etat_manette_deplacement}{Etat\+Manette\+Deplacement} \&ma\+Structure) const
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur == afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachette\+Bas\+Droit}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du bouton R2. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachette\+Bas\+Gauche}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du bouton L2. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystick\+Gauche\+A\+Droite}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du joystick sur l\textquotesingle{}axe X. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystick\+Gauche\+A\+Gauche}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du joystick sur l\textquotesingle{}axe X. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystick\+Gauche\+En\+Arriere}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du joystick sur l\textquotesingle{}axe Y. \end{DoxyCompactList}\item 
+bool \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystick\+Gauche\+En\+Avant}
+\begin{DoxyCompactList}\small\item\em Membre définissant l\textquotesingle{}état du joystick sur l\textquotesingle{}axe Y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Structure qui définit l\textquotesingle{}état de la manette en mode déplacement du robot. 
+
+Définition à la ligne \hyperlink{manette_8h_source_l00178}{178} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{struct_etat_manette_deplacement_aa57df0ecb60478f389d84c6e5d0cc1b8}\label{struct_etat_manette_deplacement_aa57df0ecb60478f389d84c6e5d0cc1b8}} 
+\index{Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}}
+\paragraph{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Deplacement\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_etat_manette_deplacement}{Etat\+Manette\+Deplacement} \&}]{ma\+Structure }\end{DoxyParamCaption}) const}
+
+
+
+Surcharge de l\textquotesingle{}opérateur != afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ma\+Structure} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Si l\textquotesingle{}opération est possible ou pas 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{manette_8cpp_source_l00654}{654} du fichier \hyperlink{manette_8cpp_source}{manette.\+cpp}.
+
+
+\begin{DoxyCode}
+00655 \{
+00656     \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == maStructure);
+00657 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{struct_etat_manette_deplacement_a8f248b6ec1788c058e161b74fb371c5b}\label{struct_etat_manette_deplacement_a8f248b6ec1788c058e161b74fb371c5b}} 
+\index{Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}!operator==@{operator==}}
+\index{operator==@{operator==}!Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}}
+\paragraph{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Deplacement\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_etat_manette_deplacement}{Etat\+Manette\+Deplacement} \&}]{ma\+Structure }\end{DoxyParamCaption}) const}
+
+
+
+Surcharge de l\textquotesingle{}opérateur == afin de comparer un état de manette prédéfini avec l\textquotesingle{}état actuel de la manette. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ma\+Structure} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Si l\textquotesingle{}opération est possible ou pas 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{manette_8cpp_source_l00636}{636} du fichier \hyperlink{manette_8cpp_source}{manette.\+cpp}.
+
+
+
+Références \hyperlink{manette_8h_source_l00185}{gachette\+Bas\+Droit}, \hyperlink{manette_8h_source_l00184}{gachette\+Bas\+Gauche}, \hyperlink{manette_8h_source_l00183}{joystick\+Gauche\+A\+Droite}, \hyperlink{manette_8h_source_l00182}{joystick\+Gauche\+A\+Gauche}, \hyperlink{manette_8h_source_l00181}{joystick\+Gauche\+En\+Arriere}, et \hyperlink{manette_8h_source_l00180}{joystick\+Gauche\+En\+Avant}.
+
+
+\begin{DoxyCode}
+00637 \{
+00638     \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit} != maStructure.\hyperlink{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}{gachetteBasDroit})
+00639         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00640     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche} != maStructure.
+      \hyperlink{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}{gachetteBasGauche})
+00641         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00642     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite} != maStructure.
+      \hyperlink{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}{joystickGaucheADroite})
+00643         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00644     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche} != maStructure.
+      \hyperlink{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}{joystickGaucheAGauche})
+00645         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00646     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere} != maStructure.
+      \hyperlink{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}{joystickGaucheEnArriere})
+00647         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00648     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(this->\hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant} != maStructure.
+      \hyperlink{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}{joystickGaucheEnAvant})
+00649         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00650     \textcolor{keywordflow}{else}
+00651         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00652 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}\label{struct_etat_manette_deplacement_a4588620c1e2a3543ce67c9a791aac106}} 
+\index{Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}!gachette\+Bas\+Droit@{gachette\+Bas\+Droit}}
+\index{gachette\+Bas\+Droit@{gachette\+Bas\+Droit}!Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}}
+\paragraph{\texorpdfstring{gachette\+Bas\+Droit}{gachetteBasDroit}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Deplacement\+::gachette\+Bas\+Droit}
+
+
+
+Membre définissant l\textquotesingle{}état du bouton R2. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00185}{185} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00504}{Manette\+::changer\+Gachette\+Bas\+Droit()}, \hyperlink{manette_8cpp_source_l00178}{Manette\+::initialisation\+Structure\+Rotation\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00151}{Manette\+::initialisation\+Structure\+Rotation\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00127}{Manette\+::initialisation\+Structures\+En\+Arriere()}, \hyperlink{manette_8cpp_source_l00103}{Manette\+::initialisation\+Structures\+En\+Avant()}, \hyperlink{manette_8cpp_source_l00188}{Manette\+::initialisation\+Structures\+Rotation\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00161}{Manette\+::initialisation\+Structures\+Rotation\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00296}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00269}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00242}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00215}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00286}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00259}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00232}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00205}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, et \hyperlink{manette_8cpp_source_l00636}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}\label{struct_etat_manette_deplacement_a0d197e25bc2e0402a068a8d012c25472}} 
+\index{Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}!gachette\+Bas\+Gauche@{gachette\+Bas\+Gauche}}
+\index{gachette\+Bas\+Gauche@{gachette\+Bas\+Gauche}!Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}}
+\paragraph{\texorpdfstring{gachette\+Bas\+Gauche}{gachetteBasGauche}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Deplacement\+::gachette\+Bas\+Gauche}
+
+
+
+Membre définissant l\textquotesingle{}état du bouton L2. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00184}{184} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00493}{Manette\+::changer\+Gachette\+Bas\+Gauche()}, \hyperlink{manette_8cpp_source_l00178}{Manette\+::initialisation\+Structure\+Rotation\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00151}{Manette\+::initialisation\+Structure\+Rotation\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00127}{Manette\+::initialisation\+Structures\+En\+Arriere()}, \hyperlink{manette_8cpp_source_l00103}{Manette\+::initialisation\+Structures\+En\+Avant()}, \hyperlink{manette_8cpp_source_l00188}{Manette\+::initialisation\+Structures\+Rotation\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00161}{Manette\+::initialisation\+Structures\+Rotation\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00296}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00269}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00242}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00215}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00286}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00259}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00232}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00205}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, et \hyperlink{manette_8cpp_source_l00636}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}\label{struct_etat_manette_deplacement_a8fa93da5af430ac00ffd4ee8b76987a2}} 
+\index{Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}!joystick\+Gauche\+A\+Droite@{joystick\+Gauche\+A\+Droite}}
+\index{joystick\+Gauche\+A\+Droite@{joystick\+Gauche\+A\+Droite}!Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}}
+\paragraph{\texorpdfstring{joystick\+Gauche\+A\+Droite}{joystickGaucheADroite}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Deplacement\+::joystick\+Gauche\+A\+Droite}
+
+
+
+Membre définissant l\textquotesingle{}état du joystick sur l\textquotesingle{}axe X. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00183}{183} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00421}{Manette\+::changer\+Axe\+X\+Joystick\+Gauche()}, \hyperlink{manette_8cpp_source_l00178}{Manette\+::initialisation\+Structure\+Rotation\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00151}{Manette\+::initialisation\+Structure\+Rotation\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00127}{Manette\+::initialisation\+Structures\+En\+Arriere()}, \hyperlink{manette_8cpp_source_l00103}{Manette\+::initialisation\+Structures\+En\+Avant()}, \hyperlink{manette_8cpp_source_l00188}{Manette\+::initialisation\+Structures\+Rotation\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00161}{Manette\+::initialisation\+Structures\+Rotation\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00296}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00269}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00242}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00215}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00286}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00259}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00232}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00205}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, et \hyperlink{manette_8cpp_source_l00636}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}\label{struct_etat_manette_deplacement_af7e92a8d8f116e2bc4a5a95386f604e7}} 
+\index{Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}!joystick\+Gauche\+A\+Gauche@{joystick\+Gauche\+A\+Gauche}}
+\index{joystick\+Gauche\+A\+Gauche@{joystick\+Gauche\+A\+Gauche}!Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}}
+\paragraph{\texorpdfstring{joystick\+Gauche\+A\+Gauche}{joystickGaucheAGauche}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Deplacement\+::joystick\+Gauche\+A\+Gauche}
+
+
+
+Membre définissant l\textquotesingle{}état du joystick sur l\textquotesingle{}axe X. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00182}{182} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00421}{Manette\+::changer\+Axe\+X\+Joystick\+Gauche()}, \hyperlink{manette_8cpp_source_l00178}{Manette\+::initialisation\+Structure\+Rotation\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00151}{Manette\+::initialisation\+Structure\+Rotation\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00127}{Manette\+::initialisation\+Structures\+En\+Arriere()}, \hyperlink{manette_8cpp_source_l00103}{Manette\+::initialisation\+Structures\+En\+Avant()}, \hyperlink{manette_8cpp_source_l00188}{Manette\+::initialisation\+Structures\+Rotation\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00161}{Manette\+::initialisation\+Structures\+Rotation\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00296}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00269}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00242}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00215}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00286}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00259}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00232}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00205}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, et \hyperlink{manette_8cpp_source_l00636}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}\label{struct_etat_manette_deplacement_a584cf1538425c87588c5b96b79c8d482}} 
+\index{Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}!joystick\+Gauche\+En\+Arriere@{joystick\+Gauche\+En\+Arriere}}
+\index{joystick\+Gauche\+En\+Arriere@{joystick\+Gauche\+En\+Arriere}!Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}}
+\paragraph{\texorpdfstring{joystick\+Gauche\+En\+Arriere}{joystickGaucheEnArriere}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Deplacement\+::joystick\+Gauche\+En\+Arriere}
+
+
+
+Membre définissant l\textquotesingle{}état du joystick sur l\textquotesingle{}axe Y. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00181}{181} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00438}{Manette\+::changer\+Axe\+Y\+Joystick\+Gauche()}, \hyperlink{manette_8cpp_source_l00178}{Manette\+::initialisation\+Structure\+Rotation\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00151}{Manette\+::initialisation\+Structure\+Rotation\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00127}{Manette\+::initialisation\+Structures\+En\+Arriere()}, \hyperlink{manette_8cpp_source_l00103}{Manette\+::initialisation\+Structures\+En\+Avant()}, \hyperlink{manette_8cpp_source_l00188}{Manette\+::initialisation\+Structures\+Rotation\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00161}{Manette\+::initialisation\+Structures\+Rotation\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00296}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00269}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00242}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00215}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00286}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00259}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00232}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00205}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, et \hyperlink{manette_8cpp_source_l00636}{operator==()}.
+
+\mbox{\Hypertarget{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}\label{struct_etat_manette_deplacement_a8c8e3ca694408bc6a6ced4e20b9da0be}} 
+\index{Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}!joystick\+Gauche\+En\+Avant@{joystick\+Gauche\+En\+Avant}}
+\index{joystick\+Gauche\+En\+Avant@{joystick\+Gauche\+En\+Avant}!Etat\+Manette\+Deplacement@{Etat\+Manette\+Deplacement}}
+\paragraph{\texorpdfstring{joystick\+Gauche\+En\+Avant}{joystickGaucheEnAvant}}
+{\footnotesize\ttfamily bool Etat\+Manette\+Deplacement\+::joystick\+Gauche\+En\+Avant}
+
+
+
+Membre définissant l\textquotesingle{}état du joystick sur l\textquotesingle{}axe Y. 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00180}{180} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00438}{Manette\+::changer\+Axe\+Y\+Joystick\+Gauche()}, \hyperlink{manette_8cpp_source_l00178}{Manette\+::initialisation\+Structure\+Rotation\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00151}{Manette\+::initialisation\+Structure\+Rotation\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00127}{Manette\+::initialisation\+Structures\+En\+Arriere()}, \hyperlink{manette_8cpp_source_l00103}{Manette\+::initialisation\+Structures\+En\+Avant()}, \hyperlink{manette_8cpp_source_l00188}{Manette\+::initialisation\+Structures\+Rotation\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00161}{Manette\+::initialisation\+Structures\+Rotation\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00296}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00269}{Manette\+::initialisation\+Structures\+Virage\+Arriere\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00242}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Droite\+Doucement()}, \hyperlink{manette_8cpp_source_l00215}{Manette\+::initialisation\+Structures\+Virage\+Avant\+A\+Gauche\+Doucement()}, \hyperlink{manette_8cpp_source_l00286}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00259}{Manette\+::initialisation\+Structure\+Virage\+Arriere\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00232}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Droite()}, \hyperlink{manette_8cpp_source_l00205}{Manette\+::initialisation\+Structure\+Virage\+Avant\+A\+Gauche()}, \hyperlink{manette_8cpp_source_l00023}{Manette\+::initialiser\+Etats()}, et \hyperlink{manette_8cpp_source_l00636}{operator==()}.
+
+
+
+La documentation de cette structure a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{manette_8h}{manette.\+h}\item 
+\hyperlink{manette_8cpp}{manette.\+cpp}\end{DoxyCompactItemize}

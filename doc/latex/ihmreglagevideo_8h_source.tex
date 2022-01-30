@@ -1,0 +1,59 @@
+\hypertarget{ihmreglagevideo_8h_source}{}\subsection{ihmreglagevideo.\+h}
+\label{ihmreglagevideo_8h_source}\index{ihmreglagevideo.\+h@{ihmreglagevideo.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef REGLAGEVIDEO\_H}
+00008 \textcolor{preprocessor}{#define REGLAGEVIDEO\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QtWidgets>}
+00011 \textcolor{preprocessor}{#include <QCameraInfo>}
+00012 \textcolor{preprocessor}{#include "\hyperlink{rov_8h}{rov.h}"}
+00013 
+\Hypertarget{ihmreglagevideo_8h_source_l00014}\hyperlink{ihmreglagevideo_8h_a4a739fa13f7cc257ce61e04383ed8a9a}{00014} \textcolor{preprocessor}{#define NOM\_FENETRE\_REGLAGEVIDEO "Réglages vidéo"}
+00015 
+00016 \textcolor{keyword}{class }\hyperlink{class_rov}{Rov};
+00017 
+\Hypertarget{ihmreglagevideo_8h_source_l00023}\hyperlink{class_i_h_m_reglage_video}{00023} \textcolor{keyword}{class }\hyperlink{class_i_h_m_reglage_video}{IHMReglageVideo} : \textcolor{keyword}{public} \hyperlink{class_q_widget}{QWidget}
+00024 \{
+00025     Q\_OBJECT
+00026 \textcolor{keyword}{private}:
+\Hypertarget{ihmreglagevideo_8h_source_l00027}\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{00027}     \hyperlink{class_rov}{Rov} *\hyperlink{class_i_h_m_reglage_video_a755736fe361e651453de6bc21725a626}{rov};                           
+\Hypertarget{ihmreglagevideo_8h_source_l00028}\hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{00028}     QSlider *\hyperlink{class_i_h_m_reglage_video_a333b7f1b3239abd5823e0b0f2857716b}{sliderLuminositeVideo};     
+\Hypertarget{ihmreglagevideo_8h_source_l00029}\hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{00029}     QSlider *\hyperlink{class_i_h_m_reglage_video_a69917b4179132a63efe6c3fb63ba666a}{sliderContrasteVideo};      
+\Hypertarget{ihmreglagevideo_8h_source_l00030}\hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{00030}     QSlider *\hyperlink{class_i_h_m_reglage_video_aba60de0eccec35f165101b10c0cd33df}{sliderSaturationVideo};     
+\Hypertarget{ihmreglagevideo_8h_source_l00031}\hyperlink{class_i_h_m_reglage_video_a16b65877af48863d0752e226371952ab}{00031}     QLabel *\hyperlink{class_i_h_m_reglage_video_a16b65877af48863d0752e226371952ab}{luminosite};                 
+\Hypertarget{ihmreglagevideo_8h_source_l00032}\hyperlink{class_i_h_m_reglage_video_ad1aa173a98ced9f3aaeccb0c2712093c}{00032}     QLabel *\hyperlink{class_i_h_m_reglage_video_ad1aa173a98ced9f3aaeccb0c2712093c}{contraste};                  
+\Hypertarget{ihmreglagevideo_8h_source_l00033}\hyperlink{class_i_h_m_reglage_video_a452450793da1908cfe89fb9984b914d1}{00033}     QLabel *\hyperlink{class_i_h_m_reglage_video_a452450793da1908cfe89fb9984b914d1}{saturation};                 
+\Hypertarget{ihmreglagevideo_8h_source_l00034}\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{00034}     QSpinBox *\hyperlink{class_i_h_m_reglage_video_a9109c0801d582917e78e57c350510ea7}{luminositeVideo};          
+\Hypertarget{ihmreglagevideo_8h_source_l00035}\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{00035}     QSpinBox *\hyperlink{class_i_h_m_reglage_video_a617e9dbd5a92c35e7e351228354deb63}{contrasteVideo};           
+\Hypertarget{ihmreglagevideo_8h_source_l00036}\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{00036}     QSpinBox *\hyperlink{class_i_h_m_reglage_video_a058bd2a65aefa5f95ff73851f156064c}{saturationVideo};          
+\Hypertarget{ihmreglagevideo_8h_source_l00037}\hyperlink{class_i_h_m_reglage_video_a5a57047117d423ba8bf62bbcb2baee74}{00037}     QLabel *\hyperlink{class_i_h_m_reglage_video_a5a57047117d423ba8bf62bbcb2baee74}{camera};                     
+\Hypertarget{ihmreglagevideo_8h_source_l00038}\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{00038}     QComboBox *\hyperlink{class_i_h_m_reglage_video_a38a35548ddd0e5750917305ac6f32142}{listeCameras};            
+\Hypertarget{ihmreglagevideo_8h_source_l00039}\hyperlink{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}{00039}     QLabel *\hyperlink{class_i_h_m_reglage_video_a7fd79309e9501b8cb340ae61b96c0366}{resolution};                 
+\Hypertarget{ihmreglagevideo_8h_source_l00040}\hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{00040}     QComboBox *\hyperlink{class_i_h_m_reglage_video_ad897355a4350d95f5f219db57ff68d4f}{listeResolutions};        
+\Hypertarget{ihmreglagevideo_8h_source_l00041}\hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{00041}     QPushButton *\hyperlink{class_i_h_m_reglage_video_a98d33390551ab92165f192be44f6361d}{boutonDemarrerVideo};   
+\Hypertarget{ihmreglagevideo_8h_source_l00042}\hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{00042}     QPushButton *\hyperlink{class_i_h_m_reglage_video_a705db68dd445a91a4144a3c9bf95a9cf}{boutonArreterVideo};    
+00043 
+00048     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_ad41172843e79eae9bb64048ec76b81e6}{initialiserWidgets}();
+00053     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a2e51529e3a822121ae999e13da2180c6}{configurerWidgets}();
+00058     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a6efcf5e8c7dfd272ecb1398985f7332a}{initialiserLayouts}();
+00063     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a4576b1b6ccfcabf6b2b39d37db2dd248}{initialiserEvenements}();    
+00068     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a0a480faa747bc705b4cf49df4ecc1d44}{chargerListeCameraDisponible}();
+00069 
+00070 \textcolor{keyword}{public}:
+00077     \hyperlink{class_i_h_m_reglage_video_aa057ded6ad29a2d7fd117a8e9336c3ad}{IHMReglageVideo}(\hyperlink{class_rov}{Rov} *rov, \hyperlink{class_q_widget}{QWidget} *parent = \textcolor{keyword}{nullptr});
+00082     \hyperlink{class_i_h_m_reglage_video_aaf105e0ca892a751632170a3a083dfec}{~IHMReglageVideo}();
+00087     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_aba318ba2789177dafcf2651f95603435}{initialiserEvenementsCamera}();
+00088 
+00089 signals:
+00090 
+00091 \textcolor{keyword}{public} slots:
+00096     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a7e5c5d7515a6c745dfde5c3ad3b61a66}{activerCamera}();
+00101     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_ac838581ba03f52e79064cb91ebabb35d}{modifierEtatBoutons}();
+00107     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(\textcolor{keywordtype}{int} index);
+00113     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_reglage_video_a26dc15cf9453af24c464f0d6aebb42df}{chargerListeResolutionDisponible}(QString nom);
+00114 \};
+00115 
+00116 \textcolor{preprocessor}{#endif // REGLAGEVIDEO\_H}
+\end{DoxyCode}

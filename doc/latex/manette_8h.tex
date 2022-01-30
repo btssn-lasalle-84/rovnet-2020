@@ -1,0 +1,353 @@
+\hypertarget{manette_8h}{}\subsection{Référence du fichier manette.\+h}
+\label{manette_8h}\index{manette.\+h@{manette.\+h}}
+
+
+Fichier qui contient la déclaration de la classe \hyperlink{class_manette}{Manette}.  
+
+
+{\ttfamily \#include $<$Q\+Object$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+Q\+Core\+Application$>$}\newline
+{\ttfamily \#include $<$Qt\+Gamepad/\+Q\+Gamepad$>$}\newline
+{\ttfamily \#include $<$Q\+Debug$>$}\newline
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_etat_manette_bouton}{Etat\+Manette\+Bouton}
+\begin{DoxyCompactList}\small\item\em Structure qui définit l\textquotesingle{}état de la manette en mode pilotage de la pince. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_etat_manette_deplacement}{Etat\+Manette\+Deplacement}
+\begin{DoxyCompactList}\small\item\em Structure qui définit l\textquotesingle{}état de la manette en mode déplacement du robot. \end{DoxyCompactList}\item 
+struct \hyperlink{struct_etat_manette_pilotage}{Etat\+Manette\+Pilotage}
+\begin{DoxyCompactList}\small\item\em Structure qui définit l\textquotesingle{}état de la manette en mode pilotage de la pince. \end{DoxyCompactList}\item 
+class \hyperlink{class_manette}{Manette}
+\begin{DoxyCompactList}\small\item\em Classe permettant une communication entre le rov et la manette. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{manette_8h_af54a6d7aa82993b62caabaaf5b3f1459}{A\+V\+A\+N\+C\+ER}~\char`\"{}A\+V\+A\+N\+C\+ER\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors du mouvement A\+V\+A\+N\+C\+ER \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_ac4938d166a83f56a4261513560c0139b}{C\+A\+M\+E\+R\+A\+\_\+\+B\+AS}~1
+\item 
+\#define \hyperlink{manette_8h_aa81fd560b0b9c7c7cde5ac335fefa4c3}{C\+A\+M\+E\+R\+A\+\_\+\+D\+R\+O\+I\+TE}~1
+\begin{DoxyCompactList}\small\item\em défini la valeur du double retourné par le signal lorsque le joystick de la manette est poussé a fond sur la droite \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a7390be8c9f6019e070951ebef00c3529}{C\+A\+M\+E\+R\+A\+\_\+\+G\+A\+U\+C\+HE}~-\/1
+\begin{DoxyCompactList}\small\item\em défini la valeur du double retourné par le signal lorsque le joystick de la manette est poussé a fond sur la gauche \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a4683b40a863ce725b9dffe57df758312}{C\+A\+M\+E\+R\+A\+\_\+\+H\+A\+UT}~-\/1
+\begin{DoxyCompactList}\small\item\em défini la valeur du double retourné par le signal lorsque le joystick de la manette est poussé a fond sur le haut \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a0f61ab9ae13b77038540b31843a6c2ea}{D\+E\+S\+C\+E\+N\+D\+RE}~\char`\"{}D\+E\+S\+C\+E\+N\+D\+RE\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors du mouvement D\+E\+S\+C\+E\+N\+D\+RE \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_af625d3f3bc022848a558f2b18def5b15}{D\+R\+O\+I\+TE}~\char`\"{}D\+R\+O\+I\+TE\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors du mouvement D\+R\+O\+I\+TE \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a1c242b29a47122b6c528f2bcb73a29e2}{F\+E\+R\+M\+E\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE}~\char`\"{}F\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors de la fermeture de la pince \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_af07f8bf974fdf76afd17f2b97ac15a22}{G\+A\+U\+C\+HE}~\char`\"{}G\+A\+U\+C\+HE\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors du mouvement G\+A\+U\+C\+HE \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a16ccf2890fcfc78a47402fe94becb6ca}{I\+M\+M\+O\+B\+I\+LE}~\char`\"{}0\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors du mouvement I\+M\+M\+O\+B\+I\+LE \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a765e6ea0e13ca38a457aa563930ce2df}{M\+O\+N\+T\+ER}~\char`\"{}M\+O\+N\+T\+ER\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors du mouvement M\+O\+N\+T\+ER \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a0259cc955736c3970883196448e0476a}{O\+U\+V\+E\+R\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE}~\char`\"{}O\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors de l\textquotesingle{}ouverture de la pince \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_afeb63c058f63189b11f10b79f90459e2}{P\+O\+S\+E\+R\+\_\+\+O\+B\+J\+E\+T\+\_\+\+D\+A\+N\+S\+\_\+\+B\+AC}~\char`\"{}B\+AC\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lorsque l\textquotesingle{}on pose l\textquotesingle{}objet dans le bac \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a26da42c0f048eced1fff947bac0c2b3d}{R\+E\+C\+U\+L\+ER}~\char`\"{}R\+E\+C\+U\+L\+ER\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors du mouvement R\+E\+C\+U\+L\+ER \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a26e43ead1d984ddabb462b55010d12f6}{R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+V\+I\+T\+E\+S\+SE}~0.\+75
+\begin{DoxyCompactList}\small\item\em défini le taux de reduction de la puissance lors d\textquotesingle{}un mouvement \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a0d14fc3b862ee6b41366ac22e9737025}{R\+E\+T\+O\+U\+R\+\_\+\+E\+T\+A\+T\+\_\+\+I\+N\+I\+T\+I\+AL}~\char`\"{}I\+N\+IT\char`\"{}
+\begin{DoxyCompactList}\small\item\em défini la valeur du paramètre de la trame lors d\textquotesingle{}un retour à l\textquotesingle{}etat initial \end{DoxyCompactList}\item 
+\#define \hyperlink{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}{T\+A\+U\+X\+\_\+\+V\+A\+L\+I\+D\+I\+T\+E\+\_\+\+J\+O\+Y\+S\+T\+I\+CK}~0.\+50
+\begin{DoxyCompactList}\small\item\em défini le taux d\textquotesingle{}acceptation de la valeur du joystick \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Fichier qui contient la déclaration de la classe \hyperlink{class_manette}{Manette}. 
+
+
+
+Définition dans le fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+\subsubsection{Documentation des macros}
+\mbox{\Hypertarget{manette_8h_af54a6d7aa82993b62caabaaf5b3f1459}\label{manette_8h_af54a6d7aa82993b62caabaaf5b3f1459}} 
+\index{manette.\+h@{manette.\+h}!A\+V\+A\+N\+C\+ER@{A\+V\+A\+N\+C\+ER}}
+\index{A\+V\+A\+N\+C\+ER@{A\+V\+A\+N\+C\+ER}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{A\+V\+A\+N\+C\+ER}{AVANCER}}
+{\footnotesize\ttfamily \#define A\+V\+A\+N\+C\+ER~\char`\"{}A\+V\+A\+N\+C\+ER\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors du mouvement A\+V\+A\+N\+C\+ER 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00038}{38} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00375}{Manette\+::determiner\+Trame\+Pilotage\+Bras()}.
+
+\mbox{\Hypertarget{manette_8h_ac4938d166a83f56a4261513560c0139b}\label{manette_8h_ac4938d166a83f56a4261513560c0139b}} 
+\index{manette.\+h@{manette.\+h}!C\+A\+M\+E\+R\+A\+\_\+\+B\+AS@{C\+A\+M\+E\+R\+A\+\_\+\+B\+AS}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+B\+AS@{C\+A\+M\+E\+R\+A\+\_\+\+B\+AS}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{C\+A\+M\+E\+R\+A\+\_\+\+B\+AS}{CAMERA\_BAS}}
+{\footnotesize\ttfamily \#define C\+A\+M\+E\+R\+A\+\_\+\+B\+AS~1}
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00116}{116} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+\mbox{\Hypertarget{manette_8h_aa81fd560b0b9c7c7cde5ac335fefa4c3}\label{manette_8h_aa81fd560b0b9c7c7cde5ac335fefa4c3}} 
+\index{manette.\+h@{manette.\+h}!C\+A\+M\+E\+R\+A\+\_\+\+D\+R\+O\+I\+TE@{C\+A\+M\+E\+R\+A\+\_\+\+D\+R\+O\+I\+TE}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+D\+R\+O\+I\+TE@{C\+A\+M\+E\+R\+A\+\_\+\+D\+R\+O\+I\+TE}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{C\+A\+M\+E\+R\+A\+\_\+\+D\+R\+O\+I\+TE}{CAMERA\_DROITE}}
+{\footnotesize\ttfamily \#define C\+A\+M\+E\+R\+A\+\_\+\+D\+R\+O\+I\+TE~1}
+
+
+
+défini la valeur du double retourné par le signal lorsque le joystick de la manette est poussé a fond sur la droite 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00098}{98} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+\mbox{\Hypertarget{manette_8h_a7390be8c9f6019e070951ebef00c3529}\label{manette_8h_a7390be8c9f6019e070951ebef00c3529}} 
+\index{manette.\+h@{manette.\+h}!C\+A\+M\+E\+R\+A\+\_\+\+G\+A\+U\+C\+HE@{C\+A\+M\+E\+R\+A\+\_\+\+G\+A\+U\+C\+HE}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+G\+A\+U\+C\+HE@{C\+A\+M\+E\+R\+A\+\_\+\+G\+A\+U\+C\+HE}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{C\+A\+M\+E\+R\+A\+\_\+\+G\+A\+U\+C\+HE}{CAMERA\_GAUCHE}}
+{\footnotesize\ttfamily \#define C\+A\+M\+E\+R\+A\+\_\+\+G\+A\+U\+C\+HE~-\/1}
+
+
+
+défini la valeur du double retourné par le signal lorsque le joystick de la manette est poussé a fond sur la gauche 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00104}{104} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+\mbox{\Hypertarget{manette_8h_a4683b40a863ce725b9dffe57df758312}\label{manette_8h_a4683b40a863ce725b9dffe57df758312}} 
+\index{manette.\+h@{manette.\+h}!C\+A\+M\+E\+R\+A\+\_\+\+H\+A\+UT@{C\+A\+M\+E\+R\+A\+\_\+\+H\+A\+UT}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+H\+A\+UT@{C\+A\+M\+E\+R\+A\+\_\+\+H\+A\+UT}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{C\+A\+M\+E\+R\+A\+\_\+\+H\+A\+UT}{CAMERA\_HAUT}}
+{\footnotesize\ttfamily \#define C\+A\+M\+E\+R\+A\+\_\+\+H\+A\+UT~-\/1}
+
+
+
+défini la valeur du double retourné par le signal lorsque le joystick de la manette est poussé a fond sur le haut 
+
+défini la valeur du double retourné par le signal lorsque le joystick de la manette est poussé a fond sur le bass \mbox{\Hypertarget{manette_8h_a0f61ab9ae13b77038540b31843a6c2ea}\label{manette_8h_a0f61ab9ae13b77038540b31843a6c2ea}} 
+\index{manette.\+h@{manette.\+h}!D\+E\+S\+C\+E\+N\+D\+RE@{D\+E\+S\+C\+E\+N\+D\+RE}}
+\index{D\+E\+S\+C\+E\+N\+D\+RE@{D\+E\+S\+C\+E\+N\+D\+RE}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{D\+E\+S\+C\+E\+N\+D\+RE}{DESCENDRE}}
+{\footnotesize\ttfamily \#define D\+E\+S\+C\+E\+N\+D\+RE~\char`\"{}D\+E\+S\+C\+E\+N\+D\+RE\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors du mouvement D\+E\+S\+C\+E\+N\+D\+RE 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00050}{50} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00375}{Manette\+::determiner\+Trame\+Pilotage\+Bras()}.
+
+\mbox{\Hypertarget{manette_8h_af625d3f3bc022848a558f2b18def5b15}\label{manette_8h_af625d3f3bc022848a558f2b18def5b15}} 
+\index{manette.\+h@{manette.\+h}!D\+R\+O\+I\+TE@{D\+R\+O\+I\+TE}}
+\index{D\+R\+O\+I\+TE@{D\+R\+O\+I\+TE}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{D\+R\+O\+I\+TE}{DROITE}}
+{\footnotesize\ttfamily \#define D\+R\+O\+I\+TE~\char`\"{}D\+R\+O\+I\+TE\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors du mouvement D\+R\+O\+I\+TE 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00068}{68} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00375}{Manette\+::determiner\+Trame\+Pilotage\+Bras()}.
+
+\mbox{\Hypertarget{manette_8h_a1c242b29a47122b6c528f2bcb73a29e2}\label{manette_8h_a1c242b29a47122b6c528f2bcb73a29e2}} 
+\index{manette.\+h@{manette.\+h}!F\+E\+R\+M\+E\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE@{F\+E\+R\+M\+E\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE}}
+\index{F\+E\+R\+M\+E\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE@{F\+E\+R\+M\+E\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{F\+E\+R\+M\+E\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE}{FERMETURE\_PINCE}}
+{\footnotesize\ttfamily \#define F\+E\+R\+M\+E\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE~\char`\"{}F\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors de la fermeture de la pince 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00086}{86} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00393}{Manette\+::determiner\+Trame\+Bouton()}.
+
+\mbox{\Hypertarget{manette_8h_af07f8bf974fdf76afd17f2b97ac15a22}\label{manette_8h_af07f8bf974fdf76afd17f2b97ac15a22}} 
+\index{manette.\+h@{manette.\+h}!G\+A\+U\+C\+HE@{G\+A\+U\+C\+HE}}
+\index{G\+A\+U\+C\+HE@{G\+A\+U\+C\+HE}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{G\+A\+U\+C\+HE}{GAUCHE}}
+{\footnotesize\ttfamily \#define G\+A\+U\+C\+HE~\char`\"{}G\+A\+U\+C\+HE\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors du mouvement G\+A\+U\+C\+HE 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00062}{62} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00375}{Manette\+::determiner\+Trame\+Pilotage\+Bras()}.
+
+\mbox{\Hypertarget{manette_8h_a16ccf2890fcfc78a47402fe94becb6ca}\label{manette_8h_a16ccf2890fcfc78a47402fe94becb6ca}} 
+\index{manette.\+h@{manette.\+h}!I\+M\+M\+O\+B\+I\+LE@{I\+M\+M\+O\+B\+I\+LE}}
+\index{I\+M\+M\+O\+B\+I\+LE@{I\+M\+M\+O\+B\+I\+LE}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{I\+M\+M\+O\+B\+I\+LE}{IMMOBILE}}
+{\footnotesize\ttfamily \#define I\+M\+M\+O\+B\+I\+LE~\char`\"{}0\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors du mouvement I\+M\+M\+O\+B\+I\+LE 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00032}{32} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00393}{Manette\+::determiner\+Trame\+Bouton()}, et \hyperlink{manette_8cpp_source_l00375}{Manette\+::determiner\+Trame\+Pilotage\+Bras()}.
+
+\mbox{\Hypertarget{manette_8h_a765e6ea0e13ca38a457aa563930ce2df}\label{manette_8h_a765e6ea0e13ca38a457aa563930ce2df}} 
+\index{manette.\+h@{manette.\+h}!M\+O\+N\+T\+ER@{M\+O\+N\+T\+ER}}
+\index{M\+O\+N\+T\+ER@{M\+O\+N\+T\+ER}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{M\+O\+N\+T\+ER}{MONTER}}
+{\footnotesize\ttfamily \#define M\+O\+N\+T\+ER~\char`\"{}M\+O\+N\+T\+ER\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors du mouvement M\+O\+N\+T\+ER 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00056}{56} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00375}{Manette\+::determiner\+Trame\+Pilotage\+Bras()}.
+
+\mbox{\Hypertarget{manette_8h_a0259cc955736c3970883196448e0476a}\label{manette_8h_a0259cc955736c3970883196448e0476a}} 
+\index{manette.\+h@{manette.\+h}!O\+U\+V\+E\+R\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE@{O\+U\+V\+E\+R\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE}}
+\index{O\+U\+V\+E\+R\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE@{O\+U\+V\+E\+R\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{O\+U\+V\+E\+R\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE}{OUVERTURE\_PINCE}}
+{\footnotesize\ttfamily \#define O\+U\+V\+E\+R\+T\+U\+R\+E\+\_\+\+P\+I\+N\+CE~\char`\"{}O\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors de l\textquotesingle{}ouverture de la pince 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00080}{80} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00393}{Manette\+::determiner\+Trame\+Bouton()}.
+
+\mbox{\Hypertarget{manette_8h_afeb63c058f63189b11f10b79f90459e2}\label{manette_8h_afeb63c058f63189b11f10b79f90459e2}} 
+\index{manette.\+h@{manette.\+h}!P\+O\+S\+E\+R\+\_\+\+O\+B\+J\+E\+T\+\_\+\+D\+A\+N\+S\+\_\+\+B\+AC@{P\+O\+S\+E\+R\+\_\+\+O\+B\+J\+E\+T\+\_\+\+D\+A\+N\+S\+\_\+\+B\+AC}}
+\index{P\+O\+S\+E\+R\+\_\+\+O\+B\+J\+E\+T\+\_\+\+D\+A\+N\+S\+\_\+\+B\+AC@{P\+O\+S\+E\+R\+\_\+\+O\+B\+J\+E\+T\+\_\+\+D\+A\+N\+S\+\_\+\+B\+AC}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{P\+O\+S\+E\+R\+\_\+\+O\+B\+J\+E\+T\+\_\+\+D\+A\+N\+S\+\_\+\+B\+AC}{POSER\_OBJET\_DANS\_BAC}}
+{\footnotesize\ttfamily \#define P\+O\+S\+E\+R\+\_\+\+O\+B\+J\+E\+T\+\_\+\+D\+A\+N\+S\+\_\+\+B\+AC~\char`\"{}B\+AC\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lorsque l\textquotesingle{}on pose l\textquotesingle{}objet dans le bac 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00092}{92} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00393}{Manette\+::determiner\+Trame\+Bouton()}.
+
+\mbox{\Hypertarget{manette_8h_a26da42c0f048eced1fff947bac0c2b3d}\label{manette_8h_a26da42c0f048eced1fff947bac0c2b3d}} 
+\index{manette.\+h@{manette.\+h}!R\+E\+C\+U\+L\+ER@{R\+E\+C\+U\+L\+ER}}
+\index{R\+E\+C\+U\+L\+ER@{R\+E\+C\+U\+L\+ER}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{R\+E\+C\+U\+L\+ER}{RECULER}}
+{\footnotesize\ttfamily \#define R\+E\+C\+U\+L\+ER~\char`\"{}R\+E\+C\+U\+L\+ER\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors du mouvement R\+E\+C\+U\+L\+ER 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00044}{44} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00375}{Manette\+::determiner\+Trame\+Pilotage\+Bras()}.
+
+\mbox{\Hypertarget{manette_8h_a26e43ead1d984ddabb462b55010d12f6}\label{manette_8h_a26e43ead1d984ddabb462b55010d12f6}} 
+\index{manette.\+h@{manette.\+h}!R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+V\+I\+T\+E\+S\+SE@{R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+V\+I\+T\+E\+S\+SE}}
+\index{R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+V\+I\+T\+E\+S\+SE@{R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+V\+I\+T\+E\+S\+SE}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+V\+I\+T\+E\+S\+SE}{REDUCTION\_VITESSE}}
+{\footnotesize\ttfamily \#define R\+E\+D\+U\+C\+T\+I\+O\+N\+\_\+\+V\+I\+T\+E\+S\+SE~0.\+75}
+
+
+
+défini le taux de reduction de la puissance lors d\textquotesingle{}un mouvement 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00026}{26} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00341}{Manette\+::determiner\+Trame\+Deplacement\+Robot()}.
+
+\mbox{\Hypertarget{manette_8h_a0d14fc3b862ee6b41366ac22e9737025}\label{manette_8h_a0d14fc3b862ee6b41366ac22e9737025}} 
+\index{manette.\+h@{manette.\+h}!R\+E\+T\+O\+U\+R\+\_\+\+E\+T\+A\+T\+\_\+\+I\+N\+I\+T\+I\+AL@{R\+E\+T\+O\+U\+R\+\_\+\+E\+T\+A\+T\+\_\+\+I\+N\+I\+T\+I\+AL}}
+\index{R\+E\+T\+O\+U\+R\+\_\+\+E\+T\+A\+T\+\_\+\+I\+N\+I\+T\+I\+AL@{R\+E\+T\+O\+U\+R\+\_\+\+E\+T\+A\+T\+\_\+\+I\+N\+I\+T\+I\+AL}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{R\+E\+T\+O\+U\+R\+\_\+\+E\+T\+A\+T\+\_\+\+I\+N\+I\+T\+I\+AL}{RETOUR\_ETAT\_INITIAL}}
+{\footnotesize\ttfamily \#define R\+E\+T\+O\+U\+R\+\_\+\+E\+T\+A\+T\+\_\+\+I\+N\+I\+T\+I\+AL~\char`\"{}I\+N\+IT\char`\"{}}
+
+
+
+défini la valeur du paramètre de la trame lors d\textquotesingle{}un retour à l\textquotesingle{}etat initial 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00074}{74} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00393}{Manette\+::determiner\+Trame\+Bouton()}.
+
+\mbox{\Hypertarget{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}\label{manette_8h_a1ae244fc787303cd46a9b684fb4b4056}} 
+\index{manette.\+h@{manette.\+h}!T\+A\+U\+X\+\_\+\+V\+A\+L\+I\+D\+I\+T\+E\+\_\+\+J\+O\+Y\+S\+T\+I\+CK@{T\+A\+U\+X\+\_\+\+V\+A\+L\+I\+D\+I\+T\+E\+\_\+\+J\+O\+Y\+S\+T\+I\+CK}}
+\index{T\+A\+U\+X\+\_\+\+V\+A\+L\+I\+D\+I\+T\+E\+\_\+\+J\+O\+Y\+S\+T\+I\+CK@{T\+A\+U\+X\+\_\+\+V\+A\+L\+I\+D\+I\+T\+E\+\_\+\+J\+O\+Y\+S\+T\+I\+CK}!manette.\+h@{manette.\+h}}
+\paragraph{\texorpdfstring{T\+A\+U\+X\+\_\+\+V\+A\+L\+I\+D\+I\+T\+E\+\_\+\+J\+O\+Y\+S\+T\+I\+CK}{TAUX\_VALIDITE\_JOYSTICK}}
+{\footnotesize\ttfamily \#define T\+A\+U\+X\+\_\+\+V\+A\+L\+I\+D\+I\+T\+E\+\_\+\+J\+O\+Y\+S\+T\+I\+CK~0.\+50}
+
+
+
+défini le taux d\textquotesingle{}acceptation de la valeur du joystick 
+
+
+
+Définition à la ligne \hyperlink{manette_8h_source_l00020}{20} du fichier \hyperlink{manette_8h_source}{manette.\+h}.
+
+
+
+Référencé par \hyperlink{manette_8cpp_source_l00455}{Manette\+::changer\+Axe\+X\+Joystick\+Droit()}, \hyperlink{manette_8cpp_source_l00421}{Manette\+::changer\+Axe\+X\+Joystick\+Gauche()}, \hyperlink{manette_8cpp_source_l00467}{Manette\+::changer\+Axe\+Y\+Joystick\+Droit()}, et \hyperlink{manette_8cpp_source_l00438}{Manette\+::changer\+Axe\+Y\+Joystick\+Gauche()}.
+

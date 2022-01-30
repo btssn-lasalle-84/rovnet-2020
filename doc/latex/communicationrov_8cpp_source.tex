@@ -1,0 +1,103 @@
+\hypertarget{communicationrov_8cpp_source}{}\subsection{communicationrov.\+cpp}
+\label{communicationrov_8cpp_source}\index{communicationrov.\+cpp@{communicationrov.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{communicationrov_8h}{communicationrov.h}"}
+00008 
+\Hypertarget{communicationrov_8cpp_source_l00009}\hyperlink{class_communication_rov_a22b64c69228d392a212f543e071adc02}{00009} \hyperlink{class_communication_rov_a22b64c69228d392a212f543e071adc02}{CommunicationRov::CommunicationRov}(\hyperlink{class_q_object}{QObject} *parent) : 
+      \hyperlink{class_q_object}{QObject}(parent)
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO;
+00012     \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port} = \textcolor{keyword}{new} QSerialPort(\textcolor{keyword}{this});
+00013 
+00014 \textcolor{preprocessor}{    #ifdef CONFIGURATION\_MANUELLE}
+00015         \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setPortName(\textcolor{stringliteral}{"/dev/ttyUSB0"});
+00016         \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setBaudRate(QSerialPort::Baud115200);
+00017         \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setDataBits(QSerialPort::Data8);
+00018         \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setStopBits(QSerialPort::OneStop);
+00019         \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setParity(QSerialPort::NoParity);
+00020         \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setFlowControl(QSerialPort::NoFlowControl);
+00021 
+00022         \hyperlink{class_communication_rov_acc835a6d927b1b8cd631e64ffabca0b4}{ouvrirPort}();
+00023 \textcolor{preprocessor}{    #else}
+00024 
+00027 \textcolor{preprocessor}{    #endif}
+00028 \}
+00029 
+\Hypertarget{communicationrov_8cpp_source_l00030}\hyperlink{class_communication_rov_a97e96f47dad6d47cbec4adc82756b49e}{00030} \hyperlink{class_communication_rov_a97e96f47dad6d47cbec4adc82756b49e}{CommunicationRov::~CommunicationRov}()
+00031 \{
+00032     \textcolor{keywordflow}{if}(\hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->isOpen())
+00033         \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->close();
+00034     qDebug() << Q\_FUNC\_INFO;
+00035 \}
+00036 
+\Hypertarget{communicationrov_8cpp_source_l00037}\hyperlink{class_communication_rov_acc835a6d927b1b8cd631e64ffabca0b4}{00037} \textcolor{keywordtype}{void} \hyperlink{class_communication_rov_acc835a6d927b1b8cd631e64ffabca0b4}{CommunicationRov::ouvrirPort}()
+00038 \{
+00039     \textcolor{keywordflow}{if}(\hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->open(QIODevice::ReadWrite))
+00040     \{
+00041         \textcolor{keywordflow}{if}(\hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->isOpen())
+00042             connect(\hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}, SIGNAL(readyRead()), \textcolor{keyword}{this}, SLOT(\hyperlink{class_communication_rov_a75de69ca01c849f760d7efea1b2722b9}{recevoir}()));
+00043     \}
+00044 \textcolor{preprocessor}{    #ifdef MODE\_CONNECTE}
+00045     \textcolor{keywordflow}{else}
+00046         QMessageBox::critical(\textcolor{keyword}{nullptr}, \textcolor{stringliteral}{"Communication rov"}, QString::fromUtf8(\textcolor{stringliteral}{"Erreur ouverture du port
+       série !"}));
+00047 \textcolor{preprocessor}{    #endif}
+00048 \}
+00049 
+\Hypertarget{communicationrov_8cpp_source_l00050}\hyperlink{class_communication_rov_a3d83702b8b9a753761d924556e55c38d}{00050} \textcolor{keywordtype}{void} \hyperlink{class_communication_rov_a3d83702b8b9a753761d924556e55c38d}{CommunicationRov::setConfiguration}(
+      \hyperlink{struct_configuration}{Configuration} maConfiguration)
+00051 \{
+00052     \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setPortName(maConfiguration.\hyperlink{struct_configuration_acc40b4f298cb215a94fb43976ef7d3a8}{port});
+00053     \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setBaudRate(maConfiguration.\hyperlink{struct_configuration_ab714d6036189bf451e566e6c6a971c85}{debit});
+00054     \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setDataBits((QSerialPort::DataBits)maConfiguration.\hyperlink{struct_configuration_a37e0691e4a25b11bd86a52bc68c81f93}{bitsDonnees});
+00055     \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setStopBits((QSerialPort::StopBits)maConfiguration.\hyperlink{struct_configuration_a9c24ff9a3e5a24b14e1ac8bc03de907d}{bitStop});
+00056     \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setParity(QSerialPort::NoParity);
+00057     \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->setFlowControl(QSerialPort::NoFlowControl);
+00058 \}
+00059 
+\Hypertarget{communicationrov_8cpp_source_l00060}\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{00060} \textcolor{keywordtype}{int} \hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{CommunicationRov::emettreTrame}(QString trame)
+00061 \{
+00062     \textcolor{keywordtype}{int} nombresOctets = -1;
+00063 
+00064     \textcolor{keywordflow}{if} (\hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port} == NULL || !\hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->isOpen())
+00065     \{
+00066        \textcolor{keywordflow}{return} -1;
+00067     \}
+00068 
+00069     nombresOctets = \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->write(trame.toLatin1());
+00070     \textcolor{keywordflow}{return} nombresOctets;
+00071 \}
+00072 
+\Hypertarget{communicationrov_8cpp_source_l00073}\hyperlink{class_communication_rov_a75de69ca01c849f760d7efea1b2722b9}{00073} \textcolor{keywordtype}{void} \hyperlink{class_communication_rov_a75de69ca01c849f760d7efea1b2722b9}{CommunicationRov::recevoir}()
+00074 \{
+00075     \textcolor{keywordflow}{while}(\hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->bytesAvailable())
+00076     \{
+00077         \hyperlink{class_communication_rov_acbb6939bb597179956c6f4bc5ca39f3f}{donnees} += \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->readAll();
+00078         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"bytesAvailable"} << \hyperlink{class_communication_rov_a21b62067ef0b2a6aec339df60b4abd72}{port}->bytesAvailable() << \textcolor{stringliteral}{"donnees"} << 
+      \hyperlink{class_communication_rov_acbb6939bb597179956c6f4bc5ca39f3f}{donnees};
+00079     \}
+00080 
+00081     \textcolor{keywordflow}{if}(\hyperlink{class_communication_rov_acbb6939bb597179956c6f4bc5ca39f3f}{donnees}.startsWith(\textcolor{stringliteral}{"$"}) && \hyperlink{class_communication_rov_acbb6939bb597179956c6f4bc5ca39f3f}{donnees}.endsWith(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"}))
+00082     \{
+00083         \hyperlink{class_communication_rov_a2f5a49875a9fa51800522c531ecc65fc}{trameRecue} = QString(\hyperlink{class_communication_rov_acbb6939bb597179956c6f4bc5ca39f3f}{donnees}.data());
+00084         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"trameRecue"} << \hyperlink{class_communication_rov_a2f5a49875a9fa51800522c531ecc65fc}{trameRecue};
+00085         emit \hyperlink{class_communication_rov_a78ee383e056cec7e8b24f3f9e472f60f}{nouvelleTrame}(trameRecue);
+00086         \hyperlink{class_communication_rov_acbb6939bb597179956c6f4bc5ca39f3f}{donnees}.clear();
+00087     \}
+00088 \}
+00089 
+\Hypertarget{communicationrov_8cpp_source_l00090}\hyperlink{class_communication_rov_ad9882c08083c66cd89b472b9244727e9}{00090} QStringList \hyperlink{class_communication_rov_ad9882c08083c66cd89b472b9244727e9}{CommunicationRov::detecterPortsDisponibles}()
+00091 \{
+00092     QStringList listePortsDetectes;
+00093 
+00094     \textcolor{keywordflow}{foreach}(\textcolor{keyword}{const} QSerialPortInfo &info, QSerialPortInfo::availablePorts())
+00095     \{
+00096         listePortsDetectes.push\_back(info.portName());
+00097     \}
+00098 
+00099     \textcolor{keywordflow}{return} listePortsDetectes;
+00100 \}
+00101 
+\end{DoxyCode}

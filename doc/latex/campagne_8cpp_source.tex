@@ -1,0 +1,112 @@
+\hypertarget{campagne_8cpp_source}{}\subsection{campagne.\+cpp}
+\label{campagne_8cpp_source}\index{campagne.\+cpp@{campagne.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{campagne_8h}{campagne.h}"}
+00008 
+\Hypertarget{campagne_8cpp_source_l00009}\hyperlink{class_campagne_aba78ce7d7b921053abc69e22789ec6da}{00009} \hyperlink{class_campagne_aba78ce7d7b921053abc69e22789ec6da}{Campagne::Campagne}(QString nomCampagne, QString lieu, QString nomTechnicien, QString 
+      prenomTechnicien, QDateTime date, \hyperlink{class_q_object}{QObject} *parent, \textcolor{keywordtype}{int} duree) : \hyperlink{class_q_object}{QObject} (parent), nomCampagne(
+      nomCampagne), nomTechnicien(nomTechnicien), prenomTechnicien(prenomTechnicien), lieu(lieu), date(date), duree(
+      duree), estArchive(false), albumPhoto(), mesures(), nombrePhotos(0)
+00010 \{
+00011     qDebug() << Q\_FUNC\_INFO;
+00012 \}
+00013 
+\Hypertarget{campagne_8cpp_source_l00014}\hyperlink{class_campagne_a250c1d51fba057efbd7d1f66dce7c6e9}{00014} \hyperlink{class_campagne_a250c1d51fba057efbd7d1f66dce7c6e9}{Campagne::~Campagne}()
+00015 \{
+00016     qDebug() << Q\_FUNC\_INFO;
+00017 \}
+00018 
+\Hypertarget{campagne_8cpp_source_l00019}\hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{00019} QString \hyperlink{class_campagne_a99a682fcb8e5a3f8c2aff7a44eb2c930}{Campagne::getNomCampagne}()\textcolor{keyword}{ const}
+00020 \textcolor{keyword}{}\{
+00021     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a4455078418041442fa3998b9b6cb6230}{nomCampagne};
+00022 \}
+00023 
+\Hypertarget{campagne_8cpp_source_l00024}\hyperlink{class_campagne_ae1df1bd6234222ccdaf5a1d20d64ee46}{00024} QString \hyperlink{class_campagne_ae1df1bd6234222ccdaf5a1d20d64ee46}{Campagne::getNomTechnicien}()\textcolor{keyword}{ const}
+00025 \textcolor{keyword}{}\{
+00026     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a6d3e88fb93b38cbcf1bc53cc9fc30f2f}{nomTechnicien};
+00027 \}
+00028 
+\Hypertarget{campagne_8cpp_source_l00029}\hyperlink{class_campagne_ac6c7772ef5d7b15964664d659b486263}{00029} QString \hyperlink{class_campagne_ac6c7772ef5d7b15964664d659b486263}{Campagne::getPrenomTechnicien}()\textcolor{keyword}{ const}
+00030 \textcolor{keyword}{}\{
+00031     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a9cc37c9671136683b5dac87ff34017bc}{prenomTechnicien};
+00032 \}
+00033 
+\Hypertarget{campagne_8cpp_source_l00034}\hyperlink{class_campagne_a98d71a731d16dec7a882787387b29d8e}{00034} QString \hyperlink{class_campagne_a98d71a731d16dec7a882787387b29d8e}{Campagne::getLieu}()\textcolor{keyword}{ const}
+00035 \textcolor{keyword}{}\{
+00036     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a1df66832d5d700bfd2bd36fe548f7cba}{lieu};
+00037 \}
+00038 
+\Hypertarget{campagne_8cpp_source_l00039}\hyperlink{class_campagne_a319b5bb4ed2b0fc1a10fc4d099a7a6d2}{00039} QDateTime \hyperlink{class_campagne_a319b5bb4ed2b0fc1a10fc4d099a7a6d2}{Campagne::getDate}()\textcolor{keyword}{ const}
+00040 \textcolor{keyword}{}\{
+00041     \textcolor{keywordflow}{return} \hyperlink{class_campagne_ac8180e3e533648770c4e6d9a182fe3ed}{date};
+00042 \}
+00043 
+\Hypertarget{campagne_8cpp_source_l00044}\hyperlink{class_campagne_abe02a9050f4a5ea9521dd40b855c350b}{00044} \textcolor{keywordtype}{int} \hyperlink{class_campagne_abe02a9050f4a5ea9521dd40b855c350b}{Campagne::getDuree}()\textcolor{keyword}{ const}
+00045 \textcolor{keyword}{}\{
+00046     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree};
+00047 \}
+00048 
+\Hypertarget{campagne_8cpp_source_l00049}\hyperlink{class_campagne_aff9aebbc64c40ce2c1b5ae584c7a8d71}{00049} \textcolor{keywordtype}{void} \hyperlink{class_campagne_aff9aebbc64c40ce2c1b5ae584c7a8d71}{Campagne::setDuree}(\textcolor{keywordtype}{int} \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree})
+00050 \{
+00051     this->duree = this->duree + \hyperlink{class_campagne_a4fb4cb286275103c9b6946e25e301fbf}{duree};
+00052 \}
+00053 
+00054 
+\Hypertarget{campagne_8cpp_source_l00055}\hyperlink{class_campagne_ad752790357417d83a93056d9c9689a16}{00055} QString \hyperlink{class_campagne_ad752790357417d83a93056d9c9689a16}{Campagne::getCheminSauvegarde}()\textcolor{keyword}{ const}
+00056 \textcolor{keyword}{}\{
+00057     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a95484d0782021bc30157669d16c42208}{cheminSauvegardePhotos};
+00058 \}
+00059 
+\Hypertarget{campagne_8cpp_source_l00060}\hyperlink{class_campagne_a68c7eb6776e46306b10f1ca2a409ae6e}{00060} \textcolor{keywordtype}{void} \hyperlink{class_campagne_a68c7eb6776e46306b10f1ca2a409ae6e}{Campagne::setCheminSauvegarde}(QString chemin)
+00061 \{
+00062     \hyperlink{class_campagne_a95484d0782021bc30157669d16c42208}{cheminSauvegardePhotos} = chemin;
+00063 \}
+00064 
+\Hypertarget{campagne_8cpp_source_l00065}\hyperlink{class_campagne_a2b8848ade0f97708571331ef71e4c9cb}{00065} \textcolor{keywordtype}{void} \hyperlink{class_campagne_a2b8848ade0f97708571331ef71e4c9cb}{Campagne::setNombrePhotos}(\textcolor{keywordtype}{int} nombre)
+00066 \{
+00067     \hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{nombrePhotos} = nombre;
+00068 \}
+00069 
+\Hypertarget{campagne_8cpp_source_l00070}\hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{00070} QVector<Photo> \hyperlink{class_campagne_abec90fcbc0c4ded45caaac9adb454add}{Campagne::getAlbumPhoto}()\textcolor{keyword}{ const}
+00071 \textcolor{keyword}{}\{
+00072     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto};
+00073 \}
+00074 
+\Hypertarget{campagne_8cpp_source_l00075}\hyperlink{class_campagne_ab3a3e6e325fec3aef0521f077e71c914}{00075} QVector<Mesure> \hyperlink{class_campagne_ab3a3e6e325fec3aef0521f077e71c914}{Campagne::getMesures}()\textcolor{keyword}{ const}
+00076 \textcolor{keyword}{}\{
+00077     \textcolor{keywordflow}{return} \hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{mesures};
+00078 \}
+00079 
+\Hypertarget{campagne_8cpp_source_l00080}\hyperlink{class_campagne_a472029bf46646d136a750dbaa7a3155f}{00080} \textcolor{keywordtype}{void} \hyperlink{class_campagne_a472029bf46646d136a750dbaa7a3155f}{Campagne::ajouterPhoto}(\hyperlink{struct_photo}{Photo} &photo)
+00081 \{
+00082     \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto}.push\_back(photo);
+00083 \}
+00084 
+\Hypertarget{campagne_8cpp_source_l00085}\hyperlink{class_campagne_a7751a5a0b5d1be46384f57b5409163e8}{00085} \textcolor{keywordtype}{void} \hyperlink{class_campagne_a7751a5a0b5d1be46384f57b5409163e8}{Campagne::modifierArchivePhoto}(\textcolor{keywordtype}{int} numeroPhoto)
+00086 \{
+00087     \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto}[numeroPhoto].aGarder = !(\hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto}[numeroPhoto].aGarder);
+00088 \}
+00089 
+\Hypertarget{campagne_8cpp_source_l00090}\hyperlink{class_campagne_ab301ceaacbe1186682c2b6f3282619d0}{00090} \textcolor{keywordtype}{void} \hyperlink{class_campagne_ab301ceaacbe1186682c2b6f3282619d0}{Campagne::ajouterMesure}(\hyperlink{struct_mesure}{Mesure} &mesure)
+00091 \{
+00092     \hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{mesures}.push\_back(mesure);
+00093 \}
+00094 
+\Hypertarget{campagne_8cpp_source_l00095}\hyperlink{class_campagne_a77066423e53f99bb6cd39fd25a6f2b5f}{00095} \textcolor{keywordtype}{void} \hyperlink{class_campagne_a77066423e53f99bb6cd39fd25a6f2b5f}{Campagne::supprimerMesures}()
+00096 \{
+00097     \hyperlink{class_campagne_ac460df42e2fbc12aae7b97abbe219ad0}{mesures}.clear();
+00098 \}
+00099 
+\Hypertarget{campagne_8cpp_source_l00100}\hyperlink{class_campagne_ad2fc4d5863302c88ded7b58991b1398a}{00100} \textcolor{keywordtype}{void} \hyperlink{class_campagne_ad2fc4d5863302c88ded7b58991b1398a}{Campagne::supprimerPhotos}()
+00101 \{
+00102     \hyperlink{class_campagne_a4d1fc7d4dbf10868a297fe3df7f08dbf}{albumPhoto}.clear();
+00103 \}
+00104 
+\Hypertarget{campagne_8cpp_source_l00105}\hyperlink{class_campagne_ab6a893a28bc18e054d2d19d2671ce6da}{00105} \textcolor{keywordtype}{int} \hyperlink{class_campagne_ab6a893a28bc18e054d2d19d2671ce6da}{Campagne::incrementeNombrePhoto}()
+00106 \{
+00107     \hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{nombrePhotos}++;
+00108     \textcolor{keywordflow}{return} \hyperlink{class_campagne_a3696e02e3cefc30bf4f284152917718b}{nombrePhotos};
+00109 \}
+\end{DoxyCode}

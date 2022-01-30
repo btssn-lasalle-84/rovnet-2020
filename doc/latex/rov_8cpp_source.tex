@@ -1,0 +1,291 @@
+\hypertarget{rov_8cpp_source}{}\subsection{rov.\+cpp}
+\label{rov_8cpp_source}\index{rov.\+cpp@{rov.\+cpp}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#include "\hyperlink{rov_8h}{rov.h}"}
+00008 \textcolor{preprocessor}{#include "\hyperlink{campagne_8h}{campagne.h}"}
+00009 \textcolor{preprocessor}{#include <iomanip>}
+00010 
+\Hypertarget{rov_8cpp_source_l00011}\hyperlink{class_rov_a6e893548f3aadca5660540feb74f06f4}{00011} \hyperlink{class_rov_a6e893548f3aadca5660540feb74f06f4}{Rov::Rov}(\hyperlink{class_i_h_m_rov}{IHMRov} *ihmRov, \hyperlink{class_q_object}{QObject} *parent) : \hyperlink{class_q_object}{QObject}(parent), ihmRov(ihmRov), 
+      camera(nullptr), trameDeplacement(\textcolor{stringliteral}{"$DEP;0;0;0\(\backslash\)r\(\backslash\)n"}), tramePrecedenteDeplacement(\textcolor{stringliteral}{"$DEP;0;0;0\(\backslash\)r\(\backslash\)n"}), 
+      tramePilotage(\textcolor{stringliteral}{"$BRAS;0\(\backslash\)r\(\backslash\)n"}), tramePrecedentePilotage(\textcolor{stringliteral}{"$BRAS;0\(\backslash\)r\(\backslash\)n"}), tramePince(\textcolor{stringliteral}{"$PINCE;0\(\backslash\)r\(\backslash\)n"}), tramePrecedentePince(\textcolor{stringliteral}{
+      "$PINCE;0\(\backslash\)r\(\backslash\)n"}), tramePrecedenteCamera(\hyperlink{rov_8h_a12ba48a9aa995ebb4c7a7ace01808a2e}{TRAME\_CAMERA\_IMMOBILE}),
+00012 campagneEnCours(false)
+00013 \{
+00014     qDebug() << Q\_FUNC\_INFO;
+00015     \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov} = \textcolor{keyword}{new} \hyperlink{class_communication_rov}{CommunicationRov}(\textcolor{keyword}{this});
+00016     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs} = \textcolor{keyword}{new} \hyperlink{class_capteurs}{Capteurs}(\textcolor{keyword}{this});
+00017 
+00018     \hyperlink{class_rov_a3ba4939b5d1cbd837b9c42869e6b8114}{initialiserEvenements}();
+00019     \hyperlink{class_rov_a53979bc347cda7cc30d18324f2146be1}{detecterManette}();
+00020 \}
+00021 
+\Hypertarget{rov_8cpp_source_l00022}\hyperlink{class_rov_a6e41f712195b9af74fd75b781745d1b5}{00022} \hyperlink{class_rov_a6e41f712195b9af74fd75b781745d1b5}{Rov::~Rov}()
+00023 \{
+00024     \hyperlink{class_rov_a31f810925200612a6bb4728236c695ed}{supprimerManette}();
+00025     \hyperlink{class_rov_ad53e8d86817c81f92e3113b0394bedc5}{arreterCampagne}();
+00026     qDebug() << Q\_FUNC\_INFO;
+00027 \}
+00028 
+\Hypertarget{rov_8cpp_source_l00029}\hyperlink{class_rov_a53979bc347cda7cc30d18324f2146be1}{00029} \textcolor{keywordtype}{void} \hyperlink{class_rov_a53979bc347cda7cc30d18324f2146be1}{Rov::detecterManette}()
+00030 \{
+00031     \hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{listeManettes} = QGamepadManager::instance()->connectedGamepads();
+00032 
+00033     \textcolor{keywordflow}{if} (\hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{listeManettes}.isEmpty())
+00034     \{
+00035         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Aucune manette détectée !"};
+00036 
+00037     \}
+00038     \textcolor{keywordflow}{else}
+00039     \{
+00040         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Nombre de manettes"} << \hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{listeManettes}.size();
+00041     \}
+00042 
+00043     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} m : \hyperlink{class_rov_ac3bf6c7552073bd2d780e005205919a9}{listeManettes})
+00044     \{
+00045         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"-> Manette"} << m;
+00046         \hyperlink{class_manette}{Manette} *manette = \textcolor{keyword}{new} \hyperlink{class_manette}{Manette}(m);
+00047         \hyperlink{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}{manettes}.push\_back(manette);
+00048         \hyperlink{class_rov_a0d1863d7d230c0153253d7d2689429b5}{initialiserEvenementManette}(manette);
+00049     \}
+00050 \}
+00051 
+\Hypertarget{rov_8cpp_source_l00052}\hyperlink{class_rov_a0d1863d7d230c0153253d7d2689429b5}{00052} \textcolor{keywordtype}{void} \hyperlink{class_rov_a0d1863d7d230c0153253d7d2689429b5}{Rov::initialiserEvenementManette}(\hyperlink{class_manette}{Manette} *manette)
+00053 \{
+00054     connect(manette, SIGNAL(creationTrameDeplacement(\textcolor{keywordtype}{char}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char})), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_aa264d0723f6b491425ac2f85b933bab2}{creerTrameDeplacement}(\textcolor{keywordtype}{char}, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{char})));
+00055     connect(manette, SIGNAL(creationTramePilotage(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_a97be62676ab0d57d5a8ac498147905ec}{creerTramePilotage}(QString)));
+00056     connect(manette, SIGNAL(creationTrameOrdre(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_a9e80eccfada890561e8af1f3426f6a2b}{creerTrameOrdre}(QString)));
+00057     connect(manette, SIGNAL(creationTramePince(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_a66be7f6ff6e20da160d55e0cd0605965}{creerTramePince}(QString)));
+00058     connect(manette, SIGNAL(nouvelleTrameCamera(QString,QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_a204b1f4efe5a89f4458d84e17858e7c8}{creerTrameCamera}(QString,QString)));
+00059 
+00060     connect(manette, SIGNAL(axisLeftXChanged(\textcolor{keywordtype}{double})), manette, SLOT(changerAxeXJoystickGauche(\textcolor{keywordtype}{double})));
+00061     connect(manette, SIGNAL(axisLeftYChanged(\textcolor{keywordtype}{double})), manette, SLOT(changerAxeYJoystickGauche(\textcolor{keywordtype}{double})));
+00062     connect(manette, SIGNAL(axisRightXChanged(\textcolor{keywordtype}{double})), manette, SLOT(changerAxeXJoystickDroit(\textcolor{keywordtype}{double})));
+00063     connect(manette, SIGNAL(axisRightYChanged(\textcolor{keywordtype}{double})), manette, SLOT(changerAxeYJoystickDroit(\textcolor{keywordtype}{double})));
+00064     connect(manette, SIGNAL(buttonL1Changed(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonHautGauche(\textcolor{keywordtype}{bool})));
+00065     connect(manette, SIGNAL(buttonR1Changed(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonHautDroit(\textcolor{keywordtype}{bool})));
+00066     connect(manette, SIGNAL(buttonL2Changed(\textcolor{keywordtype}{double})), manette, SLOT(changerGachetteBasGauche(\textcolor{keywordtype}{double})));
+00067     connect(manette, SIGNAL(buttonR2Changed(\textcolor{keywordtype}{double})), manette, SLOT(changerGachetteBasDroit(\textcolor{keywordtype}{double})));
+00068     connect(manette, SIGNAL(buttonUpChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerFlecheEnAvant(\textcolor{keywordtype}{bool})));
+00069     connect(manette, SIGNAL(buttonDownChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerFlecheEnArriere(\textcolor{keywordtype}{bool})));
+00070     connect(manette, SIGNAL(buttonLeftChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerFlecheAGauche(\textcolor{keywordtype}{bool})));
+00071     connect(manette, SIGNAL(buttonRightChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerFlecheADroite(\textcolor{keywordtype}{bool})));
+00072     connect(manette, SIGNAL(buttonAChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonA(\textcolor{keywordtype}{bool})));
+00073     connect(manette, SIGNAL(buttonBChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonB(\textcolor{keywordtype}{bool})));
+00074     connect(manette, SIGNAL(buttonXChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonX(\textcolor{keywordtype}{bool})));
+00075     connect(manette, SIGNAL(buttonYChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonY(\textcolor{keywordtype}{bool})));
+00076     connect(manette, SIGNAL(buttonSelectChanged(\textcolor{keywordtype}{bool})), manette, SLOT(changerBoutonSelect(\textcolor{keywordtype}{bool})));
+00077     connect(manette, SIGNAL(buttonGuideChanged(\textcolor{keywordtype}{bool})), manette, SLOT(fermerApplication(\textcolor{keywordtype}{bool})));
+00078     connect(manette, SIGNAL(buttonR3Changed(\textcolor{keywordtype}{bool})), \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}, SLOT(capturerImage(\textcolor{keywordtype}{bool})));
+00079 \}
+00080 
+\Hypertarget{rov_8cpp_source_l00081}\hyperlink{class_rov_a0d51099f9e1991ceffa0b6ed4a1c4e2e}{00081} \textcolor{keywordtype}{void} \hyperlink{class_rov_a0d51099f9e1991ceffa0b6ed4a1c4e2e}{Rov::decoderTrameTelemetrie}(QString trameTelemetrie)
+00082 \{
+00083     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs}->\hyperlink{class_capteurs_a399af986afb9d707138bc57a51e1f34f}{setTelemetrie}(trameTelemetrie.section(\textcolor{stringliteral}{";"},1,1));
+00084 \}
+00085 
+\Hypertarget{rov_8cpp_source_l00086}\hyperlink{class_rov_ac1780c0484f427807f6207d17b564221}{00086} \textcolor{keywordtype}{void} \hyperlink{class_rov_ac1780c0484f427807f6207d17b564221}{Rov::decoderTrameCapteur}(QString trameCapteur)
+00087 \{
+00088     QString temperature, humidite, radiation;
+00089 
+00090     temperature = trameCapteur.section(\textcolor{stringliteral}{";"},1,1);
+00091     humidite = trameCapteur.section(\textcolor{stringliteral}{";"},2,2);
+00092     radiation = trameCapteur.section(\textcolor{stringliteral}{";"},3,3);
+00093 
+00094     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs}->\hyperlink{class_capteurs_a8d6a0bceb4d236edf7b51335d9be8ecd}{setTemperature}(temperature);
+00095     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs}->\hyperlink{class_capteurs_aafb06e1746006cdb72e92dc7a0519a2e}{setHumidite}(humidite);
+00096     \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs}->\hyperlink{class_capteurs_a8692d145188df3129d88fef77efbb7b0}{setRadiation}(radiation);
+00097 
+00098     \hyperlink{struct_mesure}{Mesure} mesure;
+00099     mesure.\hyperlink{struct_mesure_a9958b0440aca6af40028e742123afd9e}{dateheure} = QDateTime::currentDateTime();
+00100     mesure.\hyperlink{struct_mesure_ad0dba8933e4b65b3781be7811f0f86ac}{temperature} = temperature;
+00101     mesure.\hyperlink{struct_mesure_ad354ba4d8a32c05600859c76a8af0282}{humidite} = humidite;
+00102     mesure.\hyperlink{struct_mesure_a1dae237cf09302d426ea375b9afb12f7}{radiation} = radiation;
+00103 
+00104     QDateTime date;
+00105 
+00106     \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_ab301ceaacbe1186682c2b6f3282619d0}{ajouterMesure}(mesure);
+00107 
+00108     emit \hyperlink{class_rov_a180b955cc5ee7e01196299377e0c5f33}{enregistrerMesures}(temperature, humidite, radiation);
+00109 
+00110 \}
+00111 
+\Hypertarget{rov_8cpp_source_l00112}\hyperlink{class_rov_a3ba4939b5d1cbd837b9c42869e6b8114}{00112} \textcolor{keywordtype}{void} \hyperlink{class_rov_a3ba4939b5d1cbd837b9c42869e6b8114}{Rov::initialiserEvenements}()
+00113 \{
+00114     connect(\hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}, SIGNAL(nouvelleTrame(QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_rov_ad818ff6ee1210ae44a24106b2bbbee7d}{decoderTrame}(QString)));
+00115 \}
+00116 
+\Hypertarget{rov_8cpp_source_l00117}\hyperlink{class_rov_a31f810925200612a6bb4728236c695ed}{00117} \textcolor{keywordtype}{void} \hyperlink{class_rov_a31f810925200612a6bb4728236c695ed}{Rov::supprimerManette}()
+00118 \{
+00119     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\hyperlink{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}{manettes}.size();i++)
+00120         \textcolor{keyword}{delete} \hyperlink{class_rov_a58ea20dc3615a732b87ac381bf1c0a83}{manettes}[i];
+00121 \}
+00122 
+\Hypertarget{rov_8cpp_source_l00123}\hyperlink{class_rov_ab20c6d0a73d6b20d4bef9e9236535a3d}{00123} \textcolor{keywordtype}{bool} \hyperlink{class_rov_ab20c6d0a73d6b20d4bef9e9236535a3d}{Rov::demarrerCampagne}()
+00124 \{
+00125     qDebug() << Q\_FUNC\_INFO;
+00126     \textcolor{keywordflow}{if}(\hyperlink{class_camera_a116b3869ff0647c851715605a1938a3c}{Camera::getNbCameras}() > 0)
+00127     \{
+00128         \hyperlink{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}{dureeCampagne}.start();
+00129         QString nom = \hyperlink{class_camera_a506d459df95042a03894afd5b781c2aa}{Camera::creerNomCamera}(\hyperlink{camera_8h_a87f76384d33bc9bba579afd1d5f3221a}{CAMERA\_DEFAUT});
+00130         \textcolor{keywordflow}{if}(\hyperlink{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}{demarrerVideo}(nom))
+00131             \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours} = \textcolor{keyword}{true};
+00132     \}
+00133     \textcolor{keywordflow}{return} \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours};
+00134 \}
+00135 
+\Hypertarget{rov_8cpp_source_l00136}\hyperlink{class_rov_ad53e8d86817c81f92e3113b0394bedc5}{00136} \textcolor{keywordtype}{void} \hyperlink{class_rov_ad53e8d86817c81f92e3113b0394bedc5}{Rov::arreterCampagne}()
+00137 \{
+00138     qDebug() << Q\_FUNC\_INFO;
+00139     \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_aff9aebbc64c40ce2c1b5ae584c7a8d71}{setDuree}(\hyperlink{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}{dureeCampagne}.elapsed());
+00140     \hyperlink{class_rov_a241368439666a2549faff42931d82dfb}{arreterVideo}();
+00141     \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours} = \textcolor{keyword}{false};
+00142 \}
+00143 
+\Hypertarget{rov_8cpp_source_l00144}\hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{00144} \hyperlink{class_camera}{Camera}* \hyperlink{class_rov_ac1eeb568d39018359b89384c2ee6ee86}{Rov::getCamera}()
+00145 \{
+00146     \textcolor{keywordflow}{return} \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera};
+00147 \}
+00148 
+\Hypertarget{rov_8cpp_source_l00149}\hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{00149} \hyperlink{class_capteurs}{Capteurs}* \hyperlink{class_rov_a7e231245b39e7cc8026324e337b34c64}{Rov::getCapteurs}()
+00150 \{
+00151     \textcolor{keywordflow}{return} \hyperlink{class_rov_a1b34d63d505da660be27b75ad93754c3}{capteurs};
+00152 \}
+00153 
+\Hypertarget{rov_8cpp_source_l00154}\hyperlink{class_rov_aa977585d4377a57281004fd57208635a}{00154} QString \hyperlink{class_rov_aa977585d4377a57281004fd57208635a}{Rov::getTempsCampagne}()
+00155 \{
+00156     QTime duree(0,0);
+00157     QTime dureeMission = duree.addMSecs(\hyperlink{class_rov_a148a0ff28fc2dbed7b65466d77297b8a}{dureeCampagne}.elapsed() + 
+      \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}()->\hyperlink{class_campagne_abe02a9050f4a5ea9521dd40b855c350b}{getDuree}());
+00158     \textcolor{keywordflow}{return} dureeMission.toString(\textcolor{stringliteral}{"hh:mm:ss"});
+00159 \}
+00160 
+\Hypertarget{rov_8cpp_source_l00161}\hyperlink{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}{00161} \textcolor{keywordtype}{bool} \hyperlink{class_rov_aaf1a53557b6e8f0ae2497a0af93bd6db}{Rov::demarrerVideo}(QString nomCamera, \textcolor{keywordtype}{int} choixResolution)
+00162 \{
+00163     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"nomCamera"} << nomCamera << \textcolor{stringliteral}{"choixResolution"} << choixResolution;
+00164     \textcolor{keywordflow}{if}(\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera} == \textcolor{keyword}{nullptr})
+00165     \{
+00166         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera} = \textcolor{keyword}{new} \hyperlink{class_camera}{Camera}(\textcolor{keyword}{this}, nomCamera, choixResolution);
+00167         connect(\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}, SIGNAL(nouvelleImage(QPixmap)), \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}, SLOT(afficherImage(QPixmap)));
+00168         \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_a955daa231d959666fa7ed01346b2b6ef}{initialiserEvenementsCamera}();
+00169         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}->start();
+00170         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00171     \}
+00172     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00173 \}
+00174 
+\Hypertarget{rov_8cpp_source_l00175}\hyperlink{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}{00175} \textcolor{keywordtype}{bool} \hyperlink{class_rov_a59d1a6d2ca83324e6efc0b74f2cff686}{Rov::getCampagneEncours}()\textcolor{keyword}{ const}
+00176 \textcolor{keyword}{}\{
+00177     \textcolor{keywordflow}{return} \hyperlink{class_rov_abc9d61d10d8fb5e99283d3775baf98a8}{campagneEnCours};
+00178 \}
+00179 
+\Hypertarget{rov_8cpp_source_l00180}\hyperlink{class_rov_ad818ff6ee1210ae44a24106b2bbbee7d}{00180} \textcolor{keywordtype}{void} \hyperlink{class_rov_ad818ff6ee1210ae44a24106b2bbbee7d}{Rov::decoderTrame}(QString trame)
+00181 \{
+00182     QString trameTelemetrie, trameCapteur;
+00183 
+00184     QStringList trames = trame.split(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"});
+00185     qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"trame"} << trames.size();
+00186     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < trames.size(); i++)
+00187     \{
+00188         \textcolor{keywordflow}{if}(!trames[i].isEmpty())
+00189         \{
+00190             \textcolor{keywordflow}{if}(trames[i].startsWith(\hyperlink{rov_8h_aa4d7955cdbd3d56086855ed938b980d1}{DEBUT\_TRAME\_TELEMETRIE}))
+00191             \{
+00192                 trameTelemetrie = trames[i];
+00193                 \hyperlink{class_rov_a0d51099f9e1991ceffa0b6ed4a1c4e2e}{decoderTrameTelemetrie}(trameTelemetrie);
+00194             \}
+00195             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(trames[i].startsWith(\hyperlink{rov_8h_a224f8acbc025db0e90045ce113761b0f}{DEBUT\_TRAME\_CAPTEUR}))
+00196             \{
+00197                 trameCapteur = trames[i];
+00198                 \hyperlink{class_rov_ac1780c0484f427807f6207d17b564221}{decoderTrameCapteur}(trameCapteur);
+00199             \}
+00200         \}
+00201         \textcolor{keywordflow}{else}
+00202         \{
+00203             qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Trame inconnue !"};
+00204         \}
+00205     \}
+00206 \}
+00207 
+\Hypertarget{rov_8cpp_source_l00208}\hyperlink{class_rov_aa264d0723f6b491425ac2f85b933bab2}{00208} \textcolor{keywordtype}{void} \hyperlink{class_rov_aa264d0723f6b491425ac2f85b933bab2}{Rov::creerTrameDeplacement}(\textcolor{keywordtype}{char} deplacementAxeX, \textcolor{keywordtype}{int} puissance, \textcolor{keywordtype}{char} 
+      deplacementAxeY)
+00209 \{
+00210     \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement} = \hyperlink{rov_8h_a5bebf7c0b48103d44a372f28cf7f8981}{DEBUT\_TRAME\_DEPLACEMENT} \textcolor{stringliteral}{";"} + QString(
+      deplacementAxeX) + \textcolor{stringliteral}{";"} + QString::number(puissance) + \textcolor{stringliteral}{";"} + QString(deplacementAxeY) + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00211     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a6e42b166c837f5103b53bb9eae35f087}{tramePrecedenteDeplacement} != \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement})
+00212     \{
+00213         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"trameDeplacement :"} << \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement};
+00214         \hyperlink{class_rov_a6e42b166c837f5103b53bb9eae35f087}{tramePrecedenteDeplacement} = \hyperlink{class_rov_ad30a06154c31cdb02eb28a0c7197731f}{trameDeplacement};
+00215         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(trameDeplacement);
+00216     \}
+00217 \}
+00218 
+\Hypertarget{rov_8cpp_source_l00219}\hyperlink{class_rov_a97be62676ab0d57d5a8ac498147905ec}{00219} \textcolor{keywordtype}{void} \hyperlink{class_rov_a97be62676ab0d57d5a8ac498147905ec}{Rov::creerTramePilotage}(QString deplacement)
+00220 \{
+00221     \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage} = \hyperlink{rov_8h_a023822fa9447e76b37e5d5c78f5c64f9}{DEBUT\_TRAME\_PILOTAGE} \textcolor{stringliteral}{";"} + deplacement + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00222     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage} != \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage} && 
+      \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince} == \hyperlink{rov_8h_ab46e52d96e193353eadd9cd7f598f670}{TRAME\_PINCE\_IMMOBILE})
+00223     \{
+00224         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"tramePilotage :"} << \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage};
+00225         \hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage} = \hyperlink{class_rov_a379b288ce69a0bb9eaac8f673db8ae07}{tramePilotage};
+00226         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(tramePilotage);
+00227     \}
+00228 \}
+00229 
+\Hypertarget{rov_8cpp_source_l00230}\hyperlink{class_rov_a9e80eccfada890561e8af1f3426f6a2b}{00230} \textcolor{keywordtype}{void} \hyperlink{class_rov_a9e80eccfada890561e8af1f3426f6a2b}{Rov::creerTrameOrdre}(QString ordre)
+00231 \{
+00232     \hyperlink{class_rov_aa813010d76738e268a4bbe3773663a38}{trameOrdre} = \hyperlink{rov_8h_a8b313ffefec16809296d06146e0e75c8}{DEBUT\_TRAME\_ORDRE} \textcolor{stringliteral}{";"} + ordre + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00233     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage} == \hyperlink{rov_8h_ab218eea9b0b6d799e400a0d1ff835c13}{TRAME\_PILOTAGE\_IMMOBILE} && 
+      \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince} == \hyperlink{rov_8h_ab46e52d96e193353eadd9cd7f598f670}{TRAME\_PINCE\_IMMOBILE})
+00234     \{
+00235         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"trameOrdre :"} << \hyperlink{class_rov_aa813010d76738e268a4bbe3773663a38}{trameOrdre};
+00236         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(trameOrdre);
+00237     \}
+00238 \}
+00239 
+\Hypertarget{rov_8cpp_source_l00240}\hyperlink{class_rov_a66be7f6ff6e20da160d55e0cd0605965}{00240} \textcolor{keywordtype}{void} \hyperlink{class_rov_a66be7f6ff6e20da160d55e0cd0605965}{Rov::creerTramePince}(QString mouvementPince)
+00241 \{
+00242     \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince} = \hyperlink{rov_8h_ab9dc0e136712ab8227078e19a43e166a}{DEBUT\_TRAME\_PINCE} \textcolor{stringliteral}{";"} + mouvementPince + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00243     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a12b08128a49ca43fc1198fdeb6a6f0cd}{tramePrecedentePilotage} == \hyperlink{rov_8h_ab218eea9b0b6d799e400a0d1ff835c13}{TRAME\_PILOTAGE\_IMMOBILE} && 
+      \hyperlink{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}{tramePrecedentePince} != \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince})
+00244     \{
+00245         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"tramePince :"} << \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince};
+00246         \hyperlink{class_rov_aa8ee68edaa542473e1e5ea6bc24432ce}{tramePrecedentePince} = \hyperlink{class_rov_a2c24d7c884d8fae07e452105037f8e2c}{tramePince};
+00247         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(tramePince);
+00248     \}
+00249 \}
+00250 
+\Hypertarget{rov_8cpp_source_l00251}\hyperlink{class_rov_a204b1f4efe5a89f4458d84e17858e7c8}{00251} \textcolor{keywordtype}{void} \hyperlink{class_rov_a204b1f4efe5a89f4458d84e17858e7c8}{Rov::creerTrameCamera}(QString axeX, QString axeY)
+00252 \{
+00253     QString trameCamera = \hyperlink{rov_8h_adc800d68618fc04d8386c438c5a890ca}{DEBUT\_TRAME\_CAMERA} \textcolor{stringliteral}{";"} + axeX + \textcolor{stringliteral}{";"} + axeY + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+00254 
+00255     \textcolor{keywordflow}{if}(\hyperlink{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}{tramePrecedenteCamera} != trameCamera)
+00256     \{
+00257         \hyperlink{class_rov_a66e64595d9bb97dfbfa6f2ed9548b216}{tramePrecedenteCamera} = trameCamera;
+00258         \hyperlink{class_rov_a8e7aaa17ee2134f26d57241d11ab2a99}{communicationRov}->\hyperlink{class_communication_rov_a4f52076db8d6e78abe1745fa1e235272}{emettreTrame}(trameCamera);
+00259         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"trame camera"} << trameCamera;
+00260     \}
+00261 \}
+00262 
+\Hypertarget{rov_8cpp_source_l00263}\hyperlink{class_rov_a241368439666a2549faff42931d82dfb}{00263} \textcolor{keywordtype}{void} \hyperlink{class_rov_a241368439666a2549faff42931d82dfb}{Rov::arreterVideo}()
+00264 \{
+00265     \textcolor{keywordflow}{if}(\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera} != \textcolor{keyword}{nullptr})
+00266     \{
+00267         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"isRunning"} << \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}->isRunning();
+00268         \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}->\hyperlink{class_i_h_m_rov_a81335964f1443d11e0929017b2f21267}{arreterVideo}();
+00269         disconnect(\hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}, SIGNAL(nouvelleImage(QPixmap)), \hyperlink{class_rov_a9b1c1c3b4e268a32e69b2ea4c863b817}{ihmRov}, SLOT(afficherImage(QPixmap))
+      );
+00270         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}->requestInterruption();
+00271         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera}->wait();
+00272         \textcolor{keyword}{delete} \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera};
+00273         \hyperlink{class_rov_ad0461ecece812497ee9b4a962f168c18}{camera} = \textcolor{keyword}{nullptr};
+00274     \}
+00275 \}
+\end{DoxyCode}

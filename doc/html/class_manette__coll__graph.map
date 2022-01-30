@@ -1,0 +1,6 @@
+<map id="Manette" name="Manette">
+<area shape="rect" id="node2" href="$class_q_gamepad.html" title="La classe QGamepad est utilisée pour accéder à l&#39;état actuel du matériel de la manette de jeu connect..." alt="" coords="5,49,93,127"/>
+<area shape="rect" id="node3" href="$struct_etat_manette_bouton.html" title="Structure qui définit l&#39;état de la manette en mode pilotage de la pince. " alt="" coords="118,20,253,156"/>
+<area shape="rect" id="node4" href="$struct_etat_manette_pilotage.html" title="Structure qui définit l&#39;état de la manette en mode pilotage de la pince. " alt="" coords="277,5,424,171"/>
+<area shape="rect" id="node5" href="$struct_etat_manette_deplacement.html" title="Structure qui définit l&#39;état de la manette en mode déplacement du robot. " alt="" coords="448,5,627,171"/>
+</map>

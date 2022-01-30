@@ -1,0 +1,72 @@
+\hypertarget{ihmrov_8h_source}{}\subsection{ihmrov.\+h}
+\label{ihmrov_8h_source}\index{ihmrov.\+h@{ihmrov.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef IHMROV\_H}
+00008 \textcolor{preprocessor}{#define IHMROV\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QtWidgets>}
+00011 \textcolor{preprocessor}{#include <QMessageBox>}
+00012 
+00013 \textcolor{comment}{//#define PAS\_DE\_MANETTE}
+00014 
+\Hypertarget{ihmrov_8h_source_l00020}\hyperlink{ihmrov_8h_aa7e4fcf0d5f67b5c84de425d1f4776ea}{00020} \textcolor{preprocessor}{#define NOM\_FENETRE\_ROV "Projet Rovnet 2020"}
+00021 
+\Hypertarget{ihmrov_8h_source_l00027}\hyperlink{ihmrov_8h_a7e8b3c8482e593df0ace933ad3de22ee}{00027} \textcolor{preprocessor}{#define RATIO           0.85}
+00028 
+00029 \textcolor{keyword}{class }\hyperlink{class_i_h_m_album_photo}{IHMAlbumPhoto};
+00030 \textcolor{keyword}{class }\hyperlink{class_i_h_m_reglage_video}{IHMReglageVideo};
+00031 \textcolor{keyword}{class }\hyperlink{class_rov}{Rov};
+00032 \textcolor{keyword}{class }\hyperlink{class_i_h_m_accueil}{IHMAccueil};
+00033 \textcolor{keyword}{class }\hyperlink{class_campagne}{Campagne};
+00034 \textcolor{keyword}{class }\hyperlink{class_i_h_m_configuration}{IHMConfiguration};
+00035 
+\Hypertarget{ihmrov_8h_source_l00041}\hyperlink{class_i_h_m_rov}{00041} \textcolor{keyword}{class }\hyperlink{class_i_h_m_rov}{IHMRov} : \textcolor{keyword}{public} \hyperlink{class_q_widget}{QWidget}
+00042 \{
+00043     Q\_OBJECT
+00044 \textcolor{keyword}{private}:
+\Hypertarget{ihmrov_8h_source_l00045}\hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{00045}     \hyperlink{class_campagne}{Campagne} *\hyperlink{class_i_h_m_rov_af0475e935531b7331f097ae13d07989b}{campagneEnCours};       
+\Hypertarget{ihmrov_8h_source_l00046}\hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{00046}     \hyperlink{class_i_h_m_accueil}{IHMAccueil} *\hyperlink{class_i_h_m_rov_aa22f6fe8daf5c67071ec02a348e5cc3e}{ihmAccueil};          
+\Hypertarget{ihmrov_8h_source_l00047}\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{00047}     \hyperlink{class_rov}{Rov} *\hyperlink{class_i_h_m_rov_a777ca33fdb295ba6b6773e880356fa1e}{rov};                        
+\Hypertarget{ihmrov_8h_source_l00048}\hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{00048}     \hyperlink{class_i_h_m_reglage_video}{IHMReglageVideo} *\hyperlink{class_i_h_m_rov_a6baa53853d29151404e6ae3dec5d2003}{reglageVideo};   
+\Hypertarget{ihmrov_8h_source_l00049}\hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{00049}     \hyperlink{class_i_h_m_configuration}{IHMConfiguration} *\hyperlink{class_i_h_m_rov_a29f4de081899d8830376f1ad27e74647}{configuration}; 
+\Hypertarget{ihmrov_8h_source_l00050}\hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{00050}     QLabel *\hyperlink{class_i_h_m_rov_acdeabe02e1431b5c1817cb2a89debd0a}{fluxVideo};               
+\Hypertarget{ihmrov_8h_source_l00051}\hyperlink{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}{00051}     QPushButton *\hyperlink{class_i_h_m_rov_a0896dea1a2d901a7cf43a344e22fc66d}{photosEnCours};      
+\Hypertarget{ihmrov_8h_source_l00052}\hyperlink{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}{00052}     QPushButton *\hyperlink{class_i_h_m_rov_a57cb3bea4f1f9149d730ccc5688581fc}{boutonReglageVideo}; 
+\Hypertarget{ihmrov_8h_source_l00053}\hyperlink{class_i_h_m_rov_a2081e30323773ee895199ec026d82fc8}{00053}     QPixmap \hyperlink{class_i_h_m_rov_a2081e30323773ee895199ec026d82fc8}{derniereImageVideo};      
+00054 \textcolor{preprocessor}{    #ifdef PAS\_DE\_MANETTE}
+00055     QPushButton *testCapturePhoto;   
+00056 \textcolor{preprocessor}{    #endif}
+\Hypertarget{ihmrov_8h_source_l00057}\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{00057}     QPushButton *\hyperlink{class_i_h_m_rov_a324be23537f48127c49b943aa439a978}{boutonCampagne};     
+\Hypertarget{ihmrov_8h_source_l00058}\hyperlink{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}{00058}     QPushButton *\hyperlink{class_i_h_m_rov_aea67721180bf155892a297b3c39309c5}{boutonConfiguration};
+00059 
+00064     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a77d08efdfc3292d215af4df0e1af33a8}{initialiserWidgets}();
+00069     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_aba47130fb875a01eefa09bc875affe6c}{configurerWidgets}();
+00074     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_aa900473297415bf43a13c4152034135a}{initialiserLayouts}();
+00079     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a61e34efc084bba9934bce0d91448ea04}{initialiserEvenements}();
+00085     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a58ba3661c111c9ab2d6f1e3c52f4ec21}{actualiserInformations}(QPixmap &image);
+00090     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_ac0c8c09dc2ef1c06e1008647dcd2d6b8}{fermer}();
+00091 
+00092 \textcolor{keyword}{protected}:
+00098     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a68b11818797a6444a8fab81b7b45f670}{closeEvent}(QCloseEvent *event);
+00099 
+00100 \textcolor{keyword}{public}:
+00107     \hyperlink{class_i_h_m_rov_a403274da2bd4ca316f2f1b64a48a315b}{IHMRov}(\hyperlink{class_i_h_m_accueil}{IHMAccueil} *ihmAccueil, \hyperlink{class_q_widget}{QWidget} *parent = \textcolor{keyword}{nullptr});
+00112     \hyperlink{class_i_h_m_rov_ab861463889934a3b6083b7a29c6adf45}{~IHMRov}();
+00118     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a301a0b8cb323c2c9de71df9070bb7555}{setCampagne}(\hyperlink{class_campagne}{Campagne} *campagne);
+00124     \hyperlink{class_campagne}{Campagne}* \hyperlink{class_i_h_m_rov_ab3e8686eef9233b4c1e6711cf1c4576a}{getCampagne}();
+00125 
+00126 \textcolor{keyword}{public} slots:
+00132     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_ae6e1c32c5dea20eb835f5c9036de8a5b}{afficherImage}(QPixmap image);
+00137     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a68653dfe09dbb9695797d60e9190366b}{reglerVideo}();
+00142     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a9b517b4891917634d64c903894bcc48b}{reglerConfiguration}();
+00148     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a15fe4fd090a0171bb9ad24e28d3b978a}{capturerImage}(\textcolor{keywordtype}{bool} etat=\textcolor{keyword}{false});
+00153     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a3660d3b4bf61367534eae9d0c3618a5e}{gererCampagne}();
+00158     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_aae5c264f7a1b6d27c1d2e25574c88c5b}{chargerPhotos}();
+00163     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a955daa231d959666fa7ed01346b2b6ef}{initialiserEvenementsCamera}();
+00168     \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_rov_a81335964f1443d11e0929017b2f21267}{arreterVideo}();
+00169 \};
+00170 
+00171 \textcolor{preprocessor}{#endif // IHMROV\_H}
+\end{DoxyCode}

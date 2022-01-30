@@ -1,0 +1,48 @@
+\hypertarget{ihmalbumphoto_8h_source}{}\subsection{ihmalbumphoto.\+h}
+\label{ihmalbumphoto_8h_source}\index{ihmalbumphoto.\+h@{ihmalbumphoto.\+h}}
+
+\begin{DoxyCode}
+00001 
+00007 \textcolor{preprocessor}{#ifndef ALBUMPHOTO\_H}
+00008 \textcolor{preprocessor}{#define ALBUMPHOTO\_H}
+00009 
+00010 \textcolor{preprocessor}{#include <QtWidgets>}
+00011 \textcolor{preprocessor}{#include <QVector>}
+00012 
+\Hypertarget{ihmalbumphoto_8h_source_l00013}\hyperlink{ihmalbumphoto_8h_ac3297f6dcd811e18b4cada4be745f2c2}{00013} \textcolor{preprocessor}{#define NOM\_FENETRE\_ALBUMPHOTO "Projet Rovnet 2020"}
+00014 
+\Hypertarget{ihmalbumphoto_8h_source_l00020}\hyperlink{struct_photo}{00020} \textcolor{keyword}{struct }\hyperlink{struct_photo}{Photo}
+00021 \{
+\Hypertarget{ihmalbumphoto_8h_source_l00022}\hyperlink{struct_photo_aa6ecfed8082bea5af2905208308a6adb}{00022}     QPixmap \hyperlink{struct_photo_aa6ecfed8082bea5af2905208308a6adb}{image};            
+\Hypertarget{ihmalbumphoto_8h_source_l00023}\hyperlink{struct_photo_a0ac4d5bba2d119ca73ba949d18a557bd}{00023}     QTime \hyperlink{struct_photo_a0ac4d5bba2d119ca73ba949d18a557bd}{dateheure};          
+\Hypertarget{ihmalbumphoto_8h_source_l00024}\hyperlink{struct_photo_afec1baefdd7d036432494bbb33b21366}{00024}     \textcolor{keywordtype}{bool} \hyperlink{struct_photo_afec1baefdd7d036432494bbb33b21366}{aGarder};             
+\Hypertarget{ihmalbumphoto_8h_source_l00025}\hyperlink{struct_photo_a3c28eb9ad160b65deb46a72146a1d14f}{00025}     QString \hyperlink{struct_photo_a3c28eb9ad160b65deb46a72146a1d14f}{cheminSauvegarde}; 
+00026 \};
+00027 
+00028 \textcolor{keyword}{class }\hyperlink{class_i_h_m_rov}{IHMRov};
+00029 
+\Hypertarget{ihmalbumphoto_8h_source_l00035}\hyperlink{class_i_h_m_album_photo}{00035} \textcolor{keyword}{class }\hyperlink{class_i_h_m_album_photo}{IHMAlbumPhoto} : \textcolor{keyword}{public} \hyperlink{class_q_widget}{QWidget}
+00036 \{
+00037     Q\_OBJECT
+00038 \textcolor{keyword}{private}:
+\Hypertarget{ihmalbumphoto_8h_source_l00039}\hyperlink{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}{00039}     \hyperlink{class_q_widget}{QWidget} *\hyperlink{class_i_h_m_album_photo_a0a58f758260250ac5520f2430d708d87}{photos};                  
+\Hypertarget{ihmalbumphoto_8h_source_l00040}\hyperlink{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}{00040}     QHBoxLayout *\hyperlink{class_i_h_m_album_photo_aabe492a016823fa63259c8e5d5b58e9d}{layoutPhotos};        
+\Hypertarget{ihmalbumphoto_8h_source_l00041}\hyperlink{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}{00041}     QVBoxLayout *\hyperlink{class_i_h_m_album_photo_a1b4028248430efc384e34b0151709fa0}{layoutAlbumPhoto};    
+\Hypertarget{ihmalbumphoto_8h_source_l00042}\hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{00042}     QScrollArea *\hyperlink{class_i_h_m_album_photo_a9ed730123be1c9ca6f7aa078ec9e0556}{scrollArea};          
+\Hypertarget{ihmalbumphoto_8h_source_l00043}\hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{00043}     QSignalMapper *\hyperlink{class_i_h_m_album_photo_a184d7d26edab19328980b55ce727811b}{signalMapper};      
+\Hypertarget{ihmalbumphoto_8h_source_l00044}\hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{00044}     QVector<Photo> \hyperlink{class_i_h_m_album_photo_a686adeccd626a94d9a4996782c851c61}{albumPhoto};        
+\Hypertarget{ihmalbumphoto_8h_source_l00045}\hyperlink{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}{00045}     \hyperlink{class_i_h_m_rov}{IHMRov} *\hyperlink{class_i_h_m_album_photo_ab7056087d5ed3ee1528bd7f689b46c2a}{imhRov};                   
+00046 
+00047 \textcolor{keyword}{public}:
+00054     \hyperlink{class_i_h_m_album_photo}{IHMAlbumPhoto}(\hyperlink{class_i_h_m_rov}{IHMRov} *ihmRov, \hyperlink{class_q_widget}{QWidget} *parent = \textcolor{keyword}{nullptr});
+00059     ~\hyperlink{class_i_h_m_album_photo}{IHMAlbumPhoto}();
+00064     \textcolor{keywordtype}{void} ouvrirAlbumPhotos(QVector<Photo> albumPhoto);
+00065 
+00066 signals:
+00067 
+00068 \textcolor{keyword}{public} slots:
+00074     \textcolor{keywordtype}{void} selectionnerPhoto(\textcolor{keywordtype}{int} numero);
+00075 \};
+00076 
+00077 \textcolor{preprocessor}{#endif // ALBUMPHOTO\_H}
+\end{DoxyCode}
